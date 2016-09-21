@@ -1,0 +1,69 @@
+tx_gridelements.setup{
+  bs3-tabs_container {
+    title = Tab / Accordion Container
+    description = Ein Element das mehrere Tabs enthält
+    flexformDS = FILE:fileadmin/Mysite4/app/Configuration/FlexForms/bs3-tabs_container.xml
+    frame = 1
+
+    config {
+      colCount = 1
+      rowCount = 1
+      rows {
+        1 {
+          columns {
+            1 {
+              name = Tab / Accordion Container Element
+              allowed = gridelements_pi1
+              allowedGridTypes = bs3-tabs_tab, bs3-accordion_tab
+              colPos = 0
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  bs3-tabs_tab {
+    title = Tab
+    description = Ein Tab für einen Container
+    frame = 1
+
+    config {
+      colCount = 1
+      rowCount = 1
+      rows {
+        1 {
+          columns {
+            1 {
+              name = Tab Element
+              colPos = 0
+            }
+          }
+        }
+      }
+    }
+  }
+
+  bs3-accordion_tab {
+    title = Accordion
+    description = Ein Accordion für einen Container
+    flexformDS = FILE:fileadmin/Mysite4/app/Configuration/FlexForms/bs3-accordion_tab.xml
+    frame = 1
+
+    config {
+      colCount = 1
+      rowCount = 1
+      rows {
+        1 {
+          columns {
+            1 {
+              name = Tab Element
+              colPos = 0
+            }
+          }
+        }
+      }
+    }
+  }
+}

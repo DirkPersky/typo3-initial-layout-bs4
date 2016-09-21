@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+  <meta type="array">
+    <langDisable>1</langDisable>
+  </meta>
+  <sheets>
+  	<general>
+      	<ROOT type="array">
+	        <TCEforms>
+	          <sheetTitle>Button</sheetTitle>
+	        </TCEforms>
+	        <el type="array">
+	        	<label type="array">
+					<TCEforms type="array">
+						<label>Headline</label>
+						<config type="array">
+						<type>input</type>
+						<size>48</size>
+						<eval>trim</eval>
+						</config>
+					</TCEforms>
+				</label>
+				<btn_style type="array">
+		            <TCEforms type="array">
+		              <label>Button Style</label>
+		              <config type="array">
+		                <type>select</type>
+		                <items type="array">
+		                  <numIndex index="0" type="array"><numIndex index="0">Default</numIndex><numIndex index="1">btn-default</numIndex></numIndex>
+		                  <numIndex index="1" type="array"><numIndex index="0">Info</numIndex><numIndex index="1">btn-info</numIndex></numIndex>
+		                  <numIndex index="2" type="array"><numIndex index="0">Primary</numIndex><numIndex index="1">btn-primary</numIndex></numIndex>
+		                  <numIndex index="3" type="array"><numIndex index="0">Success</numIndex><numIndex index="1">btn-success</numIndex></numIndex>
+		                  <numIndex index="4" type="array"><numIndex index="0">Waring</numIndex><numIndex index="1">btn-warning</numIndex></numIndex>
+		                  <numIndex index="5" type="array"><numIndex index="0">Error</numIndex><numIndex index="1">btn-error</numIndex></numIndex>
+		                </items>
+		                <default>btn-default</default>
+		              </config>
+		            </TCEforms>
+		        </btn_style>
+	        </el>
+    	</ROOT>
+    </general>
+  	<popover>
+		<ROOT type="array">
+			<TCEforms>
+	          <sheetTitle>Popover Allgemein</sheetTitle>
+	        </TCEforms>
+	        <el type="array">
+	        	<headline type="array">
+					<TCEforms type="array">
+						<label>Headline</label>
+						<config type="array">
+							<type>input</type>
+							<size>48</size>
+							<eval>trim</eval>
+						</config>
+					</TCEforms>
+				</headline>
+				<direction type="array">
+		            <TCEforms type="array">
+		              <label>Ausrichtung</label>
+		              <config type="array">
+		                <type>select</type>
+		                <items type="array">
+		                  <numIndex index="0" type="array"><numIndex index="0">Rechts</numIndex><numIndex index="1">right</numIndex></numIndex>
+		                  <numIndex index="1" type="array"><numIndex index="0">Links </numIndex><numIndex index="1">left </numIndex></numIndex>
+		                  <numIndex index="2" type="array"><numIndex index="0">Oben</numIndex><numIndex index="1">top</numIndex></numIndex>
+		                  <numIndex index="3" type="array"><numIndex index="0">Unten</numIndex><numIndex index="1">bottom</numIndex></numIndex>
+		                  <numIndex index="5" type="array"><numIndex index="0">Auto</numIndex><numIndex index="1">auto</numIndex></numIndex>
+		                </items>
+		                <default>auto</default>
+		              </config>
+		            </TCEforms>
+		        </direction>
+			</el>
+		</ROOT>
+	</popover>
+  <popoverStyle>
+		<ROOT type="array">
+			<TCEforms>
+	          <sheetTitle>Popover Einstellungen</sheetTitle>
+	        </TCEforms>
+	        <el type="array">
+				<css type="array">
+					<TCEforms type="array">
+						<label>CSS</label>
+						<config type="array">
+						<type>input</type>
+						<size>150</size>
+						<eval>trim</eval>
+						</config>
+					</TCEforms>
+				</css>
+				<arrow type="array">
+					<TCEforms type="array">
+						<label>Color-Arrow</label>
+						<config type="array">
+							<type>input</type>
+							<size>150</size>
+							<eval>trim</eval>
+							<default>white</default>
+						</config>
+					</TCEforms>
+				</arrow>
+				<image type="array">
+					<TCEforms type="array">
+						<label>Hintergrund Image</label>
+						<config type="array">
+							<type>group</type>
+							<internal_type>file</internal_type>
+							<allowed>jpg,gif,png</allowed>
+							<max_size>1000</max_size>
+							<uploadfolder>uploads/tx_gridelements</uploadfolder>
+							<show_thumbs>1</show_thumbs>
+							<size>1</size>
+							<minitems>0</minitems>
+							<maxitems>1</maxitems>
+						</config>
+					</TCEforms>
+				</image>
+			</el>
+		</ROOT>
+	</popoverStyle>
+  <position>
+		<ROOT type="array">
+			<TCEforms>
+        <sheetTitle>Position Einstellungen</sheetTitle>
+      </TCEforms>
+        <el type="array">
+          <top type="array">
+            <TCEforms type="array">
+              <label>Position Top</label>
+              <config type="array">
+              <type>input</type>
+              <size>20</size>
+              <eval>trim</eval>
+              </config>
+            </TCEforms>
+          </top>
+          <left type="array">
+            <TCEforms type="array">
+              <label>Position left</label>
+              <config type="array">
+              <type>input</type>
+              <size>20</size>
+              <eval>trim</eval>
+              </config>
+            </TCEforms>
+          </left>
+          <right type="array">
+            <TCEforms type="array">
+              <label>Position Right</label>
+              <config type="array">
+              <type>input</type>
+              <size>20</size>
+              <eval>trim</eval>
+              </config>
+            </TCEforms>
+          </right>
+          <bottom type="array">
+            <TCEforms type="array">
+              <label>Position Bottom</label>
+              <config type="array">
+              <type>input</type>
+              <size>20</size>
+              <eval>trim</eval>
+              </config>
+            </TCEforms>
+          </bottom>
+  			</el>
+  		</ROOT>
+  	</position>
+  </sheets>
+</T3DataStructure>

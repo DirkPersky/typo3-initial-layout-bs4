@@ -1,0 +1,224 @@
+# Language
+	temp.language = TEXT
+	temp.language.value = <img src="typo3/sysext/core/Resources/Public/Icons/Flags/SVG/DE.svg" alt="Deutsch"/> Deutsch
+
+	temp.languageText = TEXT
+	temp.languageText.value = Bitte wählen Sie Ihre Sprache
+
+#########################################
+# Spracherkennung(s-Plugin) aktivieren
+#########################################
+plugin.tx_rlmplanguagedetection_pi1 {
+	defaultLang = de
+	dontBreakIfLanguageIsAlreadySelected = 1
+	dontBreakIfLanguageAlreadySelected = 1
+
+	countryCodeToLanguageCode  {
+		us = en
+		gb = en
+		nz = en
+		au = en
+		ie = en
+		ca = en
+		de = de
+		at = de
+		ch = de
+		lu = de
+		li = de
+		nl = nl
+		es = en
+		zh = en
+	}
+
+	forceRedirect = 1
+}
+
+################
+### SPRACHEN ###
+################
+[globalVar = GP:L = 0]
+	config.htmlTag_stdWrap.cObject.20.value = de
+	page.config.sys_language_uid = 0
+	page.config.language = de
+	page.config.locale_all = de_DE.UTF-8
+	page.config.htmlTag_langKey = de
+
+	config.sys_language_uid = 0
+	config.language = de
+	config.locale_all = de_DE.UTF-8
+	config.htmlTag_langKey = de
+
+	# Spracherkennung deaktivieren
+	plugin.tx_rlmplanguagedetection_pi1 >
+	plugin.tx_indexedsearch._DEFAULT_PI_VARS.lang = 0
+
+[global]
+
+
+[globalVar = GP:L = 1]
+	# EN
+	config.htmlTag_stdWrap.cObject.20.value = en
+	page.config.sys_language_uid = 1
+	page.config.language = en
+	page.config.locale_all = en_EN.UTF-8
+	page.config.htmlTag_langKey = en
+
+	config.sys_language_uid = 1
+	config.language = en
+	config.locale_all = en_EN.UTF-8
+	config.htmlTag_langKey = en
+
+	temp.language.value = <img src="typo3/sysext/core/Resources/Public/Icons/Flags/SVG/GB.svg" alt="Englisch"/> English
+
+	temp.languageText.value = Please select a language
+
+	# Spracherkennung deaktivieren
+	plugin.tx_rlmplanguagedetection_pi1 >
+	plugin.tx_indexedsearch._DEFAULT_PI_VARS.lang = 1
+
+	page.headerData.130.10.10.value = This website uses cookies to ensure you get the best experience on our website
+	page.headerData.130.10.20.value = Got it!
+	page.headerData.130.10.30.value = More info
+
+[global]
+
+#####################
+### LANGUAGE MENU ###
+#####################
+temp.languagemenu = COA
+temp.languagemenu {
+	20 = HMENU
+	20 {
+		special = language
+
+		# Sprachen wahl
+		special.value = 0,1
+
+		wrap = <ul class="dropdown-menu">|</ul>
+		1 = TMENU
+		1 {
+			noBlur = 1
+			# Standard Sprachen
+			NO = 1
+			NO {
+			  linkWrap = <li>|</li>
+
+			  # Standardmäßige Verlinkung des Menüs ausschalten
+			  doNotLinkIt = 1
+
+			  stdWrap {
+				# Link Title ändern
+			  	override = <img src="{$path.baseURL}typo3/sysext/core/Resources/Public/Icons/Flags/SVG/DE.svg" alt="Deutsch" /> Deutsch ||  <img src="{$path.baseURL}typo3/sysext/core/Resources/Public/Icons/Flags/SVG/GB.svg" alt="Englisch" /> Englisch
+
+				typolink {
+					# Nun wird der Link mit den aktuellen GET-Parametern neu aufgebaut
+					parameter.data = page:uid
+					additionalParams = &L=0 || &L=1
+					addQueryString = 1
+					addQueryString.exclude = L,id,cHash,no_cache
+					addQueryString.method = GET
+					useCacheHash = 1
+					no_cache = 0
+					title = Deutsch || Englisch
+				}
+			  }
+			}
+
+			# Aktive Sprache
+			ACT < .NO
+			ACT.linkWrap = <li class="active">|</li>
+			# NO + Übersetzung nicht vorhanden
+			USERDEF1 < .NO
+			# ACT + Übersetzung nicht vorhanden
+			USERDEF2 < .ACT
+		}
+	}
+}
+
+lib.sprache = COA
+lib.sprache {
+	10 < temp.language
+	10 {
+		wrap = <div class="navbar-language">|</div>
+		typolink = 1
+		typolink {
+			parameter = #sprache
+			ATagParams = data-select="#sprache"
+		}
+	}
+	20 = COA
+	20 {
+		wrap = <div id="sprache">|</div>
+		10 = TEXT
+		10 {
+			value = &times;
+
+			typolink = 1
+			typolink {
+				parameter = #top
+				ATagParams = data-close="#sprache" class="close"
+			}
+		}
+
+		20 = COA
+		20 {
+			wrap = <div class="sprache-inner-wrap">|</div>
+
+			10 < temp.languagemenu
+			10 {
+				wrap = <div class="sprache-inner">|</div>
+				10 < temp.languageText
+				10.wrap = <h4>|</h4>
+
+				20.wrap = <ul class="nav">|</ul>
+			}
+		}
+	}
+
+	30 =< plugin.tx_rlmplanguagedetection_pi1
+}
+################################
+### Google Meta Informations ###
+################################
+page.headerData.444 = HMENU
+page.headerData.444 {
+	
+special = language
+special.value = 0,0,1,2
+	1 = TMENU
+	1 {
+		NO = 1
+		NO {
+			stdWrap.cObject = TEXT
+			stdWrap.cObject {
+				value = x-default || de || en || nl
+			}
+			linkWrap = <link rel="alternate" hreflang="|
+			doNotLinkIt = 1
+			after.cObject = TEXT
+			after.cObject {
+				stdWrap {
+					wrap = " href="|" />
+					typolink {
+						parameter.data = page:uid
+						additionalParams = &L=0 || &L=0 || &L=1 || &L=2
+						returnLast = url
+						#inkl baseurl
+						forceAbsoluteUrl = 1
+						#z.b. tt_news
+						addQueryString = 1
+					}
+				}
+			}
+		}
+	}
+}
+
+#########################
+### FORCE DE IN LINKS ###
+#########################
+config {
+  defaultGetVars {
+    L = 0
+  }
+}

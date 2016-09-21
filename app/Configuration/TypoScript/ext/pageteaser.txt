@@ -1,0 +1,134 @@
+# TCA TCEFORM.tt_content.menu_type.addItems.100 = Produktteaser mit Vorschaubild
+#######################
+tt_content.menu.20.100 < tt_content.menu.20.4
+tt_content.menu.20.100 {
+  // Löscht evtl. Wraps um das gesamte Objekt
+  stdWrap >
+  1 {
+    // Wrap um den gesamten Teaser
+    wrap = <div class="page-teaser">|</div>    
+    NO {
+      ATagTitle >
+      // Keine Verlinkung des Seitennamens, das machen wir selber
+      doNotLinkIt = 1
+      // alle zusätzlichen stdWrap-Auszeichnungen und Wraps löschen
+      stdWrap >
+      linkWrap >
+      // löschen des stdWrap (after) und folgender Objekte,
+      // welche dem normalen Menu-Element 4 nachfolgen würde (z.B. als <dd> einer Liste)
+      after >
+      // ------------------------
+
+      // Eigenes Objekt aufbauen
+      // Da wir mehrere Elemente brauchen, ist unser Objekt vom Typ Content Object Array
+      // Statt eines Arrays können Sie auch mit einem Template das Folgende erstellen.
+      // Ersetzen Sie einfach die Array-Indizes durch Marker, Subparts oder Variablen (Fluid)
+      // Dadurch trennen Sie Layout von Inhalt.
+      // Nachteil: das parsen des Templates braucht mehr Rechenleistung (meist zu vernachlässigen)
+      // Vorteil: Bessere Übersicht
+      stdWrap.cObject = COA
+      stdWrap.cObject {       
+        // Wrapped jeden Einzelteaser
+        wrap = <div class="toggle-box main clearfix toggle-box-open">|</div>
+        // Zuerst möchte ich das Bild aus dem Media-Feld
+        // Sie können aber auch anders beginnen
+
+        // ------------------------
+
+        // Zuerst der Seitenname als TEXT-Objekt
+        10 = TEXT
+        10 {
+          // Holt den Seitennamen aus dem Feld "nav_title" = "alternative Pagetitle".
+          // Wenn das Feld leer ist, wird der Seitenname aus dem Feld "title" = "Pagetitle" geholt.
+          field = title // nav_title
+
+          outerWrap = <div class="csc-header title">|</div>
+          wrap = <h2>|</h2>
+          typolink {
+            // Verlinkt den Seitennamen mit der Unterseite
+            parameter.data = field:uid
+          }
+        }
+
+
+        // Erstellt Bild-Objekt
+        // Den Textblock bilde ich in einem COA ab
+        20 = COA
+        20 {
+          wrap = <div class="box-content">|</div>
+
+          10 = IMAGE
+          10 {
+            // Als Alt-Text den Seitennamen
+            altText.field = title
+            // Dateizuordnung
+            file {
+              // Speicherort der Bilder aus dem Feld Media 
+              // Ist eher eine Art Workaround, da die Bilder ja referenziert werden (ab TYPO3 4.7)
+              import =  uploads/media/
+              // Datenbankfeld der Seite mit dem Vorschaulbild
+              import.field = media
+              // Da das Bild über den FAL referenziert ist, muss das nochmals explizit angeführt werden,
+              // dass es sich um eine Referenz handelt
+              treatIdAsReference = 1
+              // Das erste Bild soll ausgeben werden
+              import.listNum = 0
+              // Bildbreite
+              width = 180c
+              height = 200c
+            }
+            // stdWrap um das Bild
+            stdWrap {
+              // Wrap um das Bild
+              wrap = <div class="icon">|</div>
+              typolink {
+                // Verlinkt das Bild mit der Unterseite
+                parameter.data = field:uid
+              }
+            }
+          }
+          
+          20 = COA
+          20 {
+            wrap = <div class="text">|</div>
+
+            10 = COA
+            10 {
+              outerWrap = <div class="label">|</div>
+              wrap = <div class="label-inner">|</div>
+
+              // Ausgabe des Kurztexts. 
+              20 = TEXT
+              20 {
+                // Holt den Text aus dem Feld "abstract" (unter Meta-Angaben der jeweiligen Seite)
+                field = abstract
+                // Für den Fall, dass Sie Umbrüche im Feld "abstract" haben
+                br = 1
+                wrap = <p>|</p>
+              }
+            }
+            20 = COA
+            20 {
+              outerWrap = <div class="link">|</div>
+              
+              // Der abschließende "weiterlesen" Link.
+              // Ebenfalls ein Text-Objekt
+              10 = TEXT
+              10 {
+                // Das Objekt wird mit einem festen Text befüllt
+                value = weiterlesen
+                wrap = <p>|</p>
+                typolink {
+                  // Verlinkt den Seitennamen mit der Unterseite
+                  parameter.data = field:uid
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  special = list
+  #special.value.field = pages
+}

@@ -1,0 +1,10 @@
+###############
+### RealURL ###
+###############
+config {
+  simulateStaticDocuments = 0
+  simulateStaticDocuments_noTypeIfNoTitle = 1
+  tx_realurl_enable = 1
+  redirectOldLinksToNew = 1
+  typolinkCheckRootline=0
+}

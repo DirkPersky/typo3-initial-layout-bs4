@@ -1,0 +1,267 @@
+page = PAGE
+#################################
+### LOAD BASIC CONFIGURATIONS ###
+#################################
+	<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/config.txt">
+	<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/cssJS.txt">
+	<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/lightbox.txt">
+	<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/content.txt">
+	<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/killImageWrap.txt">
+	<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/lazysizes.txt">
+	<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/indention.txt">
+	<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/gridElements.txt">
+	<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/sozial.txt">
+	<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/cookie.txt">
+
+########################
+### Optionale Script ###
+########################
+	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/compress.txt">
+	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/scriptmeger.txt">
+	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/coolUri.txt">
+	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/realUrl.txt">
+	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/breadcrumb.txt">
+	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/language.txt">
+	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/analytics.txt">
+	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/pageteaser.txt">
+	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/news.txt">
+
+###############
+### FE Edit ###
+###############
+	[globalVar = TSFE : beUserLogin> 0]
+		config {
+			admPanel = 1
+			module.edit.forceDisplayFieldIcons=1
+	  	hide=1
+	  	override.tsdebug.forceTemplateParsing = 1
+		}
+		page.config.admPanel = 1
+		page.CSS_inlineStyle (
+			#TSFE_ADMIN_PANEL_FORM {
+				position:fixed !important;
+				top: 10px;
+			}
+			.typo3-feedit-element {
+				display: initial;
+			}
+			.btn span.icon-markup img {
+	      		height: 15px;
+		    }
+		    .typo3-feedit-element .btn.content-link,
+		    .typo3-editPanel .btn {
+			    padding-right: 10px;
+			    padding-left: 10px;
+		    }
+		)
+	[global]
+
+######################
+### Default Config ###
+######################
+	lib.home = TEXT
+	lib.home.typolink {
+		parameter = {$nav.homeUid}
+		returnLast = url
+	}
+	lib.search = TEXT
+	lib.search.typolink {
+		parameter = {$plugin.tx_indexedsearch.searchUID}
+		returnLast = url
+	}
+
+####################
+### Site Scripts ###
+####################
+lib.nav = COA
+lib.nav {
+	10 = HMENU
+	10 {
+		special = list
+		special.value = {$nav.homeUid}
+
+		1 = TMENU
+		1 {
+			NO = 1
+			NO {
+				wrapItemAndSub = <li class="nav-item">|</li>
+				ATagParams = title="{field:subtitle}" class="nav-link"
+				allStdWrap.insertData = 1
+			}
+
+			CUR <.NO
+			CUR.wrapItemAndSub = <li class="nav-item active">|</li>
+		}
+	}
+	10 >
+
+	20 = HMENU
+	20 {
+		excludeUidList = {$nav.exclude}
+
+		1 = TMENU
+		1 {
+			noBlur = 1
+			expAll = 1
+
+			NO = 1
+			NO {
+				wrapItemAndSub = <li class="nav-item">|</li>
+				ATagParams = title="{field:subtitle}" class="nav-link"
+				allStdWrap.insertData = 1
+
+				########################
+				### Use Image in Nav ###
+				########################
+				/*
+					stdWrap.wrap.cObject = COA
+					stdWrap.wrap.cObject {
+
+						10 = FILES
+						10 {
+							references {
+								table = pages
+								fieldName = media
+							}
+							renderObj = IMAGE
+							renderObj {
+								file {
+									import.data = file:current:publicUrl
+									maxW = 64
+									maxH = 64
+								}
+
+								titleText.data = file:current:title
+								altText.data = file:current:alternative
+							}
+
+							required = 1
+							# start with first image
+						  begin = 0
+						  # show only XX images
+						  maxItems = 1
+						}
+
+						20 = TEXT
+						20.value = <span>|</span>
+					}
+			  */
+
+				#################################
+				### HTML Direkt Link / Anchor ###
+				#################################
+					doNotLinkIt = 1
+					doNotLinkIt.if {
+						value = 3
+						equals.field = doktype
+					}
+
+					stdWrap {
+						cObject = COA
+						cObject {
+							5 = TEXT
+							5 {
+								value.field = title
+
+								typolink {
+									section.field = subtitle
+									parameter.field = url
+									title.field = title
+									ATagParams = data-link="true" class="nav-link"
+
+									if {
+										value = 3
+										equals.field = doktype
+									}
+								}
+							}
+						}
+					}
+				# end stdWrap
+			}
+
+			CUR <.NO
+			CUR.wrapItemAndSub = <li class="nav-item active">|</li>
+
+			ACT <.CUR
+
+			IFSUB <.NO
+			IFSUB.wrapItemAndSub = <li class="nav-item dropdown" data-nav="true">|</li>
+
+			CURIFSUB <.IFSUB
+			CURIFSUB.wrapItemAndSub = <li class="nav-item active dropdown" data-nav="true">|</li>
+
+			ACTIFSUB <.CURIFSUB
+		}
+
+		2 < .1
+		2 {
+			wrap = <span class="nav-trans"><ul class="nav dropdown-nav"><li class="dropdown-nav-close"><button class="btn btn-block btn-close"><i class="fa fa-angle-left"></i> </button></li>|</ul></span>
+		}
+
+		3 <.2
+	}
+}
+
+lib.footerNav = COA
+lib.footerNav {
+	wrap = <ul class="nav">|</ul>
+	10 = HMENU
+	10 {
+		special = list
+		special.value = {$nav.footer}
+
+		includeNotInMenu = 1
+
+		1 = TMENU
+		1 {
+			noBlur = 1
+			expAll = 1
+
+			NO = 1
+			NO {
+				wrapItemAndSub = <li>|</li>
+				ATagParams = title="{field:subtitle}"
+				allStdWrap.insertData = 1
+
+
+				#################################
+				### HTML Direkt Link / Anchor ###
+				#################################
+					doNotLinkIt = 1
+					doNotLinkIt.if {
+						value = 3
+						equals.field = doktype
+					}
+
+					stdWrap {
+						cObject = COA
+						cObject {
+							5 = TEXT
+							5 {
+								value.field = title
+
+								typolink {
+									section.field = subtitle
+									parameter.field = url
+									title.field = title
+									ATagParams = data-link="true"
+
+									if {
+										value = 3
+										equals.field = doktype
+									}
+								}
+							}
+						}
+					}
+				# end stdWrap
+			}
+		}
+	}
+}
+
+#####################
+### Load Template ###
+#####################
+<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/template.txt">

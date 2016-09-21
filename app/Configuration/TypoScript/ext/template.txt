@@ -1,0 +1,40 @@
+page.10 = FLUIDTEMPLATE
+page.10 {
+	layoutRootPath = {$path.template}Private/Layout/
+	partialRootPath = {$path.template}Private/Partial/
+	variables{
+	    layout = TEXT
+	    layout.data = levelfield:-1,backend_layout_next_level,slide
+	    layout.override.field = backend_layout
+
+			bodyclass = TEXT
+			bodyclass.value = {$template.style}
+			bodyclass.insertData = 1
+
+			newsImage < lib.newsImage
+    }
+
+	file.cObject = CASE
+	file.cObject {
+	  key.data = levelfield:-1, backend_layout_next_level, slide
+	  key.override.field = backend_layout
+	  default = TEXT
+	  default.value = {$path.template}Private/Template/normal.html
+	  2 = TEXT
+	  2.value = {$path.template}Private/Template/root.html
+	}
+}
+
+
+## RTE Liste always add class
+lib.parseFunc_RTE {
+  externalBlocks := addToList(ul)
+  externalBlocks {
+    ul.stripNL = 1
+    ul.callRecursive = 1
+    ul.callRecursive.tagStdWrap.HTMLparser = 1
+    ul.callRecursive.tagStdWrap.HTMLparser.tags.ul {
+      fixAttrib.class.default = csc-bulletlist
+    }
+  }
+}

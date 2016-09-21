@@ -1,0 +1,49 @@
+tx_gridelements.setup{
+ bs3-carousel_container {
+    title = Carousel Container
+    description = Ein Element, dass mehrere Carousel Elemente enthält
+    flexformDS = FILE:fileadmin/Mysite4/app/Configuration/FlexForms/bs3_carousel_container.xml
+
+    config {
+      colCount = 1
+      rowCount = 1
+
+      rows {
+        1 {
+          columns {
+            1 {
+              name = Carousel Container
+              allowed = gridelements_pi1
+              allowedGridTypes = bs3-carousel_item
+              colPos = 0
+            }
+          }
+        }
+      }
+    }
+  }
+  bs3-carousel_item {
+    title = Carousel Element
+    description = Ein Element für ein Carousel-Container
+
+    config {
+      colCount = 4
+      rowCount = 1
+      rows {
+        1 {
+          columns {
+            1 {
+              name = Bild (max. 1)
+              colPos = 0
+            }
+            2 {
+              name = Inhalt
+              colspan = 3
+              colPos = 1
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+// main: ../../style.scss
+// keyframes mixin
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @-o-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin transform-origin($value){
+	-webkit-transform-origin: #{$value};
+	   -moz-transform-origin: #{$value};
+	   	-ms-transform-origin: #{$value};
+	   	 -o-transform-origin: #{$value};
+	   	 	transform-origin: #{$value};
+
+}
+@mixin animation-name($value){
+	-webkit-animation-name: #{$value};
+	   -moz-animation-name: #{$value};
+	   	-ms-animation-name: #{$value};
+	   	 -o-animation-name: #{$value};
+	   	 	animation-name: #{$value};
+
+}
+@mixin animation-duration($value){
+	-webkit-animation-duration: #{$value};
+	   -moz-animation-duration: #{$value};
+	   	-ms-animation-duration: #{$value};
+	   	 -o-animation-duration: #{$value};
+	   	 	animation-duration: #{$value};
+
+}
+@mixin animation-fill-mode($value){
+	-webkit-animation-fill-mode: #{$value};
+	   -moz-animation-fill-mode: #{$value};
+	   	-ms-animation-fill-mode: #{$value};
+	   	 -o-animation-fill-mode: #{$value};
+	   	 	animation-fill-mode: #{$value};
+
+}
+@mixin animation-timing-function($value){
+	-webkit-animation-timing-function: #{$value};
+	   -moz-animation-timing-function: #{$value};
+	   	-ms-animation-timing-function: #{$value};
+	   	 -o-animation-timing-function: #{$value};
+	   	 	animation-timing-function: #{$value};
+
+}
+@mixin animation-iteration-count($value){
+	-webkit-animation-iteration-count: #{$value};
+	   -moz-animation-iteration-count: #{$value};
+	   	-ms-animation-iteration-count: #{$value};
+	   	 -o-animation-iteration-count: #{$value};
+	   	 	animation-iteration-count: #{$value};
+
+}
+@mixin transform($value){
+	-webkit-transform: #{$value};
+	   -moz-transform: #{$value};
+	   	-ms-transform: #{$value};
+	   	 -o-transform: #{$value};
+	   	 	transform: #{$value};
+}
+
+@mixin transition($value){
+	-webkit-transition: #{$value};
+	   -moz-transition: #{$value};
+	   	-ms-transition: #{$value};
+	   	 -o-transition: #{$value};
+	   	 	transition: #{$value};
+}

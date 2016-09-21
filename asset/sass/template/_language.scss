@@ -1,0 +1,124 @@
+// main: ../style.scss
+
+@mixin navbarLanguageMedias ($mediaUp){
+
+  @include media-breakpoint-up($mediaUp) {
+    @include rem(padding, 12 35 12 0);
+    @include rem(margin, 7.5 0);
+  }
+
+  a {
+    @include media-breakpoint-up($mediaUp) {
+      font-size: inherit;
+      line-height: 1;
+    }
+
+  }
+
+  img {
+
+    @include media-breakpoint-up($mediaUp) {
+      @include rem(margin-right, 15);
+    }
+  }
+}
+
+.navbar-language {
+  @include rem(padding, 12 10);
+  line-height: 1;
+  float: right;
+
+  display: inline-block;
+
+  a {
+    text-decoration: none;
+    @include rem(line-height, 26);
+    color: inherit;
+    font-size: 0;
+
+
+  }
+  img {
+    @include rem(height, 16);
+  }
+
+  .navbar-toggleable-sm & {
+    @include navbarLanguageMedias(sm);
+  }
+  .navbar-toggleable-md & {
+    @include navbarLanguageMedias(md);
+  }
+  .navbar-toggleable-lg & {
+    @include navbarLanguageMedias(lg);
+  }
+}
+
+#search,
+#sprache {
+	background-color: white;
+	background-color: rgba(white, 0.9);
+	visibility: hidden;
+	opacity: 0;
+
+	position: fixed;
+	z-index: 9999;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	top: 0;
+
+
+	@include transition(all 0.5s ease .15s);
+
+	&:target,
+	&.on {
+		visibility: visible;
+		opacity: 1;
+	}
+
+	.close {
+    @include rem(font-size, 40);
+    @include rem(padding, 10 15);
+		line-height: 1;
+		opacity: 0.5;
+
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+
+	.sprache-inner-wrap {
+		display: table;
+		width: 100%;
+		height: 100%;
+
+
+		.sprache-inner {
+			text-transform: uppercase;
+			vertical-align: middle;
+			display: table-cell;
+			text-align: center;
+
+			> * {
+				margin: 0 auto;
+        @include rem(width, 250);
+			}
+
+      > hr {
+        border-top-color: $gray-dark;
+        @include rem(margin, 10 auto);
+      }
+
+			.nav {
+				> li {
+					> a {
+						color: inherit;
+					 	img {
+              @include rem(width, 25);
+					 	}
+					}
+				}
+			}
+		}
+	}
+}

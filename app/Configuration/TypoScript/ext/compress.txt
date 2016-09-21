@@ -1,0 +1,9 @@
+################
+### Compress ###
+################
+config {
+  compressCss = 1
+  concatenateCss = 1
+  compressJs = 1
+  concatenateJs = 1
+}

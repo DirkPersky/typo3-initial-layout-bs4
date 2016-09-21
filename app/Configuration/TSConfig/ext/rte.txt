@@ -1,0 +1,67 @@
+###########
+### RTE ###
+###########
+RTE.default.contentCSS = fileadmin/Mysite4/app/Resources/Public/css/rte.css
+
+# LINK BUTTON
+RTE.default.proc.allowedClasses := addToList(btn-info)
+RTE.default.proc.allowedClasses := addToList(btn-default)
+RTE.default.proc.allowedClasses := addToList(btn-block)
+RTE.default.proc.allowedClasses := addToList(btn-primary)
+RTE.default.proc.allowedClasses := addToList(btn-success)
+RTE.default.proc.allowedClasses := addToList(btn-warning)
+RTE.default.proc.allowedClasses := addToList(btn-danger)
+RTE.default.proc.allowedClasses := addToList(btn)
+RTE.default.proc.allowedClasses := addToList(btn-lg)
+RTE.default.proc.allowedClasses := addToList(btn-sm)
+RTE.default.proc.allowedClasses := addToList(btn-xs)
+
+RTE.default.buttons {
+	 link.properties.class.allowedClasses := addToList(btn btn-default)
+	 link.properties.class.allowedClasses := addToList(btn btn-info)
+	 link.properties.class.allowedClasses := addToList(btn btn-primary)
+	 link.properties.class.allowedClasses := addToList(btn btn-success)
+	 link.properties.class.allowedClasses := addToList(btn btn-warning)
+	 link.properties.class.allowedClasses := addToList(btn btn-danger)
+
+	 link.properties.class.allowedClasses := addToList(btn btn-default btn-lg)
+	 link.properties.class.allowedClasses := addToList(btn btn-default btn-sm)
+	 link.properties.class.allowedClasses := addToList(btn btn-default btn-xs)
+	 link.properties.class.allowedClasses := addToList(btn btn-default btn-block)
+}
+
+# SPAN ALERT
+RTE.default.proc.allowedClasses := addToList(big)
+RTE.default.proc.allowedClasses := addToList(alert)
+RTE.default.proc.allowedClasses := addToList(alert-success)
+RTE.default.proc.allowedClasses := addToList(alert-info)
+RTE.default.proc.allowedClasses := addToList(alert-warning)
+RTE.default.proc.allowedClasses := addToList(alert-danger)
+
+RTE.default.buttons.textstyle.showTagFreeClasses = 1
+RTE.default.buttons.textstyle.tags.span.allowedClasses := addToList(big)
+RTE.default.buttons.textstyle.tags.span.allowedClasses := addToList(alert)
+RTE.default.buttons.textstyle.tags.span.allowedClasses := addToList(alert-success)
+RTE.default.buttons.textstyle.tags.span.allowedClasses := addToList(alert-info)
+RTE.default.buttons.textstyle.tags.span.allowedClasses := addToList(alert-warning)
+RTE.default.buttons.textstyle.tags.span.allowedClasses := addToList(alert-danger)
+
+# P TAG
+RTE.default.proc.allowedClasses := addToList(text-muted)
+RTE.default.proc.allowedClasses := addToList(text-primary)
+RTE.default.proc.allowedClasses := addToList(text-success)
+RTE.default.proc.allowedClasses := addToList(text-info)
+RTE.default.proc.allowedClasses := addToList(text-warning)
+RTE.default.proc.allowedClasses := addToList(text-danger)
+RTE.default.proc.allowedClasses := addToList(bg-primary)
+RTE.default.proc.allowedClasses := addToList(bg-success)
+RTE.default.proc.allowedClasses := addToList(bg-info)
+RTE.default.proc.allowedClasses := addToList(bg-warning)
+RTE.default.proc.allowedClasses := addToList(bg-danger)
+
+# Additional
+RTE.default.proc.allowedClasses := addToList(small)
+RTE.default.proc.allowedClasses := addToList(list-unstyled)
+
+#RTE.default.showButtons := addToList(pastetoggle)
+#RTE.default.buttons.pastetoggle.setActiveOnRteOpen = 1

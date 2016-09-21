@@ -1,0 +1,169 @@
+tx_gridelements.setup {
+  bs-grid-2 {
+    title = Gridelement - 2 Spalten flexibel
+    description = Aufteilung des Inhaltsbereichs in 2 Spalten - flexibel
+    flexformDS = FILE:fileadmin/Mysite4/app/Configuration/FlexForms/bs3-grid-2.xml
+    frame = 1
+
+    config {
+      colCount = 2
+      rowCount = 1
+      rows {
+        1 {
+          columns {
+            1 {
+              name = Links
+              colPos = 10
+            }
+            2 {
+              name = Rechts
+              colPos = 11
+            }
+          }
+        }
+      }
+    }
+  }
+
+  bs-grid-3 {
+    title = Gridelement - 3 Spalten flexibel
+    description = Aufteilung des Inhaltsbereichs in 3 Spalten - flexibel
+    flexformDS = FILE:fileadmin/Mysite4/app/Configuration/FlexForms/bs3-grid-3.xml
+    frame = 1
+
+    config {
+      colCount = 3
+      rowCount = 1
+      rows {
+        1 {
+          columns {
+            1 {
+              name = Links
+              colPos = 10
+            }
+            2 {
+              name = Rechts
+              colPos = 11
+            }
+            3 {
+              name = Rechts
+              colPos = 12
+            }
+          }
+        }
+      }
+    }
+  }
+
+  bs-grid-4 {
+    title = Gridelement - 4 Spalten flexibel
+    description = Aufteilung des Inhaltsbereichs in 4 Spalten - flexibel
+    flexformDS = FILE:fileadmin/Mysite4/app/Configuration/FlexForms/bs3-grid-4.xml
+    frame = 1
+
+    config {
+      colCount = 4
+      rowCount = 1
+      rows {
+        1 {
+          columns {
+            1 {
+              name = Links
+              colPos = 10
+            }
+            2 {
+              name = Rechts
+              colPos = 11
+            }
+            3 {
+              name = Rechts
+              colPos = 12
+            }
+            4 {
+              name = Rechts
+              colPos = 13
+            }
+          }
+        }
+      }
+    }
+  }
+  bs-grid-5 {
+    title = Gridelement - 5 Spalten flexibel
+    description = Aufteilung des Inhaltsbereichs in 5 Spalten - flexibel
+    flexformDS = FILE:fileadmin/Mysite4/app/Configuration/FlexForms/bs3-grid-5.xml
+    frame = 1
+
+    config {
+      colCount = 5
+      rowCount = 1
+      rows {
+        1 {
+          columns {
+            1 {
+              name = Links
+              colPos = 10
+            }
+            2 {
+              name = Rechts
+              colPos = 11
+            }
+            3 {
+              name = Rechts
+              colPos = 12
+            }
+            4 {
+              name = Rechts
+              colPos = 13
+            }
+            5 {
+              name = Rechts
+              colPos = 14
+            }
+          }
+        }
+      }
+    }
+  }
+  bs-grid-6 {
+    title = Gridelement - 6 Spalten flexibel
+    description = Aufteilung des Inhaltsbereichs in 6 Spalten - flexibel
+    flexformDS = FILE:fileadmin/Mysite4/app/Configuration/FlexForms/bs3-grid-6.xml
+    frame = 1
+
+    config {
+      colCount = 6
+      rowCount = 1
+      rows {
+        1 {
+          columns {
+            1 {
+              name = Links
+              colPos = 10
+            }
+            2 {
+              name = Rechts
+              colPos = 11
+            }
+            3 {
+              name = Rechts
+              colPos = 12
+            }
+            4 {
+              name = Rechts
+              colPos = 13
+            }
+            5 {
+              name = Rechts
+              colPos = 14
+            }
+            6 {
+              name = Rechts
+              colPos = 15
+            }
+          }
+        }
+      }
+    }
+  }
+}

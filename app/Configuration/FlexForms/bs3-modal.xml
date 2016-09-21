@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+  <meta type="array">
+    <langDisable>1</langDisable>
+  </meta>
+  <sheets>
+    <general>
+      <ROOT type="array">
+        <TCEforms>
+          <sheetTitle>Modal Inhalt</sheetTitle>
+        </TCEforms>
+        <el type="array">
+          <uniqueID type="array">
+            <TCEforms type="array">
+              <label>Unique ID</label>
+              <config type="array">
+              <type>input</type>
+              <size>45</size>
+              <eval>trim</eval>
+              </config>
+            </TCEforms>
+          </uniqueID>
+
+          <headline type="array">
+            <TCEforms type="array">
+              <label>Headline</label>
+              <config type="array">
+              <type>input</type>
+              <size>150</size>
+              <eval>trim</eval>
+              </config>
+            </TCEforms>
+          </headline>
+
+          <closebtn type="array">
+            <TCEforms type="array">
+              <label>Close Button Label</label>
+              <config type="array">
+              <type>input</type>
+              <size>48</size>
+              <eval>trim</eval>
+              </config>
+            </TCEforms>
+          </closebtn>
+        </el>
+      </ROOT>
+    </general>
+
+    <openbutton>
+      <ROOT type="array">
+        <TCEforms>
+          <sheetTitle>Modal Button</sheetTitle>
+        </TCEforms>
+        <el type="array">
+          <button type="array">
+            <TCEforms type="array">
+              <label>Label Modal Button</label>
+              <config type="array">
+              <type>input</type>
+              <size>45</size>
+              <eval>trim</eval>
+              </config>
+            </TCEforms>
+          </button>
+
+          <btn_style type="array">
+            <TCEforms type="array">
+              <label>Button Style</label>
+              <config type="array">
+                <type>select</type>
+                <items type="array">
+                  <numIndex index="0" type="array"><numIndex index="0">Default</numIndex><numIndex index="1">btn-default</numIndex></numIndex>
+                  <numIndex index="1" type="array"><numIndex index="0">Info</numIndex><numIndex index="1">btn-info</numIndex></numIndex>
+                  <numIndex index="2" type="array"><numIndex index="0">Primary</numIndex><numIndex index="1">btn-primary</numIndex></numIndex>
+                  <numIndex index="3" type="array"><numIndex index="0">Success</numIndex><numIndex index="1">btn-success</numIndex></numIndex>
+                  <numIndex index="4" type="array"><numIndex index="0">Waring</numIndex><numIndex index="1">btn-warning</numIndex></numIndex>
+                  <numIndex index="5" type="array"><numIndex index="0">Error</numIndex><numIndex index="1">btn-error</numIndex></numIndex>
+                </items>
+                <default>btn-default</default>
+              </config>
+            </TCEforms>
+          </btn_style>
+
+          <btn_size type="array">
+            <TCEforms type="array">
+              <label>Button Size</label>
+              <config type="array">
+                <type>select</type>
+                <items type="array">
+                  <numIndex index="0" type="array"><numIndex index="0">Normal</numIndex><numIndex index="1"></numIndex></numIndex>
+                  <numIndex index="1" type="array"><numIndex index="0">LG</numIndex><numIndex index="1">btn-lg</numIndex></numIndex>
+                  <numIndex index="2" type="array"><numIndex index="0">MD</numIndex><numIndex index="1">btn-md</numIndex></numIndex>
+                  <numIndex index="3" type="array"><numIndex index="0">XS</numIndex><numIndex index="1">btn-xs</numIndex></numIndex>
+                </items>
+                <default></default>
+              </config>
+            </TCEforms>
+          </btn_size>
+
+          <trigger type="array">
+            <TCEforms type="array">
+              <label>Eigene Modal Box öffnen?</label>
+              <config type="array">
+                <type>select</type>
+                <items type="array">
+                  <numIndex index="0" type="array"><numIndex index="0">Eigene Modalbox öffnen</numIndex><numIndex index="1">true</numIndex></numIndex>
+                  <numIndex index="1" type="array"><numIndex index="0">Vorhandene Modalbox öffnen</numIndex><numIndex index="1">false</numIndex></numIndex>
+                </items>
+                <default>true</default>
+              </config>
+            </TCEforms>
+          </trigger>
+
+          <cmodal type="array">
+            <TCEforms type="array">
+              <label>Modal Button erstellen?</label>
+              <config type="array">
+                <type>select</type>
+                <items type="array">
+                  <numIndex index="0" type="array"><numIndex index="0">ja</numIndex><numIndex index="1">true</numIndex></numIndex>
+                  <numIndex index="1" type="array"><numIndex index="0">nein</numIndex><numIndex index="1">false</numIndex></numIndex>
+                </items>
+                <default>true</default>
+              </config>
+            </TCEforms>
+          </cmodal>
+        </el>
+      </ROOT>
+    </openbutton>
+  </sheets>
+</T3DataStructure>

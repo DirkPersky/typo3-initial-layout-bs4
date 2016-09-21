@@ -1,0 +1,66 @@
+
+lib.breadcrumb = COA
+lib.breadcrumb {
+    wrap = <ul class="breadcrumb">|</ul>
+    10 = TEXT
+    10 {
+        value = Sie sind hier: &nbsp;
+        wrap = <li class="active">|</li>
+    }
+    10 >
+    20 = HMENU
+    20 {
+        special = rootline
+        special.range = 0 | -1
+        includeNotInMenu = 1
+
+        1 = TMENU
+        1 {
+          NO = 1
+          NO {
+            ATagParams = title="{field:subtitle}"
+            wrapItemAndSub = <li>|</li>
+
+            #################################
+    				### HTML Direkt Link / Anchor ###
+    				#################################
+              doNotLinkIt = 1
+              doNotLinkIt.if {
+                value = 3
+                equals.field = doktype
+              }
+
+              stdWrap {
+                cObject = COA
+                cObject {
+                  5 = TEXT
+                  5 {
+                    value.field = title
+
+                    typolink {
+                      section.field = subtitle
+                      parameter.field = url
+                      title.field = title
+                      ATagParams = data-link="true"
+
+                      if {
+                        value = 3
+                        equals.field = doktype
+                      }
+                    }
+                  }
+                }
+              }
+            ### end stdWrap
+          }
+
+          CUR = 1
+          CUR.doNotLinkIt = 1
+          CUR.wrapItemAndSub = <li class="active">|</li>
+        }
+    }
+}
+
+[globalVar = TSFE:id = {$nav.homeUid}]
+    lib.breadcrumb >
+[global]

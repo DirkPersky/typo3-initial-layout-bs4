@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+  <meta type="array">
+		<langDisable>1</langDisable>
+	</meta>
+	<sheets>
+		<general>
+			<ROOT type="array">
+				<TCEforms>
+					<sheetTitle>Einstellungen</sheetTitle>
+				</TCEforms>
+				<el type="array">
+					<active type="array">
+						<TCEforms type="array">
+							<label>Aktiv</label>
+							<config type="array">
+								<type>check</type>
+							</config>
+						</TCEforms>
+					</active>
+					<style type="array">
+						<TCEforms type="array">
+							<label>Aussehen</label>
+							<config type="array">
+								<type>select</type>
+								<items type="array">
+									<numIndex index="0" type="array"><numIndex index="0">Standard</numIndex><numIndex index="1">panel-default</numIndex></numIndex>
+									<numIndex index="1" type="array"><numIndex index="0">Wichtig (primary)</numIndex><numIndex index="1">panel-primary</numIndex></numIndex>
+									<numIndex index="2" type="array"><numIndex index="0">Erfolgreich (success)</numIndex><numIndex index="1">panel-success</numIndex></numIndex>
+									<numIndex index="3" type="array"><numIndex index="0">Information (info)</numIndex><numIndex index="1">panel-info</numIndex></numIndex>
+									<numIndex index="4" type="array"><numIndex index="0">Warnung (warning)</numIndex><numIndex index="1">panel-warning</numIndex></numIndex>
+									<numIndex index="5" type="array"><numIndex index="0">Vorsicht (danger)</numIndex><numIndex index="1">panel-danger</numIndex></numIndex>
+								</items>
+								<default>panel-default</default>
+							</config>
+						</TCEforms>
+					</style>
+				</el>
+			</ROOT>
+		</general>
+	</sheets>
+</T3DataStructure>

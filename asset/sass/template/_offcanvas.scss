@@ -1,0 +1,406 @@
+// main: ../style.scss
+/*
+ * Off Canvas
+ * --------------------------------------------------
+ <nav class="navbar navbar-fixed-top navbar-light bg-faded" role="navigation">
+	 <div class="container">
+		 <!-- OffCanvis Toogle -->
+		 <button class="navbar-toggler hamburger hamburger--collapse hidden-md-up" type="button"
+			 aria-label="Menu" aria-controls="navigation" data-toggle="collapse" data-target=".main-nav">
+			 <span class="hamburger-box">
+				 <span class="hamburger-inner"></span>
+			 </span>
+		 </button>
+
+		 <div class="collapse navbar-toggleable-md main-nav">
+			 <!-- Overlay to Background Click toogle OffCanvis -->
+			 <button type="button" class="nav-overlay" data-toggle="collapse" data-target=".main-nav" aria-expanded="true" style=""> &nbsp; </button>
+			 <!-- Offcanvis -->
+			 <div class="offCanvis">
+				 <ul class="nav navbar-nav">
+					 <!-- data-nav="true" :: activte JavaScript -->
+					 <li class="nav-item" data-nav="true">
+						 <a href="#" class="nav-link">Link</a>
+						 <!-- Wrap Childs::Start -->
+						 <span class="nav-trans">
+							 <ul class="nav {CUSTOMCLASS}">
+								 <!-- Close Child on Mobile::Start -->
+								 <li class="dropdown-nav-close">
+									 <button class="btn btn-block btn-close">
+										 <i class="fa fa-angle-left"></i>
+									 </button>
+								 </li>
+								 <!-- Close Child on Mobile::Ende -->
+								 {LISTITEMSCHILD}
+							 </ul>
+						 </span>
+						 <!-- Wrap Childs::Ende -->
+					 </li>
+					 {LISTITEMS}
+				 </ul>
+			 </div>
+		 </div>
+	 </div>
+ </nav>
+ * --------------------------------------------------
+ */
+@mixin offcanvisColor($color-link-color, $color-toggle-hover-bg) {
+  // OffCanvis
+	.offCanvis {
+		// SET Background-color
+		background-color: $offcanvis-bg;
+		.nav {
+			> li {
+				// Link
+				> a {
+					// Mobile
+					// Set divider
+					border-bottom: 1px solid $color-link-color;
+				}
+
+				&[data-nav="true"] {
+					> a {
+						&:after {
+							border-right-color: $color-link-color;
+						}
+
+						@include hover-focus {
+							&:after {
+								border-right-color: $color-toggle-hover-bg;
+							}
+						}
+					}
+				}
+				// Close BTN für Sub Menu
+				&.dropdown-nav-close {
+					// Mobile::Close Button
+					.btn {
+						&.btn-close {
+							// Set Color to Default
+							background-color: $color-link-color;
+							color: $offcanvis-bg;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@mixin offCanvisMedias ($mediaUp, $mediaDown){
+	.offCanvis {
+		// Desktop
+		@include media-breakpoint-up($mediaUp) {
+			background-color: transparent !important;
+			// Clear Transitions
+			@include transition( none );
+			@include transform( none );
+			// Clear Overflow
+			overflow: visible;
+			width: auto;
+			// Reset Position
+			position: relative;;
+			bottom: auto;
+			right: auto;
+			left: auto;
+			top: auto;
+		}
+	}
+
+	.nav-overlay {
+		@include media-breakpoint-up($mediaUp) {
+			display: none;
+		}
+	}
+
+	.nav {
+		// Mobile
+		@include media-breakpoint-down($mediaDown) {
+			// SET Overflow for Scrolling
+			overflow-x:hidden;
+			overflow-y: auto;
+			// Normalize
+			float: none;
+		}
+
+		> li.nav-item {
+			// Dekstop
+			@include media-breakpoint-up($mediaUp) {
+				// Float Elements on Desktop
+				display: inline-block;
+				float: left;
+				// Set Relative for Desktop Dropdowns
+				position: relative;
+			}
+
+			& + li.nav-item {
+				// Mobile
+				@include media-breakpoint-down($mediaDown) {
+					margin-left: 0;
+				}
+			}
+			> a {
+				// Desktop
+				@include media-breakpoint-up($mediaUp) {
+					// Rest divider
+					border-bottom: 0;
+				}
+			}
+			// Child Toogle Wrap
+			> span.nav-trans {
+				//Mobile
+				@include media-breakpoint-down($mediaDown) {
+					overflow: hidden;
+				}
+				// Desktop
+				@include media-breakpoint-up($mediaUp) {
+					@include transform(translateX(0));
+					background-color: $dropdown-bg;
+					bottom: auto;
+					right: auto;
+					top: 100%;
+
+					visibility: hidden;
+					opacity: 0;
+				}
+				> ul {
+					@include media-breakpoint-up($mediaUp) {
+						// @extend .dropdown-menu;
+						// display: block;
+					}
+
+					> li {
+
+						> a {
+							// Desktop
+							@include media-breakpoint-up($mediaUp) {
+								// Rest divider
+								border-bottom: 0;
+							}
+						}
+					}
+				}
+				// IF Toogle Submenu fly in
+				&.on {
+					//Mobile
+					@include media-breakpoint-down($mediaDown) {
+						@include transform(translateX(0));
+					}
+				}
+			}
+
+			@include hover-focus {
+				> span.nav-trans {
+					@include media-breakpoint-up($mediaUp) {
+						visibility: visible;
+						opacity: 1;
+					}
+				}
+			}
+		}
+
+		> li {
+
+			&[data-nav="true"] {
+				> a {
+					&:after {
+						@include media-breakpoint-up($mediaUp) {
+							display: none;
+						}
+					}
+				}
+			}
+			// Close BTN für Sub Menu
+			&.dropdown-nav-close {
+				// Desktop::Hide BTN
+				@include media-breakpoint-up($mediaUp) {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+// Rebuild Bootstrap Drilldown to OffCanvis nav
+.navbar {
+  padding-left: 0;
+  padding-right: 0;
+  // Offcanvis Button :: Mobile Only
+	.navbar-toggler {
+    // Set Button to full size
+		@include rem(line-height , $navbar-height - 20);
+		@include rem(padding, 10);
+		@include rem(height , $navbar-height);
+    // Animate Color Change
+    @include transition( all 0.7s );
+    // Normelize
+    @include rem(border-radius , 0);
+    @include rem(margin, -8 0 -8 -15);
+    display: inline-block;
+    width: auto;
+    border: 0;
+
+    position: relative;
+    z-index: 10;
+
+    // @if($offcanvis-overlay){
+    //   @include rem(width, $offcanvis-overlay);
+    // }
+	}
+
+	.main-nav {
+    // Reset Bootstrap
+    height: auto !important;
+    display: block !important;
+    // OffCanvis
+    .offCanvis {
+      background-color: $offcanvis-bg;
+      // Mobile
+      @include transform(translateX(-($offcanvis-width - $offcanvis-overlay)));
+      @include transition( all 0.7s );
+      @include rem(margin, 0);
+      display: block;
+      // Set Offcanvis Size
+      height: auto !important;
+      max-height: 100%;
+      width: $offcanvis-width;
+      // SET Overflow for slide in submenu
+      overflow-y: visible;
+      overflow-x: hidden;
+      // Place Offcanvis
+      position: fixed;
+      @include rem(bottom, 0);
+      @include rem(left, 0);
+      @include rem(top, $offcanvis-overlay-height);
+
+			&.offCanvis-right {
+				@include transform(translateX(($offcanvis-width - $offcanvis-overlay)));
+				@include rem(right, 0);
+				left: auto;
+			}
+    }
+
+    .nav {
+      // SET Size for Sub to list
+      position: relative;
+
+      > li {
+        // Mobile
+        // Normalize
+        position: static;
+				float: none;
+        // Link
+        > a {
+          // Mobile
+          @include rem(padding, 7 10);
+        }
+				> span.nav-trans {
+					background-color: $offcanvis-bg;
+					// Animate Submenu
+					@include transform(translateX($offcanvis-width));
+					@include transition( all 0.7s );
+					// Set Size of Submenu
+					position: absolute;
+					z-index: 10;
+					bottom: 0;
+					right: 0;
+					left: 0;
+					top: 0;
+				}
+
+				&[data-nav="true"] {
+					> a {
+						position: relative;
+						$size-arrow: 5px;
+						&:after {
+							@include rem(border-width, $size-arrow);
+							border-bottom-color:transparent;
+							border-left-color:transparent;
+							border-top-color:transparent;
+							border-right-color:#333;
+							border-style: solid;
+							content: '';
+
+							@include rem(margin-top, -($size-arrow));
+							@include rem(right, 10);
+							display: inline-block;
+							position: absolute;
+							top: 50%;
+						}
+					}
+				}
+        // Close BTN für Sub Menu
+        &.dropdown-nav-close {
+          // Mobile::Close Button
+          .btn {
+						&.btn-close {
+              // Set Size
+							@include rem(padding, 10 15);
+							@include rem(font-size, 20);
+							font-weight: bold;
+              // Normalize
+							text-align: left;
+							border-radius: 0;
+						}
+					}
+				}
+			}
+    }
+    // Overlay to Close
+    .nav-overlay {
+      // Mobile Close OffCanvis Overlay
+      @extend .btn;
+
+      transition: all .7s ease;
+      height: auto !important;
+      overflow: hidden;
+
+      visibility: hidden;
+      opacity: 0;
+
+      background-color: rgba(#333, 0.7);
+      border-radius: 0;
+      box-shadow: none;
+      width: 100%;
+      border: 0;
+
+      position: fixed;
+      @include rem(bottom, 0);
+      @include rem(right, 0);
+      @include rem(left, 0);
+      @include rem(top, $offcanvis-overlay-height);
+    }
+
+    &.in {
+      // Toogle Offcanvis
+      .offCanvis {
+        // Mobile
+        @include transform(translateX(0));
+      }
+
+      .nav-overlay {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
+		&.navbar-toggleable {
+			&-sm {
+				@include offCanvisMedias(sm,xs);
+			}
+			&-md {
+				@include offCanvisMedias(md,sm);
+			}
+			&-lg {
+				@include offCanvisMedias(lg,md);
+			}
+		}
+	}
+
+  &.navbar-light {
+    @include offcanvisColor($navbar-light-color, $navbar-light-hover-color);
+  }
+  &.navbar-dark {
+    @include offcanvisColor($navbar-dark-color, $navbar-dark-hover-color);
+  }
+}

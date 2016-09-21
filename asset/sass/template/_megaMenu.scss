@@ -1,0 +1,312 @@
+// main: ../style.scss
+
+/*
+ * MEGA NAV EXAMPLE
+ * --------------------------------------------------
+  <nav class="navbar navbar-light" role="navigation">
+    <div class="container">
+      <!-- OffCanvis Toogle -->
+      <button class="navbar-toggler hamburger hamburger--collapse hidden-md-up" type="button"
+        aria-label="Menu" aria-controls="navigation" data-toggle="collapse" data-target=".main-nav">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+      <!-- Desktop nav -->
+      <ul class="nav navbar-nav pull-md-right hidden-sm-down">
+        <li class="nav-item">
+          <!-- href, for no JS fallback, data-mega for JS Animations -->
+          <a href="#mega" class="nav-link" data-mega="#mega">Link</a>
+        </li>
+        <!-- {LISTITEMS} -->
+      </ul>
+
+    </div>
+  </nav>
+  <nav class="navbar navbar-mega navbar-light">
+    <div class="container">
+      <div class="collapse navbar-toggleable-md main-nav in">
+        <!-- Overlay to Background Click toogle OffCanvis -->
+        <button type="button" class="nav-overlay" data-toggle="collapse" data-target=".main-nav" aria-expanded="true" style=""> &nbsp; </button>
+        <!-- Offcanvis -->
+        <div class="offCanvis">
+          <!-- Off-Canvis Nav -->
+          <ul class="nav navbar-nav">
+            <!-- data-nav="true" :: activte JavaScript -->
+            <li class="nav-item" data-nav="true" id="mega">
+              <!-- hidden Mobile -->
+              <a href="#" class="nav-link">Link</a>
+              <!-- Wrap Childs::Start -->
+              <span class="nav-trans">
+                <ul class="nav">
+                  <li class="nav-item">
+                    <span class="nav-header">Link</span>
+                    <ul class="nav">
+                      <!-- {LISTITEMSCHILD} -->
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <span class="nav-header">Link</span>
+                    <ul class="nav">
+                      <! -- {LISTITEMSCHILD} -->
+                    </ul>
+                  </li>
+                  <!-- hide Mobile -->
+                  <li class="nav-item hidden-sm-down">
+                    <span class="nav-header">Link</span>
+                    <div>
+                      <!-- {SOME TEXT MAYBE} -->
+                    </div>
+                  </li>
+                  <!-- Close Child on Mobile::Ende -->
+                </ul>
+              </span>
+              <!-- Wrap Childs::Ende -->
+            </li>
+            <!-- {LISTITEMS} -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+ * --------------------------------------------------
+ */
+@mixin megaMenüColor($mediaUp, $mediaDown, $color1 , $color2){
+  .offCanvis  {
+    // Colorise
+    background-color: rgba($offcanvis-bg, .8);
+
+    @include media-breakpoint-up($mediaUp) {
+      background-color: transparent;
+    }
+
+    .navbar-nav {
+      > li.nav-item {
+        > a {
+          // Colorise
+          background-color: rgba($color1, .8);
+          color: $color2;
+
+          // @import hover-focus {
+          //
+          // }
+        }
+
+        > span.nav-trans {
+          // Colorise
+          background-color: rgba($color1, .8);
+          @include media-breakpoint-up($mediaUp) {
+            background-color: transparent;
+          }
+
+          > ul {
+            // Colorise
+            background-color: $color2;
+
+            @include media-breakpoint-up($mediaUp) {
+              background-color: transparent;
+            }
+
+            > li {
+              > .nav-header {
+                background-color: rgba($color1, .5);
+                text-shadow: 1px 1px #666;
+                color: $color2;
+
+                @include media-breakpoint-up($mediaUp) {
+                  background-color: transparent;
+                  text-shadow: none;
+                  color: $color1;
+                }
+
+              }
+              > div {
+                @include media-breakpoint-up($mediaUp) {
+                  background-color: $color2;
+                }
+              }
+              > ul {
+                > li {
+                  > a {
+                    @include media-breakpoint-up($mediaUp) {
+                      background-color: $color2;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@mixin megaMenü($mediaUp, $mediaDown) {
+
+  .offCanvis  {
+    @include rem(padding-top, 5);
+
+    @include media-breakpoint-up($mediaUp) {
+      @include rem(padding-top, 0);
+
+    }
+
+    .navbar-nav {
+      > li.nav-item {
+        @include rem(padding, 5 10);
+
+        @include media-breakpoint-up($mediaUp) {
+          @include rem(padding, 15 0 30 0);
+          overflow: hidden;
+          display: none;
+          width: 100%;
+          float: none;
+        }
+
+        & + li.nav-item {
+          @include rem(margin-left, 0);
+        }
+
+        .no-js &:target,
+        &.on {
+          @include media-breakpoint-up($mediaUp) {
+            display: block;
+          }
+        }
+
+        > a {
+          border-bottom: 0;
+
+          &:after {
+            border-right-color: transparent;
+            border-top-color: white;
+          }
+
+          @include media-breakpoint-up($mediaUp) {
+            display: none;
+          }
+        }
+
+        > span.nav-trans {
+          @include transform(initial);
+          position: static;
+          display: none;
+
+          @include media-breakpoint-up($mediaUp) {
+            visibility: visible;
+            display: block;
+            opacity: 1;
+          }
+
+          &.on {
+            display: block;
+          }
+          > ul {
+
+            @include media-breakpoint-up($mediaUp) {
+              @include rem(margin, 0 -15);
+              display: block;
+            }
+
+            &:after {
+              content: '';
+              display: table;
+              clear: both;
+            }
+            > li {
+              @include media-breakpoint-up($mediaUp) {
+                @include rem(padding, 0 15);
+                float: left;
+                width: 33%;
+                margin: 0;
+              }
+
+              &.dropdown-nav-close {
+                display: none;
+              }
+
+              > .nav-header {
+                @include rem(padding, 2 10);
+                text-transform: uppercase;
+                display: block;
+              }
+
+              > div {
+                @include rem(margin-top, 1);
+                @include rem(padding, 7 10);
+              }
+
+              > ul {
+                > li {
+                  @include media-breakpoint-up($mediaUp) {
+                    @include rem(padding, 1 0);
+                  }
+
+                  > a {
+                    @include media-breakpoint-up($mediaUp) {
+                      border: 0;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.navbar {
+  box-shadow: 0px 1px 5px #999;
+  border-radius: 0;
+
+  &.navbar-mega {
+    @include transition(all .7s ease);
+    @include rem(padding, 0);
+    background-color: #d6d6d6;
+    box-shadow: 0px 1px 5px #999;
+    .main-nav {
+      &.navbar-toggleable {
+        &-sm {
+          @extend .clearfix;
+          @include megaMenü(sm,xs);
+        }
+        &-md {
+          @extend .clearfix;
+          @include megaMenü(md,sm);
+        }
+        &-lg {
+          @extend .clearfix;
+          @include megaMenü(lg,md);
+        }
+      }
+    }
+  }
+
+  &:not(.navbar-mega){
+    position: relative;
+    z-index: 100;
+  }
+
+  &.navbar-light {
+    &.navbar-mega {
+
+      .navbar-toggleable {
+        &-sm {
+          @include megaMenüColor(sm, xs, #000, #fff);
+        }
+        &-md {
+          @include megaMenüColor(md, sm, #000, #fff);
+        }
+        &-lg {
+          @include megaMenüColor(lg, md, #000, #fff);
+        }
+      }
+    }
+  }
+  // &.navbar-dark {
+  //   @include megaMenüColor(sm, xs, #fff, #000);
+  // }
+}

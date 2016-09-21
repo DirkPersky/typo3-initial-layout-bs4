@@ -1,0 +1,154 @@
+/*
+#############################
+######## PAGE CONFIG ########
+#############################
+*/
+config  {
+  admPanel = 0
+  // set doctype to html5
+  doctype = html5
+  // set <html> attributes
+  // in this example: modernizr no-js class
+  htmlTag_setParams = none
+  htmlTag_stdWrap {
+    setContentToCurrent = 1
+    cObject = COA
+    cObject {
+      10 = TEXT
+      10.value = class="no-js"
+      10.noTrimWrap = | | |
+
+      20 = TEXT
+      20.value = de
+      20.wrap = lang="|"
+
+      wrap = <html | >
+    }
+  }
+
+  htmlTag_langKey = de
+  xmlprologue = none
+  xhtml_cleaning = all
+
+  // Cache settings
+  cache_period = 43200
+  sendCacheHeaders = 1
+
+  renderCharset = utf-8
+  metaCharset = utf-8
+  disablePrefixComment = 1
+  index_enable = 1
+  baseURL = {$path.baseURL}
+
+  removeDefaultJS = 0
+  inlineStyle2TempFile = 0
+  noScaleUp = 1
+  meaningfulTempFilePrefix = 50
+
+  uniqueLinkVars = 1
+  linkVars = L
+  language = de
+  locale_all = de_DE
+  sys_language_uid = 0
+  sys_language_overlay = 1
+  sys_language_mode = content_fallback; 1,0
+  sys_language_fallBackOrder = 1,0
+
+  spamProtectEmailAddresses = 2
+  spamProtectEmailAddresses_atSubst = (at)
+}
+
+/*
+############################
+###### HEADER TITLE ########
+############################
+*/
+page.typeNum = 0
+page.config.noPageTitle = 1
+page.headerData.10 = TEXT
+page.headerData.10 {
+  field = subtitle // title
+  noTrimWrap = |<title>| - {$meta.title}</title>|
+}
+
+/*
+##########################
+####### META DATA ########
+##########################
+
+# to add "levelfield :-1, ...., slide" for description and keywords extend the Localconf.php
+# $TYPO3_CONF_VARS['FE']['addRootLineFields'] = 'keywords,description,abstract';
+*/
+page.meta.author.ifEmpty = {$meta.author}
+page.meta.viewport.ifEmpty = {$meta.viewport}
+
+page.meta.keywords{
+  data = page:keywords
+  ifEmpty.data = levelfield :-1, keywords, slide
+}
+page.meta.description{
+  data = page:description
+  ifEmpty.data = levelfield :-1, description, slide
+}
+page.meta.robots{
+  data = page:abstract
+  ifEmpty.data = levelfield :-1, abstract, slide
+}
+/*
+page.meta.keywords {
+    # Set 'current' value
+    setCurrent = {$meta.keywords}
+    # Set content to match current
+    current = 1
+    # Prepend page keywords
+    prepend = TEXT
+    prepend {
+        data = page:keywords
+        # if empty, return immediately
+        trim = 1
+        required = 1
+        # wrap it
+        innerWrap {
+            # wrap only if {$meta.keywords} is not empty
+            if.isTrue.current = 1
+            # We must return a wrap pattern here
+            append = TEXT
+            append.value = |,
+        }
+    }
+}
+*/
+/*
+######################
+###### FAVICON #######
+######################
+*/
+#page.shortcutIcon = {$path.template}Public/favicon.png
+page.headerData.1337 = COA
+page.headerData.1337 {
+  10 = TEXT
+  10 {
+    value = {$path.template}Public/{$favicon}
+    wrap = <link rel="shortcut icon" href="|" type="image/png; charset=binary">
+  }
+  20 = TEXT
+  20 {
+    value = {$path.template}Public/{$favicon}
+    wrap = <link rel="icon" href="|" type="image/png; charset=binary">
+  }
+}
+/*
+########################
+### BODY-TAG PAGE ID ###
+########################
+*/
+page{
+  bodyTag >
+  bodyTagCObject = TEXT
+  bodyTagCObject.field = uid
+  bodyTagCObject.wrap = <body id="page-|" class="{$template.style}">
+}
+
+lib.stdheader.10.setCurrent.htmlSpecialChars = 0
+
+plugin.tx_indexedsearch._DEFAULT_PI_VARS.lang = 0

@@ -1,0 +1,100 @@
+// main: ../style.scss
+@-webkit-keyframes BackgroundOnepage {
+  from {background-position: 0% 0%;}
+  to {background-position:   nth($bg-animation,1) nth($bg-animation,2);}
+}
+@-moz-keyframes BackgroundOnepage {
+  from {background-position: 0% 0%;}
+  to {background-position:   nth($bg-animation,1) nth($bg-animation,2);}
+}
+@keyframes BackgroundOnepage {
+  from {background-position: 0% 0%;}
+  to {background-position:   nth($bg-animation,1) nth($bg-animation,2);}
+}
+
+.onepage {
+  background-position: 0% 0%;
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+  padding: 25px 0;
+  display:table;
+  height: calc(100vh - #{$navbar-height});
+  width: 100%;
+
+  -webkit-animation: BackgroundOnepage $bg-animation-speed linear infinite;
+  -moz-animation: BackgroundOnepage $bg-animation-speed linear infinite;
+  animation: BackgroundOnepage $bg-animation-speed linear infinite;
+
+  @if(nth($bg-animation,1) != 0 and nth($bg-animation,2) != 0) {
+    background-size: nth($bg-animation,1) nth($bg-animation,2);
+  } @else if(nth($bg-animation,1) != 0) {
+    background-size: nth($bg-animation,1) auto;
+  }@else if(nth($bg-animation,2) != 0) {
+    background-size: auto nth($bg-animation,2);
+  }@else {
+    background-size: cover;
+  }
+
+  &.op-blend {
+    background-attachment: fixed;
+    background-size: cover;
+
+    -webkit-animation: none;
+    -moz-animation: none;
+    animation: none;
+
+    .container {
+      position: relative;
+    }
+  }
+
+  h1,h2 {
+    text-transform: uppercase;
+    color: $style_color_dark;
+    text-align: center;
+    font-weight: bold;
+
+    padding: 10px 0;
+    margin:0 0 15px 0;
+
+    position: relative;
+
+    @include font-size(20px);
+
+    @include media-breakpoint-up(md) {
+      @include font-size(25px);
+    }
+    @include media-breakpoint-up(lg) {
+      @include font-size(30px);
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      height: 2px;
+      display: block;
+      // background-image: url(../img/trennlinie.png);
+      background-repeat: repeat-y;
+      background-position: 50% 100%;
+      background-size: 80% auto;
+
+      @include media-breakpoint-up(md) {
+        background-size: 55% auto;
+      }
+    }
+
+    &:after {
+      bottom: 0;
+    }
+    &:before {
+      display: none;
+      top: 0;
+    }
+  }
+}

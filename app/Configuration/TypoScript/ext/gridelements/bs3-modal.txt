@@ -1,0 +1,21 @@
+#onepage
+tt_content.gridelements_pi1.20.10.setup{
+  bs3-modal <  lib.gridelements.defaultGridSetup
+  bs3-modal {
+
+    # Render navigation using fluid
+    cObject = FLUIDTEMPLATE
+    cObject {
+      file = {$path.template}Private/Partial/gridelements/bs3-modal.html
+
+      variables {
+        stdheader =< lib.stdheader
+      }
+    }
+
+    # Add the renderObj of the tab directly, this prevents the "csc-default"-wrap
+    columns {
+      15 < .default
+    }
+  }
+}

@@ -1,0 +1,26 @@
+#################################
+### LOAD BASIC CONFIGURATIONS ###
+#################################
+<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TSConfig/ext/rte.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TSConfig/ext/ident.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TSConfig/ext/gridelements.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TSConfig/ext/image.txt">
+#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TSConfig/ext/pageteaser.txt">
+#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TSConfig/ext/tx_nwtimagecrop_cropscaling_ratio.txt">
+
+#######################
+### Default Sprache ###
+#######################
+mod.SHARED {
+  defaultLanguageFlag = de
+  defaultLanguagelabel = Deutsch
+}
+
+############################################
+### replace Meta Abstract to Meta Robots ###
+############################################
+TCEFORM.pages.abstract {
+	label = Meta Robots
+}
+
+TCEFORM.tt_content.imagewidth.config.range.upper = 2000

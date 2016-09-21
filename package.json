@@ -1,0 +1,48 @@
+{
+  "name": "typo3-initial-layout-v2",
+  "version": "2.0.1",
+  "description": "NPM Integration",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:dirkpersky/typo3-initial-layout-v2.git"
+  },
+  "keywords": [
+    "Typo3"
+  ],
+  "author": "Dirk Persky",
+  "license": "ISC",
+  "devDependencies": {
+    "animate.css": "latest",
+    "browser-sync": "latest",
+    "gulp": "latest",
+    "gulp-add-src": "latest",
+    "gulp-batch": "latest",
+    "gulp-concat": "latest",
+    "gulp-imagemin": "latest",
+    "gulp-jshint": "latest",
+    "gulp-order": "latest",
+    "gulp-sass": "latest",
+    "gulp-uglify": "latest",
+    "gulp-util": "latest",
+    "gulp-watch": "latest",
+    "imagemin-pngquant": "latest",
+    "jshint": "latest",
+    "vinyl-ftp": "latest"
+  },
+  "dependencies": {
+    "animate.css": "latest",
+    "bootstrap": "^4.0.0-alpha.4",
+    "font-awesome": "latest",
+    "hamburgers": "latest",
+    "install": "latest",
+    "lazysizes": "latest",
+    "modernizr": "latest",
+    "tether": "latest",
+    "vegas": "latest",
+    "waypoints": "latest"
+  }
+}

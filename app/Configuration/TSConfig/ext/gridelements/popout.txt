@@ -1,0 +1,23 @@
+tx_gridelements.setup {
+  popout {
+    title = Side-Popout-Element
+    description = Erstellen eines Side-Popout Element
+    flexformDS = FILE:fileadmin/Mysite4/app/Configuration/FlexForms/popout.xml
+    frame = 1
+
+    config {
+      colCount = 1
+      rowCount = 1
+      rows {
+        1 {
+          columns {
+            1 {
+              name = Side-Icon Inhalt
+              colPos = 15
+            }
+          }
+        }
+      }
+    }
+  }
+}

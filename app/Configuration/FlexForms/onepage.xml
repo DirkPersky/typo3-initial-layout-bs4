@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+  <meta type="array">
+    <langDisable>1</langDisable>
+  </meta>
+  <sheets>
+    <general>
+      <ROOT type="array">
+        <TCEforms>
+          <sheetTitle>Onepage Optionen</sheetTitle>
+        </TCEforms>
+        <el type="array">
+          <center type="array">
+            <TCEforms type="array">
+              <label>Inhalt Zentrieren</label>
+              <config type="array">
+                <type>select</type>
+                <items type="array">
+                  <numIndex index="0" type="array"><numIndex index="0">Ja</numIndex><numIndex index="1">center</numIndex></numIndex>
+                  <numIndex index="1" type="array"><numIndex index="0">Nein</numIndex><numIndex index="1">left</numIndex></numIndex>
+                </items>
+                <default>center</default>
+              </config>
+            </TCEforms>
+          </center>
+          <opblend type="array">
+            <TCEforms type="array">
+              <label>Paralax Slide</label>
+              <config type="array">
+                <type>select</type>
+                <items type="array">
+                  <numIndex index="0" type="array"><numIndex index="0">Nein</numIndex><numIndex index="1"></numIndex></numIndex>
+                  <numIndex index="1" type="array"><numIndex index="0">Ja</numIndex><numIndex index="1">op-blend</numIndex></numIndex>
+                </items>
+                <default></default>
+              </config>
+            </TCEforms>
+          </opblend>
+          <image type="array">
+            <TCEforms type="array">
+              <label>Paralax Bild</label>
+              <config type="array">
+                <type>group</type>
+                <internal_type>file</internal_type>
+                <allowed>jpg,gif,png</allowed>
+                <max_size>2000</max_size>
+                <uploadfolder>uploads/tx_gridelements</uploadfolder>
+                <show_thumbs>1</show_thumbs>
+                <size>1</size>
+                <minitems>0</minitems>
+                <maxitems>1</maxitems>
+              </config>
+            </TCEforms>
+          </image>
+
+          <next>
+            <TCEforms type="array">
+              <config type="array">
+                <type>check</type>
+                <items>
+                  <numIndex index="0">
+                    <numIndex index="0">Next Button</numIndex>
+                    <numIndex index="1">1</numIndex>
+                  </numIndex>
+                </items>
+                <default></default>
+              </config>
+            </TCEforms>
+          </next>
+
+          <height type="array">
+            <TCEforms type="array">
+              <label>Height of Onepage</label>
+              <config type="array">
+                <type>input</type>
+                <size>48</size>
+                <eval>trim</eval>
+                <default>100vh</default>
+              </config>
+            </TCEforms>
+          </height>
+
+        </el>
+      </ROOT>
+    </general>
+  </sheets>
+</T3DataStructure>

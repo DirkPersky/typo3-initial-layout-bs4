@@ -1,0 +1,29 @@
+page{
+  includeCSS{
+    fancybox = {$path.template}Public/css/fancybox/jquery.fancybox.css
+    fancyboxThumb = {$path.template}Public/css/fancybox/helpers/jquery.fancybox-thumbs.css
+  }
+}
+tt_content.image.20.1.imageLinkWrap {
+  JSwindow = 0
+  directImageLink = 1
+  linkParams.ATagParams {
+    dataWrap = class = "fancybox" data-fancybox-group="group{field:uid}"
+  }
+
+  typolink {
+    ATagParams =  class="fancybox" rel="various"
+    ATagParams.if {
+      value.data = file:current:link
+      equals.cObject = TEXT
+      equals.cObject {
+        data = file:current:link
+        split {
+          token = youtube.com/embed
+        }
+      }
+
+      negate = 1
+    }
+  }
+}

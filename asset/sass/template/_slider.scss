@@ -1,0 +1,62 @@
+// main: ../style.scss
+.slider {
+	padding: 0;
+
+	@include media-breakpoint-up(lg) {
+		margin-bottom: 15px;
+	}
+
+	&[data-animation="fade"] {
+		.carousel-item {
+			transition-property: opacity;
+
+			&,
+		  &.active.left,
+		  &.active.right {
+	      opacity: 0;
+		  }
+			&.active,
+	    &.next.left,
+	    &.prev.right {
+	      opacity: 1;
+	    }
+	    &.next,
+	    &.prev,
+	    &.active.left,
+	    &.active.right {
+	      left: 0;
+	      transform: translate3d(0, 0, 0);
+	    }
+		}
+	}
+
+	.carousel {
+		.carousel-item {
+			min-height: 100px;
+
+			@include media-breakpoint-up(md) {
+				min-height: 200px;
+			}
+
+			@include media-breakpoint-up(lg) {
+				min-height: 300px;
+			}
+
+			@include media-breakpoint-up(xl) {
+				min-height: 400px;
+			}
+
+			iframe {
+				min-height: 300px;
+
+				@include media-breakpoint-up(lg) {
+					min-height: 400px;
+				}
+
+				@include media-breakpoint-up(xl) {
+					min-height: 500px;
+				}
+			}
+		}
+	}
+}

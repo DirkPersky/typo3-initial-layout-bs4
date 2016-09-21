@@ -1,0 +1,65 @@
+// main: ../../style.scss
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+@function rem-calc($value, $base-value: $font-size-root) {
+	$value: strip-unit($value) / strip-unit($base-value) * 1rem;
+  	@if ($value == 0rem) { $value: 0; } // Turn 0em into 0
+ 	@return $value;
+}
+
+@mixin font-size($value: $font-size-root) {
+  @include rem(font-size, $value);
+}
+
+@mixin line-height($value: $font-size-root, $height: $line-height-base) {
+	$value: floor(($value * $height));
+
+  @include rem(line-height, $value);
+}
+
+
+@mixin rem($property, $values) {
+  $max: length($values);
+  $important: '';
+  $pxValues: '';
+  $remValues: '';
+
+  @for $i from 1 through $max {
+
+    @if(nth($values, $i) == '!important') {
+      $important: '!important';
+
+    } @else if(nth($values, $i) == 'auto' or nth($values, $i) == 'none' ) {
+        $value: nth($values, $i);
+        $pxValues: #{$pxValues + $value};
+    } @else {
+      $value: strip-unit(nth($values, $i));
+      $pxValues: #{$pxValues + $value}px;
+    }
+    @if $i < $max {
+      $pxValues: #{$pxValues + " "};
+    }
+  }
+
+  @for $i from 1 through $max {
+    @if(nth($values, $i) == '!important') {
+      $important: '!important';
+
+    } @else if(nth($values, $i) == 'auto' or nth($values, $i) == 'none') {
+      $value: nth($values, $i);
+      $remValues: #{$remValues +  $value};
+    } @else {
+      $value: strip-unit(nth($values, $i));
+      $remValues: #{$remValues +  rem-calc($value)};
+    }
+    @if $i < $max {
+      $remValues: #{$remValues + " "};
+    }
+  }
+
+  @if ($values != 0) {
+    #{$property}: #{$pxValues + $important};
+  }
+  #{$property}: #{$remValues + $important};
+}

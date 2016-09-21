@@ -1,0 +1,25 @@
+######################
+### IDENT SELECTOR ###
+######################
+TCEFORM.tt_content.section_frame {
+	removeItems = 1,5,6,10,11,12,20,21
+	
+	#addItems.100 =
+	#addItems.110 =
+	#addItems.120 =
+
+	addItems.130 = Rechts
+	addItems.140 = Center
+	addItems.150 = alert-success
+	addItems.160 = alert-info
+	addItems.170 = alert-warning
+	addItems.180 = alert-danger
+}
+
+TCEFORM.tt_content.header_layout {
+	#addItems.6 = H1 Underline
+	#addItems.7 = H2 Underline
+	#addItems.8 = H3 Underline
+	#addItems.9 = H4 Underline
+	#addItems.10 = H5 Underline
+}

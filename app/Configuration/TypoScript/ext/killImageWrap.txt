@@ -1,0 +1,282 @@
+##########################
+### Remove default CSS ###
+##########################
+plugin.tx_cssstyledcontent._CSS_DEFAULT_STYLE >
+
+#################################
+### Configure image rendering ###
+#################################
+tt_content.image.5 = COA
+
+tt_content.image.5.10 = LOAD_REGISTER
+tt_content.image.5.10 {
+  bootstrapImageGrid.cObject = CASE
+  bootstrapImageGrid.cObject {
+    setCurrent.field = imagecols
+    key.field = imagecols
+    default = TEXT
+    default.value = col-xs-4
+    1 = TEXT
+    1.value = col-xs-12
+    2 = TEXT
+    2.value = col-xs-6
+    3 = TEXT
+    3.value = col-xs-4
+    4 = TEXT
+    4.value = col-xs-3
+    5 = TEXT
+    5.value = col-xs-2-4
+    6 = TEXT
+    6.value = col-xs-2
+    7 = TEXT
+    7.value = col-xs-1-7
+    12 = TEXT
+    12.value = col-xs-1
+
+    13 = TEXT
+    13.value = auto
+  }
+}
+
+tt_content.image.5.30 = LOAD_REGISTER
+tt_content.image.5.30 {
+  bootstrapImageOrientation.cObject = CASE
+  bootstrapImageOrientation.cObject {
+    setCurrent.field = imageorient
+    key.field = imageorient
+    # above-center
+    default = TEXT
+    default.value =
+
+    # above-right
+    1 < .default
+    1.value = pull-right
+    1.noTrimWrap = | ||
+
+    # above-left
+    2 < .default
+    2.value =
+
+    # below-center
+    8 < .default
+    8.value =
+
+    # below-right
+    9 < .default
+    9.value = pull-right
+    9.noTrimWrap = | ||
+
+    # below-left
+    10 < .default
+    10.value =
+
+    # intext-right
+    17 < .default
+    17.value =
+
+    # intext-left
+    18 < .default
+    18.value =
+
+    # beside-text-right
+    25 < .default
+    25.value =
+
+    # beside-text-left
+    26 < .default
+    26.value =
+  }
+}
+
+tt_content.image.20 {
+  cols {
+    if{
+      equals = 13
+      value.field = imagecols
+      negate = 1
+    }
+  }
+
+  rendering {
+    singleNoCaption{
+      allStdWrap.wrap = |
+      allStdWrap.innerWrap >
+      singleStdWrap.wrap = |
+      singleStdWrap.wrap.override = |
+      singleStdWrap.wrap.override.dataWrap = <figure class="col-xs-12{register:bootstrapImageOrientation}"> | </figure>
+      rowStdWrap.wrap = <div class="row"> | </div>
+      rowStdWrap.wrap.override = |
+      rowStdWrap.wrap.override {
+        if{
+          equals = 13
+          value.field = imagecols
+        }
+      }
+      noRowsStdWrap.wrap = <div class="row"> | </div>
+      noRowsStdWrap.wrap.override = |
+      noRowsStdWrap.wrap.override {
+        if{
+          equals = 13
+          value.field = imagecols
+        }
+      }
+      lastRowStdWrap.wrap = <div class="row"> | </div>
+      lastRowStdWrap.wrap.override = |
+      lastRowStdWrap.wrap.override {
+        if{
+          equals = 13
+          value.field = imagecols
+        }
+      }
+      columnStdWrap.wrap = |
+      imgTagStdWrap.wrap = |
+      caption.wrap = |
+    }
+    noCaption {
+      allStdWrap.wrap = |
+      allStdWrap.innerWrap >
+      singleStdWrap.wrap = |
+      singleStdWrap.wrap.override = |
+      singleStdWrap.wrap.override.dataWrap = <figure class="{register:bootstrapImageGrid}{register:bootstrapImageOrientation}"> | </figure>
+      rowStdWrap.wrap = <div class="row"> | </div>
+      rowStdWrap.wrap.override = |
+      rowStdWrap.wrap.override {
+        if{
+          equals = 13
+          value.field = imagecols
+        }
+      }
+      noRowsStdWrap.wrap = <div class="row"> | </div>
+      noRowsStdWrap.wrap.override = |
+      noRowsStdWrap.wrap.override {
+        if{
+          equals = 13
+          value.field = imagecols
+        }
+      }
+      lastRowStdWrap.wrap = <div class="row"> | </div>
+      lastRowStdWrap.wrap.override = |
+      lastRowStdWrap.wrap.override {
+        if{
+          equals = 13
+          value.field = imagecols
+        }
+      }
+      columnStdWrap.wrap = |
+    }
+    singleCaption {
+      singleStdWrap.wrap = |
+      singleStdWrap.wrap.override = |
+      singleStdWrap.wrap.override.dataWrap = <figure class="col-xs-12{register:bootstrapImageOrientation}"> | ###CAPTION###</figure>
+      caption.wrap = |
+    }
+    splitCaption {
+      singleStdWrap.wrap = |
+      singleStdWrap.wrap.override = |
+      singleStdWrap.wrap.override.dataWrap = <figure class="{register:bootstrapImageGrid}{register:bootstrapImageOrientation}"> | ###CAPTION###</figure>
+      rowStdWrap.wrap = <div class="row"> | </div>
+      rowStdWrap.wrap.override = |
+      rowStdWrap.wrap.override {
+        if{
+          equals = 13
+          value.field = imagecols
+        }
+      }
+      noRowsStdWrap.wrap = <div class="row"> | </div>
+      noRowsStdWrap.wrap.override = |
+      noRowsStdWrap.wrap.override {
+        if{
+          equals = 13
+          value.field = imagecols
+        }
+      }
+      lastRowStdWrap.wrap = <div class="row"> | </div>
+      lastRowStdWrap.wrap.override = |
+      lastRowStdWrap.wrap.override {
+        if{
+          equals = 13
+          value.field = imagecols
+        }
+      }
+      columnStdWrap.wrap = |
+      caption.wrap = |
+    }
+    globalCaption {
+      allStdWrap.wrap = |
+      allStdWrap.innerWrap >
+      singleStdWrap.wrap = |
+      singleStdWrap.wrap.override = |
+      singleStdWrap.wrap.override.dataWrap = <figure class="{register:bootstrapImageGrid}{register:bootstrapImageOrientation}"> | ###CAPTION###</figure>
+      rowStdWrap.wrap = <div class="row"> | </div>
+      rowStdWrap.wrap.override = |
+      rowStdWrap.wrap.override {
+        if{
+          equals = 13
+          value.field = imagecols
+        }
+      }
+      noRowsStdWrap.wrap = <div class="row"> | </div>
+      noRowsStdWrap.wrap.override = |
+      noRowsStdWrap.wrap.override {
+        if{
+          equals = 13
+          value.field = imagecols
+        }
+      }
+      lastRowStdWrap.wrap = <div class="row"> | </div>
+      lastRowStdWrap.wrap.override = |
+      lastRowStdWrap.wrap.override {
+        if{
+          equals = 13
+          value.field = imagecols
+        }
+      }
+      columnStdWrap.wrap = |
+      caption.wrap = |
+    }
+  }
+
+  imageStdWrap.dataWrap = |
+  imageStdWrapNoWidth.wrap = |
+  imageColumnStdWrap.dataWrap = |
+  caption.1.br = 0
+  layout {
+    # above-center
+    default.value = <div class="thumbnails thumbnails-center###CLASSES###">###IMAGES###</div>###TEXT###
+    default.override  = <div class="thumbnails thumbnails-center###CLASSES###">###IMAGES###</div>###TEXT###
+    # above-right
+    1.value = <div class="thumbnails thumbnails-right###CLASSES###">###IMAGES###</div>###TEXT###
+    1.override  = <div class="thumbnails thumbnails-right###CLASSES###">###IMAGES###</div>###TEXT###
+    # above-left
+    2.value = <div class="thumbnails thumbnails-left###CLASSES###">###IMAGES###</div>###TEXT###
+    2.override  = <div class="thumbnails thumbnails-left###CLASSES###">###IMAGES###</div>###TEXT###
+    # below-center
+    8.value = ###TEXT###<div class="thumbnails thumbnails-center###CLASSES###">###IMAGES###</div>
+    8.override  = ###TEXT###<div class="thumbnails thumbnails-center###CLASSES###">###IMAGES###</div>
+    # below-right
+    9.value = ###TEXT###<div class="thumbnails thumbnails-right###CLASSES###">###IMAGES###</div>
+    9.override  = ###TEXT###<div class="thumbnails thumbnails-right###CLASSES###">###IMAGES###</div>
+    # below-left
+    10.value = ###TEXT###<div class="thumbnails thumbnails-left###CLASSES###">###IMAGES###</div>
+    10.override  = ###TEXT###<div class="thumbnails thumbnails-left###CLASSES###">###IMAGES###</div>
+    # intext-right
+    17.value = <div class="thumbnails thumbnails-pull-right###CLASSES###">###IMAGES###</div>###TEXT###
+    17.override  = <div class="thumbnails thumbnails-pull-right###CLASSES###">###IMAGES###</div>###TEXT###
+    # intext-left
+    18.value = <div class="thumbnails thumbnails-pull-left###CLASSES###">###IMAGES###</div>###TEXT###
+    18.override  = <div class="thumbnails thumbnails-pull-left###CLASSES###">###IMAGES###</div>###TEXT###
+    # beside-text-right
+    25.value = <div class="###CLASSES###"><div class="thumbnails thumbnails-pull-right">###IMAGES###</div>###TEXT###</div>
+    25.override  = <div class="###CLASSES###"><div class="thumbnails thumbnails-pull-right">###IMAGES###</div>###TEXT###</div>
+    # beside-text-left
+    26.value = <div class="###CLASSES###"><div class="thumbnails thumbnails-pull-left">###IMAGES###</div>###TEXT###</div>
+    26.override  = <div class="###CLASSES###"><div class="thumbnails thumbnails-pull-left">###IMAGES###</div>###TEXT###</div>
+  }
+}
+
+tt_content.image.20.2 = RESTORE_REGISTER
+
+##########################################################
+### Copy the bootstrap registers to tt_content.textpic ###
+##########################################################
+tt_content.textpic.5 = < tt_content.image.5

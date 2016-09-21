@@ -1,0 +1,1 @@
+TCEFORM.tt_content.menu_type.addItems.100 = Produktteaser mit Vorschaubild

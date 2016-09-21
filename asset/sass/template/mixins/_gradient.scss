@@ -1,0 +1,24 @@
+// main: ../../style.scss
+@mixin gradient-top($startColor, $endColor, $width) {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#525254+0,ffffff+100 */
+  background: $endColor; /* Old browsers */
+  background: -moz-linear-gradient(top,  $startColor 0%, $endColor $width); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$startColor), color-stop($width,$endColor)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  $startColor 0%,$endColor $width); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  $startColor 0%,$endColor $width); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  $startColor 0%,$endColor $width); /* IE10+ */
+  background: linear-gradient(to bottom,  $startColor 0%,$endColor $width); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$startColor', endColorstr='$endColor',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin gradient-left($startColor, $endColor, $width) {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,7db9e8+100 */
+  background: $endColor; /* Old browsers */
+  background: -moz-linear-gradient(left,  $startColor 0%, $endColor $width); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,$startColor), color-stop(100%,$endColor)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left,  $startColor 0%,$endColor $width); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left,  $startColor 0%,$endColor $width); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left,  $startColor 0%,$endColor $width); /* IE10+ */
+  background: linear-gradient(to right,  $startColor 0%,$endColor $width); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$startColor', endColorstr='$endColor',GradientType=1 ); /* IE6-9 */
+}

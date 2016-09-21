@@ -1,0 +1,29 @@
+<f:if condition="{f:cObject(typoscriptObjectPath:'lib.slider')}">
+  <f:then>
+    <section class="slider" data-animation="fade">
+			<f:if condition="{f:cObject(typoscriptObjectPath:'lib.sliderSmall')}">
+				<f:then>
+					<div class="container">
+				</f:then>
+			</f:if>
+			<div id="carousel-example-generic" class="carousel slide"
+      	data-ride="carousel"
+      	data-interval="8000"
+        data-wrap="1"
+      >
+
+        <ol class="carousel-indicators">
+          <f:cObject typoscriptObjectPath="lib.sliderCound" />
+        </ol>
+				<div class="carousel-inner">
+	        <f:cObject typoscriptObjectPath="lib.slider" />
+				</div>
+	    </div>
+	  	<f:if condition="{f:cObject(typoscriptObjectPath:'lib.sliderSmall')}">
+				<f:then>
+					</div>
+				</f:then>
+			</f:if>
+    </section>
+  </f:then>
+</f:if>

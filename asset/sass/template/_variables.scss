@@ -1,0 +1,72 @@
+// main: ../style.scss
+
+//Font-Awesome Font Path
+$fa-font-path:        "../fonts/fontawesome/" !default;
+// Set Height Fix of Buttons and Bars for Offcanvis
+$navbar-height: 							50px !default;
+$offcanvis-width: 							280px !default;
+$offcanvis-bg:								#fff !default;
+$offcanvis-overlay: 						0px !default;
+$offcanvis-overlay-height: 					$navbar-height !default;
+// Border Width-Color
+$style_border_width:        				1px !default;
+$style_border_color: 						#ccc !default;
+$style_color_dark: 							#333 !default;
+
+// Bootstrap Overrides
+// $grid-breakpoints: (
+//   // Extra small screen / phone
+//   xs: 0,
+//   // Small screen / phone
+//   sm: 544px, 
+//   // Medium screen / tablet
+//   md: 768px,
+//   // Large screen / desktop
+//   lg: 992px,
+//   // Extra large screen / wide desktop
+//   xl: 1200px
+// ) !default;
+
+// sm: 576px,
+$container-max-widths: (
+  md: 720px,
+  lg: 940px,
+  xl: 1140px
+) !default;
+
+// $dropdown-bg:                    #fff !default;
+
+
+// Hamburger
+$hamburger-padding-x                       : 10px !default;
+$hamburger-padding-y                       : 10px !default;
+$hamburger-layer-width                     : 30px !default;
+$hamburger-layer-height                    : 4px !default;
+$hamburger-layer-color                     : #000 !default;
+$hamburger-layer-border-radius             : 4px !default;
+$hamburger-hover-opacity                   : 1 !default;
+
+// Onpage Element
+$bg-animation-speed:            40s !default;
+$bg-animation:                  (1960px, 961px)!default;
+
+// Windows 8 Colors
+$win8_font_color:			white !default;
+// LIGHT Colors:
+$win8_teal:				#00A0B1 !default;
+$win8_blue:				#2E8DEF !default;
+$win8_purple:			#A700AE !default;
+$win8_dark_purple:		#643EBF !default;
+$win8_red:				#BF1E4B !default;
+$win8_orange:			#DC572E !default;
+$win8_green:			#00A600 !default;
+$win8_sky_blue:			#0A5BC4 !default;
+// DARK Colors:
+$win8_dark_teal:		#008299 !default;
+$win8_dark_blue:		#2672EC !default;
+$win8_dark_purple:		#8C0095 !default;
+$win8_dark_dark_purple:	#5133AB !default;
+$win8_dark_red:			#AC193D !default;
+$win8_dark_orange:		#D24726 !default;
+$win8_dark_green:		#008A00 !default;
+$win8_dark_sky_blue:	#094AB2 !default;

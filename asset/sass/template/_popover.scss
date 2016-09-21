@@ -1,0 +1,30 @@
+// main: ../style.scss
+.popover-wrap {
+	display:block;
+	position: relative;
+
+	> [data-toggle="popover"] {
+		width: 100%;
+		margin-top: 0;
+
+		@include media-breakpoint-up(md) {
+			width: auto;
+		}
+	}
+
+	.popover {
+		max-width: 100%;
+
+		@include media-breakpoint-up(md) {
+			max-width: 600px;
+			width: 450px;
+		}
+	}
+
+	@include media-breakpoint-up(md) {
+	}
+	@include media-breakpoint-up(lg) {
+	}
+	@include media-breakpoint-up(xl) {
+	}
+}

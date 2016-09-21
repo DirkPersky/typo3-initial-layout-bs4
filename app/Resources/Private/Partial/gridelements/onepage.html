@@ -1,0 +1,16 @@
+<section id="onepage{data.uid}" class="onepage {data.flexform_opblend} {data.flexform_center}" style="
+  {f:if(condition:'{data.flexform_height}',then:'height:{data.flexform_height};')}
+  {f:if(condition:'{data.flexform_image}',then:'background-image:url(uploads/tx_gridelements/{data.flexform_image});')}
+  "
+>
+  <div class="onpage-inner">
+    <div class="container">
+      <f:format.html parseFuncTSPath="">{stdheader}</f:format.html>
+      <f:format.raw>{data.tx_gridelements_view_columns.0}</f:format.raw>
+    </div>
+  </div>
+
+  <f:if condition="{data.flexform_next}=='1'">
+    <a href="javascript:void(0)" data-onepage="true"><img src="fileadmin/transline/app/Resources/Public/img/Pfeil_nach_unten.png"></a>
+  </f:if>
+</section>

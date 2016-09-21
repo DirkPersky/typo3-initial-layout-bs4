@@ -1,0 +1,99 @@
+meta.title = 
+
+nav {
+	homeUid = 
+	exclude = 
+	footer = 
+	cookie = 
+}
+
+# Body Class
+template.style = body
+
+# Template
+path.template = fileadmin/Mysite4/app/Resources/
+path.baseURL = http://mysite4.cms-sudhaus.de/
+
+# Favicon
+favicon = favicon.png
+
+# IndexSearch Page
+plugin.tx_indexedsearch{
+	searchUID =
+	showAdvanced = 0
+}
+
+#########################
+### use Retina Images ###
+#########################
+image.retina = 0
+
+########################
+### DEFAULT CONSTANT ###
+########################
+meta.author = Gutenberghaus, Stadlohn
+meta.viewport =  width=device-width, initial-scale=1.0
+
+################
+### Powermail###
+################
+plugin.tx_powermail.settings.javascript.powermailJQuery =
+plugin.tx_powermail.settings.javascript.powermailJQueryUi =
+# allow HTML
+plugin.tx_powermail.settings.misc.htmlField = 1
+plugin.tx_powermail.settings.misc.disableRemoveXss = 1
+
+###################
+### IMAGE WIDTH ###
+###################
+styles.content.image.maxW			= 1960
+styles.content.imgtext.colPos0.maxW	= 1960
+styles.content.imgtext.colPos1.maxW	= 1960
+styles.content.imgtext.colPos2.maxW	= 1960
+styles.content.imgtext.colPos3.maxW	= 1960
+
+#####################################
+### Standard-Überschriften als H2 ###
+#####################################
+content.defaultHeaderType = 2
+
+###########################
+### AKTIVE LAZY LOADING ###
+###########################
+styles.content.imgtext.layoutKey = lazyloading
+
+###############
+### TX_NEWS ###
+###############
+plugin.tx_news {
+  view {
+    layoutRootPath = fileadmin/Mysite4/app/Resources/Private/Layouts/news/
+    partialRootPath = fileadmin/Mysite4/app/Resources/Private/Partial/news/
+    templateRootPath = fileadmin/Mysite4/app/Resources/Private/Template/news/
+  }
+}
+
+###################
+### SCRIPTMEGER ###
+###################
+plugin.tx_scriptmerger {
+    javascript {
+      mergedHeadFilePosition = </body>
+      compress.enable = 0
+			minify.enable = 1
+			parseBody = 1
+    }
+    css {
+      mergedFilePosition = </body>
+      compress.enable = 0
+      postUrlProcessing {
+        pattern = /(\.\.\/\.\.\/fileadmin)/i
+        replacement = {$path.baseURL}fileadmin
+      }
+    }
+}
+
+#################
+### SOURCEOPT ###
+#################
+sourceopt.formatHtml = 1

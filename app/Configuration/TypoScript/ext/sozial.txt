@@ -1,0 +1,127 @@
+lib.sozial = COA
+lib.sozial {
+	titel = TEXT
+	titel {
+		value.field = subtitle
+		ifEmpty.field = title
+	}
+
+	desc = TEXT
+	desc {
+		value.field = description
+	}
+
+	url = TEXT
+	url {
+		data = getIndpEnv:TYPO3_REQUEST_URL
+	}
+
+	media = TEXT
+	media {
+		value = {$path.baseURL}fileadmin/templates/symbioblog/Resources/Public/img/logo.png
+	}
+}
+
+lib.newsImage < lib.sozial.media
+
+[globalVar = GP:tx_news_pi1 > 0]
+lib.sozial {
+	titel = COA
+	titel {
+		5 = RECORDS
+		5 {
+			source = {GP:tx_news_pi1|news}
+			source.insertData = 1
+			tables = tx_news_domain_model_news
+			conf.tx_news_domain_model_news >
+			conf.tx_news_domain_model_news = TEXT
+			conf.tx_news_domain_model_news.field = title
+		}
+	}
+	desc < .titel
+	desc {
+		5.conf.tx_news_domain_model_news.field = uid
+	}
+
+	isNews = TEXT
+	isNews.value = 1
+
+	media = CONTENT
+	media {
+		table = sys_file_reference
+		select {
+			selectFields = uid
+			orderBy = sorting
+
+			pidInList = 3
+			where = (uid_foreign={GP:tx_news_pi1|news} and tablenames='tx_news_domain_model_news')
+			where.insertData = 1
+			max = 1
+		}
+
+		renderObj = IMG_RESOURCE
+		renderObj {
+			file.import.field = uid
+			file.treatIdAsReference = 1
+		}
+	}
+
+	datetime < .titel
+	datetime {
+		5.conf.tx_news_domain_model_news.field = datetime
+	}
+
+	teaser < .titel
+	teaser {
+		5.conf.tx_news_domain_model_news.field = teaser
+	}
+}
+
+lib.newsImage < lib.sozial.media
+lib.newsImage {
+	renderObj = TEXT
+	renderObj {
+		field = uid
+	}
+}
+[global]
+
+
+page.headerData.1337 {
+	50 = COA
+	50 {
+		## Facebook
+		10 < lib.sozial.titel
+		10 {
+			wrap = <meta property="og:title" content="|" />
+		}
+		20 < lib.sozial.desc
+		20 {
+			wrap = <meta property="og:description" content="|" />
+		}
+		30 < lib.sozial.url
+		30 {
+			wrap = <meta property="og:url" content="|" />
+		}
+		40 < lib.sozial.media
+		40 {
+			wrap = <meta property="og:image" content="|" />
+		}
+	}
+	60 = COA
+	60 {
+		## Twitter
+		10 < lib.sozial.titel
+		10 {
+			wrap = <meta property="twitter:title" content="|" />
+		}
+		20 < lib.sozial.desc
+		20 {
+			wrap = <meta property="twitter:description" content="|" />
+		}
+		30 < lib.sozial.media
+		30 {
+			wrap = <meta property="twitter:image" content="|" />
+		}
+	}
+}

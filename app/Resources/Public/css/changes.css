@@ -1,0 +1,30 @@
+.animated-hide .animated{
+	visibility: hidden;
+	-webkit-animation-name: none;
+			animation-name: none;
+}
+
+.page-loading{
+	position: fixed;
+	top:0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: block;
+
+	background-color: white;
+	background-color: rgba(250,250,250,.9);
+	z-index: 9999;
+
+	background-image:url(../img/ajax-loader.gif);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	
+}
+
+@media print{
+  html, body, #wrapper {
+    height: initial;
+    height: auto;
+  }
+}

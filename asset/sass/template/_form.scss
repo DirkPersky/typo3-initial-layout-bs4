@@ -1,0 +1,115 @@
+// main: ../style.scss
+.tx-powermail {
+  .parsley-errors-list {
+    @extend .text-danger;
+  }
+  .powermail_form{
+    &.nolabel {
+      > h3 {
+        display: none;
+      }
+    }
+  }
+
+  .powermail_fieldwrap {
+    @extend .form-group;
+
+    &.layout2 {
+      float: left;
+      width: 50%;
+    }
+    &.nolabel {
+      .powermail_label {
+        display: none;
+      }
+    }
+  }
+
+  .powermail_field {
+		// @extend .form-control;
+	}
+
+  .powermail_radio_outer {
+    @include clearfix;
+    margin: 0 -15px;
+    .powermail_radio_inner {
+      padding: 0 15px;
+      float: left;
+
+    }
+
+    label {
+      color: $gray-light;
+      font-weight: normal;
+    }
+  }
+
+  .powermail_check_outer {
+    label {
+      color: $gray-light;
+      font-weight: normal;
+    }
+  }
+
+  .powermail_input,
+  .powermail_textarea,
+  textarea, select {
+    @extend .form-control;
+  }
+
+  .powermail_fieldset {
+
+    .powermail_legend {
+      border-bottom: 0;
+      padding: 0 15px;
+
+      color: $gray-light;
+    }
+
+    &.nolabel {
+      .powermail_legend {
+        display: none;
+      }
+    }
+    @include clearfix;
+  }
+
+  .powermail_confirmation {
+    @include clearfix;
+
+    .powermail_all_label {
+      @extend h4;
+    }
+    form {
+      display: inline-block;
+      input[type="submit"] {
+        @extend .btn;
+        @extend .btn-secondary;
+      }
+    }
+  }
+}
+
+.tx-indexedsearch {
+  table {
+    @extend .table;
+
+    @include media-breakpoint-up(md) {
+      width: 600px
+    }
+  }
+  select,
+  input[type="text"]{
+    @extend .form-control;
+    margin-bottom: 5px;
+  }
+
+  .tx-indexedsearch-searchbox table input.tx-indexedsearch-searchbox-sword {
+    width: 100%;
+  }
+
+  .tx-indexedsearch-searchbox-button {
+    @extend .btn;
+    @extend .btn-secondary;
+  }
+}

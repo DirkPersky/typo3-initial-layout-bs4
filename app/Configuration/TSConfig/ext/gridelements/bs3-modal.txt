@@ -1,0 +1,23 @@
+tx_gridelements.setup{
+  bs3-modal {
+    title = Modal-Element
+    description = Erstellen eines Modal Element / Content Box
+    flexformDS = FILE:fileadmin/Mysite4/app/Configuration/FlexForms/bs3-modal.xml
+    frame = 1
+
+    config {
+      colCount = 1
+      rowCount = 1
+      rows {
+        1 {
+          columns {
+            1 {
+              name = Modal Inhalt
+              colPos = 15
+            }
+          }
+        }
+      }
+    }
+  }
+}

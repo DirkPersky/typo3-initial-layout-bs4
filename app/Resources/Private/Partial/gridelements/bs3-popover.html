@@ -1,0 +1,51 @@
+<div class="popover-wrap" id="pwrap{data.uid}">
+  <a href="javascript:void(0)"
+    class="btn {data.flexform_btn_style}"
+    data-toggle="popover"
+    data-placement="{data.flexform_direction}"
+    title="{data.flexform_headline}"
+    data-innerHtml=".p{data.uid}"
+    data-id="p{data.uid}">
+    {data.flexform_label}
+  </a>
+  <div class="p{data.uid} hidden">
+    <f:format.raw>{data.tx_gridelements_view_columns.15}</f:format.raw>
+  </div>
+  <style type="text/css">
+    <f:if condition="{data.flexform_arrow} != ''">
+    #p{data.uid}.top .arrow:after {
+      border-top-color: {data.flexform_arrow};
+    }
+    #p{data.uid}.right .arrow:after {
+      border-right-color: {data.flexform_arrow};
+    }
+    #p{data.uid}.left .arrow:after {
+      border-left-color: {data.flexform_arrow};
+    }
+    #p{data.uid}.bottom .arrow:after {
+      border-bottom-color: {data.flexform_arrow};
+    }
+    </f:if><f:if condition="{data.flexform_css} != ''">
+    #p{data.uid} .popover-content {
+      border-top-color: {data.flexform_css};
+    }
+    </f:if><f:if condition="{data.flexform_image} != ''">
+    #p{data.uid} .popover-content {
+      background-image:url("uploads/tx_gridelements/{data.flexform_image}");
+      background-position:center;
+      background-size:cover;
+    }
+    </f:if>
+    #pwrap{data.uid} {
+      <f:if condition="{data.flexform_top} != ''">
+      top: {data.flexform_top}; position:absolute;
+      </f:if><f:if condition="{data.flexform_left} != ''">
+      left: {data.flexform_left}; position:absolute;
+      </f:if><f:if condition="{data.flexform_right} != ''">
+      right: {data.flexform_right}; position:absolute;
+      </f:if><f:if condition="{data.flexform_bottom} != ''">
+      bottom: {data.flexform_bottom}; position:absolute;
+      </f:if>
+    }
+  </style>
+</div>

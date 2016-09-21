@@ -1,0 +1,15 @@
+#####################
+### CSS einbinden ###
+#####################
+page.includeCSS {
+  template = {$path.template}Public/css/style.css
+  changes = {$path.template}Public/css/changes.css
+}
+
+####################
+### JS einbinden ###
+####################
+page.includeJSFooter {
+  modernizr = {$path.template}Public/js/modernizr.min.js
+  template = {$path.template}Public/js/script.min.js
+}

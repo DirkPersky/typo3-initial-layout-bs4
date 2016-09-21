@@ -1,0 +1,81 @@
+// main: ../style.scss
+$col_space_images: 10px !default;
+.csc-default {
+	@extend .clearfix;
+}
+.thumbnails-center,
+.thumbnails-center *{
+	text-align: center;
+}
+.thumbnails-center {
+	img {
+		margin: 0 auto;
+	}
+}
+.thumbnails-right,
+.thumbnails-right *{
+	text-align: right;
+}
+.thumbnails-left,
+.thumbnails-left *{
+	text-align: left;
+}
+.thumbnails figure {
+	display: inline-block;
+	margin-bottom: 15px;
+
+	&.col-xs-12 {
+		margin-bottom: 0;
+	}
+}
+@include media-breakpoint-up(md) {
+	.thumbnails-pull-right{
+		float:right;
+		padding: 0 0 10px 10px;
+	}
+	.thumbnails-pull-left{
+		float:left;
+		padding: 0 10px 10px 0;
+	}
+	.thumbnails-pull-right,
+	.thumbnails-pull-left {
+		max-width: 60%;
+	}
+	.csc-textpic-text {
+		min-width: 40%;
+	}
+
+}
+@include media-breakpoint-down(sm) {
+	.csc-textpic-text {
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+}
+.thumbnails .row{
+	margin-right: -($col_space_images);
+	margin-left: -($col_space_images);
+}
+.thumbnails .row [class^="col-"]{
+	padding-left: $col_space_images;
+	padding-right: $col_space_images;
+}
+.thumbnails .row+.row{
+	margin-top: ($col_space_images *2);
+}
+div[class*="csc-textpic-intext"]:after {
+	clear: both;display: block;content: '';
+}
+
+.thumbnails {
+	&.csc-textpic-border {
+		.row {
+			figure {
+				img {
+					padding:5px;
+					box-shadow: 0px 0px 1px $gray-light;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+    <meta type="array">
+        <langDisable>1</langDisable>
+    </meta>
+    <sheets>
+        <general>
+            <ROOT type="array">
+                <TCEforms>
+                    <sheetTitle>Einstellungen</sheetTitle>
+                </TCEforms>
+                <el type="array">
+                    <onepage>
+                        <TCEforms type="array">
+                            <config type="array">
+                                <type>check</type>
+                                <items>
+                                    <numIndex index="0">
+                                        <numIndex index="0">Onepage Mode</numIndex>
+                                        <numIndex index="1">1</numIndex>
+                                    </numIndex>
+                                </items>
+                                <default></default>
+                            </config>
+                        </TCEforms>
+                    </onepage>
+                    <auto>
+                        <TCEforms type="array">
+                            <config type="array">
+                                <type>check</type>
+                                <items>
+                                    <numIndex index="0">
+                                        <numIndex index="0">Automatischer Durchlauf</numIndex>
+                                        <numIndex index="1">1</numIndex>
+                                    </numIndex>
+                                </items>
+                                <default>1</default>
+                            </config>
+                        </TCEforms>
+                    </auto>
+                    <interval type="array">
+                        <TCEforms type="array">
+                            <label>Geschwindigkeit (in Sekunden)</label>
+                            <config>
+                                <type>input</type>
+                                <size>6</size>
+                                <max>4</max>
+                                <eval>trim,number</eval>
+                                <default>5</default>
+                            </config>
+                        </TCEforms>
+                    </interval>
+                    <loop>
+                        <TCEforms type="array">
+                            <config type="array">
+                                <type>check</type>
+                                <items>
+                                    <numIndex index="0">
+                                        <numIndex index="0">Endlosschleife</numIndex>
+                                        <numIndex index="1">1</numIndex>
+                                    </numIndex>
+                                </items>
+                                <default>1</default>
+                            </config>
+                        </TCEforms>
+                    </loop>
+                </el>
+            </ROOT>
+        </general>
+    </sheets>
+</T3DataStructure>

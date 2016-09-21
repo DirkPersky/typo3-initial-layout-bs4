@@ -1,0 +1,86 @@
+<f:if condition="{layout} == 1">
+	<f:then>
+		<div id="wrapper" class="bg-img"></div>
+	</f:then>
+	<f:else>
+		<div id="wrapper" ></div>
+	</f:else>
+</f:if>
+
+<f:if condition="lib.border">
+	<f:then>
+		<!-- Above Nav Intro Page -->
+		<section class="into" id="intro">
+			<div class="container">
+				<f:cObject typoscriptObjectPath="lib.border" />
+			</div>
+		</section>
+	</f:then>
+</f:if>
+
+<!-- Header Logo & Navbar -->
+<header id="top">
+	<nav class="navbar navbar-default" role="navigation">
+		<!-- Mobile Toogle nav -->
+		<div class="navbar-header main-nav">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".main-nav">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+
+			<!-- Mobile Logo -->
+			<a href="<f:cObject typoscriptObjectPath="lib.home" />" class="navbar-brand visible-xs ">
+				<img src="fileadmin/Mysite4/app/Resources/Public/img/logo.png" class="logo"/>
+			</a>
+
+			<!-- Lannguage Select -->
+			<f:cObject typoscriptObjectPath="lib.language" />
+		</div>
+
+		<!-- Close Overlay Mobile -->
+		<button type="button" class="nav-overlay main-nav " data-toggle="collapse" data-target=".main-nav">
+			&nbsp;
+		</button>
+
+		<!-- Main Navigation -->
+		<div class="collapse navbar-collapse main-nav">
+			<div class="container-fluid">
+				<!-- Main Nav -->
+				<ul class="nav navbar-nav">
+					<f:cObject typoscriptObjectPath="lib.nav" />
+				</ul>
+
+				<!-- Search -->
+				<f:render partial="search" />
+			</div>
+		</div>
+	</nav>
+</header>
+
+<!-- get Content -->
+<f:render section="body" />
+
+<!-- Footer -->
+<footer id="bottom">
+	<div class="container">
+		<div class="footer-nav">
+			<!-- Product nav footer -->
+			<nav class="mega-product">
+				<f:cObject typoscriptObjectPath="lib.footerNav.10" />
+			</nav>
+
+			<!-- Social Icons -->
+			<f:cObject typoscriptObjectPath="lib.social" />
+		</div>
+
+		<!-- Imprint -->
+		<nav class="imprint">
+			<f:cObject typoscriptObjectPath="lib.footerNav.20" />
+		</nav>
+
+		<!-- Copyright -->
+		<f:cObject typoscriptObjectPath="lib.copyr" />
+	</div>
+</footer>

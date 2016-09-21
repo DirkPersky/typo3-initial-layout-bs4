@@ -1,0 +1,78 @@
+#onepage
+tt_content.gridelements_pi1.20.10.setup{
+  bs3-tabs_container <  lib.gridelements.defaultGridSetup
+  bs3-tabs_container {
+    # Render navigation using fluid
+    cObject = FLUIDTEMPLATE
+    cObject {
+      file = {$path.template}Private/Partial/gridelements/bs3-tabs.html
+    }
+
+    # Render the children the default way
+    columns {
+      0 < .default
+    }
+  }
+
+  bs3-tabs_tab <  lib.gridelements.defaultGridSetup
+  bs3-tabs_tab {
+
+    # Add the ID and the Class to the tab container
+  	preCObject = LOAD_REGISTER
+  	preCObject {
+  		containerId.cObject = COA
+  		containerId.cObject {
+  			wrap = id="|"
+  			10 = TEXT
+  			10.wrap = tab-content-|
+  			10.field = uid
+  		}
+
+  		containerClasses.cObject = COA
+  		containerClasses.cObject {
+  			wrap = class="tab-pane |"
+
+  			# fade or empty
+  			10 = TEXT
+  			10.field = parentgrid_flexform_switch_effect
+  			10.noTrimWrap = | | |
+
+  			# We want the active flag on the first child
+  			20 = TEXT
+  			20.value = active in
+  			20.noTrimWrap = | | |
+  			20.if {
+  				 value = 1
+  				 equals.data = cObj:parentRecordNumber
+  				 equals.prioriCalc = 1
+  			}
+  		}
+  	}
+
+  	outerWrap = <div {register: containerId} {register: containerClasses}>|</div>
+  	outerWrap.insertData = 1
+
+  	# Render the children the default way
+  	columns.0 {
+  		renderObj = < tt_content
+  	}
+  }
+
+  bs3-accordion_tab <  lib.gridelements.defaultGridSetup
+  bs3-accordion_tab {
+
+    # Render navigation using fluid
+    cObject = FLUIDTEMPLATE
+    cObject {
+      file = {$path.template}Private/Partial/gridelements/bs3-accordion-tab.html
+
+      variables {
+        stdheader =< lib.stdheader
+      }
+    }
+
+    columns {
+      0 < .default
+    }
+  }
+}

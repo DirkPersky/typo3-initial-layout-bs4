@@ -1,0 +1,13 @@
+TCEFORM {
+	tt_content {
+		imagecols {
+			removeItems = 8
+			addItems.12 = 12
+			addItems.13 = auto
+		}
+
+		layout {
+			#addItems.4 = (IMAGE) Above the Fold
+		}
+	}
+}

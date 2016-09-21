@@ -1,0 +1,23 @@
+tx_gridelements.setup{
+  bs3-popover  {
+    title = Popover-Element
+    description = Erstellen eines Popover Element
+    flexformDS = FILE:fileadmin/Mysite4/app/Configuration/FlexForms/bs3-popover.xml
+    frame = 1
+
+    config {
+      colCount = 1
+      rowCount = 1
+      rows {
+        1 {
+          columns {
+            1 {
+              name = Popover Inhalt
+              colPos = 15
+            }
+          }
+        }
+      }
+    }
+  }
+}

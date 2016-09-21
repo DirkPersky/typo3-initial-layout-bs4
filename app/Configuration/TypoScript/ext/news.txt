@@ -1,0 +1,53 @@
+###############
+### TX_NEWS ###
+###############
+plugin.tx_news {
+  # Override Language
+	_LOCAL_LANG.de{
+		more-link = Hier mehr erfahren
+	}
+
+	view {
+    # Override Widget Template Path
+		widget.GeorgRinger\News\ViewHelpers\Widget\PaginateViewHelper.templateRootPath = {$plugin.tx_news.view.templateRootPath}
+	}
+
+  settings {
+    # Disable Default CSS
+		cssFile >
+
+    # Teaser Max Chars
+		cropMaxCharacters = 200
+
+    # Disable Dummy Image
+    displayDummyIfNoMedia = 0
+
+    detail {
+      # Disable Social Share Buttns
+      showSocialShareButtons = 0
+      media {
+        image {
+          # set Fancybox as lightbox
+          lightbox = fancybox
+
+          # Override Image width
+          maxWidth = 800
+        }
+      }
+    }
+		list {
+			media {
+				image {
+          # Override Image Sizes
+					maxWidth = 480
+					maxHeight = 480
+				}
+			}
+      #Paginate configuration.
+      paginate {
+         insertAbove = 0
+         insertBelow = 1
+      }
+		}
+  }
+}

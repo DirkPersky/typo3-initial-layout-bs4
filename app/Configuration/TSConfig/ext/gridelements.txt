@@ -1,0 +1,7 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TSConfig/ext/gridelements/bs3-grid.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TSConfig/ext/gridelements/bs3-carousel.txt">
+#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TSConfig/ext/gridelements/bs3-tabs.txt">
+#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TSConfig/ext/gridelements/bs3-modal.txt">
+#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TSConfig/ext/gridelements/bs3-popover.txt">
+#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TSConfig/ext/gridelements/onepage.txt">
+#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TSConfig/ext/gridelements/popout.txt">

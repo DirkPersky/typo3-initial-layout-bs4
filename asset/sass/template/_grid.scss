@@ -1,0 +1,40 @@
+// main: ../style.scss
+@mixin calc-grid-column-half($index, $class, $columns ) {
+  .col-#{$class}-#{$index}{
+      // width: percentage(( 1 / $columns));
+    	width: $columns;
+
+    	float:left;
+    	position: relative;
+  		min-height: 1px;
+      padding-left: ($grid-gutter-width / 2);
+  		padding-right: ($grid-gutter-width / 2);
+    }
+}
+
+// [converter] This is defined recursively in LESS, but Sass supports real loops
+@mixin grid-columns-half($index, $columns) {
+
+	@include calc-grid-column-half($index, "xs", $columns);
+  @include media-breakpoint-up(sm) {
+    @include calc-grid-column-half($index, "sm", $columns);
+  }
+	@include media-breakpoint-up(md) {
+		@include calc-grid-column-half($index, "md", $columns);
+	}
+	@include media-breakpoint-up(lg){
+		@include calc-grid-column-half($index, "lg", $columns);
+	}
+	@include media-breakpoint-up(xl){
+		@include calc-grid-column-half($index, "xl", $columns);
+	}
+}
+
+@include grid-columns-half("2-4", 20%); //20%
+@include grid-columns-half("3-6", 30%); //30%
+@include grid-columns-half("4-8", 40%); //40%
+@include grid-columns-half("1-7", (100% / 7)); //100% / 7
+@include grid-columns-half("1-5", (100% / 8)); //100% / 7
+@include grid-columns-half("9-6", 80%); // 80%
+@include grid-columns-half("4-5", ((100%-25%) / 2)); // 80%
+@include grid-columns-half("2-2-5", ((100%-25%) / 2 / 2)); // 80%

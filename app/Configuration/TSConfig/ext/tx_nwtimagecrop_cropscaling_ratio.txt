@@ -1,0 +1,5 @@
+TCEFORM.tt_content.tx_nwtimagecrop_cropscaling_ratio {
+  #keepItems = 0
+
+	#addItems.100 = 1/2
+}
