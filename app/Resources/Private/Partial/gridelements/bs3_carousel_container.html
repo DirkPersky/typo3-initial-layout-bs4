@@ -1,8 +1,10 @@
 <div
-	id="carousel-generic-{data.uid}"
-	class="carousel slide {f:if(condition:'{data.flexform_onepage}',then:' carousel-more')}"
-	data-ride="carousel"
-	data-interval="{f:if(condition: "{data.flexform_auto}", then: "{f:cObject(typoscriptObjectPath: 'lib.math', data: '{data.flexform_interval}*1000')}", else: "0")}" data-wrap="{data.flexform_loop}">
+		id="carousel-generic-{data.uid}"
+		class="carousel slide {f:if(condition:'{data.flexform_onepage}',then:' carousel-more')}"
+		data-ride="carousel"
+		data-interval="{f:if(condition: "
+		{data.flexform_auto}", then: "{f:cObject(typoscriptObjectPath: 'lib.math', data: '{data.flexform_interval}*1000')}", else: "0")}"
+data-wrap="{f:if(condition:'{data.flexform_loop}',then:'true',else:'false')}">
 
 	<f:if condition="{data.tx_gridelements_view_children -> f:count()} > 1">
 		<ol class="carousel-indicators">

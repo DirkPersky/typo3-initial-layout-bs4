@@ -152,3 +152,14 @@ page{
 lib.stdheader.10.setCurrent.htmlSpecialChars = 0
 
 plugin.tx_indexedsearch._DEFAULT_PI_VARS.lang = 0
+
+/*
+#######################
+### WERTE BERECHNEN ###
+#######################
+*/
+lib.math = TEXT
+  lib.math {
+  current = 1
+  prioriCalc = 1
+}
