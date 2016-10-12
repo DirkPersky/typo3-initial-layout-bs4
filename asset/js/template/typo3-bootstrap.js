@@ -40,4 +40,24 @@
   //   }
   // }
 
+  /**
+   * Accordion
+   */
+  $('.panel-collapse').on('show.bs.collapse hide.bs.collapse', function (e) {
+    var type = e.type,
+        id = e.target.id,
+        anker = $('.panel-heading a[href="#' + id + '"]');
+
+    switch (type) {
+      case 'hidden':
+      case 'hide':
+        $(anker.data('icon')).removeClass('in');
+        break;
+      case 'shown':
+      case 'show':
+        $(anker.data('icon')).addClass('in');
+        break;
+    }
+  });
+
 }(jQuery);
