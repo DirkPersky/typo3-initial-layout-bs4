@@ -72,6 +72,16 @@ plugin.tx_news {
     templateRootPath = fileadmin/Mysite4/app/Resources/Private/Template/news/
   }
 }
+####################
+### TX_POWERMAIL ###
+####################
+plugin.tx_powermail{
+  view {
+    layoutRootPath = fileadmin/Mysite4/app/Resources/Private/Layouts/powermail/
+    partialRootPath = fileadmin/Mysite4/app/Resources/Private/Partial/powermail/
+    templateRootPath = fileadmin/Mysite4/app/Resources/Private/Template/powermail/
+  }
+}
 
 ###################
 ### SCRIPTMEGER ###
