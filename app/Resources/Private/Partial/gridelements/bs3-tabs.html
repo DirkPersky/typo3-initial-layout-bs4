@@ -1,19 +1,21 @@
 <f:format.html parseFuncTSPath="">{stdheader}</f:format.html>
 <f:if condition="{data.flexform_display_type}=='accordion'">
-  <f:then>
-    <div class="panel-group accordion-wrap" id="accordion{data.uid}" role="tablist" aria-multiselectable="true">
-      <f:format.raw>{data.tx_gridelements_view_columns.0}</f:format.raw>
-    </div>
-  </f:then>
-  <f:else>
-    <ul class="nav {data.flexform_display_type}">
-      	<f:for each="{data.tx_gridelements_view_children}" as="tab" iteration="tab_iteration">
-    		<li{f:if(condition:'{tab_iteration.isFirst}',then:' class="active"')}><a href="#tab-content-{tab.uid}" data-toggle="tab">{tab.header}</a></li>
-    	</f:for>
-    </ul>
+    <f:then>
+        <div class="panel-group accordion-wrap" id="accordion{data.uid}" role="tablist" aria-multiselectable="true">
+            <f:format.raw>{data.tx_gridelements_view_columns.0}</f:format.raw>
+        </div>
+    </f:then>
+    <f:else>
+        <ul class="nav {data.flexform_display_type} {data.header_position}">
+            <f:for each="{data.tx_gridelements_view_children}" as="tab" iteration="tab_iteration">
+                <li class="nav-item"><a href="#tab-content-{tab.uid}" data-toggle="tab"
+                                        class="nav-link {f:if(condition:'{tab_iteration.isFirst}',then:' active')}">{tab.header}</a>
+                </li>
+            </f:for>
+        </ul>
 
-    <div class="tab-content">
-    	<f:format.raw>{data.tx_gridelements_view_columns.0}</f:format.raw>
-    </div>
-  </f:else>
+        <div class="tab-content">
+            <f:format.raw>{data.tx_gridelements_view_columns.0}</f:format.raw>
+        </div>
+    </f:else>
 </f:if>

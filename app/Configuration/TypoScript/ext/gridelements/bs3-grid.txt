@@ -11,12 +11,19 @@ tt_content.gridelements_pi1.20.10.setup {
            noTrimWrap = | ||
          }
 
-         30 = TEXT
-         30 {
-           value = bordered
-           fieldRequired = flexform_bordered
-           noTrimWrap = | ||
-         }
+        30 = TEXT
+        30 {
+            value = row-center
+            fieldRequired = flexform_vcenter
+            noTrimWrap = | ||
+        }
+
+        40 = TEXT
+        40 {
+            field = flexform_class
+            fieldRequired = flexform_class
+            noTrimWrap = | ||
+        }
 
          20 = TEXT
          20 {
@@ -42,9 +49,32 @@ tt_content.gridelements_pi1.20.10.setup {
            noTrimWrap = | class="row |"|
          }
        }
+        containerStyle.cObject = COA
+        containerStyle.cObject {
+            10 = TEXT
+            10 {
+                data = field:spaceBefore
+                fieldRequired = spaceBefore
+                noTrimWrap = |margin-top:|px;|
+            }
+            20 = TEXT
+            20 {
+                data = field:spaceAfter
+                fieldRequired = spaceAfter
+                noTrimWrap = |margin-bottom:|px;|
+            }
+        }
+        containerStyleAttributes.cObject = COA
+        containerStyleAttributes.cObject {
+            10 = TEXT
+            10 {
+                data = register: containerStyle
+                noTrimWrap = | style="|"|
+            }
+        }
      }
 
-     outerWrap = <div{register: containerAttributes}> | </div>
+     outerWrap = <div{register: containerAttributes}{register: containerStyleAttributes}> | </div>
      outerWrap.insertData = 1
 
      columns.10 {
@@ -135,7 +165,7 @@ tt_content.gridelements_pi1.20.10.setup {
   				11.field = flexform_width_column_sm_3
   				12.field = flexform_width_column_md_3
   				13.field = flexform_width_column_lg_3
-          14.field = flexform_width_column_xl_3
+                14.field = flexform_width_column_xl_3
   				20.field = flexform_visibility_col3
   			}
   		}
@@ -152,7 +182,7 @@ tt_content.gridelements_pi1.20.10.setup {
   				11.field = flexform_width_column_sm_4
   				12.field = flexform_width_column_md_4
   				13.field = flexform_width_column_lg_4
-          14.field = flexform_width_column_xl_4
+                14.field = flexform_width_column_xl_4
   				20.field = flexform_visibility_col4
   			}
       }

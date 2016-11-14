@@ -1,13 +1,14 @@
 <div class="panel {data.flexform_style}">
   <div class="panel-heading" role="tab" id="heading{data.uid}">
-    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{data.uid}" aria-expanded="true"
-       aria-controls="collapse{data.uid}" data-icon=".icon.collapse{data.uid}">
+      <a role="button" data-toggle="collapse" data-parent="#accordion" data-icon=".icon.collapse{data.uid}"
+         href="#collapse{data.uid}" aria-expanded="true" aria-controls="collapse{data.uid}">
       <span class="icon collapse{data.uid} collapse {f:if(condition:'{data.flexform_active}',then:'in')}"></span>
       <f:format.html parseFuncTSPath="">{stdheader}</f:format.html>
     </a>
   </div>
-  <div id="collapse{data.uid}" class="panel-collapse collapse {f:if(condition:'{data.flexform_active}',then:'in')}"
-       role="tabpanel" aria-labelledby="heading{data.uid}">
+    <div id="collapse{data.uid}"
+         class="collapse{data.uid} panel-collapse collapse {f:if(condition:'{data.flexform_active}',then:'in')}"
+         role="tabpanel" aria-labelledby="heading{data.uid}">
     <div class="panel-body">
       <f:format.raw>{data.tx_gridelements_view_columns.0}</f:format.raw>
     </div>

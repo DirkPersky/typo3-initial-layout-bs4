@@ -3,7 +3,6 @@ html {
 	font-size: $font-size-root;
 	height: 100%;
 }
-
 html,
 body {
 	margin:0;
@@ -29,30 +28,27 @@ body{
 		// padding-top: 50px;
 	}
 
-	.wf-active &{
+  .wf-active & {
 		// Activate google Font here
 	}
 }
 
-.border-bottom{ border-bottom: $style_border_width solid $style_border_color; }
-.border-top{ border-top: $style_border_width solid $style_border_color; }
-.border-right{ border-right: $style_border_width solid $style_border_color; }
-.border-left{ border-left: $style_border_width solid $style_border_color; }
-.border{ border: $style_border_width solid $style_border_color; }
+.border, div.csc-textpic-border div.csc-textpic-imagewrap img {
+  border: $style_border_width solid $style_border_color;
+}
 
-div.csc-textpic-border div.csc-textpic-imagewrap img{ border: $style_border_width solid $style_border_color;}
-
-.right{text-align:right;}
 .left{text-align: left;}
-.center{text-align: center;}
 .small{font-size: .8em;}
 .align-justify{text-align: justify;}
 
+.right,
 .csc-header-alignment-right,
 .align-right{text-align: right;}
 
+.center,
 .csc-header-alignment-center,
 .align-center{text-align: center;}
+
 .indent{padding-left: 15px;}
 
 .tx-powermail .mandatory{color:$brand-danger;}
@@ -72,6 +68,9 @@ img.lazyload {
 	min-width: 150px;
 }
 
+/**
+ * Reformat Breadcrumb
+ */
 .breadcrumb {
 	background-color: transparent;
 	margin-bottom: 15px;
@@ -92,5 +91,87 @@ img.lazyload {
 
 	.active {
 		// color: ;
+    }
+}
+
+/**
+ * Format Accordion
+ */
+.accordion-wrap {
+  &.panel-group {
+    .panel {
+      /** Format Panel as Card **/
+      @extend .card;
+      /** Style Card Header **/
+      .panel-heading {
+        @extend .card-block;
+        @include rem(padding, 10 15);
+        background-color: $style_border_color;
+        color: white;
+
+        a {
+          @extend .card-title;
+          margin-bottom: 0;
+
+          text-decoration: none;
+          padding-left: 15px;
+          position: relative;
+          display: block;
+          color: inherit;
+          /** Define Toggle Icon **/
+          .icon {
+            @extend .fa;
+
+            overflow: visible !important;
+            height: auto !important;
+            display: inline-block;
+
+            position: absolute;
+            left: -5px;
+            top: 0;
+
+            &:before {
+              @extend .fa-plus;
+            }
+
+            &.in {
+              &:before {
+                @extend .fa-minus;
+              }
+            }
+          }
+        }
+        /** Normalize Header Styles **/
+        h1, h2, h3, h4, h5, h6 {
+          font-size: inherit;
+          color: inherit;
+          padding: 0;
+          margin: 0;
+        }
+      }
+      /** Format Boady as Card-block **/
+      .panel-body {
+        @extend .card-block;
+      }
+    }
+  }
+}
+
+/**
+ * Format Row as Flex
+ */
+.row {
+  &.row-center {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &.row-equalize {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-between;
 	}
 }
