@@ -36,5 +36,6 @@
 @include grid-columns-half("1-7", (100% / 7)); //100% / 7
 @include grid-columns-half("1-5", (100% / 8)); //100% / 7
 @include grid-columns-half("9-6", 80%); // 80%
+@include grid-columns-half("8-4", 70%); // 70%
 @include grid-columns-half("4-5", ((100%-25%) / 2)); // 80%
 @include grid-columns-half("2-2-5", ((100%-25%) / 2 / 2)); // 80%

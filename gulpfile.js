@@ -58,14 +58,16 @@ var _sass = {
 var npmModules = [
 	'node_modules/tether/dist/js/tether.min.js', // Needed for Bootstrap 4
 	'node_modules/bootstrap/dist/js/bootstrap.min.js', // Bootstrap 4
-	
-  'node_modules/lazysizes/plugins/print/ls.print.js', // LazyLoading for Print
-  'node_modules/lazysizes/plugins/respimg/ls.respimg.js', // LazyLoading for Responsive Images
-	'node_modules/lazysizes/plugins/bgset/ls.bgset.js', // LazyLoading for Background-Images
-  'node_modules/lazysizes/lazysizes.js', // LazyLoading main lib
 
-  'node_modules/waypoints/lib/jquery.waypoints.js', // Waypoint Scrolling
-  'node_modules/waypoints/lib/shortcuts/*.min.js', // Waypoint Scrolling Modules (sticky...)
+    'node_modules/lazysizes/plugins/print/ls.print.js', // LazyLoading for Print
+    'node_modules/lazysizes/plugins/respimg/ls.respimg.js', // LazyLoading for Responsive Images
+    'node_modules/lazysizes/plugins/bgset/ls.bgset.js', // LazyLoading for Background-Images
+    'node_modules/lazysizes/lazysizes.js', // LazyLoading main lib
+
+    'node_modules/waypoints/lib/jquery.waypoints.js', // Waypoint Scrolling
+    'node_modules/waypoints/lib/shortcuts/*.min.js', // Waypoint Scrolling Modules (sticky...)
+
+    'node_modules/rrssb/js/*.min.js', // Rssb Scrolling Modules (sticky...)
 ];
 /*
  |----------------------------------------------

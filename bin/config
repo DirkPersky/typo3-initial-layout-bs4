@@ -55,3 +55,5 @@ copyFile('node_modules/animate.css/animate.min.css', 'app/Resources/Public/css/a
     console.log('node_modules/animate.css/animate.min.css'+" is copyed!");
   }
 });
+
+copyDir('node_modules/rrssb/icons/', 'asset/icons/');

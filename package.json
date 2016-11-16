@@ -41,6 +41,7 @@
     "install": "latest",
     "lazysizes": "latest",
     "modernizr": "latest",
+    "rrssb": "^1.13.1",
     "tether": "latest",
     "vegas": "latest",
     "waypoints": "latest"
