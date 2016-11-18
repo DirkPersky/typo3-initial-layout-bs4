@@ -20,8 +20,9 @@ page.10 {
 	  key.override.field = backend_layout
 	  default = TEXT
 	  default.value = {$path.template}Private/Template/normal.html
-	  2 = TEXT
-	  2.value = {$path.template}Private/Template/root.html
+
+	  pagets__2 = TEXT
+	  pagets__2.value = {$path.template}Private/Template/root.html
 	}
 }
 

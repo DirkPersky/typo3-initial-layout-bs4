@@ -1,0 +1,57 @@
+mod {
+    web_layout {
+        BackendLayouts {
+            1 {
+                title = Einspaltig
+                config {
+                    backend_layout {
+                        colCount = 3
+                        rowCount = 3
+                        rows {
+                            1 {
+                                columns {
+                                    1 {
+                                        name = Inhalt
+                                        colPos = 0
+                                        colspan = 2
+                                    }
+                                    2 {
+                                        name = Ansprechpartner
+                                        colPos = 5
+                                    }
+                                }
+                            }
+                            2 {
+                                columns {
+                                    1 {
+                                        name = Logo
+                                        colPos = 1
+                                        colspan = 3
+
+                                    }
+                               }
+                            }
+                            3 {
+                                columns {
+                                    1 {
+                                        name = Links
+                                        colPos = 2
+                                    }
+                                    2 {
+                                        name = Mitte
+                                        colPos = 3
+                                    }
+                                    3 {
+                                        name = Rechts
+                                        colPos = 4
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                icon =
+            }
+        }
+    }
+}
