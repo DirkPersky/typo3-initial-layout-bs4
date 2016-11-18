@@ -42,27 +42,4 @@ tt_content.stdWrap.innerWrap.cObject {
 
   180 < tt_content.stdWrap.innerWrap.cObject.default
   180.20.10.value = alert alert-danger
-
 }
-
-/*
-lib.stdheader.10 {
-  6 = TEXT
-  6 {
-    current = 1
-    insertData = 1
-    fontTag = <h1 class="underline">|</h1>
-  }
-  7 < .6
-  7.fontTag = <h2 class="underline">|</h2>
-
-  8 < .6
-  8.fontTag = <h3 class="underline">|</h3>
-
-  9 < .6
-  9.fontTag = <h4 class="underline">|</h4>
-
-  10 < .6
-  10.fontTag = <h5 class="underline">|</h5>
-}
-*/

@@ -149,8 +149,6 @@ page{
   bodyTagCObject.wrap = <body id="page-|" class="{$template.style}">
 }
 
-lib.stdheader.10.setCurrent.htmlSpecialChars = 0
-
 plugin.tx_indexedsearch._DEFAULT_PI_VARS.lang = 0
 
 /*

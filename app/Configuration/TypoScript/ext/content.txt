@@ -107,3 +107,7 @@ temp.image = IMAGE
 temp.image {
 
 }
+#############################
+### Override Fluid Styles ###
+#############################
+lib.fluidContent.partialRootPaths.100 = {$path.template}Private/Partial/fluid_styled_content/
