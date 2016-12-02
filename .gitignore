@@ -1,2 +1,6 @@
 /node_modules
 .idea
+
+# RSSB Icons
+asset/icons/*
+!asset/icons/xing.min.svg

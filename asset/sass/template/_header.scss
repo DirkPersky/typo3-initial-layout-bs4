@@ -1,6 +1,9 @@
 // main: ../style.scss
 #navigation {
 	.navbar {
+		.navbar-toggler {
+			background-image: none;
+		}
 		.navbar-brand {
 			padding: 0;
 
