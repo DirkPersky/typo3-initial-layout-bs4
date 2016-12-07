@@ -1,7 +1,32 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:switch expression="{data.layout}">
 	<f:case value="6">
-		<f:render partial="MediaGallery" arguments="{_all}" />
+		<div
+				id="carousel-generic-{data.uid}"
+				class="carousel slide"
+				data-ride="carousel"
+				data-interval="{f:if(condition: "{data.rowDescription}", then: "{f:cObject(typoscriptObjectPath: 'lib.math', data: '{data.rowDescription}')}", else: "3000")}"
+				data-wrap="true"
+		>
+			<f:if condition="{gallery.count.rows} > 1">
+				<!--- Indicators -->
+				<ol class="carousel-indicators autofill-carousel">
+				</ol>
+			</f:if>
+			<!-- Carousel Items -->
+			<div class="carousel-inner">
+				<f:render partial="MediaGallery" arguments="{_all}" />
+			</div>
+			<f:if condition="{gallery.count.rows} > 1">
+				<!--- Direction navs -->
+				<a class="left carousel-control" href="#carousel-generic-{data.uid}" role="button" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left"></span>
+				</a>
+				<a class="right carousel-control" href="#carousel-generic-{data.uid}" role="button" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right"></span>
+				</a>
+			</f:if>
+		</div>
 	</f:case>
 	<f:case default="true">
 		<div id="c{data.uid}">

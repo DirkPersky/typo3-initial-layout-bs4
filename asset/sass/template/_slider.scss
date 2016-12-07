@@ -37,11 +37,9 @@
 			@include media-breakpoint-up(md) {
 				min-height: 200px;
 			}
-
 			@include media-breakpoint-up(lg) {
 				min-height: 300px;
 			}
-
 			@include media-breakpoint-up(xl) {
 				min-height: 400px;
 			}
@@ -55,6 +53,20 @@
 
 				@include media-breakpoint-up(xl) {
 					min-height: 500px;
+				}
+			}
+			.carousel-item-medias {
+				width: 100%;
+
+				@include media-breakpoint-up(md) {
+					display: flex;
+					flex-wrap: nowrap;
+					justify-content: center;
+					align-items: stretch;
+				}
+				.carousel-item-media {
+					position: relative;
+					width: 100%;
 				}
 			}
 		}
