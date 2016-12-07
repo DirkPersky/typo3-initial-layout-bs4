@@ -23,3 +23,7 @@ TCEFORM.tt_content.header_layout {
 	#addItems.9 = H4 Underline
 	#addItems.10 = H5 Underline
 }
+
+TCEFORM.tt_content.layout {
+	addItems.6 = Carousel(Slider)
+}

@@ -1,8 +1,4 @@
-################################################
-### Extend tx_nwtimagecrop_cropscaling_ratio ###
-################################################
-#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/tx_nwtimagecrop_cropscaling_ratio.txt">
-
+lib.responsiveImage = IMAGE
 ##########################################
 ### Responsive Layout for Lazy Loading ###
 ##########################################
@@ -25,21 +21,172 @@ tt_content.image.20.1.layout {
     source = <source srcset="###SRC###" media="###MEDIAQUERY###" ###ALTPARAMS### ###SELFCLOSINGTAGSLASH### data-width="###WIDTH###" data-height="###HEIGHT###" data-format="###DATAKEY###">
   }
 }
+##############################
+### Override for Textmedia ###
+##############################
+lib.responsiveImage {
+    defaultCropscaling {
+        ## CropScaling for Default Image
+        width.override {
+            cObject = TEXT
+            cObject {
+                data = field:data | imagewidth
+
+                override {
+                    cObject = TEXT # use cropscaling ratio field if imagewidth is not set
+                    cObject {
+                        data = field:data | imagewidth
+                        stdWrap.dataWrap = |*(16/9)
+                        prioriCalc = 1
+
+                        if.isFalse.data = field:data | imagewidth
+                    }
+                }
+
+                wrap = |c
+                if.isTrue.data = field:data | imageborder
+            }
+        }
+        ## CropScaling for Default Image
+        height.override {
+            cObject = TEXT
+            cObject {
+                data = field:data | imageheight
+
+                override {
+                    cObject = TEXT # use cropscaling ratio field if imageheight is not set
+                    cObject {
+                        data = field:data | imagewidth
+                        stdWrap.dataWrap = |*(1/(16/9))
+                        prioriCalc = 1
+
+                        if.isFalse.data = field:data | imageheight
+                    }
+                }
+
+                wrap = |c
+                if.isTrue.data = field:data | imageborder
+            }
+        }
+    }
+    sourceCollectionCropscaling {
+        width {
+            stdWrap {
+                wrap = |c
+                if.isTrue.data = field:data | imageborder
+            }
+        }
+        height {
+            cObject = TEXT
+            cObject {
+                stdWrap {
+                    dataWrap = |*({field:data|imageheight}/{field:data|imagewidth}) # Rewrite Variables
+                    dataWrap.override {
+                        cObject = COA
+                        cObject {
+                            10 = TEXT # use cropscaling ratio field if imageheight is not set
+                            10 {
+                                value = |*(1/(16/9))
+                                if.isFalse.data = field:data | imageheight
+                            }
+
+                            20 = TEXT # use cropscaling ratio field if imagewidth is not set
+                            20 {
+                                value = |/(16/9)
+                                if.isFals.data = field:data | imagewidth
+                            }
+                        }
+                    }
+
+                }
+
+                prioriCalc = 1
+            }
+
+            wrap = |c
+            if.isTrue.data = field:data | imageborder
+        }
+    }
+}
+######################################
+### Lets get smal Image as default ###
+######################################
+lib.responsiveImage {
+  # Make use of CSC file configuration
+  file {
+    import.data = field:image | uid
+    treatIdAsReference = 1
+
+    maxW = 480
+
+    width.data = field:data | imagewidth
+    width.override {
+      cObject = CASE
+      cObject {
+        setCurrent.data = field:data | imagecols
+        key.data = field:data | imagecols
+
+        default = TEXT
+        default.value = 96
+
+        1 < .default
+        1.value = 480
+
+        2 < .1
+
+        3 < .default
+        3.value = 160
+
+        4 < .default
+        4.value = 120
+      }
+
+      if {
+        value = 480
+        isGreaterThan.data = field:data | imagewidth
+
+        isTrue = 1
+        isTrue.if {
+          isTrue.data = field:data | imagewidth
+        }
+      }
+    }
+
+    height >
+    height < lib.responsiveImage.sourceCollectionCropscaling.height
+    height.cObject.value < .width
+
+    width.stdWrap < lib.responsiveImage.sourceCollectionCropscaling.width.stdWrap
+  }
+
+  # Make use of CSC configuration
+  layoutKey = {$styles.content.imgtext.layoutKey}
+  layout < tt_content.image.20.1.layout
+  params = class="img-fluid lazyload"
+
+  # Add alt and title tag
+  altText = TEXT
+  altText {
+    data = field:image | alternative
+    htmlSpecialChars = 1
+  }
+
+  titleText < .altText
+  titleText.data = field:image | title
+}
 
 ###############################################
 ### Responsive Breakpoints for Lazy Loading ###
 ###############################################
-tt_content.image.20.1 {
-  params = class="img-fluid lazyload"
-}
-
-tt_content.image.20.1.sourceCollection >
-tt_content.image.20.1.sourceCollection {
+lib.responsiveImage.sourceCollection {
   xl {
     maxW = 1960
 
-    width < tt_content.image.20.1.file.width
-    height < tt_content.image.20.1.file.height
+    width.data = field:data | imagewidth
+    height.data = field:data | imageheight
+
+    width.override < lib.responsiveImage.defaultCropscaling.width.override
+    height.override < lib.responsiveImage.defaultCropscaling.height.override
 
     srcsetCandidate = 1960w
     mediaQuery = (min-device-width:1200px)
@@ -47,11 +194,11 @@ tt_content.image.20.1.sourceCollection {
 
     if {
       value = 1200
-      isGreaterThan.field = imagewidth
+      isGreaterThan.data = field:data | imagewidth
 
       isTrue = 1
       isTrue.if {
-        isTrue.field = imagewidth
+        isTrue.data = field:data | imagewidth
       }
     }
   }
@@ -61,8 +208,8 @@ tt_content.image.20.1.sourceCollection {
     width = 1200
     width.override.cObject = CASE
     width.override.cObject {
-      setCurrent.field = imagecols
-      key.field = imagecols
+      setCurrent.data = field:data | imagecols
+      key.data = field:data | imagecols
 
       default = TEXT
       default.value = 250
@@ -80,9 +227,9 @@ tt_content.image.20.1.sourceCollection {
       4.value = 300
     }
 
-    height < tt_content.image.20.1.sourceCollectionCropscaling.height
+    height < lib.responsiveImage.sourceCollectionCropscaling.height
     height.cObject.value < .width
-    width.stdWrap < tt_content.image.20.1.sourceCollectionCropscaling.width.stdWrap
+    width.stdWrap < lib.responsiveImage.sourceCollectionCropscaling.width.stdWrap
 
     srcsetCandidate = 1200w
     mediaQuery = (min-device-width:992px)
@@ -90,11 +237,11 @@ tt_content.image.20.1.sourceCollection {
 
     if {
       value = 992
-      isGreaterThan.field = imagewidth
+      isGreaterThan.data = field:data | imagewidth
 
       isTrue = 1
       isTrue.if {
-        isTrue.field = imagewidth
+        isTrue.data = field:data | imagewidth
       }
     }
   }
@@ -104,8 +251,8 @@ tt_content.image.20.1.sourceCollection {
     width = 992
     width.override.cObject = CASE
     width.override.cObject {
-      setCurrent.field = imagecols
-      key.field = imagecols
+      setCurrent.data = field:data | imagecols
+      key.data = field:data | imagecols
 
       default = TEXT
       default.value = 199
@@ -122,9 +269,9 @@ tt_content.image.20.1.sourceCollection {
       4 < .default
       4.value = 248
     }
-    height < tt_content.image.20.1.sourceCollectionCropscaling.height
+    height < lib.responsiveImage.sourceCollectionCropscaling.height
     height.cObject.value < .width
-    width.stdWrap < tt_content.image.20.1.sourceCollectionCropscaling.width.stdWrap
+    width.stdWrap < lib.responsiveImage.sourceCollectionCropscaling.width.stdWrap
 
     srcsetCandidate = 992w
     mediaQuery = (min-device-width:768px)
@@ -132,22 +279,21 @@ tt_content.image.20.1.sourceCollection {
 
     if {
       value = 768
-      isGreaterThan.field = imagewidth
+      isGreaterThan.data = field:data | imagewidth
 
       isTrue = 1
       isTrue.if {
-        isTrue.field = imagewidth
+        isTrue.data = field:data | imagewidth
       }
     }
   }
   sm {
-    maxW = 480
-
+    maxW = 768
     width = 768
     width.override.cObject = CASE
     width.override.cObject {
-      setCurrent.field = imagecols
-      key.field = imagecols
+      setCurrent.data = field:data | imagecols
+      key.data = field:data | imagecols
 
       default = TEXT
       default.value = 154
@@ -164,9 +310,9 @@ tt_content.image.20.1.sourceCollection {
       4 < .default
       4.value = 192
     }
-    height < tt_content.image.20.1.sourceCollectionCropscaling.height
+    height < lib.responsiveImage.sourceCollectionCropscaling.height
     height.cObject.value < .width
-    width.stdWrap < tt_content.image.20.1.sourceCollectionCropscaling.width.stdWrap
+    width.stdWrap < lib.responsiveImage.sourceCollectionCropscaling.width.stdWrap
 
     srcsetCandidate = 768w
     mediaQuery = (min-device-width:480px)
@@ -174,11 +320,11 @@ tt_content.image.20.1.sourceCollection {
 
     if {
       value = 480
-      isGreaterThan.field = imagewidth
+      isGreaterThan.data = field:data | imagewidth
 
       isTrue = 1
       isTrue.if {
-        isTrue.field = imagewidth
+        isTrue.data = field:data | imagewidth
       }
     }
   }
@@ -203,66 +349,3 @@ page.jsInline.91.value (
     expFactor: 1
   };
 )
-
-#####################
-### DEFAULT IMAGE ###
-#####################
-temp.image {
-
-  params = class="img-responsive lazyload"
-
-  layoutKey < tt_content.image.20.1.layoutKey
-  layout  < tt_content.image.20.1.layout
-  sourceCollection  < tt_content.image.20.1.sourceCollection
-}
-
-######################################
-### Lets get smal Image as default ###
-######################################
-tt_content.image.20 {
-  1.file {
-    width >
-    width.field = imagewidth
-    width.override {
-      cObject = CASE
-      cObject {
-        setCurrent.field = imagecols
-        key.field = imagecols
-
-        default = TEXT
-        default.value = 96
-
-        1 < .default
-        1.value = 480
-
-        2 < .1
-
-        3 < .default
-        3.value = 160
-
-        4 < .default
-        4.value = 120
-      }
-
-      if {
-        value = 480
-        isGreaterThan.field = imagewidth
-
-        isTrue = 1
-        isTrue.if {
-          isTrue.field = imagewidth
-        }
-      }
-    }
-
-    height >
-    height =
-    height.override < tt_content.image.20.1.sourceCollectionCropscaling.height
-    height.override.cObject {
-      value.field = imagewidth
-      override < tt_content.image.20.1.file.width.override
-    }
-
-    width.stdWrap < tt_content.image.20.1.sourceCollectionCropscaling.width.stdWrap
-  }
-}

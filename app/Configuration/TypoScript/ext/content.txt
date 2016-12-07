@@ -21,8 +21,6 @@ key.field = colPos
   3 = TEXT
   3.value = {$styles.content.imgtext.colPos3.maxW}
 }
-
-
 ###############################
 ### styles.content.getRight ###
 ###############################
@@ -36,7 +34,6 @@ lib.right {
   10 < styles.content.getRight
   15 = RESTORE_REGISTER
 }
-
 ##############################
 ### styles.content.getLeft ###
 ##############################
@@ -50,7 +47,6 @@ lib.left {
   10 < styles.content.getLeft
   15 = RESTORE_REGISTER
 }
-
 ################################
 ### styles.content.getBorder ###
 ################################
@@ -65,7 +61,6 @@ temp.border {
   10.slide = -1
   15 = RESTORE_REGISTER
 }
-
 ##########################
 ### styles.content.get ###
 ##########################
@@ -79,8 +74,9 @@ lib.content {
   10 < styles.content.get
   15 = RESTORE_REGISTER
 }
-
-
+##############################
+### Load Content by colPos ###
+##############################
 temp.cPos = CONTENT
 temp.cPos {
   table = tt_content
@@ -91,23 +87,13 @@ temp.cPos {
     languageField = sys_language_uid
   }
 }
-
-temp.cPosRec < temp.cPos
-temp.cPosRec {
-  slide {
-      collect = -1
-      collectReverse = 1
-  }
-}
-
-#####################
-### Default IMAGE ###
-#####################
-temp.image = IMAGE
-temp.image {
-
-}
+############################
+### Slider Default Pos 1 ###
+############################
+lib.slider < temp.cPos
+lib.slider.select.where = colPos=1
 #############################
 ### Override Fluid Styles ###
 #############################
 lib.fluidContent.partialRootPaths.100 = {$path.template}Private/Partial/fluid_styled_content/
+lib.fluidContent.templateRootPaths.100 = {$path.template}Private/Template/fluid_styled_content/

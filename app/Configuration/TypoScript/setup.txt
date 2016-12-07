@@ -60,16 +60,16 @@ page = PAGE
 ######################
 ### Default Config ###
 ######################
-	lib.home = TEXT
-	lib.home.typolink {
-		parameter = {$nav.homeUid}
-		returnLast = url
-	}
-	lib.search = TEXT
-	lib.search.typolink {
-		parameter = {$plugin.tx_indexedsearch.searchUID}
-		returnLast = url
-	}
+lib.home = TEXT
+lib.home.typolink {
+    parameter = {$nav.homeUid}
+    returnLast = url
+}
+lib.search = TEXT
+lib.search.typolink {
+    parameter = {$plugin.tx_indexedsearch.searchUID}
+    returnLast = url
+}
 
 ####################
 ### Site Scripts ###
@@ -206,62 +206,27 @@ lib.nav {
 
 lib.footerNav = COA
 lib.footerNav {
-	wrap = <ul class="nav">|</ul>
-	10 = HMENU
-	10 {
-		special = list
-		special.value = {$nav.footer}
+    10 < temp.cPos
+    10.select.where= colPos=2
 
-		includeNotInMenu = 1
+    20 < temp.cPos
+    20.select.where= colPos=3
 
-		1 = TMENU
-		1 {
-			noBlur = 1
-			expAll = 1
+    30 < temp.cPos
+    30.select.where= colPos=4
 
-			NO = 1
-			NO {
-				wrapItemAndSub = <li>|</li>
-				ATagParams = title="{field:subtitle}"
-				allStdWrap.insertData = 1
-
-
-				#################################
-				### HTML Direkt Link / Anchor ###
-				#################################
-					doNotLinkIt = 1
-					doNotLinkIt.if {
-						value = 3
-						equals.field = doktype
-					}
-
-					stdWrap {
-						cObject = COA
-						cObject {
-							5 = TEXT
-							5 {
-								value.field = title
-
-								typolink {
-									section.field = subtitle
-									parameter.field = url
-									title.field = title
-									ATagParams = data-link="true"
-
-									if {
-										value = 3
-										equals.field = doktype
-									}
-								}
-							}
-						}
-					}
-				# end stdWrap
-			}
-		}
-	}
+    40 < temp.cPos
+    40.select.where= colPos=5
 }
-
+#################
+### Copyright ###
+#################
+lib.copyr = TEXT
+lib.copyr {
+    data = date:U
+    strftime =%Y
+    noTrimWrap = |&copy; 2016 - | Web Kon Internetagentur|
+}
 #####################
 ### Load Template ###
 #####################
