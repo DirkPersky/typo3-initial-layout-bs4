@@ -1,19 +1,32 @@
 @mixin typo3CeMedia(){
-
-  .ce-inner {
     @include rem(margin, -5);
 
     .ce-row {
-      .ce-column {
-        @include rem(padding, 5);
-        display: block;
-        float: left;
-      }
       &:after {
         content: "";
         display: table;
         clear: both;
       }
+
+      .ce-column {
+        @include rem(padding, 5);
+        display: block;
+        float: left;
+
+        text-align: center;
+        display: block;
+        float: left;
+
+        figure {
+          display: inline-block;
+          max-width: 100%;
+
+          picture {
+            display: inline-block;
+            max-width: 100%;
+
+          }
+        }
     }
   }
 
