@@ -7,6 +7,12 @@
         display: table;
         clear: both;
       }
+      // Center Images
+      .ce-center & {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
 
       .ce-column {
         @include rem(padding, 5);
