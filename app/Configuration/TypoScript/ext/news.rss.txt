@@ -1,0 +1,33 @@
+[globalVar = TSFE:type = 9818]
+# https://docs.typo3.org/typo3cms/extensions/news/3.0.0/Main/Administration/Rss/Index.html
+config {
+    disableAllHeaderCode = 1
+    xhtml_cleaning = none
+    admPanel = 0
+    metaCharset = utf-8
+    additionalHeaders = Content-Type:text/xml;charset=utf-8
+    disablePrefixComment = 1
+}
+
+pageNewsRSS = PAGE
+pageNewsRSS {
+    typeNum = 9818
+    10 < tt_content.list.20.news_pi1
+    10 {
+            switchableControllerActions {
+                    News {
+                            1 = list
+                    }
+            }
+            settings < plugin.tx_news.settings
+            settings {
+                    categories = {$rss.categories} # Limit Categories
+                    categoryConjunction = notor
+                    limit = {$rss.limit} # Limit Result
+                    detailPid = {$rss.detailPid} # Detail Page
+                    startingpoint = {$rss.startingpoint} # NewsFolderID
+                    format = {$rss.format} # XML or ATOM
+            }
+    }
+}
+[global]

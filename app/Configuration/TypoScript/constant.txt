@@ -82,7 +82,6 @@ plugin.tx_powermail{
     templateRootPath = fileadmin/Mysite4/app/Resources/Private/Template/powermail/
   }
 }
-
 ###################
 ### SCRIPTMEGER ###
 ###################
@@ -102,8 +101,32 @@ plugin.tx_scriptmerger {
       }
     }
 }
-
 #################
 ### SOURCEOPT ###
 #################
 sourceopt.formatHtml = 1
+
+############################
+### RSS Feed von TX_News ###
+############################
+plugin.tx_news {
+    rss.channel {
+            title = RSS Title
+            description =
+            link = RSS-Base-URL
+            language = de_DE
+            copyright = web kon Internetagentur
+            category =
+            generator = TYPO3 EXT:news
+    }
+}
+#######################
+### Config RSS Feed ###
+#######################
+rss {
+    limit = # Limit Result
+    detailPid = # Detail Page
+    categories = * # Limit Categories
+    startingpoint = # NewsFolderID
+    format = xml  # XML or ATOM
+}
