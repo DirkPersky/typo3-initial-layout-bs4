@@ -1,0 +1,27 @@
+@mixin typo3CeMedia(){
+
+  .ce-inner {
+    @include rem(margin, -5);
+
+    .ce-row {
+      .ce-column {
+        @include rem(padding, 5);
+        display: block;
+        float: left;
+      }
+      &:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+    }
+  }
+
+  @for $i from 1 through 12 {
+    &[data-ce-columns="#{$i}"] {
+      .ce-column {
+        width: (100% / $i);
+      }
+    }
+  }
+}

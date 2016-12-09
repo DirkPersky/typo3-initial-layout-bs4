@@ -84,3 +84,7 @@ div[class*="csc-textpic-intext"]:after {
 img.lazyloaded {
 	width: auto;
 }
+
+.ce-gallery {
+	@include typo3CeMedia();
+}
