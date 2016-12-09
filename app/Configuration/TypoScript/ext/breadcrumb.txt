@@ -20,6 +20,7 @@ lib.breadcrumb {
           NO {
             ATagParams = title="{field:subtitle}"
             wrapItemAndSub = <li>|</li>
+            stdWrap.stripHtml = 1
 
             #################################
     				### HTML Direkt Link / Anchor ###
@@ -36,6 +37,7 @@ lib.breadcrumb {
                   5 = TEXT
                   5 {
                     value.field = title
+                    stdWrap.stripHtml = 1
 
                     typolink {
                       section.field = subtitle
@@ -56,6 +58,7 @@ lib.breadcrumb {
 
           CUR = 1
           CUR.doNotLinkIt = 1
+          CUR.stdWrap.stripHtml = 1
           CUR.wrapItemAndSub = <li class="active">|</li>
         }
     }

@@ -69,6 +69,7 @@ page.headerData.10 = TEXT
 page.headerData.10 {
   field = subtitle // title
   noTrimWrap = |<title>| - {$meta.title}</title>|
+  stdWrap.stripHtml = 1
 }
 
 /*
