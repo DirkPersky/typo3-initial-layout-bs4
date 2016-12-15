@@ -10,8 +10,13 @@
 		>
 			<f:if condition="{gallery.count.rows} > 1">
 				<!--- Indicators -->
-				<ol class="carousel-indicators autofill-carousel">
+				<ol class="carousel-indicators">
+					<f:for each="{gallery.rows}" as="row" iteration="row_iteration" key="entrynumber">
+						<li data-target="#carousel-generic-{data.uid}" data-slide-to="{f:cObject(typoscriptObjectPath: 'lib.math', data: '{entrynumber} -1')}" class="{f:if(condition:'{row_iteration.isFirst}',then:'active')}">
+						</li>
+					</f:for>
 				</ol>
+
 			</f:if>
 			<!-- Carousel Items -->
 			<div class="carousel-inner">
