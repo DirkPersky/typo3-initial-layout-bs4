@@ -20,6 +20,19 @@ tt_content.image.20.1.imageLinkWrap {
         data = file:current:link
         split {
           token = youtube.com/embed
+
+          token.override = player.vimeo.com
+          token.override.if {
+            value.data = file:current:link
+            equals.cObject = TEXT
+            equals.cObject {
+              data = file:current:link
+              split {
+                token = player.vimeo.com
+              }
+            }
+            negate = 1
+          }
         }
       }
 
