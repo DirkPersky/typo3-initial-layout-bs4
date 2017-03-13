@@ -42,7 +42,13 @@ plugin.tx_powermail.settings.javascript.powermailJQueryUi =
 # allow HTML
 plugin.tx_powermail.settings.misc.htmlField = 1
 plugin.tx_powermail.settings.misc.disableRemoveXss = 1
-
+plugin.tx_powermail {
+	view {
+		templateRootPath = fileadmin/Mysite4/app/Resources/Private/Template/powermail/
+		partialRootPath = fileadmin/Mysite4/app/Resources/Private/Partial/powermail/
+		layoutRootPath = fileadmin/Mysite4/app/Resources/Private/Layouts/powermail/
+	}
+}
 ###################
 ### IMAGE WIDTH ###
 ###################
