@@ -2,17 +2,17 @@
 @function strip-unit($num) {
   @return $num / ($num * 0 + 1);
 }
-@function rem-calc($value, $base-value: $font-size-root) {
+@function rem-calc($value, $base-value: $font-size-base) {
 	$value: strip-unit($value) / strip-unit($base-value) * 1rem;
   	@if ($value == 0rem) { $value: 0; } // Turn 0em into 0
  	@return $value;
 }
 
-@mixin font-size($value: $font-size-root) {
+@mixin font-size($value: $font-size-base) {
   @include rem(font-size, $value);
 }
 
-@mixin line-height($value: $font-size-root, $height: $line-height-base) {
+@mixin line-height($value: $font-size-base, $height: $line-height-base) {
 	$value: floor(($value * $height));
 
   @include rem(line-height, $value);
