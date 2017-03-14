@@ -403,6 +403,72 @@
                             </config>
                         </TCEforms>
                     </class>
+                    <class_col1 type="array">
+                        <TCEforms type="array">
+                            <label>Spalte 1 CSS-Class</label>
+                            <config type="array">
+                                <type>input</type>
+                                <size>48</size>
+                                <eval>trim</eval>
+                                <default></default>
+                            </config>
+                        </TCEforms>
+                    </class_col1>
+                    <class_col2 type="array">
+                        <TCEforms type="array">
+                            <label>Spalte 2 CSS-Class</label>
+                            <config type="array">
+                                <type>input</type>
+                                <size>48</size>
+                                <eval>trim</eval>
+                                <default></default>
+                            </config>
+                        </TCEforms>
+                    </class_col2>
+                    <class_col3 type="array">
+                        <TCEforms type="array">
+                            <label>Spalte 3 CSS-Class</label>
+                            <config type="array">
+                                <type>input</type>
+                                <size>48</size>
+                                <eval>trim</eval>
+                                <default></default>
+                            </config>
+                        </TCEforms>
+                    </class_col3>
+                    <class_col4 type="array">
+                        <TCEforms type="array">
+                            <label>Spalte 4 CSS-Class</label>
+                            <config type="array">
+                                <type>input</type>
+                                <size>48</size>
+                                <eval>trim</eval>
+                                <default></default>
+                            </config>
+                        </TCEforms>
+                    </class_col4>
+                    <class_col5 type="array">
+                        <TCEforms type="array">
+                            <label>Spalte 5 CSS-Class</label>
+                            <config type="array">
+                                <type>input</type>
+                                <size>48</size>
+                                <eval>trim</eval>
+                                <default></default>
+                            </config>
+                        </TCEforms>
+                    </class_col5>
+                    <class_col6 type="array">
+                        <TCEforms type="array">
+                            <label>Spalte 6 CSS-Class</label>
+                            <config type="array">
+                                <type>input</type>
+                                <size>48</size>
+                                <eval>trim</eval>
+                                <default></default>
+                            </config>
+                        </TCEforms>
+                    </class_col6>
                 </el>
             </ROOT>
 		</general>
