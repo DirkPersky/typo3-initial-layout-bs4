@@ -25,13 +25,6 @@ tt_content.gridelements_pi1.20.10.setup {
             noTrimWrap = | ||
         }
 
-        50 = TEXT
-        50 {
-            field = flexform_class_col1
-            fieldRequired = flexform_class_col1
-            noTrimWrap = | ||
-        }
-
          20 = TEXT
          20 {
            field = flexform_visibility_element
@@ -137,6 +130,17 @@ tt_content.gridelements_pi1.20.10.setup {
              }
            }
 
+           30 = TEXT
+           30 {
+             field = flexform_class_col1
+             noTrimWrap = | ||
+             split {
+               token = ,
+               cObjNum = 1
+               1.current = 1
+               1.noTrimWrap = | ||
+             }
+           }
            stdWrap.noTrimWrap = | class="|"|
          }
        }
@@ -167,17 +171,17 @@ tt_content.gridelements_pi1.20.10.setup {
   bs-grid-3 {
     columns.12 < .columns.10
   	columns.12 {
-      preCObject {
-          contentColumnClass.cObject {
-              10.field = flexform_width_column_xs_3
-              11.field = flexform_width_column_sm_3
-              12.field = flexform_width_column_md_3
-              13.field = flexform_width_column_lg_3
-              14.field = flexform_width_column_xl_3
-              20.field = flexform_visibility_col3
-              30.field = flexform_class_col3
-          }
-      }
+  		preCObject {
+  			contentColumnClass.cObject {
+  				10.field = flexform_width_column_xs_3
+  				11.field = flexform_width_column_sm_3
+  				12.field = flexform_width_column_md_3
+  				13.field = flexform_width_column_lg_3
+                14.field = flexform_width_column_xl_3
+  				20.field = flexform_visibility_col3
+  				30.field = flexform_class_col3
+  			}
+  		}
   	}
   }
 
@@ -185,16 +189,16 @@ tt_content.gridelements_pi1.20.10.setup {
   bs-grid-4 {
     columns.13 < .columns.10
   	columns.13 {
-      preCObject {
-        contentColumnClass.cObject {
-            10.field = flexform_width_column_xs_4
-            11.field = flexform_width_column_sm_4
-            12.field = flexform_width_column_md_4
-            13.field = flexform_width_column_lg_4
-            14.field = flexform_width_column_xl_4
-            20.field = flexform_visibility_col4
-            30.field = flexform_class_col4
-        }
+  		preCObject {
+  			contentColumnClass.cObject {
+  				10.field = flexform_width_column_xs_4
+  				11.field = flexform_width_column_sm_4
+  				12.field = flexform_width_column_md_4
+  				13.field = flexform_width_column_lg_4
+                14.field = flexform_width_column_xl_4
+  				20.field = flexform_visibility_col4
+  				30.field = flexform_class_col4
+  			}
       }
   	}
   }
