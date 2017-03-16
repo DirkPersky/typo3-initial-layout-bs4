@@ -1,6 +1,6 @@
 // main: ../style.scss
 html {
-	font-size: $font-size-root;
+	font-size: $font-size-base;
 	height: 100%;
 }
 html,
@@ -15,8 +15,8 @@ body{
 	overflow-y: scroll;
 	overflow-x: hidden;
 
-	@include font-size($font-size-root);
-	@include line-height($font-size-root);
+	@include font-size($font-size-base);
+	@include line-height($font-size-base);
 
 	@include media-breakpoint-up(md) {
 		// padding-top: 70px;
