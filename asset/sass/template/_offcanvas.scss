@@ -46,179 +46,179 @@
  */
 @mixin offcanvisColor($color-link-color, $color-toggle-hover-bg) {
   // OffCanvis
-	.offCanvis {
-		// SET Background-color
-		background-color: $offcanvis-bg;
-		.nav {
-			> li {
-				// Link
-				> a {
-					// Mobile
-					// Set divider
-					border-bottom: 1px solid $color-link-color;
-				}
+  .offCanvis {
+    // SET Background-color
+    background-color: $offcanvis-bg;
+    .nav {
+      > li {
+        // Link
+        > a {
+          // Mobile
+          // Set divider
+          border-bottom: 1px solid $color-link-color;
+        }
 
-				&[data-nav="true"] {
-					> a {
-						&:after {
-							border-right-color: $color-link-color;
-						}
+        &[data-nav="true"] {
+          > a {
+            &:after {
+              border-right-color: $color-link-color;
+            }
 
-						@include hover-focus {
-							&:after {
-								border-right-color: $color-toggle-hover-bg;
-							}
-						}
-					}
-				}
-				// Close BTN für Sub Menu
-				&.dropdown-nav-close {
-					// Mobile::Close Button
-					.btn {
-						&.btn-close {
-							// Set Color to Default
-							background-color: $color-link-color;
-							color: $offcanvis-bg;
-						}
-					}
-				}
-			}
-		}
-	}
+            @include hover-focus {
+              &:after {
+                border-right-color: $color-toggle-hover-bg;
+              }
+            }
+          }
+        }
+        // Close BTN für Sub Menu
+        &.dropdown-nav-close {
+          // Mobile::Close Button
+          .btn {
+            &.btn-close {
+              // Set Color to Default
+              background-color: $color-link-color;
+              color: $offcanvis-bg;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
-@mixin offCanvisMedias ($mediaUp, $mediaDown){
-	.offCanvis {
-		// Desktop
-		@include media-breakpoint-up($mediaUp) {
-			background-color: transparent !important;
-			// Clear Transitions
-			@include transition( none );
-			@include transform( none );
-			// Clear Overflow
-			overflow: visible;
-			width: auto;
-			// Reset Position
-			position: relative;;
-			bottom: auto;
-			right: auto;
-			left: auto;
-			top: auto;
-		}
-	}
+@mixin offCanvisMedias($mediaUp, $mediaDown) {
+  .offCanvis {
+    // Desktop
+    @include media-breakpoint-up($mediaUp) {
+      background-color: transparent !important;
+      // Clear Transitions
+      @include transition(none);
+      @include transform(none);
+      // Clear Overflow
+      overflow: visible;
+      width: auto;
+      // Reset Position
+      position: relative;;
+      bottom: auto;
+      right: auto;
+      left: auto;
+      top: auto;
+    }
+  }
 
-	.nav-overlay {
-		@include media-breakpoint-up($mediaUp) {
-			display: none;
-		}
-	}
+  .nav-overlay {
+    @include media-breakpoint-up($mediaUp) {
+      display: none;
+    }
+  }
 
-	.nav {
-		// Mobile
-		@include media-breakpoint-down($mediaDown) {
-			// SET Overflow for Scrolling
-			overflow-x:hidden;
-			overflow-y: auto;
-			// Normalize
-			float: none;
-		}
+  .nav {
+    // Mobile
+    @include media-breakpoint-down($mediaDown) {
+      // SET Overflow for Scrolling
+      overflow-x: hidden;
+      overflow-y: auto;
+      // Normalize
+      float: none;
+    }
 
-		> li.nav-item {
-			// Dekstop
-			@include media-breakpoint-up($mediaUp) {
-				// Float Elements on Desktop
-				display: inline-block;
-				float: left;
-				// Set Relative for Desktop Dropdowns
-				position: relative;
-			}
+    > li.nav-item {
+      // Dekstop
+      @include media-breakpoint-up($mediaUp) {
+        // Float Elements on Desktop
+        display: inline-block;
+        float: left;
+        // Set Relative for Desktop Dropdowns
+        position: relative;
+      }
 
-			& + li.nav-item {
-				// Mobile
-				@include media-breakpoint-down($mediaDown) {
-					margin-left: 0;
-				}
-			}
-			> a {
-				// Desktop
-				@include media-breakpoint-up($mediaUp) {
-					// Rest divider
-					border-bottom: 0;
-				}
-			}
-			// Child Toogle Wrap
-			> span.nav-trans {
-				//Mobile
-				@include media-breakpoint-down($mediaDown) {
-					overflow: hidden;
-				}
-				// Desktop
-				@include media-breakpoint-up($mediaUp) {
-					@include transform(translateX(0));
-					background-color: $dropdown-bg;
-					bottom: auto;
-					right: auto;
-					top: 100%;
+      & + li.nav-item {
+        // Mobile
+        @include media-breakpoint-down($mediaDown) {
+          margin-left: 0;
+        }
+      }
+      > a {
+        // Desktop
+        @include media-breakpoint-up($mediaUp) {
+          // Rest divider
+          border-bottom: 0;
+        }
+      }
+      // Child Toogle Wrap
+      > span.nav-trans {
+        //Mobile
+        @include media-breakpoint-down($mediaDown) {
+          overflow: hidden;
+        }
+        // Desktop
+        @include media-breakpoint-up($mediaUp) {
+          @include transform(translateX(0));
+          background-color: $dropdown-bg;
+          bottom: auto;
+          right: auto;
+          top: 100%;
 
-					visibility: hidden;
-					opacity: 0;
-				}
-				> ul {
-					@include media-breakpoint-up($mediaUp) {
-						// @extend .dropdown-menu;
-						// display: block;
-					}
+          visibility: hidden;
+          opacity: 0;
+        }
+        > ul {
+          @include media-breakpoint-up($mediaUp) {
+            // @extend .dropdown-menu;
+            // display: block;
+          }
 
-					> li {
+          > li {
 
-						> a {
-							// Desktop
-							@include media-breakpoint-up($mediaUp) {
-								// Rest divider
-								border-bottom: 0;
-							}
-						}
-					}
-				}
-				// IF Toogle Submenu fly in
-				&.on {
-					//Mobile
-					@include media-breakpoint-down($mediaDown) {
-						@include transform(translateX(0));
-					}
-				}
-			}
+            > a {
+              // Desktop
+              @include media-breakpoint-up($mediaUp) {
+                // Rest divider
+                border-bottom: 0;
+              }
+            }
+          }
+        }
+        // IF Toogle Submenu fly in
+        &.on {
+          //Mobile
+          @include media-breakpoint-down($mediaDown) {
+            @include transform(translateX(0));
+          }
+        }
+      }
 
-			@include hover-focus {
-				> span.nav-trans {
-					@include media-breakpoint-up($mediaUp) {
-						visibility: visible;
-						opacity: 1;
-					}
-				}
-			}
-		}
+      @include hover-focus {
+        > span.nav-trans {
+          @include media-breakpoint-up($mediaUp) {
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+      }
+    }
 
-		> li {
+    > li {
 
-			&[data-nav="true"] {
-				> a {
-					&:after {
-						@include media-breakpoint-up($mediaUp) {
-							display: none;
-						}
-					}
-				}
-			}
-			// Close BTN für Sub Menu
-			&.dropdown-nav-close {
-				// Desktop::Hide BTN
-				@include media-breakpoint-up($mediaUp) {
-					display: none;
-				}
-			}
-		}
-	}
+      &[data-nav="true"] {
+        > a {
+          &:after {
+            @include media-breakpoint-up($mediaUp) {
+              display: none;
+            }
+          }
+        }
+      }
+      // Close BTN für Sub Menu
+      &.dropdown-nav-close {
+        // Desktop::Hide BTN
+        @include media-breakpoint-up($mediaUp) {
+          display: none;
+        }
+      }
+    }
+  }
 }
 
 // Rebuild Bootstrap Drilldown to OffCanvis nav
@@ -226,15 +226,15 @@
   padding-left: 0;
   padding-right: 0;
   // Offcanvis Button :: Mobile Only
-	.navbar-toggler {
+  .navbar-toggler {
     // Set Button to full size
-		@include rem(line-height , $navbar-height - 20);
-		@include rem(padding, 10);
-		@include rem(height , $navbar-height);
+    @include rem(line-height, $navbar-height - 20);
+    @include rem(padding, 10);
+    @include rem(height, $navbar-height);
     // Animate Color Change
-    @include transition( all 0.7s );
+    @include transition(all 0.7s);
     // Normelize
-    @include rem(border-radius , 0);
+    @include rem(border-radius, 0);
     @include rem(margin, -8 0 -8 -15);
     display: inline-block;
     width: auto;
@@ -246,9 +246,9 @@
     // @if($offcanvis-overlay){
     //   @include rem(width, $offcanvis-overlay);
     // }
-	}
+  }
 
-	.main-nav {
+  .main-nav {
     // Reset Bootstrap
     height: auto !important;
     display: block !important;
@@ -257,7 +257,7 @@
       background-color: $offcanvis-bg;
       // Mobile
       @include transform(translateX(-($offcanvis-width - $offcanvis-overlay)));
-      @include transition( all 0.7s );
+      @include transition(all 0.7s);
       @include rem(margin, 0);
       display: block;
       // Set Offcanvis Size
@@ -273,11 +273,11 @@
       @include rem(left, 0);
       @include rem(top, $offcanvis-overlay-height);
 
-			&.offCanvis-right {
-				@include transform(translateX(($offcanvis-width - $offcanvis-overlay)));
-				@include rem(right, 0);
-				left: auto;
-			}
+      &.offCanvis-right {
+        @include transform(translateX(($offcanvis-width - $offcanvis-overlay)));
+        @include rem(right, 0);
+        left: auto;
+      }
     }
 
     .nav {
@@ -288,63 +288,63 @@
         // Mobile
         // Normalize
         position: static;
-				float: none;
+        float: none;
         // Link
         > a {
           // Mobile
           @include rem(padding, 7 10);
         }
-				> span.nav-trans {
-					background-color: $offcanvis-bg;
-					// Animate Submenu
-					@include transform(translateX($offcanvis-width));
-					@include transition( all 0.7s );
-					// Set Size of Submenu
-					position: absolute;
-					z-index: 10;
-					bottom: 0;
-					right: 0;
-					left: 0;
-					top: 0;
-				}
+        > span.nav-trans {
+          background-color: $offcanvis-bg;
+          // Animate Submenu
+          @include transform(translateX($offcanvis-width));
+          @include transition(all 0.7s);
+          // Set Size of Submenu
+          position: absolute;
+          z-index: 10;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          top: 0;
+        }
 
-				&[data-nav="true"] {
-					> a {
-						position: relative;
-						$size-arrow: 5px;
-						&:after {
-							@include rem(border-width, $size-arrow);
-							border-bottom-color:transparent;
-							border-left-color:transparent;
-							border-top-color:transparent;
-							border-right-color:#333;
-							border-style: solid;
-							content: '';
+        &[data-nav="true"] {
+          > a {
+            position: relative;
+            $size-arrow: 5px;
+            &:after {
+              @include rem(border-width, $size-arrow);
+              border-bottom-color: transparent;
+              border-left-color: transparent;
+              border-top-color: transparent;
+              border-right-color: #333;
+              border-style: solid;
+              content: '';
 
-							@include rem(margin-top, -($size-arrow));
-							@include rem(right, 10);
-							display: inline-block;
-							position: absolute;
-							top: 50%;
-						}
-					}
-				}
+              @include rem(margin-top, -($size-arrow));
+              @include rem(right, 10);
+              display: inline-block;
+              position: absolute;
+              top: 50%;
+            }
+          }
+        }
         // Close BTN für Sub Menu
         &.dropdown-nav-close {
           // Mobile::Close Button
           .btn {
-						&.btn-close {
+            &.btn-close {
               // Set Size
-							@include rem(padding, 10 15);
-							@include rem(font-size, 20);
-							font-weight: bold;
+              @include rem(padding, 10 15);
+              @include rem(font-size, 20);
+              font-weight: bold;
               // Normalize
-							text-align: left;
-							border-radius: 0;
-						}
-					}
-				}
-			}
+              text-align: left;
+              border-radius: 0;
+            }
+          }
+        }
+      }
     }
     // Overlay to Close
     .nav-overlay {
@@ -371,7 +371,7 @@
       @include rem(top, $offcanvis-overlay-height);
     }
 
-    &.in {
+    &.show {
       // Toogle Offcanvis
       .offCanvis {
         // Mobile
@@ -384,23 +384,23 @@
       }
     }
 
-		&.navbar-toggleable {
-			&-sm {
-				@include offCanvisMedias(sm,xs);
-			}
-			&-md {
-				@include offCanvisMedias(md,sm);
-			}
-			&-lg {
-				@include offCanvisMedias(lg,md);
-			}
-		}
-	}
+    &.navbar-toggleable {
+      &-sm {
+        @include offCanvisMedias(sm, xs);
+      }
+      &-md {
+        @include offCanvisMedias(md, sm);
+      }
+      &-lg {
+        @include offCanvisMedias(lg, md);
+      }
+    }
+  }
 
   &.navbar-light {
     @include offcanvisColor($navbar-light-color, $navbar-light-hover-color);
   }
   &.navbar-dark {
-    @include offcanvisColor($navbar-dark-color, $navbar-dark-hover-color);
+    //@include offcanvisColor($navbar-dark-color, $navbar-dark-hover-color);
   }
 }

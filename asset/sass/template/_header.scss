@@ -1,6 +1,11 @@
 // main: ../style.scss
 #navigation {
 	.navbar {
+		.container {
+			@include media-breakpoint-down(sm) {
+				width: 100%;
+			}
+		}
 		.navbar-toggler {
 			background-image: none;
 		}

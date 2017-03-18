@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]><html lang="de" class="no-js ie6 oldie"><![endif]-->
-<!--[if IE 7 ]><html lang="de" class="no-js ie7 oldie"><![endif]-->
-<!--[if IE 8 ]><html lang="de" class="no-js ie8 oldie"><![endif]-->
-<!--[if IE 9 ]><html lang="de" class="no-js ie9"><![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--><html lang="de" class="no-js"><!--<![endif]-->
-  <head >
+<!--[if lt IE 7 ]>
+<html lang="de" class="no-js ie6 oldie"><![endif]-->
+<!--[if IE 7 ]>
+<html lang="de" class="no-js ie7 oldie"><![endif]-->
+<!--[if IE 8 ]>
+<html lang="de" class="no-js ie8 oldie"><![endif]-->
+<!--[if IE 9 ]>
+<html lang="de" class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="de" class="no-js"><!--<![endif]-->
+<head>
     <title></title>
     <!-- Chrome, Firefox OS and Opera -->
     <meta name="theme-color" content="#333">
@@ -16,59 +21,120 @@
     <link rel="shortcut icon" href="img/favicon.png" type="image/png; charset=binary">
     <link rel="icon" href="img/favicon.png" type="image/png; charset=binary">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="css/style.css" rel="stylesheet"  type="text/css" media="screen" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="screen"/>
     <script src="js/modernizr.min.js"></script>
-  </head>
+</head>
 
-  <body>
-    <header id="navigation">
-      <nav class="navbar navbar-static-top navbar-light" role="navigation">
+<body>
+<header id="navigation">
+    <nav class="navbar navbar-static-top navbar-light" role="navigation">
         <div class="container">
-          <!-- OffCanvis Toogle -->
-          <button class="navbar-toggler hamburger hamburger--collapse hidden-md-up" type="button"
-            aria-label="Menu" aria-controls="navigation" data-toggle="collapse" data-target=".main-nav">
+            <!-- OffCanvis Toogle -->
+            <button class="navbar-toggler hamburger hamburger--collapse hidden-md-up pull-right" type="button"
+                    aria-label="Menu" aria-controls="navigation" data-toggle="collapse" data-target=".main-nav">
             <span class="hamburger-box">
               <span class="hamburger-inner"></span>
             </span>
-          </button>
-          <!-- Logo -->
-          <a class="navbar-brand pull-right pull-md-left" href="#">
-            <img src="img/layout/logo.jpg">
-          </a>
-          <!-- Desktop nav -->
-          <ul class="nav navbar-nav pull-md-right hidden-sm-down">
-            <li class="nav-item">
-              <a href="#mega" class="nav-link" data-mega="#mega">Link</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link" data-mega="#mega2">Link</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">Link</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">Link</a>
-            </li>
-          </ul>
-          <!-- Navigation -->
+            </button>
+            <!-- Logo -->
+            <a class="navbar-brand pull-right pull-md-left" href="#">
+                <img src="img/layout/logo.jpg">
+            </a>
+            <!-- Desktop nav -->
+            <ul class="nav navbar-nav pull-md-right hidden-sm-down">
+                <li class="nav-item">
+                    <a href="#mega" class="nav-link" data-mega="#mega">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-mega="#mega2">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Link</a>
+                </li>
+            </ul>
+            <!-- Navigation -->
 
         </div>
-      </nav>
-      <nav class="navbar navbar-mega navbar-light">
+    </nav>
+    <nav class="navbar navbar-mega navbar-light">
         <div class="container">
-          <div class="collapse navbar-toggleable-md main-nav in">
-            <!-- Overlay to Background Click toogle OffCanvis -->
-            <button type="button" class="nav-overlay" data-toggle="collapse" data-target=".main-nav" aria-expanded="true" style=""> &nbsp; </button>
-            <!-- Offcanvis -->
-            <div class="offCanvis">
-              <!-- Off-Canvis Nav -->
-              <ul class="nav navbar-nav">
-                <!-- data-nav="true" :: activte JavaScript -->
-                <li class="nav-item" data-nav="true" id="mega">
-                  <a href="#" class="nav-link">Link</a>
-                  <!-- Wrap Childs::Start -->
-                  <span class="nav-trans">
+            <div class="collapse navbar-toggleable-md main-nav in">
+                <!-- Overlay to Background Click toogle OffCanvis -->
+                <button type="button" class="nav-overlay" data-toggle="collapse" data-target=".main-nav"
+                        aria-expanded="true" style=""> &nbsp; </button>
+                <!-- Offcanvis -->
+                <div class="offCanvis offCanvis-right">
+                    <!-- Off-Canvis Nav -->
+                    <ul class="nav navbar-nav">
+                        <!-- data-nav="true" :: activte JavaScript -->
+                        <li class="nav-item" data-nav="true" id="mega">
+                            <a href="#" class="nav-link">Link</a>
+                            <!-- Wrap Childs::Start -->
+                            <span class="nav-trans">
+                    <ul class="nav {CUSTOMCLASS}">
+                      <!-- Close Child on Mobile::Start -->
+                      <li class="dropdown-nav-close">
+                        <button class="btn btn-block btn-close">
+                          <i class="fa fa-angle-left"></i>
+                        </button>
+                      </li>
+                      <li class="nav-item">
+                        <span class="nav-header">Link</span>
+
+                        <ul class="nav">
+                          <li class="mega-sub" data-nav="true">
+                              <a href="" title="" class="nav-link">
+                                  Produktangebot
+                              </a>
+                              <span class="nav-trans">
+                                  <ul class="nav">
+                                     <li><a href="#" class="nav-link">Link</a></li>
+                                      <li><a href="#" class="nav-link">Link</a></li>
+                                      <li><a href="#" class="nav-link">Link</a></li>
+                                      <li><a href="#" class="nav-link">Link</a></li>
+                                      <li><a href="#" class="nav-link">Link</a></li>
+                                  </ul>
+                              </span>
+                          </li>
+                          <li><a href="#" class="nav-link">Link</a></li>
+                          <li><a href="#" class="nav-link">Link</a></li>
+                          <li><a href="#" class="nav-link">Link</a></li>
+                          <li><a href="#" class="nav-link">Link</a></li>
+                          <li><a href="#" class="nav-link">Link</a></li>
+                        </ul>
+                      </li>
+                      <li class="nav-item">
+                        <span class="nav-header">Link</span>
+
+                        <ul class="nav">
+                          <li><a href="#" class="nav-link">Link</a></li>
+                          <li><a href="#" class="nav-link">Link</a></li>
+                          <li><a href="#" class="nav-link">Link</a></li>
+                          <li><a href="#" class="nav-link">Link</a></li>
+                          <li><a href="#" class="nav-link">Link</a></li>
+                        </ul>
+                      </li>
+
+                      <li class="nav-item hidden-sm-down">
+                        <span class="nav-header">Link</span>
+
+                        <div>
+                          <p> asda dah dhaks hdkash djkasdhjkash dkhasdh asjkhd kahd kash dkash dk ahkh dkhas dk has dhaskj dhasdjkhaksd kash khdoasiud asdas h</p>
+                        </div>
+                      </li>
+                        <!-- Close Child on Mobile::Ende -->
+                    </ul>
+                  </span>
+                            <!-- Wrap Childs::Ende -->
+                        </li>
+                        <li class="nav-item" data-nav="true" id="mega2">
+                            <a href="#" class="nav-link">Link</a>
+                            <!-- Wrap Childs::Start -->
+                            <span class="nav-trans">
                     <ul class="nav {CUSTOMCLASS}">
                       <!-- Close Child on Mobile::Start -->
                       <li class="dropdown-nav-close">
@@ -106,69 +172,23 @@
                           <p> asda dah dhaks hdkash djkasdhjkash dkhasdh asjkhd kahd kash dkash dk ahkh dkhas dk has dhaskj dhasdjkhaksd kash khdoasiud asdas h</p>
                         </div>
                       </li>
-                      <!-- Close Child on Mobile::Ende -->
+                        <!-- Close Child on Mobile::Ende -->
                     </ul>
                   </span>
-                  <!-- Wrap Childs::Ende -->
-                </li>
-                <li class="nav-item" data-nav="true" id="mega2">
-                  <a href="#" class="nav-link">Link</a>
-                  <!-- Wrap Childs::Start -->
-                  <span class="nav-trans">
-                    <ul class="nav {CUSTOMCLASS}">
-                      <!-- Close Child on Mobile::Start -->
-                      <li class="dropdown-nav-close">
-                        <button class="btn btn-block btn-close">
-                          <i class="fa fa-angle-left"></i>
-                        </button>
-                      </li>
-                      <li class="nav-item">
-                        <span class="nav-header">Link</span>
-
-                        <ul class="nav">
-                          <li><a href="#" class="nav-link">Link</a></li>
-                          <li><a href="#" class="nav-link">Link</a></li>
-                          <li><a href="#" class="nav-link">Link</a></li>
-                          <li><a href="#" class="nav-link">Link</a></li>
-                          <li><a href="#" class="nav-link">Link</a></li>
-                        </ul>
-                      </li>
-                      <li class="nav-item">
-                        <span class="nav-header">Link</span>
-
-                        <ul class="nav">
-                          <li><a href="#" class="nav-link">Link</a></li>
-                          <li><a href="#" class="nav-link">Link</a></li>
-                          <li><a href="#" class="nav-link">Link</a></li>
-                          <li><a href="#" class="nav-link">Link</a></li>
-                          <li><a href="#" class="nav-link">Link</a></li>
-                        </ul>
-                      </li>
-
-                      <li class="nav-item hidden-sm-down">
-                        <span class="nav-header">Link</span>
-
-                        <div>
-                          <p> asda dah dhaks hdkash djkasdhjkash dkhasdh asjkhd kahd kash dkash dk ahkh dkhas dk has dhaskj dhasdjkhaksd kash khdoasiud asdas h</p>
-                        </div>
-                      </li>
-                      <!-- Close Child on Mobile::Ende -->
+                            <!-- Wrap Childs::Ende -->
+                        </li>
                     </ul>
-                  </span>
-                  <!-- Wrap Childs::Ende -->
-                </li>
-              </ul>
+                </div>
             </div>
-          </div>
         </div>
-      </nav>
-    </header>
+    </nav>
+</header>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script type="text/javascript" src="js/script.min.js"></script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script type="text/javascript" src="https://code.jquery.com/jquery.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script type="text/javascript" src="js/script.min.js"></script>
 
-    <!-- ###DOCUMENT_BODY### END-->
-  </body>
+<!-- ###DOCUMENT_BODY### END-->
+</body>
 </html>

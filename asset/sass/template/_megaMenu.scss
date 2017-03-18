@@ -84,53 +84,107 @@
     .navbar-nav {
       > li.nav-item {
         > a {
-          // Colorise
-          background-color: rgba($color1, .8);
-          color: $color2;
+          background-color: transparent;
+          color: $color1;
 
-          // @import hover-focus {
-          //
-          // }
-        }
-
-        > span.nav-trans {
-          // Colorise
-          background-color: rgba($color1, .8);
-          @include media-breakpoint-up($mediaUp) {
-            background-color: transparent;
+          &:after {
+            border-top-color: transparent;
+            border-right-color: $color1;
           }
 
-          > ul {
-            // Colorise
-            background-color: $color2;
+          &:hover {
+            color: $color2;
 
-            @include media-breakpoint-up($mediaUp) {
-              background-color: transparent;
+            &:after {
+              border-right-color: $color2;
             }
+          }
+        }
+        &.active {
+          > a {
+            color: $color2;
 
+            &:after {
+              border-right-color: $color2;
+              border-top-color: transparent;
+            }
+          }
+        }
+        &.in-sub {
+          > a {
+            color: $color2;
+
+            &:after {
+              border-top-color: $color2;
+              border-right-color: transparent;
+            }
+          }
+        }
+
+        span.nav-trans {
+          // Colorise
+          background-color: transparent;
+
+          > ul {
             > li {
               > .nav-header {
-                background-color: rgba($color1, .5);
-                text-shadow: 1px 1px #666;
-                color: $color2;
-
-                @include media-breakpoint-up($mediaUp) {
-                  background-color: transparent;
-                  text-shadow: none;
-                  color: $color1;
-                }
-
+                background-color: transparent;
+                color: $color1;
               }
+
+              a {
+                &:hover {
+                  color: $color2;
+                }
+              }
+
+              .mega-sub {
+                > a {
+                  &:after {
+                    border-top-color: transparent;
+                    border-right-color: $color1;
+                  }
+
+                  &:hover {
+                    &:after {
+                      border-right-color: $color2;
+                    }
+                  }
+                }
+                &.active {
+                  > a {
+                    color: $color2;
+
+                    &:after {
+                      border-right-color: $color2;
+                      border-top-color: transparent;
+                    }
+                  }
+                }
+                &.in-sub {
+                  > a {
+                    color: $color2;
+
+                    &:after {
+                      border-top-color: $color2;
+                      border-right-color: transparent;
+                    }
+                  }
+                }
+              }
+
               > div {
                 @include media-breakpoint-up($mediaUp) {
-                  background-color: $color2;
+                  //background-color: $color2;
                 }
               }
               > ul {
                 > li {
                   > a {
+                    border: 0;
+
                     @include media-breakpoint-up($mediaUp) {
-                      background-color: $color2;
+                      //background-color: $color2;
                     }
                   }
                 }
@@ -154,10 +208,11 @@
 
     .navbar-nav {
       > li.nav-item {
-        @include rem(padding, 5 10);
+        @include rem(padding, 10 10);
+        display: block;
 
         @include media-breakpoint-up($mediaUp) {
-          @include rem(padding, 15 0 30 0);
+          @include rem(padding, 20 0 0 0);
           overflow: hidden;
           display: none;
           width: 100%;
@@ -176,20 +231,18 @@
         }
 
         > a {
+          text-transform: uppercase;
+          font-weight: bold;
           border-bottom: 0;
-
-          &:after {
-            border-right-color: transparent;
-            border-top-color: white;
-          }
 
           @include media-breakpoint-up($mediaUp) {
             display: none;
           }
         }
 
-        > span.nav-trans {
-          @include transform(initial);
+        span.nav-trans {
+          @extend .clearfix;
+          @include transform(none);
           position: static;
           display: none;
 
@@ -199,12 +252,20 @@
             opacity: 1;
           }
 
+          @include media-breakpoint-up(lg) {
+            justify-content: space-between;
+            flex-flow: row nowrap;
+            display: flex;
+          }
+
           &.on {
             display: block;
           }
           > ul {
+            display: block;
 
             @include media-breakpoint-up($mediaUp) {
+              @include rem(padding-left, 0);
               @include rem(margin, 0 -15);
               display: block;
             }
@@ -215,6 +276,8 @@
               clear: both;
             }
             > li {
+              @include rem(padding, 10 0);
+
               @include media-breakpoint-up($mediaUp) {
                 @include rem(padding, 0 15);
                 float: left;
@@ -227,9 +290,18 @@
               }
 
               > .nav-header {
-                @include rem(padding, 2 10);
+                border-bottom: 1px solid #aaa;
+                @include rem(margin, 0 0 15 10);
+                @include rem(padding, 2 10 10 0);
+                line-height: 1;
                 text-transform: uppercase;
+                font-weight: bold;
                 display: block;
+
+                @include media-breakpoint-up($mediaUp) {
+                  @include rem(padding, 2 0 8 0);
+                  @include rem(margin, 0 0 24 0);
+                }
               }
 
               > div {
@@ -248,7 +320,43 @@
                       border: 0;
                     }
                   }
+
+                  span.nav-trans {
+                    > ul {
+                      > li {
+                        @include rem(padding, 0);
+
+                        > a {
+                          border: 0;
+                          @include rem(padding, 2 10 2 25);
+
+                          @include media-breakpoint-up($mediaUp) {
+                            @include rem(padding, 1 0 1 20);
+                          }
+                        }
+                      }
+                    }
+                  }
                 }
+              }
+            }
+          }
+        }
+
+        > span.nav-trans {
+          > ul {
+            display: block;
+
+            @include media-breakpoint-up($mediaUp) {
+              display: flex;
+            }
+
+            > li {
+              @include media-breakpoint-up($mediaUp) {
+                @include rem(padding-bottom, 30);
+              }
+              > ul {
+                display: block;
               }
             }
           }
@@ -295,13 +403,13 @@
 
       .navbar-toggleable {
         &-sm {
-          @include megaMenüColor(sm, xs, #000, #fff);
+          @include megaMenüColor(sm, xs, $style_color_dark, $style_border_color);
         }
         &-md {
-          @include megaMenüColor(md, sm, #000, #fff);
+          @include megaMenüColor(md, sm, $style_color_dark, $style_border_color);
         }
         &-lg {
-          @include megaMenüColor(lg, md, #000, #fff);
+          @include megaMenüColor(lg, md, $style_color_dark, $style_border_color);
         }
       }
     }
