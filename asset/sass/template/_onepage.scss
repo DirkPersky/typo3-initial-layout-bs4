@@ -13,12 +13,11 @@
 }
 
 .onepage {
-  background-position: 0% 0%;
-  background-color: white;
+  background-position: 50% 50%;
   position: relative;
   overflow: hidden;
   padding: 25px 0;
-  display:table;
+  display: block;
   height: calc(100vh - #{$navbar-height});
   width: 100%;
 

@@ -59,30 +59,47 @@
                 break;
         }
     });
-    /**
-     * Open Dropdown on Hover
-     * Handle Mobile Click
-     */
-    var _timer = null;
-    $('#navbarResponsive .nav-item.dropdown').on('mouseenter mouseleave click', function (e) {
-        var _self = $(this);
-        // Handle Click
-        if(e.type == 'click' && _timer) {
-            e.preventDefault();
-        }
-        // Show Dropdown on hover
-        if (e.type == 'mouseenter') {
-            e.preventDefault();
-            _timer = setTimeout(function(){
-                _timer = null;
-            }, 50);
-            _self.addClass('open');
-        }
-        // Hide Dropdown on hover
-        if (e.type == 'mouseleave') {
-            e.preventDefault();
-            _self.removeClass('open');
-        }
-    });
 
+
+    $.fn.navDropdown = function () {
+        var parent = $(this);
+
+        parent.each(function(){
+            var self = $(this),
+                target = $(self.data('attach')),
+                close = $(self.data('close'));
+            // Show Handler
+            self.on('show.bs.collapse', function(e){
+                // CLose all Open
+                close.collapse('hide');
+                // Add in Class
+                target.addClass('in');
+                self.parents('.navbar').addClass('in');
+                // Hide Extended Buttons
+                $('.navbar-toggler-buttons').addClass('out');
+                // Get Input for Focus if exist
+                var hasInput = self.find('input');
+                if(hasInput){
+                    setTimeout(function () {
+                        hasInput.first().focus();
+                    }, 400)
+                }
+            });
+            // Close Handler
+            self.on('hide.bs.collapse', function(e){
+                // Remove Classes
+                target.removeClass('in');
+                self.parents('.navbar').removeClass('in');
+                // Show Extended Buttons
+                $('.navbar-toggler-buttons').removeClass('out');
+            });
+            // Handler Close button Click
+            target.find('> .close').on('click', function(e){
+                e.preventDefault();
+                self.collapse('hide');
+            });
+        });
+    };
+
+    $('#navbarResponsive,#navbarSearch').navDropdown();
 }(jQuery);

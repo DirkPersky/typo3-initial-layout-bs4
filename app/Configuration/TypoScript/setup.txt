@@ -204,6 +204,16 @@ lib.nav {
 	}
 }
 
+lib.searchBtn = TEXT
+lib.searchBtn {
+    value = <i class="fa fa-search"></i>
+    typolink = 1
+    typolink {
+        parameter = #navbarSearch
+        ATagParams = data-toggle="collapse" data-target="#navbarSearch"
+    }
+}
+
 lib.footerNav = COA
 lib.footerNav {
     10 < temp.cPos

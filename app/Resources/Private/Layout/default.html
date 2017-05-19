@@ -1,29 +1,44 @@
-<nav class="navbar navbar-static-top navbar-light" role="navigation">
-	<div class="container">
-		<!-- Mobile Toogle nav :: https://github.com/jonsuh/hamburgers-->
-		<button class="navbar-toggler hamburger hamburger--collapse hidden-md-up float-xs-right"
-				type="button"
-				aria-label="Menu"
-				aria-controls="navigation"
-				data-toggle="collapse"
-				data-target="#navbarResponsive"
-		>
-            <span class="hamburger-box">
-                <span class="hamburger-inner"></span>
-            </span>
-		</button>
-		<!-- Mobile Logo -->
-		<a href="<f:cObject typoscriptObjectPath=" lib.home" />" class="navbar-brand float-md-left">
-		<img src="fileadmin/Mysite4/app/Resources/Public/img/logo.png" class="logo"/>
-		</a>
-		<!-- Main Navigation -->
-		<div class="collapse navbar-toggleable-md" id="navbarResponsive">
-			<ul class="nav navbar-nav float-md-right">
-				<f:cObject typoscriptObjectPath="lib.nav"/>
-			</ul>
+<header id="navigation">
+	<nav class="navbar navbar-static-top navbar-light" role="navigation">
+		<div class="container">
+			<!-- Mobile Toogle nav :: https://github.com/jonsuh/hamburgers-->
+			<button class="navbar-toggler hamburger hamburger--collapse hidden-md-up float-xs-right"
+					type="button"
+					aria-label="Menu"
+					aria-controls="navigation"
+					data-toggle="collapse"
+					data-target="#navbarResponsive"
+			>
+				<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+				</span>
+			</button>
+			<!-- Mobile Logo -->
+			<a href="<f:cObject typoscriptObjectPath=" lib.home" />" class="navbar-brand float-md-left">
+				<img src="fileadmin/Mysite4/app/Resources/Public/img/logo.png" class="logo"/>
+			</a>
+			<!-- Main Navigation -->
+			<div class="collapse navbar-toggleable-md" id="navbarResponsive" data-close="#navbarSearch">
+				<ul class="nav navbar-nav float-md-right">
+					<f:cObject typoscriptObjectPath="lib.nav"/>
+				</ul>
+
+				<div class="navbar-toggler-buttons toggler-right">
+					<f:cObject typoscriptObjectPath="lib.searchBtn" />
+				</div>
+			</div>
 		</div>
-	</div>
-</nav>
+		<div class="navbar-dropdown navbar-search-wrap">
+			<div class="container">
+				<div class="collapse" id="navbarSearch" data-attach=".navbar-search-wrap" data-close="#navbarResponsive">
+					<f:render partial="search" />
+				</div>
+			</div>
+
+			<a href="#top" data-close="#navbarSearch" class="close">×</a>
+		</div>
+	</nav>
+</header>
 <section class="slider">
 	<f:cObject typoscriptObjectPath="lib.slider" />
 </section>

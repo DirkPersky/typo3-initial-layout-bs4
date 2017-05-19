@@ -20,6 +20,63 @@
 				@include rem(height, 34);
 			}
 		}
+
+		.navbar-dropdown {
+			background-color: inherit;
+			position: absolute;
+			right: 0;
+			left: 0;
+			top: 100%;
+
+			transition: all .3s ease-in-out;
+
+			opacity: 0;
+			visibility: hidden;
+
+			&.in {
+				display: block;
+
+				opacity: 1;
+				visibility: visible;
+			}
+
+			.container {
+				-webkit-overflow-scrolling: touch;
+				max-height: calc(100vh - 50px);
+				position: relative;
+				overflow: auto;
+
+				@include media-breakpoint-up(md) {
+					overflow: visible;
+				}
+			}
+			.close {
+				position: absolute;
+				padding: 5px;
+				right: 0;
+				top: 0;
+			}
+			&.navbar-search-wrap {
+				.container {
+					padding: 30px 15px;
+
+					input {
+						background-color: transparent;
+						border: 0;
+						padding: 0;
+						color: inherit;
+						font-size: 21px;
+						line-height: 28px;
+					}
+
+					.input-group-btn {
+						display: none;
+					}
+				}
+			}
+		}
+
+
 	}
 	@include media-breakpoint-up(md) {
 	}

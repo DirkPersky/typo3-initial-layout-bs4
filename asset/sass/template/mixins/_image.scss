@@ -1,38 +1,57 @@
 @mixin typo3CeMedia(){
-    @include rem(margin, -5);
+  @include rem(margin, -5);
 
-    .ce-row {
-      &:after {
-        content: "";
-        display: table;
-        clear: both;
-      }
-      // Center Images
-      .ce-center & {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
+  .ce-row {
+    display: flex;
+    flex-wrap: wrap;
+
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    // Center Images
+    .ce-center & {
+      justify-content: center;
 
       .ce-column {
-        @include rem(padding, 5);
-        display: block;
-        float: left;
-
         text-align: center;
-        display: block;
-        float: left;
+      }
+    }
 
-        figure {
+    .ce-left & {
+      justify-content: flex-start;
+
+      .ce-column {
+        text-align: left;
+
+      }
+    }
+
+    .ce-right & {
+      justify-content: flex-end;
+
+      .ce-column {
+        text-align: right;
+      }
+    }
+
+    .ce-column {
+      @include rem(padding, 5);
+      display: block;
+      text-align: left;
+      float: left;
+
+      figure {
+        display: inline-block;
+        max-width: 100%;
+
+        picture {
           display: inline-block;
           max-width: 100%;
 
-          picture {
-            display: inline-block;
-            max-width: 100%;
-
-          }
         }
+      }
     }
   }
 
@@ -40,6 +59,43 @@
     &[data-ce-columns="#{$i}"] {
       .ce-column {
         width: (100% / $i);
+      }
+    }
+  }
+
+  &[data-ce-columns="2"],
+  &[data-ce-columns="3"] {
+    .ce-column {
+      @include media-breakpoint-down(xs) {
+        width: 100%;
+      }
+    }
+  }
+  &[data-ce-columns="4"] {
+    .ce-column {
+      @include media-breakpoint-down(xs) {
+        width: (100% / 2);
+      }
+    }
+  }
+  &[data-ce-columns="6"] {
+    .ce-column {
+      @include media-breakpoint-down(xs) {
+        width: (100% / 3);
+      }
+    }
+  }
+  &[data-ce-columns="8"] {
+    .ce-column {
+      @include media-breakpoint-down(xs) {
+        width: (100% / 4);
+      }
+    }
+  }
+  &[data-ce-columns="12"] {
+    .ce-column {
+      @include media-breakpoint-down(xs) {
+        width: (100% / 6);
       }
     }
   }
