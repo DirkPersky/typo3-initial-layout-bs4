@@ -1,5 +1,16 @@
-meta.title = 
+########################
+### DEFAULT CONSTANT ###
+########################
+meta {
+    title =
+    theme-color =
+    author = Gutenberghaus, Stadlohn
+    viewport =  width=device-width, initial-scale=1.0
+}
 
+#########################
+### Navigation Config ###
+#########################
 nav {
 	homeUid = 
 	exclude = 
@@ -7,48 +18,43 @@ nav {
 	cookie = 
 }
 
-# Body Class
-template.style = body
-
-# Template
+################
+### Template ###
+################
 path.template = fileadmin/Mysite4/app/Resources/
 path.baseURL = http://mysite4.cms-sudhaus.de/
 
-# Favicon
+template.style = body
 favicon = favicon.png
 
-# IndexSearch Page
-plugin.tx_indexedsearch{
+########################
+### IndexSearch Page ###
+########################
+plugin.tx_indexedsearch {
 	searchUID =
 	showAdvanced = 0
 }
 
-#########################
-### use Retina Images ###
-#########################
-image.retina = 0
-
-########################
-### DEFAULT CONSTANT ###
-########################
-meta.author = Gutenberghaus, Stadlohn
-meta.viewport =  width=device-width, initial-scale=1.0
-
-################
-### Powermail###
-################
-plugin.tx_powermail.settings.javascript.powermailJQuery =
-plugin.tx_powermail.settings.javascript.powermailJQueryUi =
-# allow HTML
-plugin.tx_powermail.settings.misc.htmlField = 1
-plugin.tx_powermail.settings.misc.disableRemoveXss = 1
+#################
+### Powermail ###
+#################
 plugin.tx_powermail {
-	view {
-		templateRootPath = fileadmin/Mysite4/app/Resources/Private/Template/powermail/
-		partialRootPath = fileadmin/Mysite4/app/Resources/Private/Partial/powermail/
-		layoutRootPath = fileadmin/Mysite4/app/Resources/Private/Layouts/powermail/
-	}
+    settings {
+        # Disable internal jQuery
+        javascript.powermailJQuery =
+        javascript.powermailJQueryUi =
+        # allow HTML
+        misc.htmlField = 1
+        misc.disableRemoveXss = 1
+    }
+    # Override Templates
+    view {
+        layoutRootPath = fileadmin/Mysite4/app/Resources/Private/Layout/powermail/
+        partialRootPath = fileadmin/Mysite4/app/Resources/Private/Partial/powermail/
+        templateRootPath = fileadmin/Mysite4/app/Resources/Private/Template/powermail/
+    }
 }
+
 ###################
 ### IMAGE WIDTH ###
 ###################
@@ -73,40 +79,32 @@ styles.content.imgtext.layoutKey = lazyloading
 ###############
 plugin.tx_news {
   view {
-    layoutRootPath = fileadmin/Mysite4/app/Resources/Private/Layouts/news/
+    layoutRootPath = fileadmin/Mysite4/app/Resources/Private/Layout/news/
     partialRootPath = fileadmin/Mysite4/app/Resources/Private/Partial/news/
     templateRootPath = fileadmin/Mysite4/app/Resources/Private/Template/news/
   }
 }
-####################
-### TX_POWERMAIL ###
-####################
-plugin.tx_powermail{
-  view {
-    layoutRootPath = fileadmin/Mysite4/app/Resources/Private/Layouts/powermail/
-    partialRootPath = fileadmin/Mysite4/app/Resources/Private/Partial/powermail/
-    templateRootPath = fileadmin/Mysite4/app/Resources/Private/Template/powermail/
-  }
-}
+
 ###################
 ### SCRIPTMEGER ###
 ###################
 plugin.tx_scriptmerger {
     javascript {
-      mergedHeadFilePosition = </body>
-      compress.enable = 0
-			minify.enable = 1
-			parseBody = 1
+        mergedHeadFilePosition = </body>
+        compress.enable = 0
+        minify.enable = 1
+        parseBody = 1
     }
     css {
-      mergedFilePosition = </body>
-      compress.enable = 0
-      postUrlProcessing {
-        pattern = /(\.\.\/\.\.\/fileadmin)/i
-        replacement = {$path.baseURL}fileadmin
-      }
+        mergedFilePosition = </body>
+        compress.enable = 0
+        postUrlProcessing {
+            pattern = /(\.\.\/\.\.\/fileadmin)/i
+            replacement = {$path.baseURL}fileadmin
+        }
     }
 }
+
 #################
 ### SOURCEOPT ###
 #################
@@ -117,15 +115,16 @@ sourceopt.formatHtml = 1
 ############################
 plugin.tx_news {
     rss.channel {
-            title = RSS Title
-            description =
-            link = RSS-Base-URL
-            language = de_DE
-            copyright = web kon Internetagentur
-            category =
-            generator = TYPO3 EXT:news
+        title = RSS Title
+        description =
+        link = RSS-Base-URL
+        language = de_DE
+        copyright = web kon Internetagentur
+        category =
+        generator = TYPO3 EXT:news
     }
 }
+
 #######################
 ### Config RSS Feed ###
 #######################

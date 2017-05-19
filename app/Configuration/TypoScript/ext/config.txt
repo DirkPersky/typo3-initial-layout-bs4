@@ -138,6 +138,30 @@ page.headerData.1337 {
     wrap = <link rel="icon" href="|" type="image/png; charset=binary">
   }
 }
+
+/*
+#########################
+###### BAR COLOR ########
+#########################
+*/
+page.headerData.101 = COA
+page.headerData.101 {
+  10 = TEXT
+  10 {
+    value = {$meta.theme-color}
+    wrap = <meta name="theme-color" content="|">
+  }
+  20 = TEXT
+  20 {
+    value = {$meta.theme-color}
+    wrap = <meta name="msapplication-navbutton-color" content="|">
+  }
+  30 = TEXT
+  30 {
+    value = {$meta.theme-color}
+    wrap = <meta name="apple-mobile-web-app-status-bar-style" content="|">
+  }
+}
 /*
 ########################
 ### BODY-TAG PAGE ID ###

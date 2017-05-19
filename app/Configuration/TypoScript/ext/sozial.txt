@@ -18,7 +18,7 @@ lib.sozial {
 
 	media = TEXT
 	media {
-		value = {$path.baseURL}fileadmin/templates/symbioblog/Resources/Public/img/logo.png
+		value = {$path.baseURL}fileadmin/Mysite4/app/Resources/Public/img/logo.png
 	}
 }
 
