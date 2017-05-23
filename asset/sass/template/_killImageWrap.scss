@@ -1,90 +1,74 @@
 // main: ../style.scss
-$col_space_images: 10px !default;
-.csc-default {
-	@extend .clearfix;
-}
-.thumbnails-center,
-.thumbnails-center *{
-	text-align: center;
-}
-.thumbnails-center {
-	img {
-		margin: 0 auto;
-	}
-}
-.thumbnails-right,
-.thumbnails-right *{
-	text-align: right;
-}
-.thumbnails-left,
-.thumbnails-left *{
-	text-align: left;
-}
-.thumbnails figure {
-	display: inline-block;
-	margin-bottom: 15px;
-
-	&.col-xs-12 {
-		margin-bottom: 0;
-	}
-}
-@include media-breakpoint-up(md) {
-	.thumbnails-pull-right{
-		float:right;
-		padding: 0 0 10px 10px;
-	}
-	.thumbnails-pull-left{
-		float:left;
-		padding: 0 10px 10px 0;
-	}
-	.thumbnails-pull-right,
-	.thumbnails-pull-left {
-		max-width: 60%;
-	}
-	.csc-textpic-text {
-		min-width: 40%;
-	}
-
-}
-@include media-breakpoint-down(sm) {
-	.csc-textpic-text {
-		margin-left: 0 !important;
-		margin-right: 0 !important;
-	}
-}
-.thumbnails .row{
-	margin-right: -($col_space_images);
-	margin-left: -($col_space_images);
-}
-.thumbnails .row [class^="col-"]{
-	padding-left: $col_space_images;
-	padding-right: $col_space_images;
-}
-.thumbnails .row+.row{
-	margin-top: ($col_space_images *2);
-}
-div[class*="csc-textpic-intext"]:after {
-	clear: both;display: block;content: '';
-}
-
-.thumbnails {
-	&.csc-textpic-border {
-		.row {
-			figure {
-				img {
-					padding:5px;
-					box-shadow: 0px 0px 1px $gray-light;
-				}
-			}
-		}
-	}
-}
-
-
 img.lazyloaded {
 	width: auto;
 }
 
 .ce-gallery {
 	@include typo3CeMedia();
+}
+
+
+.ce-textpic.ce-intext {
+	@extend .clearfix;
+
+	.ce-gallery {
+		@include media-breakpoint-down(sm) {
+			padding-bottom: 10px;
+		}
+		@include media-breakpoint-up(md) {
+			max-width: 60%;
+		}
+
+		.ce-row {
+			@include media-breakpoint-down(sm) {
+				justify-content: center;
+			}
+
+			.ce-column{
+				@include media-breakpoint-down(sm) {
+					text-align: center;
+				}
+			}
+		}
+	}
+
+	&.ce-right {
+		.ce-gallery {
+			@include media-breakpoint-up(md){
+				padding: 0 0 10px 10px;
+				float: right;
+			}
+		}
+	}
+
+	&.ce-left {
+		.ce-gallery {
+			@include media-breakpoint-up(md){
+				padding: 0 10px 10px 0;
+				float: left;
+			}
+		}
+	}
+
+	&.ce-nowrap {
+		@include media-breakpoint-up(md) {
+			display: flex;
+		}
+
+		.ce-gallery {
+			@include media-breakpoint-up(md) {
+				padding-bottom: 0;
+				flex: 0 0 auto;
+				float: none;
+			}
+		}
+
+		&.ce-right {
+			.ce-gallery {
+				@include media-breakpoint-up(md) {
+					order: 2
+				}
+			}
+		}
+	}
 }
