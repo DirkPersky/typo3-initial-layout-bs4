@@ -49,3 +49,10 @@ lib.fluidContent.settings.media.popup {
     dataWrap = class = "fancybox" data-fancybox-group="group{field:uid}"
   }
 }
+lib.contentElement.settings.media.popup {
+  JSwindow = 0
+  directImageLink = 1
+  linkParams.ATagParams {
+    dataWrap = class = "fancybox" data-fancybox-group="group{field:uid}"
+  }
+}

@@ -1,0 +1,48 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:switch expression="{data.layout}">
+	<f:case value="6">
+		<f:render section="pictureTag" arguments="{_all}" />
+	</f:case>
+	<f:case default="true">
+		<figure class="image">
+			<f:render section="defaultImage" arguments="{_all}" />
+
+			<f:if condition="{file.description}">
+				<figcaption class="image-caption">
+					<f:format.raw>{file.description}</f:format.raw>
+				</figcaption>
+			</f:if>
+		</figure>
+	</f:case>
+</f:switch>
+
+<f:section name="pictureTag">
+	<f:render partial="Media/Rendering/Image" arguments="{file: file, dimensions: dimensions, settings: settings, data:data}" />
+</f:section>
+<f:section name="defaultImage">
+	<f:if condition="{file.link}">
+		<f:then>
+			<f:link.typolink parameter="{file.link}" title="{file.title}">
+				<f:render section="pictureTag" arguments="{_all}" />
+			</f:link.typolink>
+		</f:then>
+		<f:else>
+			<f:render section="noLinkImage" arguments="{_all}" />
+		</f:else>
+	</f:if>
+</f:section>
+<f:section name="noLinkImage">
+	<f:if condition="{data.image_zoom}">
+		<f:then>
+			<ce:link.clickEnlarge image="{file}" configuration="{settings.media.popup}">
+				<f:render section="pictureTag" arguments="{_all}" />
+			</ce:link.clickEnlarge>
+		</f:then>
+		<f:else>
+			<f:render section="pictureTag" arguments="{_all}" />
+		</f:else>
+	</f:if>
+</f:section>
+
+
+</html>

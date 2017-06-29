@@ -5,19 +5,8 @@
 			<div class="carousel-item {f:if(condition:'{row_iteration.isFirst}',then:'active')}">
 				<div class="carousel-item-medias">
 					<f:for each="{row.columns}" as="column" iteration="column_iteration">
-						<f:if condition="{column.media}">
-							<div class="carousel-item-media" data-mediaload="row{row_iteration.index}-item{column_iteration.index}">
-							<f:switch expression="{column.media.type}">
-								<f:case value="3">
-									<f:render section="audioType" arguments="{_all}" />
-								</f:case>
-								<f:case value="4">
-									<f:render section="videoType" arguments="{_all}" />
-								</f:case>
-								<f:case default="TRUE">
-									<f:render section="imageType" arguments="{_all}" />
-								</f:case>
-							</f:switch>
+						<div class="carousel-item-media" data-mediaload="row{row_iteration.index}-item{column_iteration.index}">
+							<f:render partial="Media/Type" arguments="{file: column.media, dimensions: column.dimensions, data: data, settings: settings}" />
 							<f:if condition="{column.media.description}">
 								<div class="carousel-inner-wrap">
 									<div class="carousel-caption">
@@ -26,13 +15,13 @@
 								</div>
 							</f:if>
 						</div>
-						</f:if>
 					</f:for>
 				</div>
 			</div>
 		</f:for>
 	</f:case>
 	<f:case default="true">
+
 		<f:if condition="{gallery.rows}">
 			<div class="ce-gallery{f:if(condition: data.imageborder, then: ' ce-border')}" data-ce-columns="{gallery.count.columns}" data-ce-images="{gallery.count.files}">
 				<f:if condition="{gallery.position.horizontal} == 'center'">
@@ -44,51 +33,33 @@
 						<f:for each="{row.columns}" as="column">
 							<f:if condition="{column.media}">
 								<div class="ce-column">
-									<f:if condition="{column.media.description}">
-										<f:then>
-											<figure>
-										</f:then>
-										<f:else>
-											<div class="ce-media">
-										</f:else>
-									</f:if>
-
-									<f:switch expression="{column.media.type}">
-										<f:case value="3">
-											<f:render section="audioType" arguments="{_all}" />
-										</f:case>
-										<f:case value="4">
-											<f:render section="videoType" arguments="{_all}" />
-										</f:case>
-										<f:case default="TRUE">
-											<f:render section="imageType" arguments="{_all}" />
-										</f:case>
-									</f:switch>
-
-									<f:if condition="{column.media.description}">
-										<f:then>
-											<figcaption>
-												{column.media.description}
-											</figcaption>
-											</figure>
-										</f:then>
-										<f:else>
-											</div>
-										</f:else>
-									</f:if>
+									<f:render partial="Media/Type" arguments="{file: column.media, dimensions: column.dimensions, data: data, settings: settings}" />
 								</div>
 							</f:if>
 						</f:for>
 					</div>
 				</f:for>
 				<f:if condition="{gallery.position.horizontal} == 'center'">
-						</div>
+					</div>
 					</div>
 				</f:if>
 			</div>
 		</f:if>
 	</f:case>
 </f:switch>
+
+<f:section name="imageType2">
+	<f:if condition="{data.image_zoom}">
+		<f:then>
+			<ce:link.clickEnlarge image="{column.media}" configuration="{settings.media.popup}">
+				<f:render section="responsiveImages" arguments="{_all}" />
+			</ce:link.clickEnlarge>
+		</f:then>
+		<f:else>
+			<f:render section="responsiveImages" arguments="{_all}" />
+		</f:else>
+	</f:if>
+</f:section>
 
 <f:section name="imageType">
 	<f:if condition="{column.media.link}">
@@ -110,24 +81,6 @@
 			</f:if>
 		</f:else>
 	</f:if>
-</f:section>
-
-<f:section name="audioType">
-	<f:render section="media" arguments="{_all}" />
-</f:section>
-
-<f:section name="videoType">
-	<f:render section="media" arguments="{_all}" />
-</f:section>
-
-<f:section name="media">
-	<f:media
-			file="{column.media}"
-			width="{column.dimensions.width}"
-			height="{column.dimensions.height}"
-			alt="{column.media.alternative}"
-			title="{column.media.title}"
-	/>
 </f:section>
 
 <f:section name="responsiveImages">

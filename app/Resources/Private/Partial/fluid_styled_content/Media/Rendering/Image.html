@@ -1,0 +1,36 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:comment>
+        <!-- Original Link -->
+        <f:media class="image-embed-item" file="{file}" width="{data.imagewidth}" height="{data.imageheight}" alt="{file.alternative}" title="{file.title}" />
+        <f:image class="image-embed-item" image="{file}" maxWidth="{data.imagewidth}" maxHeight="{data.imageheight}" />
+        <f:uri.image image="{file}" maxWidth="{data.imagewidth}" maxHeight="{data.imageheight}" cropVariant="specialMobile"  />
+    </f:comment>
+    <picture>
+        <f:if condition="{data.imagewidth} > 1200">
+            <source
+                    srcset="<f:uri.image image="{file}" width="1960" maxWidth="{data.imagewidth}" maxHeight="{data.imageheight}" cropVariant="default" />"
+            media="(min-width: 1200px)"
+            >
+        </f:if>
+        <f:if condition="{data.imagewidth} > 992">
+            <source
+                    srcset="<f:uri.image image="{file}" width="1200" maxWidth="{data.imagewidth}" maxHeight="{data.imageheight}" cropVariant="default" />"
+            media="(min-width: 992px)"
+            >
+        </f:if>
+        <f:if condition="{data.imagewidth} > 768">
+            <source
+                    srcset="<f:uri.image image="{file}" width="992" maxWidth="{data.imagewidth}" maxHeight="{data.imageheight}" cropVariant="tablet" />"
+            media="(min-width: 768px)"
+            >
+        </f:if>
+        <f:if condition="{data.imagewidth} > 480">
+            <source
+                    srcset="<f:uri.image image="{file}" width="768" maxWidth="{data.imagewidth}" maxHeight="{data.imageheight}" cropVariant="tablet" />"
+            media="(min-width: 480px)"
+            >
+        </f:if>
+
+        <f:image class="img-fluid lazyload" image="{file}" width="480" maxWidth="{data.imagewidth}" maxHeight="{data.imageheight}" cropVariant="mobile"  />
+    </picture>
+</html>

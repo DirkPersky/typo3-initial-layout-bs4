@@ -63,6 +63,8 @@ styles.content.imgtext.colPos0.maxW	= 1960
 styles.content.imgtext.colPos1.maxW	= 1960
 styles.content.imgtext.colPos2.maxW	= 1960
 styles.content.imgtext.colPos3.maxW	= 1960
+styles.content.textmedia.maxW = 1960
+styles.content.textmedia.maxWInText = 1960
 
 #####################################
 ### Standard-Überschriften als H2 ###

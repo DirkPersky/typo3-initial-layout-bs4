@@ -97,3 +97,7 @@ lib.slider.select.where = colPos=1
 #############################
 lib.fluidContent.partialRootPaths.100 = {$path.template}Private/Partial/fluid_styled_content/
 lib.fluidContent.templateRootPaths.100 = {$path.template}Private/Template/fluid_styled_content/
+
+lib.contentElement.partialRootPaths.100 = {$path.template}Private/Partial/fluid_styled_content/
+lib.contentElement.templateRootPaths.100 = {$path.template}Private/Template/fluid_styled_content/
+lib.contentElement.layoutRootPaths.100 = {$path.template}Private/Layout/fluid_styled_content/
