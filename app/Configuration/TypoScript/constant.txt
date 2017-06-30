@@ -44,8 +44,8 @@ plugin.tx_powermail {
         javascript.powermailJQuery =
         javascript.powermailJQueryUi =
         # allow HTML
-        misc.htmlField = 1
-        misc.disableRemoveXss = 1
+        misc.htmlForHtmlFields = 1
+        misc.htmlForLabels = 1
     }
     # Override Templates
     view {
