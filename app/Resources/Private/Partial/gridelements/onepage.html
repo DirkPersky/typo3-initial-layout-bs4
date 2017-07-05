@@ -1,8 +1,6 @@
-<section id="onepage{data.uid}" class="onepage {data.flexform_opblend} {data.flexform_center}" style="
-  {f:if(condition:'{data.flexform_height}',then:'height:{data.flexform_height};')}
-  {f:if(condition:'{data.flexform_image}',then:'background-image:url(uploads/tx_gridelements/{data.flexform_image});')}
-  "
->
+<section id="onepage{data.uid}"
+         class="onepage {data.flexform_opblend} {data.flexform_center}{f:if(condition:'{data.space_before_class}',then:' onepage-space-before-{data.space_before_class}')}{f:if(condition:'{data.space_after_class}',then:' onepage-space-after-{data.space_after_class}')}"
+         style="{f:if(condition:'{data.flexform_height}',then:'height:{data.flexform_height}')} {f:if(condition:'{data.flexform_image}',then:'background-image:url(uploads/tx_gridelements/{data.flexform_image}')}">
   <div class="onpage-inner">
     <div class="container">
       <f:format.html parseFuncTSPath="">{stdheader}</f:format.html>
