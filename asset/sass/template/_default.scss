@@ -55,6 +55,46 @@ body{
 .cc_banner-wrapper {height: 0 !important;}
 
 /**
+* Space before and after
+*/
+.frame-space- {
+  &after- {
+    &extra-small {
+        padding-bottom: 15px;
+    }
+    &small {
+        padding-bottom: 30px;
+    }
+    &medium {
+        padding-bottom: 45px;
+    }
+    &large {
+        padding-bottom: 60px;
+    }
+    &extra-large {
+        padding-bottom: 75px;
+    }
+  }
+  &before- {
+    &extra-small {
+      padding-top: 15px;
+    }
+    &small {
+      padding-top: 30px;
+    }
+    &medium {
+      padding-top: 45px;
+    }
+    &large {
+      padding-top: 60px;
+    }
+    &extra-large {
+      padding-top: 75px;
+    }
+  }
+}
+
+/**
 * SITE SPECIFIC
 */
 img {
