@@ -137,3 +137,6 @@ rss {
     startingpoint = # NewsFolderID
     format = xml  # XML or ATOM
 }
+
+plugin.tx_ckeditor_fontawesome.loadCSS = 0
+plugin.tx_iconfont.cssFile =
