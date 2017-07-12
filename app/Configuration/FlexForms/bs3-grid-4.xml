@@ -345,18 +345,18 @@
 								<type>select</type>
 								<items type="array">
 									<numIndex index="0" type="array"><numIndex index="0">Nicht definiert</numIndex><numIndex index="1"></numIndex></numIndex>
-									<numIndex index="1" type="array"><numIndex index="0">1/12</numIndex><numIndex index="1">col-xs-1</numIndex></numIndex>
-									<numIndex index="2" type="array"><numIndex index="0">2/12</numIndex><numIndex index="1">col-xs-2</numIndex></numIndex>
-									<numIndex index="3" type="array"><numIndex index="0">3/12</numIndex><numIndex index="1">col-xs-3</numIndex></numIndex>
-									<numIndex index="4" type="array"><numIndex index="0">4/12</numIndex><numIndex index="1">col-xs-4</numIndex></numIndex>
-									<numIndex index="5" type="array"><numIndex index="0">5/12</numIndex><numIndex index="1">col-xs-5</numIndex></numIndex>
-									<numIndex index="6" type="array"><numIndex index="0">6/12</numIndex><numIndex index="1">col-xs-6</numIndex></numIndex>
-									<numIndex index="7" type="array"><numIndex index="0">7/12</numIndex><numIndex index="1">col-xs-7</numIndex></numIndex>
-									<numIndex index="8" type="array"><numIndex index="0">8/12</numIndex><numIndex index="1">col-xs-8</numIndex></numIndex>
-									<numIndex index="9" type="array"><numIndex index="0">9/12</numIndex><numIndex index="1">col-xs-9</numIndex></numIndex>
-									<numIndex index="10" type="array"><numIndex index="0">10/12</numIndex><numIndex index="1">col-xs-10</numIndex></numIndex>
-									<numIndex index="11" type="array"><numIndex index="0">11/12</numIndex><numIndex index="1">col-xs-11</numIndex></numIndex>
-									<numIndex index="12" type="array"><numIndex index="0">12/12</numIndex><numIndex index="1">col-xs-12</numIndex></numIndex>
+									<numIndex index="1" type="array"><numIndex index="0">1/12</numIndex><numIndex index="1">col-1</numIndex></numIndex>
+									<numIndex index="2" type="array"><numIndex index="0">2/12</numIndex><numIndex index="1">col-2</numIndex></numIndex>
+									<numIndex index="3" type="array"><numIndex index="0">3/12</numIndex><numIndex index="1">col-3</numIndex></numIndex>
+									<numIndex index="4" type="array"><numIndex index="0">4/12</numIndex><numIndex index="1">col-4</numIndex></numIndex>
+									<numIndex index="5" type="array"><numIndex index="0">5/12</numIndex><numIndex index="1">col-5</numIndex></numIndex>
+									<numIndex index="6" type="array"><numIndex index="0">6/12</numIndex><numIndex index="1">col-6</numIndex></numIndex>
+									<numIndex index="7" type="array"><numIndex index="0">7/12</numIndex><numIndex index="1">col-7</numIndex></numIndex>
+									<numIndex index="8" type="array"><numIndex index="0">8/12</numIndex><numIndex index="1">col-8</numIndex></numIndex>
+									<numIndex index="9" type="array"><numIndex index="0">9/12</numIndex><numIndex index="1">col-9</numIndex></numIndex>
+									<numIndex index="10" type="array"><numIndex index="0">10/12</numIndex><numIndex index="1">col-10</numIndex></numIndex>
+									<numIndex index="11" type="array"><numIndex index="0">11/12</numIndex><numIndex index="1">col-11</numIndex></numIndex>
+									<numIndex index="12" type="array"><numIndex index="0">12/12</numIndex><numIndex index="1">col-12</numIndex></numIndex>
 								</items>
 							</config>
 						</TCEforms>
@@ -368,18 +368,18 @@
 								<type>select</type>
 								<items type="array">
 									<numIndex index="0" type="array"><numIndex index="0">Nicht definiert</numIndex><numIndex index="1"></numIndex></numIndex>
-									<numIndex index="1" type="array"><numIndex index="0">1/12</numIndex><numIndex index="1">col-xs-1</numIndex></numIndex>
-									<numIndex index="2" type="array"><numIndex index="0">2/12</numIndex><numIndex index="1">col-xs-2</numIndex></numIndex>
-									<numIndex index="3" type="array"><numIndex index="0">3/12</numIndex><numIndex index="1">col-xs-3</numIndex></numIndex>
-									<numIndex index="4" type="array"><numIndex index="0">4/12</numIndex><numIndex index="1">col-xs-4</numIndex></numIndex>
-									<numIndex index="5" type="array"><numIndex index="0">5/12</numIndex><numIndex index="1">col-xs-5</numIndex></numIndex>
-									<numIndex index="6" type="array"><numIndex index="0">6/12</numIndex><numIndex index="1">col-xs-6</numIndex></numIndex>
-									<numIndex index="7" type="array"><numIndex index="0">7/12</numIndex><numIndex index="1">col-xs-7</numIndex></numIndex>
-									<numIndex index="8" type="array"><numIndex index="0">8/12</numIndex><numIndex index="1">col-xs-8</numIndex></numIndex>
-									<numIndex index="9" type="array"><numIndex index="0">9/12</numIndex><numIndex index="1">col-xs-9</numIndex></numIndex>
-									<numIndex index="10" type="array"><numIndex index="0">10/12</numIndex><numIndex index="1">col-xs-10</numIndex></numIndex>
-									<numIndex index="11" type="array"><numIndex index="0">11/12</numIndex><numIndex index="1">col-xs-11</numIndex></numIndex>
-									<numIndex index="12" type="array"><numIndex index="0">12/12</numIndex><numIndex index="1">col-xs-12</numIndex></numIndex>
+									<numIndex index="1" type="array"><numIndex index="0">1/12</numIndex><numIndex index="1">col-1</numIndex></numIndex>
+									<numIndex index="2" type="array"><numIndex index="0">2/12</numIndex><numIndex index="1">col-2</numIndex></numIndex>
+									<numIndex index="3" type="array"><numIndex index="0">3/12</numIndex><numIndex index="1">col-3</numIndex></numIndex>
+									<numIndex index="4" type="array"><numIndex index="0">4/12</numIndex><numIndex index="1">col-4</numIndex></numIndex>
+									<numIndex index="5" type="array"><numIndex index="0">5/12</numIndex><numIndex index="1">col-5</numIndex></numIndex>
+									<numIndex index="6" type="array"><numIndex index="0">6/12</numIndex><numIndex index="1">col-6</numIndex></numIndex>
+									<numIndex index="7" type="array"><numIndex index="0">7/12</numIndex><numIndex index="1">col-7</numIndex></numIndex>
+									<numIndex index="8" type="array"><numIndex index="0">8/12</numIndex><numIndex index="1">col-8</numIndex></numIndex>
+									<numIndex index="9" type="array"><numIndex index="0">9/12</numIndex><numIndex index="1">col-9</numIndex></numIndex>
+									<numIndex index="10" type="array"><numIndex index="0">10/12</numIndex><numIndex index="1">col-10</numIndex></numIndex>
+									<numIndex index="11" type="array"><numIndex index="0">11/12</numIndex><numIndex index="1">col-11</numIndex></numIndex>
+									<numIndex index="12" type="array"><numIndex index="0">12/12</numIndex><numIndex index="1">col-12</numIndex></numIndex>
 								</items>
 							</config>
 						</TCEforms>
@@ -391,18 +391,18 @@
 								<type>select</type>
 								<items type="array">
 									<numIndex index="0" type="array"><numIndex index="0">Nicht definiert</numIndex><numIndex index="1"></numIndex></numIndex>
-									<numIndex index="1" type="array"><numIndex index="0">1/12</numIndex><numIndex index="1">col-xs-1</numIndex></numIndex>
-									<numIndex index="2" type="array"><numIndex index="0">2/12</numIndex><numIndex index="1">col-xs-2</numIndex></numIndex>
-									<numIndex index="3" type="array"><numIndex index="0">3/12</numIndex><numIndex index="1">col-xs-3</numIndex></numIndex>
-									<numIndex index="4" type="array"><numIndex index="0">4/12</numIndex><numIndex index="1">col-xs-4</numIndex></numIndex>
-									<numIndex index="5" type="array"><numIndex index="0">5/12</numIndex><numIndex index="1">col-xs-5</numIndex></numIndex>
-									<numIndex index="6" type="array"><numIndex index="0">6/12</numIndex><numIndex index="1">col-xs-6</numIndex></numIndex>
-									<numIndex index="7" type="array"><numIndex index="0">7/12</numIndex><numIndex index="1">col-xs-7</numIndex></numIndex>
-									<numIndex index="8" type="array"><numIndex index="0">8/12</numIndex><numIndex index="1">col-xs-8</numIndex></numIndex>
-									<numIndex index="9" type="array"><numIndex index="0">9/12</numIndex><numIndex index="1">col-xs-9</numIndex></numIndex>
-									<numIndex index="10" type="array"><numIndex index="0">10/12</numIndex><numIndex index="1">col-xs-10</numIndex></numIndex>
-									<numIndex index="11" type="array"><numIndex index="0">11/12</numIndex><numIndex index="1">col-xs-11</numIndex></numIndex>
-									<numIndex index="12" type="array"><numIndex index="0">12/12</numIndex><numIndex index="1">col-xs-12</numIndex></numIndex>
+									<numIndex index="1" type="array"><numIndex index="0">1/12</numIndex><numIndex index="1">col-1</numIndex></numIndex>
+									<numIndex index="2" type="array"><numIndex index="0">2/12</numIndex><numIndex index="1">col-2</numIndex></numIndex>
+									<numIndex index="3" type="array"><numIndex index="0">3/12</numIndex><numIndex index="1">col-3</numIndex></numIndex>
+									<numIndex index="4" type="array"><numIndex index="0">4/12</numIndex><numIndex index="1">col-4</numIndex></numIndex>
+									<numIndex index="5" type="array"><numIndex index="0">5/12</numIndex><numIndex index="1">col-5</numIndex></numIndex>
+									<numIndex index="6" type="array"><numIndex index="0">6/12</numIndex><numIndex index="1">col-6</numIndex></numIndex>
+									<numIndex index="7" type="array"><numIndex index="0">7/12</numIndex><numIndex index="1">col-7</numIndex></numIndex>
+									<numIndex index="8" type="array"><numIndex index="0">8/12</numIndex><numIndex index="1">col-8</numIndex></numIndex>
+									<numIndex index="9" type="array"><numIndex index="0">9/12</numIndex><numIndex index="1">col-9</numIndex></numIndex>
+									<numIndex index="10" type="array"><numIndex index="0">10/12</numIndex><numIndex index="1">col-10</numIndex></numIndex>
+									<numIndex index="11" type="array"><numIndex index="0">11/12</numIndex><numIndex index="1">col-11</numIndex></numIndex>
+									<numIndex index="12" type="array"><numIndex index="0">12/12</numIndex><numIndex index="1">col-12</numIndex></numIndex>
 								</items>
 							</config>
 						</TCEforms>
@@ -414,18 +414,18 @@
 								<type>select</type>
 								<items type="array">
 									<numIndex index="0" type="array"><numIndex index="0">Nicht definiert</numIndex><numIndex index="1"></numIndex></numIndex>
-									<numIndex index="1" type="array"><numIndex index="0">1/12</numIndex><numIndex index="1">col-xs-1</numIndex></numIndex>
-									<numIndex index="2" type="array"><numIndex index="0">2/12</numIndex><numIndex index="1">col-xs-2</numIndex></numIndex>
-									<numIndex index="3" type="array"><numIndex index="0">3/12</numIndex><numIndex index="1">col-xs-3</numIndex></numIndex>
-									<numIndex index="4" type="array"><numIndex index="0">4/12</numIndex><numIndex index="1">col-xs-4</numIndex></numIndex>
-									<numIndex index="5" type="array"><numIndex index="0">5/12</numIndex><numIndex index="1">col-xs-5</numIndex></numIndex>
-									<numIndex index="6" type="array"><numIndex index="0">6/12</numIndex><numIndex index="1">col-xs-6</numIndex></numIndex>
-									<numIndex index="7" type="array"><numIndex index="0">7/12</numIndex><numIndex index="1">col-xs-7</numIndex></numIndex>
-									<numIndex index="8" type="array"><numIndex index="0">8/12</numIndex><numIndex index="1">col-xs-8</numIndex></numIndex>
-									<numIndex index="9" type="array"><numIndex index="0">9/12</numIndex><numIndex index="1">col-xs-9</numIndex></numIndex>
-									<numIndex index="10" type="array"><numIndex index="0">10/12</numIndex><numIndex index="1">col-xs-10</numIndex></numIndex>
-									<numIndex index="11" type="array"><numIndex index="0">11/12</numIndex><numIndex index="1">col-xs-11</numIndex></numIndex>
-									<numIndex index="12" type="array"><numIndex index="0">12/12</numIndex><numIndex index="1">col-xs-12</numIndex></numIndex>
+									<numIndex index="1" type="array"><numIndex index="0">1/12</numIndex><numIndex index="1">col-1</numIndex></numIndex>
+									<numIndex index="2" type="array"><numIndex index="0">2/12</numIndex><numIndex index="1">col-2</numIndex></numIndex>
+									<numIndex index="3" type="array"><numIndex index="0">3/12</numIndex><numIndex index="1">col-3</numIndex></numIndex>
+									<numIndex index="4" type="array"><numIndex index="0">4/12</numIndex><numIndex index="1">col-4</numIndex></numIndex>
+									<numIndex index="5" type="array"><numIndex index="0">5/12</numIndex><numIndex index="1">col-5</numIndex></numIndex>
+									<numIndex index="6" type="array"><numIndex index="0">6/12</numIndex><numIndex index="1">col-6</numIndex></numIndex>
+									<numIndex index="7" type="array"><numIndex index="0">7/12</numIndex><numIndex index="1">col-7</numIndex></numIndex>
+									<numIndex index="8" type="array"><numIndex index="0">8/12</numIndex><numIndex index="1">col-8</numIndex></numIndex>
+									<numIndex index="9" type="array"><numIndex index="0">9/12</numIndex><numIndex index="1">col-9</numIndex></numIndex>
+									<numIndex index="10" type="array"><numIndex index="0">10/12</numIndex><numIndex index="1">col-10</numIndex></numIndex>
+									<numIndex index="11" type="array"><numIndex index="0">11/12</numIndex><numIndex index="1">col-11</numIndex></numIndex>
+									<numIndex index="12" type="array"><numIndex index="0">12/12</numIndex><numIndex index="1">col-12</numIndex></numIndex>
 								</items>
 							</config>
 						</TCEforms>
