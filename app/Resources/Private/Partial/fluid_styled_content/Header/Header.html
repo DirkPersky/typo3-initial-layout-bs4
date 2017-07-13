@@ -1,7 +1,7 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:switch expression="{layout}">
     <f:case value="1">
-        <h1>
+        <h1 class="{positionClass}">
             <f:link.typolink parameter="{link}">
                 <f:if condition="{icon}"><i class="fa fa-{icon}"></i></f:if>
                 <f:format.raw>{header}</f:format.raw>
@@ -9,7 +9,7 @@
         </h1>
     </f:case>
     <f:case value="2">
-        <h2>
+        <h2 class="{positionClass}">
             <f:link.typolink parameter="{link}">
                 <f:if condition="{icon}"><i class="fa fa-{icon}"></i></f:if>
                 <f:format.raw>{header}</f:format.raw>
@@ -17,7 +17,7 @@
         </h2>
     </f:case>
     <f:case value="3">
-        <h3>
+        <h3 class="{positionClass}">
             <f:link.typolink parameter="{link}">
                 <f:if condition="{icon}"><i class="fa fa-{icon}"></i></f:if>
                 <f:format.raw>{header}</f:format.raw>
@@ -25,7 +25,7 @@
         </h3>
     </f:case>
     <f:case value="4">
-        <h4>
+        <h4 class="{positionClass}">
             <f:link.typolink parameter="{link}">
                 <f:if condition="{icon}"><i class="fa fa-{icon}"></i></f:if>
                 <f:format.raw>{header}</f:format.raw>
@@ -33,7 +33,7 @@
         </h4>
     </f:case>
     <f:case value="5">
-        <h5>
+        <h5 class="{positionClass}">
             <f:link.typolink parameter="{link}">
                 <f:if condition="{icon}"><i class="fa fa-{icon}"></i></f:if>
                 <f:format.raw>{header}</f:format.raw>
@@ -41,7 +41,7 @@
         </h5>
     </f:case>
     <f:case value="6">
-        <h6>
+        <h6 class="{positionClass}">
             <f:link.typolink parameter="{link}">
                 <f:if condition="{icon}"><i class="fa fa-{icon}"></i></f:if>
                 <f:format.raw>{header}</f:format.raw>
