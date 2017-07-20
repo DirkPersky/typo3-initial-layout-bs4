@@ -1,6 +1,6 @@
 // main: ../style.scss
 @mixin calc-grid-column-half($index, $class, $columns ) {
-  .col-#{$class}-#{$index}{
+  .col-#{$class}#{$index}{
       // width: percentage(( 1 / $columns));
     	width: $columns;
 
@@ -15,18 +15,18 @@
 // [converter] This is defined recursively in LESS, but Sass supports real loops
 @mixin grid-columns-half($index, $columns) {
 
-	@include calc-grid-column-half($index, "xs", $columns);
+	@include calc-grid-column-half($index, "", $columns);
   @include media-breakpoint-up(sm) {
-    @include calc-grid-column-half($index, "sm", $columns);
+    @include calc-grid-column-half($index, "sm-", $columns);
   }
 	@include media-breakpoint-up(md) {
-		@include calc-grid-column-half($index, "md", $columns);
+		@include calc-grid-column-half($index, "md-", $columns);
 	}
 	@include media-breakpoint-up(lg){
-		@include calc-grid-column-half($index, "lg", $columns);
+		@include calc-grid-column-half($index, "lg-", $columns);
 	}
 	@include media-breakpoint-up(xl){
-		@include calc-grid-column-half($index, "xl", $columns);
+		@include calc-grid-column-half($index, "xl-", $columns);
 	}
 }
 

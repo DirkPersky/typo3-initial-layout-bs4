@@ -37,15 +37,19 @@ body{
   border: $style_border_width solid $style_border_color;
 }
 
+
+.ce-headline-left,
 .left{text-align: left;}
 .small{font-size: .8em;}
 .align-justify{text-align: justify;}
 
 .right,
+.ce-headline-right,
 .csc-header-alignment-right,
 .align-right{text-align: right;}
 
 .center,
+.ce-headline-center,
 .csc-header-alignment-center,
 .align-center{text-align: center;}
 

@@ -1,0 +1,41 @@
+.tx-indexedsearch-res {
+  padding-top: 30px;
+
+  h3 {
+    .tx-indexedsearch-percent {
+      float: right;
+    }
+  }
+
+  .tx-indexedsearch-info {
+    border-bottom: 1px solid #e1e1e1;
+    border-top: 1px solid #e1e1e1;
+    display: flex;
+    flex-wrap: wrap;
+
+    > div {
+      border-bottom: 1px solid #e1e1e1;
+      border-top: 1px solid #e1e1e1;
+      display: flex;
+      width: 100%;
+
+      @include media-breakpoint-up(md){
+        width: 50%;
+      }
+
+      @include media-breakpoint-up(lg){
+        width: 25%;
+      }
+
+      .tx-indexedserach-footer-headline {
+        font-weight: bold;
+        padding: 5px;
+
+      }
+      .tx-indexedserach-footer-wert {
+        padding: 5px;
+
+      }
+    }
+  }
+}

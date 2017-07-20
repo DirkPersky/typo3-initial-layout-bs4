@@ -58,11 +58,6 @@ lib.home.typolink {
     parameter = {$nav.homeUid}
     returnLast = url
 }
-lib.search = TEXT
-lib.search.typolink {
-    parameter = {$plugin.tx_indexedsearch.searchUID}
-    returnLast = url
-}
 
 ####################
 ### Site Scripts ###
@@ -229,6 +224,26 @@ lib.copyr {
     data = date:U
     strftime =%Y
     noTrimWrap = |&copy; 2016 - | Web Kon Internetagentur|
+}
+##############
+### Search ###
+##############
+lib.search = USER
+lib.search {
+    userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+    vendorName = TYPO3\CMS
+    extensionName = IndexedSearch
+    pluginName = Pi2
+    switchableControllerActions {
+        Search {
+            1 = form
+            2 = search
+        }
+    }
+
+    view =< plugin.tx_indexedsearch.view
+    settings =< plugin.tx_indexedsearch.settings
+    settings.headlineStyle = 1
 }
 #####################
 ### Load Template ###

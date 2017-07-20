@@ -31,8 +31,16 @@ favicon = favicon.png
 ### IndexSearch Page ###
 ########################
 plugin.tx_indexedsearch {
-	searchUID =
-	showAdvanced = 0
+    settings {
+        targetPid = 51
+        displayAdvancedSearchLink = 0
+    }
+
+    view {
+        layoutRootPath = fileadmin/web-kon/app/Resources/Private/Layout/search/
+        partialRootPath = fileadmin/web-kon/app/Resources/Private/Partial/search/
+        templateRootPath = fileadmin/web-kon/app/Resources/Private/Template/search/
+    }
 }
 
 #################
@@ -80,11 +88,12 @@ styles.content.imgtext.layoutKey = lazyloading
 ### TX_NEWS ###
 ###############
 plugin.tx_news {
-  view {
-    layoutRootPath = fileadmin/Mysite4/app/Resources/Private/Layout/news/
-    partialRootPath = fileadmin/Mysite4/app/Resources/Private/Partial/news/
-    templateRootPath = fileadmin/Mysite4/app/Resources/Private/Template/news/
-  }
+    storePidForSocalLink = 52 # Folder ID for social.txt & Twitter Opengraph
+    view {
+        layoutRootPath = fileadmin/Mysite4/app/Resources/Private/Layout/news/
+        partialRootPath = fileadmin/Mysite4/app/Resources/Private/Partial/news/
+        templateRootPath = fileadmin/Mysite4/app/Resources/Private/Template/news/
+    }
 }
 
 ###################

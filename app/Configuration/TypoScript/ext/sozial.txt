@@ -24,7 +24,7 @@ lib.sozial {
 
 lib.newsImage < lib.sozial.media
 
-[globalVar = GP:tx_news_pi1 > 0]
+[globalVar = GP:tx_news_pi1 > 0] && [globalVar = GP:tx_news_pi1|action = detail]
 lib.sozial {
 	titel = COA
 	titel {
@@ -40,7 +40,7 @@ lib.sozial {
 	}
 	desc < .titel
 	desc {
-		5.conf.tx_news_domain_model_news.field = uid
+		5.conf.tx_news_domain_model_news.field = teaser
 	}
 
 	isNews = TEXT
@@ -53,7 +53,7 @@ lib.sozial {
 			selectFields = uid
 			orderBy = sorting
 
-			pidInList = 3
+            pidInList = {$plugin.tx_news.storePidForSocalLink}
 			where = (uid_foreign={GP:tx_news_pi1|news} and tablenames='tx_news_domain_model_news')
 			where.insertData = 1
 			max = 1
@@ -125,3 +125,10 @@ page.headerData.1337 {
 		}
 	}
 }
+
+[globalVar = GP:tx_news_pi1 > 0] && [globalVar = GP:tx_news_pi1|action = detail]
+    # TX_News to it self for Facebook
+    page.headerData.1337 {
+        50 >
+    }
+[global]
