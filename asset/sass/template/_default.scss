@@ -256,3 +256,19 @@ p:last-child {
     justify-content: space-between;
 	}
 }
+/**
+ * Fade Box in
+ */
+.animated {
+  transition: all .7s ease-in-out;
+  visibility: visible;
+  opacity: 1;
+  /**
+   * Only Add this Class and JS will handle it him self
+   */
+  &.animated-hide {
+    transform: translateY(100px);
+    visibility: hidden;
+    opacity: 0;
+  }
+}
