@@ -37,9 +37,9 @@ plugin.tx_indexedsearch {
     }
 
     view {
-        layoutRootPath = fileadmin/web-kon/app/Resources/Private/Layout/search/
-        partialRootPath = fileadmin/web-kon/app/Resources/Private/Partial/search/
-        templateRootPath = fileadmin/web-kon/app/Resources/Private/Template/search/
+        layoutRootPath = fileadmin/Mysite4/app/Resources/Private/Layout/search/
+        partialRootPath = fileadmin/Mysite4/app/Resources/Private/Partial/search/
+        templateRootPath = fileadmin/Mysite4/app/Resources/Private/Template/search/
     }
 }
 
