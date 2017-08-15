@@ -1,7 +1,7 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:if condition="{settings.headlineStyle}">
     <f:then>
-        <div class="search-toggleable collapse" id="collapseSearch">
+        <div class="search-toggleable collapse" id="navbarSearch">
             <div class="search-container">
                 <div class="container">
                     <f:alias map="{sword: searchParams.sword}">
@@ -9,6 +9,8 @@
                     </f:alias>
                 </div>
             </div>
+
+            <a href="#top" data-toggle="collapse" data-target="#navbarSearch" class="close">×</a>
         </div>
     </f:then>
     <f:else>
