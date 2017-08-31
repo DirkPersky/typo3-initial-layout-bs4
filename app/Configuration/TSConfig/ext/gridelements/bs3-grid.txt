@@ -12,11 +12,11 @@ tx_gridelements.setup {
         1 {
           columns {
             1 {
-              name = Links
+              name = Spalte 1
               colPos = 10
             }
             2 {
-              name = Rechts
+              name = Spalte 2
               colPos = 11
             }
           }
@@ -38,15 +38,15 @@ tx_gridelements.setup {
         1 {
           columns {
             1 {
-              name = Links
+              name = Spalte 1
               colPos = 10
             }
             2 {
-              name = Rechts
+              name = Spalte 2
               colPos = 11
             }
             3 {
-              name = Rechts
+              name = Spalte 3
               colPos = 12
             }
           }
@@ -68,19 +68,19 @@ tx_gridelements.setup {
         1 {
           columns {
             1 {
-              name = Links
+              name = Spalte 1
               colPos = 10
             }
             2 {
-              name = Rechts
+              name = Spalte 2
               colPos = 11
             }
             3 {
-              name = Rechts
+              name = Spalte 3
               colPos = 12
             }
             4 {
-              name = Rechts
+              name = Spalte 4
               colPos = 13
             }
           }
@@ -101,23 +101,23 @@ tx_gridelements.setup {
         1 {
           columns {
             1 {
-              name = Links
+              name = Spalte 1
               colPos = 10
             }
             2 {
-              name = Rechts
+              name = Spalte 2
               colPos = 11
             }
             3 {
-              name = Rechts
+              name = Spalte 3
               colPos = 12
             }
             4 {
-              name = Rechts
+              name = Spalte 4
               colPos = 13
             }
             5 {
-              name = Rechts
+              name = Spalte 5
               colPos = 14
             }
           }
@@ -138,27 +138,27 @@ tx_gridelements.setup {
         1 {
           columns {
             1 {
-              name = Links
+              name = Spalte 1
               colPos = 10
             }
             2 {
-              name = Rechts
+              name = Spalte 2
               colPos = 11
             }
             3 {
-              name = Rechts
+              name = Spalte 3
               colPos = 12
             }
             4 {
-              name = Rechts
+              name = Spalte 4
               colPos = 13
             }
             5 {
-              name = Rechts
+              name = Spalte 5
               colPos = 14
             }
             6 {
-              name = Rechts
+              name = Spalte 6
               colPos = 15
             }
           }

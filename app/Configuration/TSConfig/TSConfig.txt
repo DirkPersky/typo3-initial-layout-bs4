@@ -25,3 +25,10 @@ TCEFORM.pages.abstract {
 }
 
 TCEFORM.tt_content.imagewidth.config.range.upper = 2000
+
+########################################
+### Remove old page content elements ###
+########################################
+TCEFORM.tt_content.CType {
+    removeItems = text, textpic, image
+}
