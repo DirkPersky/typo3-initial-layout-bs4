@@ -1,0 +1,42 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{data.header_layout} != 100">
+	<f:if condition="{data.header} || {data.subheader} || {data.date}">
+		<header>
+			<f:switch expression="{data.layout}">
+				<f:case value="6">
+					<f:render section="MainHeader" arguments="{_all}" />
+				</f:case>
+				<f:defaultCase>
+					<f:render section="DefaultHeadline" arguments="{_all}" />
+				</f:defaultCase>
+			</f:switch>
+		</header>
+	</f:if>
+</f:if>
+
+<f:section name="DefaultHeadline">
+	<f:render section="MainHeader" arguments="{_all}" />
+	<f:render section="SubHeader" arguments="{_all}" />
+	<f:render section="DateHeader" arguments="{_all}" />
+</f:section>
+<f:section name="MainHeader">
+	<f:render partial="Header/Header" arguments="{
+		header: data.header,
+		layout: data.header_layout,
+		positionClass: '{f:if(condition: data.header_position, then: \'ce-headline-{data.header_position}\')}',
+		link: data.header_link,
+		default: settings.defaultHeaderType}" />
+</f:section>
+<f:section name="SubHeader">
+	<f:render partial="Header/SubHeader" arguments="{
+		subheader: data.subheader,
+		layout: data.header_layout,
+		positionClass: '{f:if(condition: data.header_position, then: \'ce-headline-{data.header_position}\')}',
+		default: settings.defaultHeaderType}" />
+</f:section>
+<f:section name="DateHeader">
+	<f:render partial="Header/Date" arguments="{
+		date: data.date,
+		positionClass: '{f:if(condition: data.header_position, then: \'ce-headline-{data.header_position}\')}'}" />
+</f:section>
+</html>
