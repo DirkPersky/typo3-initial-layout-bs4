@@ -12,7 +12,7 @@
 					id="carousel-generic-{data.uid}"
 					class="carousel slide"
 					data-ride="carousel"
-					data-interval="{f:if(condition: "{data.rowDescription}", then: "{f:cObject(typoscriptObjectPath: 'lib.math', data: '{data.rowDescription}')}", else: "3000")}"
+					data-interval="{f:if(condition: "{data.subheader}", then: "{f:cObject(typoscriptObjectPath: 'lib.math', data: '{data.subheader}')}", else: "3000")}"
 			data-wrap="true"
 			>
 			<f:if condition="{gallery.count.rows} > 1">
