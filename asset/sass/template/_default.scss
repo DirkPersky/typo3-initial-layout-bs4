@@ -55,7 +55,7 @@ body{
 
 .indent{padding-left: 15px;}
 
-.tx-powermail .mandatory{color:$brand-danger;}
+//.tx-powermail .mandatory{color:$brand-danger;}
 .cc_banner-wrapper {height: 0 !important;}
 
 /**
@@ -185,7 +185,7 @@ p:last-child {
       @extend .card;
       /** Style Card Header **/
       .panel-heading {
-        @extend .card-block;
+        @extend .card-body;
         @include rem(padding, 10 15);
         background-color: $style_border_color;
         color: white;
@@ -230,9 +230,9 @@ p:last-child {
           margin: 0;
         }
       }
-      /** Format Boady as Card-block **/
+      /** Format Boady as card-body **/
       .panel-body {
-        @extend .card-block;
+        @extend .card-body;
       }
     }
   }
