@@ -1,4 +1,4 @@
-!function($){
+jQuery(function ($) {
   /**
    * Custom DOM Event
    */
@@ -28,6 +28,7 @@
  		}
  	});
 
+
   /**
    * Anchor Scroll
    */
@@ -36,7 +37,7 @@
         e.preventDefault();
       }
   });
-}(jQuery);
+});
 
 jQuery( window ).load(function() {
     // scrollToAnchor(document.URL);

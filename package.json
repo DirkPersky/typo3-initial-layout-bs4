@@ -41,6 +41,7 @@
     "install": "latest",
     "lazysizes": "latest",
     "modernizr": "latest",
+    "popper.js": "^1.12.5",
     "rrssb": "^1.13.1",
     "tether": "latest",
     "vegas": "latest",

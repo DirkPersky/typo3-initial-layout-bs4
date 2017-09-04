@@ -57,6 +57,7 @@ var _sass = {
  */
 var npmModules = [
 	'node_modules/tether/dist/js/tether.min.js', // Needed for Bootstrap 4
+    'node_modules/popper.js/dist/umd/popper.min.js', // Popper.js
 	'node_modules/bootstrap/dist/js/bootstrap.min.js', // Bootstrap 4
 
     'node_modules/lazysizes/plugins/print/ls.print.js', // LazyLoading for Print
