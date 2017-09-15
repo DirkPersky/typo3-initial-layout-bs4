@@ -149,3 +149,8 @@ rss {
 
 plugin.tx_ckeditor_fontawesome.loadCSS = 0
 plugin.tx_iconfont.cssFile =
+
+###########################
+### Google Maps Api Key ###
+###########################
+plugin.tx_gomapsext.settings.apiKey =
