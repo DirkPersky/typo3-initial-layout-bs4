@@ -2,13 +2,12 @@ lib.sozial = COA
 lib.sozial {
 	titel = TEXT
 	titel {
-		value.field = subtitle
-		ifEmpty.field = title
+		data = page:subtitle
 	}
 
 	desc = TEXT
 	desc {
-		value.field = description
+		data = page:description
 	}
 
 	url = TEXT
