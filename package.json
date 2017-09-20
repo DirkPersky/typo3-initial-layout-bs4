@@ -35,14 +35,15 @@
   },
   "dependencies": {
     "animate.css": "latest",
-    "bootstrap": "^4.0.0-alpha.4",
+    "bootstrap": "^4.0.0-beta",
+    "jquery": "latest",
     "font-awesome": "latest",
     "hamburgers": "latest",
     "install": "latest",
     "lazysizes": "latest",
     "modernizr": "latest",
-    "popper.js": "^1.12.5",
-    "rrssb": "^1.13.1",
+    "popper.js": "latest",
+    "rrssb": "latest",
     "tether": "latest",
     "vegas": "latest",
     "waypoints": "latest"
