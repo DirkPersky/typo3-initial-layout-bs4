@@ -51,12 +51,33 @@ $_defaultConf = array(
                         'table' => 'tx_news_domain_model_news',
                         'id_field' => 'uid',
                         'alias_field' => 'title',
+                        'addWhereClause' => ' AND NOT deleted',
                         'useUniqueCache' => 1,
                         'useUniqueCache_conf' => array(
                             'strtolower' => 1,
-                            'spaceCharacter' => '-',
+                            'spaceCharacter' => '-'
                         ),
-                    ),
+                        'languageGetVar' => 'L',
+                        'languageExceptionUids' => '',
+                        'languageField' => 'sys_language_uid',
+                        'transOrigPointerField' => 'l10n_parent',
+                        'autoUpdate' => 1,
+                        'expireDays' => 180,
+                    )
+                ),
+                array(
+                    'GETvar' => 'tx_news_pi1[action]',
+                    'noMatch' => 'bypass'
+                ),
+                array(
+                    'GETvar' => 'tx_news_pi1[controller]',
+                    'noMatch' => 'bypass'
+                ),
+
+            ),
+            'newspage' => array(
+                array(
+                    'GETvar' => 'tx_news_pi1[@widget_0][currentPage]',
                 ),
             ),
         ),
