@@ -11,8 +11,9 @@ body {
 	background-attachment: fixed;
 	background-size: 100%;
 }
+
 body{
-	overflow-y: scroll;
+  overflow-y: scroll;
 	overflow-x: hidden;
 
 	@include font-size($font-size-base-calc);

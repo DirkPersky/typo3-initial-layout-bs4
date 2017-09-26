@@ -1,3 +1,8 @@
+require('./jquery.fancybox');
+require('./helpers/jquery.fancybox-buttons');
+require('./helpers/jquery.fancybox-media');
+require('./helpers/jquery.fancybox-thumbs');
+
 jQuery.noConflict();
 jQuery(document).ready(function($) {
   $('.fancybox').fancybox({

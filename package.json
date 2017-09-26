@@ -1,10 +1,12 @@
 {
-  "name": "typo3-initial-layout-v2",
+  "name": "typo3-initial-layout-v3",
   "version": "2.0.1",
   "description": "NPM Integration",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=webpack.config.js",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -16,36 +18,32 @@
   "author": "Dirk Persky",
   "license": "ISC",
   "devDependencies": {
-    "animate.css": "latest",
-    "browser-sync": "latest",
-    "gulp": "latest",
-    "gulp-add-src": "latest",
-    "gulp-batch": "latest",
-    "gulp-concat": "latest",
-    "gulp-imagemin": "latest",
-    "gulp-jshint": "latest",
-    "gulp-order": "latest",
-    "gulp-sass": "latest",
-    "gulp-uglify": "latest",
-    "gulp-util": "latest",
-    "gulp-watch": "latest",
-    "imagemin-pngquant": "latest",
+    "babel-core": "latest",
+    "babel-loader": "latest",
+    "babel-preset-env": "latest",
+    "cross-env": "latest",
+    "css-loader": "latest",
+    "extract-text-webpack-plugin": "latest",
+    "file-loader": "latest",
+    "friendly-errors-webpack-plugin": "latest",
+    "img-loader": "latest",
     "jshint": "latest",
-    "vinyl-ftp": "latest"
+    "node-sass": "latest",
+    "sass-loader": "latest",
+    "uglifyjs-webpack-plugin": "latest",
+    "webpack": "latest"
   },
   "dependencies": {
-    "animate.css": "latest",
     "bootstrap": "^4.0.0-beta",
-    "jquery": "latest",
     "font-awesome": "latest",
     "hamburgers": "latest",
-    "install": "latest",
+    "install": "^0.10.1",
+    "jquery": "latest",
     "lazysizes": "latest",
     "modernizr": "latest",
     "popper.js": "latest",
     "rrssb": "latest",
     "tether": "latest",
-    "vegas": "latest",
     "waypoints": "latest"
   }
 }

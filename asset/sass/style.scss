@@ -4,16 +4,16 @@
 @import "template/variables";
 
 /* INCLUDE bootstrap */
-@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "~bootstrap/scss/bootstrap.scss";
 
 /* INCLUDE Hambugers */
-@import "../../node_modules/hamburgers/_sass/hamburgers/hamburgers";
+@import "~hamburgers/_sass/hamburgers/hamburgers";
 
 /* Icon Font */
-@import "../../node_modules/font-awesome/scss/font-awesome";
+@import "~font-awesome/scss/font-awesome";
 
 /* Social Share */
 @import "rrssb/rrssb";
 
-/* INCLUDE Layout Specific */
+///* INCLUDE Layout Specific */
 @import "template/style";

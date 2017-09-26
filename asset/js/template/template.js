@@ -28,7 +28,6 @@ jQuery(function ($) {
  		}
  	});
 
-
   /**
    * Anchor Scroll
    */
