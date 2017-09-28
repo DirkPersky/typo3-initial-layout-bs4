@@ -1,25 +1,23 @@
-// main: ../style.scss
-
 // Core variables and mixins
 @import "mixins/mixins";
 // TEMPLATE STYLES
-//@import "offcanvas";
-//@import "megaMenu";
+@import "offcanvas";
+@import "megaMenu";
 @import "default";
-//@import "header";
-//@import "content";
-//@import "footer";
-//@import "slider";
-//@import "killImageWrap";
-//@import "popover";
-//@import "grid";
-//
-//@import "toggleBox";
-//@import "onepage";
-//@import "search";
-//
-//@import "language";
-//@import "sprites";
-//@import "form";
+@import "header";
+@import "content";
+@import "footer";
+@import "slider";
+@import "killImageWrap";
+@import "popover";
+@import "grid";
 
-// @import "popout";
+@import "toggleBox";
+@import "onepage";
+@import "search";
+
+@import "language";
+@import "sprites";
+@import "form";
+
+//@import "popout";

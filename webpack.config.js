@@ -9,6 +9,10 @@ class WebpackConfig {
      * Create a new instance.
      */
     constructor() {
+        this.config = {
+            publicPath: 'app/Resources/Public'
+        };
+
         this.webpackConfig = {
             entry: '',
             output: {},
@@ -20,6 +24,9 @@ class WebpackConfig {
     }
     isProduction(){
         return (!process.env.NODE_ENV || process.env.NODE_ENV === 'production') ? true: false;
+    }
+    isServe(){
+        return (process.env.NODE_SERVE && process.env.NODE_SERVE === 'true') ? true: false;
     }
     /**
      * Build the Webpack configuration object.
@@ -49,7 +56,7 @@ class WebpackConfig {
      */
     buildOutput() {
         this.webpackConfig.output = {
-            path: path.resolve(__dirname, 'app/Resources/Public/js'),
+            path: path.resolve(__dirname,  this.config.publicPath+'/js'),
             filename: 'script.min.js'
         };
 
@@ -165,8 +172,33 @@ class WebpackConfig {
             })
         );
 
+        if(this.isServe()) {
+            // let BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+            // plugins.push(
+            //     new BrowserSyncPlugin(
+            //         {
+            //             host: 'localhost',
+            //             port: 3000,
+            //             server: {
+            //                 baseDir: ['app/Resources/Public']
+            //             },
+            //             files: [
+            //                 'app/Resources/Public/js/**/*.js',
+            //                 'app/Resources/Public/css/**/*.css',
+            //                 'app/Resources/Public/*.html'
+            //             ]
+            //         },
+            //         // plugin options
+            //         {
+            //             // prevent BrowserSync from reloading the page
+            //             // and let Webpack Dev Server take care of this
+            //             reload: false
+            //         }
+            //     )
+            // );
+        }
+
         return this;
     }
 }
-
 module.exports = new WebpackConfig().build();

@@ -1,12 +1,15 @@
 {
-  "name": "typo3-initial-layout-v3",
-  "version": "2.0.1",
-  "description": "NPM Integration",
+  "name": "typo3-initial-layout-v2",
+  "version": "2.1.0",
+  "description": "NPM Integration with webpack",
   "main": "index.js",
   "scripts": {
-    "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=webpack.config.js",
+    "dev": "npm run development",
+    "development": "npm run serve | npm run watch",
+    "serve": "webpack-dev-server --config=server.js",
+    "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules",
     "prod": "npm run production",
-    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=webpack.config.js"
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules"
   },
   "repository": {
     "type": "git",
@@ -31,10 +34,11 @@
     "node-sass": "latest",
     "sass-loader": "latest",
     "uglifyjs-webpack-plugin": "latest",
-    "webpack": "latest"
+    "webpack": "latest",
+    "webpack-dev-server": "latest"
   },
   "dependencies": {
-    "bootstrap": "^4.0.0-beta",
+    "bootstrap": "next",
     "font-awesome": "latest",
     "hamburgers": "latest",
     "install": "^0.10.1",
