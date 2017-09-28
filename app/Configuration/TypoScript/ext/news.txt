@@ -14,10 +14,10 @@ plugin.tx_news {
 
   settings {
     # Disable Default CSS
-		cssFile >
+    cssFile >
 
     # Teaser Max Chars
-		cropMaxCharacters = 200
+    cropMaxCharacters = 200
 
     # Disable Dummy Image
     displayDummyIfNoMedia = 0
@@ -35,19 +35,19 @@ plugin.tx_news {
         }
       }
     }
-		list {
-			media {
-				image {
-          # Override Image Sizes
-					maxWidth = 480
-					maxHeight = 480
-				}
-			}
-      #Paginate configuration.
-      paginate {
-         insertAbove = 0
-         insertBelow = 1
-      }
-		}
+    list {
+        media {
+            image {
+                # Override Image Sizes
+                maxWidth = 480
+                maxHeight = 480
+            }
+        }
+        #Paginate configuration.
+        paginate {
+            insertAbove = 0
+            insertBelow = 1
+        }
+    }
   }
 }

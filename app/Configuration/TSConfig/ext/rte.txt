@@ -58,6 +58,8 @@ RTE.default.proc.allowedClasses := addToList(bg-success)
 RTE.default.proc.allowedClasses := addToList(bg-info)
 RTE.default.proc.allowedClasses := addToList(bg-warning)
 RTE.default.proc.allowedClasses := addToList(bg-danger)
+RTE.default.proc.allowedClasses := addToList(text-center)
+RTE.default.proc.allowedClasses := addToList(text-right)
 
 # Additional
 RTE.default.proc.allowedClasses := addToList(small)

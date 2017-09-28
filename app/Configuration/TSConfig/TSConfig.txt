@@ -7,7 +7,6 @@
 <INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TSConfig/ext/gridelements.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TSConfig/ext/image.txt">
 #<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TSConfig/ext/pageteaser.txt">
-#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TSConfig/ext/tx_nwtimagecrop_cropscaling_ratio.txt">
 
 #######################
 ### Default Sprache ###

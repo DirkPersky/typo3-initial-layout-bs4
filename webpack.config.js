@@ -2,15 +2,39 @@ const path = require('path');
 let FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 let UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 let ExtractTextPlugin = require('extract-text-webpack-plugin');
+let ModernizrWebpackPlugin = require('modernizr-webpack-plugin');
 
-// console.log(process.env.NODE_ENV);
 class WebpackConfig {
     /**
      * Create a new instance.
      */
     constructor() {
         this.config = {
-            publicPath: 'app/Resources/Public'
+            publicPath: 'app/Resources/Public',
+            modernizr: {
+                filename: 'modernizr.min.js',
+                classPrefix: "",
+                options: [
+                    "addTest",
+                    "atRule",
+                    "domPrefixes",
+                    "hasEvent",
+                    "load",
+                    "mq",
+                    "prefixed",
+                    "prefixes",
+                    "prefixedCSS",
+                    "setClasses",
+                    "testAllProps",
+                    "testProp",
+                    "testStyles"
+                ],
+                'feature-detects': [
+                    "css/flexbox",
+                    "svg",
+                    "svg/smil"
+                ]
+            }
         };
 
         this.webpackConfig = {
@@ -24,9 +48,6 @@ class WebpackConfig {
     }
     isProduction(){
         return (!process.env.NODE_ENV || process.env.NODE_ENV === 'production') ? true: false;
-    }
-    isServe(){
-        return (process.env.NODE_SERVE && process.env.NODE_SERVE === 'true') ? true: false;
     }
     /**
      * Build the Webpack configuration object.
@@ -85,7 +106,6 @@ class WebpackConfig {
                 'css-loader', 'sass-loader'
             ])
         });
-
         // Copy Fonts to Public dir
         this.webpackConfig.module.rules.push({
             test: /\.(woff2?|ttf|eot|svg|otf)$/,
@@ -149,12 +169,19 @@ class WebpackConfig {
      * Build the plugins array.
      */
     buildPlugins() {
+        // Add Frindly Errors
         this.webpackConfig.plugins.push(
             new FriendlyErrorsWebpackPlugin({
                 clearConsole: true
             })
         );
-
+        // Generate Moderniz
+        this.webpackConfig.plugins.push(
+            new ModernizrWebpackPlugin(
+                this.config.modernizr
+            )
+        );
+        // Uglify & Compress JS
         if(this.isProduction()) {
             this.webpackConfig.plugins.push(
                 new UglifyJSPlugin({
@@ -164,39 +191,13 @@ class WebpackConfig {
                 })
             );
         }
-
+        // say ExtractTextPlugin to export his results to style.css
         this.webpackConfig.plugins.push(
             new ExtractTextPlugin({ // define where to save the file
                 filename: '../css/style.css',
                 allChunks: true,
             })
         );
-
-        if(this.isServe()) {
-            // let BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-            // plugins.push(
-            //     new BrowserSyncPlugin(
-            //         {
-            //             host: 'localhost',
-            //             port: 3000,
-            //             server: {
-            //                 baseDir: ['app/Resources/Public']
-            //             },
-            //             files: [
-            //                 'app/Resources/Public/js/**/*.js',
-            //                 'app/Resources/Public/css/**/*.css',
-            //                 'app/Resources/Public/*.html'
-            //             ]
-            //         },
-            //         // plugin options
-            //         {
-            //             // prevent BrowserSync from reloading the page
-            //             // and let Webpack Dev Server take care of this
-            //             reload: false
-            //         }
-            //     )
-            // );
-        }
 
         return this;
     }

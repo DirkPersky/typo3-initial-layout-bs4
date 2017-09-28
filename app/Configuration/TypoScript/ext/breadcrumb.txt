@@ -1,11 +1,11 @@
 
 lib.breadcrumb = COA
 lib.breadcrumb {
-    wrap = <ul class="breadcrumb">|</ul>
+    wrap = <ol class="breadcrumb">|</ol>
     10 = TEXT
     10 {
         value = Sie sind hier: &nbsp;
-        wrap = <li class="active">|</li>
+        wrap = <li class="breadcrumb-item active">|</li>
     }
     10 >
     20 = HMENU
@@ -19,7 +19,7 @@ lib.breadcrumb {
           NO = 1
           NO {
             ATagParams = title="{field:subtitle}"
-            wrapItemAndSub = <li>|</li>
+            wrapItemAndSub = <li class="breadcrumb-item">|</li>
             stdWrap.stripHtml = 1
 
             #################################
@@ -59,7 +59,7 @@ lib.breadcrumb {
           CUR = 1
           CUR.doNotLinkIt = 1
           CUR.stdWrap.stripHtml = 1
-          CUR.wrapItemAndSub = <li class="active">|</li>
+          CUR.wrapItemAndSub = <li class="breadcrumb-item active">|</li>
         }
     }
 }

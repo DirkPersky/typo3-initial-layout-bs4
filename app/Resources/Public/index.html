@@ -28,156 +28,100 @@
 
 <body>
 <header id="navigation">
-    <nav class="navbar navbar-static-top navbar-light" role="navigation">
+    <nav class="navbar nav-minimal" role="navigation">
         <div class="container">
-            <!-- OffCanvis Toogle -->
-            <button class="navbar-toggler hamburger hamburger--collapse hidden-md-up pull-right" type="button"
-                    aria-label="Menu" aria-controls="navigation" data-toggle="collapse" data-target=".main-nav">
-            <span class="hamburger-box">
-              <span class="hamburger-inner"></span>
-            </span>
-            </button>
-            <!-- Logo -->
-            <a class="navbar-brand pull-right pull-md-left" href="#">
-                <img src="img/logo.png">
-            </a>
-            <!-- Desktop nav -->
-            <ul class="nav navbar-nav pull-md-right hidden-sm-down">
-                <li class="nav-item">
-                    <a href="#mega" class="nav-link" data-mega="#mega">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link" data-mega="#mega2">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Link</a>
-                </li>
-            </ul>
-            <!-- Navigation -->
+            <div class="brand">
+                <a href="/" class="navbar-brand float-left">
+                    <img src="img/layout/logo.png" class="logo">
+                </a>
+            </div>
+            <div class="nav-bars">
+                <div class="collapse navbar-toggleable" id="navbarResponsive">
+                    <div class="header-nav">
+                        <div class="head-nav">
+                            <ul class="nav navbar-nav">
+                                <li class="nav-item active"><a href="/" title="Home" class="nav-link">Home</a></li>
+                                <li class="nav-item dropdown" data-nav="true"><a href="leistungen/" title=""
+                                                                                 class="nav-link">Web-Kon</a></li>
+                                <li class="nav-item"><a href="blog/" title="" class="nav-link">Blog</a></li>
+                                <li class="nav-item"><a href="referenzen/" title="" class="nav-link">Referenzen</a></li>
+                                <li class="nav-item"><a href="karriere/" title="" class="nav-link">Karriere</a></li>
+                            </ul>
+                        </div>
 
+                        <ul class="nav sub-nav">
+                            <li class="nav-item active"><a href="/" title="Home" class="nav-link">Home</a></li>
+                            <li class="nav-item dropdown" data-nav="true"><a href="leistungen/" title=""
+                                                                             class="nav-link">Web-Kon</a></li>
+                            <li class="nav-item"><a href="blog/" title="" class="nav-link">Blog</a></li>
+                            <li class="nav-item"><a href="referenzen/" title="" class="nav-link">Referenzen</a></li>
+                            <li class="nav-item"><a href="karriere/" title="" class="nav-link">Karriere</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="search-toggleable collapse" id="collapseSearch">
+                    <div class="search-container">
+                        <div class="container">
+                            <form>
+                                <div class="input-group">
+                                    <input class="form-control" id="tx-indexedsearch-searchbox-sword" type="text" name="tx_indexedsearch_pi2[search][sword]">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="submit">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-right">
+                    <div class="search" data-toggle="collapse" data-target="#collapseSearch">
+                        <i class="fa fa-search"></i>
+                    </div>
+                    <button class="navbar-toggler hamburger hamburger--collapse float-right" type="button" aria-label="Menu"
+                            aria-controls="navigation" data-toggle="collapse" data-target="#navbarResponsive">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        <span class="menu-title">Menü</span>
+                    </button>
+                </div>
+            </div>
         </div>
     </nav>
-    <nav class="navbar navbar-mega navbar-light">
+    <nav class="navbar nav-inline" role="navigation" style="margin-top: 80px">
         <div class="container">
-            <div class="collapse navbar-toggleable-md main-nav in">
-                <!-- Overlay to Background Click toogle OffCanvis -->
-                <button type="button" class="nav-overlay" data-toggle="collapse" data-target=".main-nav"
-                        aria-expanded="true" style=""> &nbsp; </button>
-                <!-- Offcanvis -->
-                <div class="offCanvis offCanvis-right">
-                    <!-- Off-Canvis Nav -->
+            <div class="brand">
+                <a href="/" class="navbar-brand float-left">
+                    <img src="img/layout/logo.png" class="logo">
+                </a>
+            </div>
+            <div class="nav-bars">
+                <div class="collapse navbar-toggleable" id="navbarResponsive2">
                     <ul class="nav navbar-nav">
-                        <!-- data-nav="true" :: activte JavaScript -->
-                        <li class="nav-item" data-nav="true" id="mega">
-                            <a href="#" class="nav-link">Link</a>
-                            <!-- Wrap Childs::Start -->
-                            <span class="nav-trans">
-                    <ul class="nav {CUSTOMCLASS}">
-                      <!-- Close Child on Mobile::Start -->
-                      <li class="dropdown-nav-close">
-                        <button class="btn btn-block btn-close">
-                          <i class="fa fa-angle-left"></i>
-                        </button>
-                      </li>
-                      <li class="nav-item">
-                        <span class="nav-header">Link</span>
-
-                        <ul class="nav">
-                          <li class="mega-sub" data-nav="true">
-                              <a href="" title="" class="nav-link">
-                                  Produktangebot
-                              </a>
-                              <span class="nav-trans">
-                                  <ul class="nav">
-                                     <li><a href="#" class="nav-link">Link</a></li>
-                                      <li><a href="#" class="nav-link">Link</a></li>
-                                      <li><a href="#" class="nav-link">Link</a></li>
-                                      <li><a href="#" class="nav-link">Link</a></li>
-                                      <li><a href="#" class="nav-link">Link</a></li>
-                                  </ul>
-                              </span>
-                          </li>
-                          <li><a href="#" class="nav-link">Link</a></li>
-                          <li><a href="#" class="nav-link">Link</a></li>
-                          <li><a href="#" class="nav-link">Link</a></li>
-                          <li><a href="#" class="nav-link">Link</a></li>
-                          <li><a href="#" class="nav-link">Link</a></li>
-                        </ul>
-                      </li>
-                      <li class="nav-item">
-                        <span class="nav-header">Link</span>
-
-                        <ul class="nav">
-                          <li><a href="#" class="nav-link">Link</a></li>
-                          <li><a href="#" class="nav-link">Link</a></li>
-                          <li><a href="#" class="nav-link">Link</a></li>
-                          <li><a href="#" class="nav-link">Link</a></li>
-                          <li><a href="#" class="nav-link">Link</a></li>
-                        </ul>
-                      </li>
-
-                      <li class="nav-item hidden-sm-down">
-                        <span class="nav-header">Link</span>
-
-                        <div>
-                          <p> asda dah dhaks hdkash djkasdhjkash dkhasdh asjkhd kahd kash dkash dk ahkh dkhas dk has dhaskj dhasdjkhaksd kash khdoasiud asdas h</p>
-                        </div>
-                      </li>
-                        <!-- Close Child on Mobile::Ende -->
+                        <li class="nav-item active"><a href="/" title="Home" class="nav-link">Home</a></li>
+                        <li class="nav-item dropdown" data-nav="true"><a href="leistungen/" title=""
+                                                                         class="nav-link">Web-Kon</a></li>
+                        <li class="nav-item"><a href="blog/" title="" class="nav-link">Blog</a></li>
+                        <li class="nav-item"><a href="referenzen/" title="" class="nav-link">Referenzen</a></li>
+                        <li class="nav-item"><a href="karriere/" title="" class="nav-link">Karriere</a></li>
                     </ul>
-                  </span>
-                            <!-- Wrap Childs::Ende -->
-                        </li>
-                        <li class="nav-item" data-nav="true" id="mega2">
-                            <a href="#" class="nav-link">Link</a>
-                            <!-- Wrap Childs::Start -->
-                            <span class="nav-trans">
-                    <ul class="nav {CUSTOMCLASS}">
-                      <!-- Close Child on Mobile::Start -->
-                      <li class="dropdown-nav-close">
-                        <button class="btn btn-block btn-close">
-                          <i class="fa fa-angle-left"></i>
-                        </button>
-                      </li>
-                      <li class="nav-item">
-                        <span class="nav-header">Link</span>
+                </div>
 
-                        <ul class="nav">
-                          <li><a href="#" class="nav-link">Link</a></li>
-                          <li><a href="#" class="nav-link">Link</a></li>
-                          <li><a href="#" class="nav-link">Link</a></li>
-                          <li><a href="#" class="nav-link">Link</a></li>
-                          <li><a href="#" class="nav-link">Link</a></li>
-                        </ul>
-                      </li>
-                      <li class="nav-item">
-                        <span class="nav-header">Link</span>
-
-                        <ul class="nav">
-                          <li><a href="#" class="nav-link">Link</a></li>
-                          <li><a href="#" class="nav-link">Link</a></li>
-                          <li><a href="#" class="nav-link">Link</a></li>
-                          <li><a href="#" class="nav-link">Link</a></li>
-                          <li><a href="#" class="nav-link">Link</a></li>
-                        </ul>
-                      </li>
-
-                      <li class="nav-item hidden-sm-down">
-                        <span class="nav-header">Link</span>
-
-                        <div>
-                          <p> asda dah dhaks hdkash djkasdhjkash dkhasdh asjkhd kahd kash dkash dk ahkh dkhas dk has dhaskj dhasdjkhaksd kash khdoasiud asdas h</p>
-                        </div>
-                      </li>
-                        <!-- Close Child on Mobile::Ende -->
-                    </ul>
-                  </span>
-                            <!-- Wrap Childs::Ende -->
-                        </li>
-                    </ul>
+                <div class="nav-right">
+                    <div class="search" data-toggle="collapse" data-target="#collapseSearch">
+                        <i class="fa fa-search"></i>
+                    </div>
+                    <button class="navbar-toggler hamburger hamburger--collapse float-right" type="button" aria-label="Menu"
+                            aria-controls="navigation" data-toggle="collapse" data-target="#navbarResponsive2">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                        <span class="menu-title">Menü</span>
+                    </button>
                 </div>
             </div>
         </div>

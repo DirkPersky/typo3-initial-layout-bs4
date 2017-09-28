@@ -7,11 +7,11 @@ page.10 {
 	    layout.data = levelfield:-1,backend_layout_next_level,slide
 	    layout.override.field = backend_layout
 
-			bodyclass = TEXT
-			bodyclass.value = {$template.style}
-			bodyclass.insertData = 1
+        bodyclass = TEXT
+        bodyclass.value = {$template.style}
+        bodyclass.insertData = 1
 
-			newsImage < lib.newsImage
+        newsImage < lib.newsImage
     }
 
 	file.cObject = CASE

@@ -13,41 +13,20 @@ page = PAGE
 ########################
 ### Optionale Script ###
 ########################
-	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/compress.txt">
-	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/scriptmeger.txt">
-	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/realUrl.txt">
+	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/FEEdit.txt">
 	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/breadcrumb.txt">
 	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/language.txt">
-	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/analytics.txt">
 	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/pageteaser.txt">
 	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/news.txt">
 	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/table.txt">
 
-###############
-### FE Edit ###
-###############
-	[globalVar = TSFE : beUserLogin> 0]
-		config {
-			admPanel = 1
-			module.edit.forceDisplayFieldIcons=1
-            hide=1
-            override.tsdebug.forceTemplateParsing = 1
-		}
-		page.config.admPanel = 1
-		page.CSS_inlineStyle (
-			.typo3-feedit-element {
-				display: initial;
-			}
-			.btn span.icon-markup img {
-	      		height: 15px;
-		    }
-		    .typo3-feedit-element .btn.content-link,
-		    .typo3-editPanel .btn {
-			    padding-right: 10px;
-			    padding-left: 10px;
-		    }
-		)
-	[global]
+#######################
+### GO LIVE Scripte ###
+#######################
+	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/compress.txt">
+	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/scriptmeger.txt">
+	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/realUrl.txt">
+    #<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/analytics.txt">
 
 ######################
 ### Default Config ###
@@ -222,7 +201,7 @@ lib.copyr = TEXT
 lib.copyr {
     data = date:U
     strftime =%Y
-    noTrimWrap = |&copy; 2016 - | Web Kon Internetagentur|
+    noTrimWrap = |&copy; 2017 - | Web Kon Internetagentur|
 }
 ##############
 ### Search ###

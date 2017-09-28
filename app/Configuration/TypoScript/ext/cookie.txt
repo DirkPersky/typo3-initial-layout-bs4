@@ -48,7 +48,7 @@ page {
         50 = TEXT
         50 {
           wrap = "theme":"|",
-          value = dark-top
+          value = dark-bottom
         }
       }
 

@@ -1,37 +1,72 @@
 <header id="navigation">
-	<nav class="navbar navbar-static-top navbar-light" role="navigation">
+	<nav class="navbar nav-minimal fixed-top" role="navigation">
 		<div class="container">
-			<!-- Mobile Toogle nav :: https://github.com/jonsuh/hamburgers-->
-			<button class="navbar-toggler hamburger hamburger--collapse hidden-md-up float-xs-right"
-					type="button"
-					aria-label="Menu"
-					aria-controls="navigation"
-					data-toggle="collapse"
-					data-target="#navbarResponsive"
-			>
-				<span class="hamburger-box">
-					<span class="hamburger-inner"></span>
-				</span>
-			</button>
-			<!-- Mobile Logo -->
-			<a href="<f:cObject typoscriptObjectPath=" lib.home" />" class="navbar-brand float-md-left">
-				<img src="fileadmin/Mysite4/app/Resources/Public/img/logo.png" class="logo"/>
-			</a>
-			<!-- Main Navigation -->
-			<div class="collapse navbar-toggleable-md" id="navbarResponsive" data-close="#navbarSearch">
-				<ul class="nav navbar-nav float-md-right">
-					<f:cObject typoscriptObjectPath="lib.nav"/>
-				</ul>
+			<div class="brand">
+				<a href="<f:cObject typoscriptObjectPath=" lib.home" />" class="navbar-brand float-left">
+					<img src="fileadmin/Mysite4/app/Resources/Public/img/logo.png" class="logo">
+				</a>
+			</div>
+			<div class="nav-bars">
+				<div class="collapse navbar-toggleable" id="navbarResponsive">
+					<div class="header-nav">
+						<div class="head-nav">
+							<ul class="nav navbar-nav">
+								<f:cObject typoscriptObjectPath="lib.nav"/>
+							</ul>
+						</div>
 
-				<div class="navbar-toggler-buttons toggler-right">
-					<f:cObject typoscriptObjectPath="lib.searchBtn" />
+						<ul class="nav sub-nav">
+							<f:cObject typoscriptObjectPath="lib.nav"/>
+						</ul>
+					</div>
+				</div>
+				<f:cObject typoscriptObjectPath="lib.search" />
+				<div class="nav-right">
+					<div class="search" data-toggle="collapse" data-target="#collapseSearch">
+						<i class="fa fa-search"></i>
+					</div>
+					<button class="navbar-toggler hamburger hamburger--collapse float-right" type="button" aria-label="Menu"
+							aria-controls="navigation" data-toggle="collapse" data-target="#navbarResponsive">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+						<span class="menu-title">Menü</span>
+					</button>
 				</div>
 			</div>
 		</div>
-
-		<f:cObject typoscriptObjectPath="lib.search" />
+	</nav>
+	<nav class="navbar nav-inline fixed-top" role="navigation" style="margin-top: 80px">
+		<div class="container">
+			<div class="brand">
+				<a href="<f:cObject typoscriptObjectPath=" lib.home" />" class="navbar-brand float-left">
+					<img src="fileadmin/Mysite4/app/Resources/Public/img/logo.png" class="logo">
+				</a>
+			</div>
+			<div class="nav-bars">
+				<div class="collapse navbar-toggleable" id="navbarResponsive2">
+					<ul class="nav navbar-nav">
+						<f:cObject typoscriptObjectPath="lib.nav"/>
+					</ul>
+				</div>
+				<f:cObject typoscriptObjectPath="lib.search" />
+				<div class="nav-right">
+					<div class="search" data-toggle="collapse" data-target="#collapseSearch">
+						<i class="fa fa-search"></i>
+					</div>
+					<button class="navbar-toggler hamburger hamburger--collapse float-right" type="button" aria-label="Menu"
+							aria-controls="navigation" data-toggle="collapse" data-target="#navbarResponsive2">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+						<span class="menu-title">Menü</span>
+					</button>
+				</div>
+			</div>
+		</div>
 	</nav>
 </header>
+
 <section class="slider">
 	<f:cObject typoscriptObjectPath="lib.slider" />
 </section>

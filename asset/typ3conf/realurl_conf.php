@@ -95,7 +95,7 @@ $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['realurl'] = array(
      | WebSeite Route
      |--------------------------------
      */
-    'web-kon.de' => array_merge($_defaultConf, array(
+    'mysite4.cms-sudhaus.de' => array_merge($_defaultConf, array(
         'pagePath' => array(
             'rootpage_id' => '1',
         ),
@@ -105,5 +105,5 @@ $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['realurl'] = array(
      | WebSeite Redirect www to none
      |--------------------------------
      */
-    'www.web-kon.de' => 'web-kon.de',
+    'www.mysite4.cms-sudhaus.de' => 'mysite4.cms-sudhaus.de',
 );

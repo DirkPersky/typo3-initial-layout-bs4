@@ -22,6 +22,7 @@ try {
     // RSSB
     require('rrssb');
     // Load jQuery Plugins
+    require('jquery.finger');
     requireAll(require.context("./jquery", true, /^\.\/.*\.js/));
     // // Load Template Files
     requireAll(require.context('./template', true, /\.js$/));
