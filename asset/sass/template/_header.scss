@@ -23,6 +23,7 @@
 
 		display: flex;
 		flex-wrap: nowrap;
+		align-items: stretch;
 		justify-content: space-between;
 
 		margin-right: 0;
@@ -158,6 +159,31 @@
 			}
 		}
 	}
+	// Navigation
+	.navbar-toggleable {
+		max-height: calc(100vh - 90px);
+		overflow: auto;
+	}
+	//Navbar
+	.nav {
+		> .nav-item {
+			> .nav-link {
+				display: block;
+				color: theme-color('light');
+				text-transform: uppercase;
+
+				&:hover {
+					color: theme-color('secondary');
+				}
+			}
+
+			&.active {
+				> .nav-link {
+					color: theme-color('primary');
+				}
+			}
+		}
+	}
 }
 
 .nav-minimal {
@@ -169,6 +195,10 @@
 		right: 0;
 
 		background-color: rgba(black, 0.9);
+
+		@include media-breakpoint-up(md) {
+			overflow: visible;
+		}
 
 		&.show {
 			max-height: calc(100vh - 70px);
@@ -213,69 +243,40 @@
 				}
 			}
 		}
-		// Main Navigation
-		.navbar-nav {
+		// navs
+		.nav {
 			flex-direction: column;
+			// Main Navigation
+			&.navbar-nav {
+				> .nav-item {
+					> .nav-link {
+						font-size: 35px;
 
-			.nav-item {
+						transition: all 0.2s ease-in-out;
 
-				a {
-					display: inline-block;
-					color: theme-color('light');
-					font-size: 35px;
-					text-transform: uppercase;
-
-					transition: all 0.2s ease-in-out;
-
-					@include media-breakpoint-up(md) {
-						font-size: 42px;
-					}
-
-					&:hover {
-						color: theme-color('secondary');
-					}
-				}
-
-				&.active {
-
-					a {
-						color: theme-color('primary');
+						@include media-breakpoint-up(md) {
+							font-size: 42px;
+						}
 					}
 				}
 			}
-		}
-		// Besite Main
-		.sub-nav {
-			flex-direction: column;
+			// Besite Main
+			&.sub-nav {
+				margin: 0;
+				padding: 50px 0;
+				list-style: none;
 
-			margin: 0;
-			padding: 50px 0;
-			list-style: none;
-
-			@include media-breakpoint-up(md) {
-				display: inline-block;
-				padding: 0;
-			}
-
-			.nav-item {
-				line-height: 13px;
-
-				a {
+				@include media-breakpoint-up(md) {
 					display: inline-block;
-					color: theme-color('light');
-					font-size: 21px;
-					text-transform: uppercase;
-
-					transition: all 0.2s ease-in-out;
-
-					&:hover {
-						color: theme-color('primary');
-					}
+					padding: 0;
 				}
 
-				&.active {
-					a {
-						color: theme-color('secondary');
+				> .nav-item {
+					line-height: 13px;
+
+					> .nav-link {
+						font-size: 21px;
+						transition: all 0.2s ease-in-out;
 					}
 				}
 			}
@@ -284,8 +285,19 @@
 }
 
 .nav-inline {
+	@include media-breakpoint-up(lg) {
+		padding: 0;
+	}
+	.navbar-brand {
+		@include media-breakpoint-up(lg) {
+			padding: 20px 0;
+		}
+	}
 	// Search & Toggle Btn
 	.nav-right {
+		@include media-breakpoint-up(lg) {
+			align-self: center;
+		}
 		.navbar-toggler {
 			@include media-breakpoint-up(lg) {
 				display: none;
@@ -317,25 +329,189 @@
 			background-color: transparent;
 			position: static;
 			display: block;
+			overflow: visible;
 		}
-
-		.navbar-nav {
-			@include media-breakpoint-up(lg) {
-				flex-direction: row;
+		.nav {
+			&.navbar-nav {
+				position: relative;
+				overflow: hidden;
+				flex-wrap: nowrap;
+				@include media-breakpoint-up(lg) {
+					flex-direction: row;
+					flex-wrap: wrap;
+					align-items: stretch;
+					overflow: visible;
+					height: 100%;
+				}
+				> .nav-item {
+					@include media-breakpoint-up(lg) {
+						display: flex;
+						align-items: center;
+						justify-content: center;
+					}
+				}
 			}
 
-			.nav-item {
-
+			> .nav-item {
 				> .nav-link {
-					text-transform: uppercase;
-					color: theme-color('light');
 					@include rem(padding, 10 15);
+					border-bottom: 1px solid theme-color('light');
 
+					@include media-breakpoint-up(lg) {
+						border-bottom: 0;
+					}
 					@include media-breakpoint-up(xl) {
 						font-size: 1.15rem;
 					}
 				}
 			}
 		}
+	}
+	// Dropdowns
+	.dropdown {
+		position: static;
+		@include media-breakpoint-up(lg) {
+			position: relative;
+		}
+		// Nav Formating
+		.nav {
+			flex-direction: column;
+			flex-wrap: nowrap;
+		}
+		// nav Wrap
+		.dropdown-wrap {
+			background-color: theme-color('dark');
+			transition: all .4s ease-in-out;
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			top: 0;
+			overflow: hidden;
+
+			transform: translate(100%, 0);
+
+			@include media-breakpoint-up(lg) {
+				transform: translate(0, 0);
+				z-index: -1;
+				bottom: auto;
+				right: auto;
+				top: 100%;
+				left: 0;
+
+				overflow: visible;
+
+				opacity: 0;
+				visibility: hidden;
+			}
+
+			.dropdown-wrap {
+				@include media-breakpoint-up(lg) {
+					left: 100%;
+					top: 0;
+				}
+			}
+
+			.list-header {
+				position: relative;
+				@include rem(padding, 10 15);
+				border-bottom: 1px solid theme-color('light');
+				color: theme-color('light');
+
+				text-align: center;
+				cursor: pointer;
+
+				@include media-breakpoint-up(lg) {
+					display: none;
+				}
+
+				&:before {
+					@extend .fa;
+					@extend .fa-angle-left;
+
+					display: flex;
+					justify-content: center;
+					align-items: center;
+
+					font-size: 22px;
+					height: 100%;
+					width: 44px;
+
+					position: absolute;
+					bottom: 0;
+					right: 0;
+					left: 0;
+					top: 0;
+
+				}
+			}
+
+			&.show {
+				transform: translate(0, 0);
+			}
+
+			> ul {
+				overflow: auto;
+				max-height: 100%;
+
+				@include media-breakpoint-up(lg) {
+					overflow: visible;
+				}
+			}
+		}
+		// Hover event
+		&:hover {
+			> .dropdown-wrap {
+				@include media-breakpoint-up(lg) {
+					opacity: 1;
+					visibility: visible;
+
+					animation-name: dropdown-nav;
+					animation-duration: .4s;
+					animation-iteration-count: 1;
+				}
+			}
+		}
+		// Link
+		> .nav-link {
+			position: relative;
+			@include media-breakpoint-down(md) {
+				padding-right: 55px !important;
+			}
+			> .trigger {
+				border-left: 1px solid theme-color('light');
+				cursor: pointer;
+
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				font-size: 22px;
+				height: 100%;
+				width: 44px;
+
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				top: 0;
+
+				@include media-breakpoint-up(lg) {
+					display: none;
+				}
+
+				&:before {
+					@extend .fa;
+					@extend .fa-angle-right
+				}
+			}
+		}
+	}
+}
+
+@keyframes dropdown-nav {
+	from {
+		top: -100%;
+	}
+	to {
 	}
 }
