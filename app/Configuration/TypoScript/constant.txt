@@ -43,26 +43,6 @@ plugin.tx_indexedsearch {
     }
 }
 
-#################
-### Powermail ###
-#################
-plugin.tx_powermail {
-    settings {
-        # Disable internal jQuery
-        javascript.powermailJQuery =
-        javascript.powermailJQueryUi =
-        # allow HTML
-        misc.htmlForHtmlFields = 1
-        misc.htmlForLabels = 1
-    }
-    # Override Templates
-    view {
-        layoutRootPath = fileadmin/Mysite4/app/Resources/Private/Layout/powermail/
-        partialRootPath = fileadmin/Mysite4/app/Resources/Private/Partial/powermail/
-        templateRootPath = fileadmin/Mysite4/app/Resources/Private/Template/powermail/
-    }
-}
-
 ###################
 ### IMAGE WIDTH ###
 ###################
