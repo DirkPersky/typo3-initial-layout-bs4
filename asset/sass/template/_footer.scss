@@ -1,6 +1,38 @@
 // main: ../style.scss
-.class {
+footer#bottom {
+	background-color: theme-color('dark');
+	color: theme-color('light');
+	padding: 2rem 0;
+
+	a {
+		color: inherit;
+
+		&:hover {
+			opacity: .8;
+		}
+	}
+
+	.row {
+		> div {
+			padding-bottom: 2rem;
+		}
+	}
+
+	.nav-footer {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: flex-start;
+
+		margin: 0 -1rem;
+
+		.copyr {
+			padding: .5rem 1rem;
+		}
+	}
+
 	@include media-breakpoint-up(md) {
+		padding: 3rem 0;
 	}
 	@include media-breakpoint-up(lg) {
 	}

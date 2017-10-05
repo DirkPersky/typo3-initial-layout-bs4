@@ -522,3 +522,91 @@
 	to {
 	}
 }
+
+.nav-light {
+	background-color: rgba(theme-color('light'), 0.9);
+
+	&.show {
+		background-color: rgba(theme-color('light'), 0.9);
+	}
+	// Search & Toggle Btn
+	.nav-right {
+		.search {
+			i {
+				color: theme-color('dark');
+			}
+		}
+
+		.navbar-toggler {
+			color: theme-color('dark');
+			&:hover {
+				color: theme-color('dark');
+			}
+
+			.hamburger-box {
+				.hamburger-inner {
+					background-color: theme-color('dark');
+
+					&:before {
+						background-color: theme-color('dark');
+					}
+					&:after {
+						background-color: theme-color('dark');
+					}
+				}
+			}
+		}
+	}
+	// Search Bar
+	.search-toggleable {
+		background-color: rgba(theme-color('light'), 0.9);
+
+		.search-container {
+
+			.form-control {
+				::placeholder {
+					color: theme-color('dark');
+				}
+			}
+		}
+		.close {
+			color: theme-color('dark');
+		}
+	}
+	//Navbar
+	.nav {
+		> .nav-item {
+			> .nav-link {
+				color: theme-color('dark');
+
+				&:hover {
+					color: theme-color('secondary');
+				}
+			}
+
+			&.active {
+				> .nav-link {
+					color: theme-color('primary');
+				}
+			}
+		}
+	}
+	// Minimal Nav
+	&.nav-minimal {
+		// Navigation
+		.navbar-toggleable {
+			background-color: rgba(theme-color('light'), 0.9);
+
+			// navbar Wrap
+			.header-nav {
+				.head-nav {
+					border-bottom-color: theme-color('dark');
+
+					@include media-breakpoint-up(md) {
+						border-right-color: theme-color('dark');
+					}
+				}
+			}
+		}
+	}
+}

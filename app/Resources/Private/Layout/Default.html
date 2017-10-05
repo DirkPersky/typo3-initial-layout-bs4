@@ -79,20 +79,20 @@
 <footer id="bottom">
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-6 col-lg-3">
+			<div class="col-md-6">
 				<f:cObject typoscriptObjectPath="lib.footerNav.10" />
 			</div>
-			<div class="col-sm-6 col-lg-3">
+			<div class="col-md-6">
 				<f:cObject typoscriptObjectPath="lib.footerNav.20" />
 			</div>
-			<div class="col-sm-6 col-lg-3">
-				<f:cObject typoscriptObjectPath="lib.footerNav.30" />
-			</div>
-			<div class="col-sm-6 col-lg-3">
-				<f:cObject typoscriptObjectPath="lib.footerNav.40" />
-			</div>
 		</div>
-		<!-- Copyright -->
-		<f:cObject typoscriptObjectPath="lib.copyr" />
+		<nav class="nav-footer">
+			<!-- footer nav -->
+			<f:cObject typoscriptObjectPath="lib.footerNav.30" />
+			<!-- Copyright -->
+			<div class="copyr">
+				<f:cObject typoscriptObjectPath="lib.copyr" />
+			</div>
+		</nav>
 	</div>
 </footer>

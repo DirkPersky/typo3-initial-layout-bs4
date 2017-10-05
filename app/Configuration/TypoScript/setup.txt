@@ -180,6 +180,7 @@ lib.searchBtn {
     }
 }
 
+
 lib.footerNav = COA
 lib.footerNav {
     10 < temp.cPos
@@ -188,11 +189,23 @@ lib.footerNav {
     20 < temp.cPos
     20.select.where= colPos=3
 
-    30 < temp.cPos
-    30.select.where= colPos=4
+    30 = HMENU
+    30 {
+        special = list
+        special.value = {$nav.footer}
 
-    40 < temp.cPos
-    40.select.where= colPos=5
+        wrap = <ul class="nav">|</ul>
+
+        1 = TMENU
+        1 {
+            NO = 1
+            NO {
+                wrapItemAndSub = <li class="nav-item">|</li>
+                ATagParams = title="{field:subtitle}" class="nav-link"
+                ATagParams.insertData = 1
+            }
+        }
+    }
 }
 #################
 ### Copyright ###
