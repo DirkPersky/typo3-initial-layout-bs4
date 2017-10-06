@@ -3,7 +3,7 @@
 	<f:case value="6">
 		<f:render section="pictureTag" arguments="{_all}" />
 	</f:case>
-	<f:case default="true">
+	<f:defaultCase>
 		<figure class="image">
 			<f:render section="defaultImage" arguments="{_all}" />
 
@@ -13,7 +13,7 @@
 				</figcaption>
 			</f:if>
 		</figure>
-	</f:case>
+	</f:defaultCase>
 </f:switch>
 
 <f:section name="pictureTag">

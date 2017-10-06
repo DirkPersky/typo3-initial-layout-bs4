@@ -43,7 +43,9 @@
 			@include media-breakpoint-up(xl) {
 				min-height: 400px;
 			}
-
+			img {
+				width: 100%;
+			}
 			iframe {
 				min-height: 300px;
 

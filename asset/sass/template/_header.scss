@@ -40,6 +40,12 @@
 		.nav-bars {
 			flex: 0 0 auto;
 		}
+
+		.brand {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
 	}
 	// Brand/Logo
 	.navbar-brand {
@@ -204,7 +210,7 @@
 		background-color: rgba(black, 0.9);
 
 		@include media-breakpoint-up(md) {
-			overflow: visible;
+			overflow: hidden;
 		}
 
 		&.show {

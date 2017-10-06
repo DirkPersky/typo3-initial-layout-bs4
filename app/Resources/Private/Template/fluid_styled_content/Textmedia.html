@@ -40,7 +40,7 @@
 			</f:if>
 			</div>
 		</f:case>
-		<f:case default="true">
+		<f:defaultCase>
 			<div class="ce-textpic ce-{gallery.position.horizontal} ce-{gallery.position.vertical}{f:if(condition: gallery.position.noWrap, then: ' ce-nowrap')}">
 				<f:if condition="{gallery.position.vertical} != 'below'">
 					<f:render partial="Media/Gallery" arguments="{_all}" />
@@ -70,7 +70,7 @@
 					<f:render partial="Media/Gallery" arguments="{_all}" />
 				</f:if>
 			</div>
-		</f:case>
+		</f:defaultCase>
 	</f:switch>
 </f:section>
 </html>
