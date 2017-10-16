@@ -41,6 +41,7 @@
     "webpack-dev-server": "latest"
   },
   "dependencies": {
+    "@fancyapps/fancybox": "git+https://github.com/fancyapps/fancybox.git",
     "bootstrap": "^4.0.0-beta",
     "font-awesome": "latest",
     "hamburgers": "latest",

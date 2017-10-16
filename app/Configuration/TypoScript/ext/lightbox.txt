@@ -1,7 +1,7 @@
 page{
   includeCSS{
-    fancybox = {$path.template}Public/css/fancybox/jquery.fancybox.css
-    fancyboxThumb = {$path.template}Public/css/fancybox/helpers/jquery.fancybox-thumbs.css
+    #fancybox = {$path.template}Public/css/fancybox/jquery.fancybox.css
+    #fancyboxThumb = {$path.template}Public/css/fancybox/helpers/jquery.fancybox-thumbs.css
   }
 }
 tt_content.image.20.1.imageLinkWrap {

@@ -1,0 +1,35 @@
+.fancybox-container {
+  .fancybox-bg {
+    opacity: .9;
+  }
+
+  .fancybox-toolbar {
+    .fancybox-button--thumbs {
+      display: none;
+    }
+  }
+
+  @media all and (min-width: 800px) {
+    .fancybox-thumbs {
+      top: auto;
+      width: auto;
+      bottom: 0;
+      left: 0;
+      right : 0;
+      height: 95px;
+      padding: 10px;
+      box-sizing: border-box;
+      background: transparent;
+    }
+
+    &.fancybox-show-thumbs .fancybox-inner {
+      right: 0;
+      bottom: 95px;
+    }
+
+  }
+
+  .fancybox-button--thumbs {
+    display: none;
+  }
+}

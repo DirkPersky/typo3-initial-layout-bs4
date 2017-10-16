@@ -7,7 +7,8 @@ try {
     window.Popper = require('popper.js'); // Popper.js - Needed for Bootstrap 4
     require('bootstrap'); // Bootstrap 4
     // Fancybox
-    require('./fancybox/jquery.fancybox.init');
+    require('@fancyapps/fancybox');
+    require('./fancybox/fancybox_v3.init');
     // LazyLoading
     require('lazysizes/plugins/print/ls.print'); // LazyLoading for Print
     require('lazysizes/plugins/respimg/ls.respimg'); // LazyLoading for Responsive Images
