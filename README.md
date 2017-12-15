@@ -1,8 +1,8 @@
 # Start Developing with SASS & Combined JavaScript Files for TYPO3
-This Porjekt shoud help you to start developing with SASS and minifyed JavaScripts to get an high Google Page Insight Ranking.
+This project should help you to start developing with SASS and minified JavaScripts to get an high [Google Page Insight Ranking](https://developers.google.com/speed/pagespeed/insights/)
 
 ## Required
-- NPM-Packacke Manager
+- NPM-Package Manager
 
 ## Default used NPM-Modules
 - [animate.css](https://daneden.github.io/animate.css/)
@@ -13,16 +13,16 @@ This Porjekt shoud help you to start developing with SASS and minifyed JavaScrip
 - [Waypoints](http://imakewebthings.com/waypoints/)
 
 ## Download & Config
-Clone this Projekt to your Remote-Device and config all relevant Options
+Clone this project to your server and config all relevant options
 
 ### Modernizr
-You can config your needed [Modernizr](https://modernizr.com/) options in the file:
+You can config needed [Modernizr](https://modernizr.com/) options in the file:
 ```
-/asses/js/config-modenizr.js
+/assets/js/config-modenizr.js
 ```
 
 ### GULP Task Manager
-In the  `guilpfile.js` you can setup diferent Options to Combile and Minify JavaScripts and SASS-Files.
+In the  `gulpfile.js` you can setup diferent options to combile and minify JavaScripts and SASS-Files.
 
 #### JavaScripts
 All JavaScript´s from the `/asses/js/` Folder Strukture will be Combined to an singel JavaScript File. You cann define options to Minify this Result by setup:
@@ -39,7 +39,7 @@ var _uglify = {
 };
 ```
 
-If you need Diferent Libeys which are not places in the `/asses/js` Folder you can add this to the npmModules list
+If you need different libraries which are not places in the `/asses/js` Folder you can add this to the npmModules list
 ```
 var npmModules = [
   'node_modules/tether/dist/js/tether.min.js', // Needed for Bootstrap 4
@@ -56,7 +56,7 @@ var npmModules = [
 ```
 
 #### SASS Precompiler to CSS
-The SASS-File from `/asses/css/style.scss` compiled to an Single CSS File. You can define the Output bei configure:
+The SASS-File from `/asses/css/style.scss` compiled to an single CSS file. You can define the output bei configure:
 ```
 /*
  |----------------------------------------------
@@ -69,7 +69,7 @@ var _sass = {
 ```
 
 #### FTP-Upload Compiles Files
-If you want to upload the Compiles CSS/JS File to an FTP Server you can Setup the
+If you want to upload the compiled CSS/JS File to an FTP Server you can setup the
 ```
 #.sftp-config.json
 {
@@ -107,18 +107,18 @@ var _tasks = [
 with serve you can develope yout HTML, if you Update a SASS, JS, or HTML File your Browser will refreshed after the compiling is complete.
 
 ## Inital the Projekt
-if you have changed the config to your need go forward and run in the shell
+if you have changed the config to your need go forward and run it in the shell
 ```
 init.sh
 ```
 
 ### what init.sh do
-- the script first inital all NPM-Modules by run `npm install`
-- after that it build the Modenizr
-- than it Copy all `Font-Files` form `Bootstrap` and `Font-Awesome` to the Public folder
+- the script first installs all NPM-Modules by running `npm install`
+- after that it builds the Modenizr
+- than it Copy all `Font-Files` from `Bootstrap` and `Font-Awesome` to the Public folder
 
 ## Run gulp
-at least run gulp and start your developing
+Then run gulp and start developing
 ```
 gulp
 ```
