@@ -16,7 +16,7 @@ This project should help you to start developing with SASS and minified JavaScri
 Clone this project to your server and config all relevant options
 
 ### Modernizr
-You can config needed [Modernizr](https://modernizr.com/) options in the file:
+You can configure needed [Modernizr](https://modernizr.com/) options in the file:
 ```
 /assets/js/config-modenizr.js
 ```
@@ -39,7 +39,7 @@ var _uglify = {
 };
 ```
 
-If you need different libraries which are not places in the `/asses/js` Folder you can add this to the npmModules list
+If you need different libraries which are not placed in the `/asses/js` Folder you can add this to the npmModules list
 ```
 var npmModules = [
   'node_modules/tether/dist/js/tether.min.js', // Needed for Bootstrap 4
@@ -56,7 +56,7 @@ var npmModules = [
 ```
 
 #### SASS Precompiler to CSS
-The SASS-File from `/asses/css/style.scss` compiled to an single CSS file. You can define the output bei configure:
+The SASS-File from `/asses/css/style.scss` will be compiled to an single CSS file. You can define the output bei configure:
 ```
 /*
  |----------------------------------------------
@@ -104,18 +104,18 @@ var _tasks = [
 ```
 
 #### Gulp Serve
-with serve you can develope yout HTML, if you Update a SASS, JS, or HTML File your Browser will refreshed after the compiling is complete.
+with serve you can develop your HTML, if you Update a SASS, JS, or HTML File your Browser will be refreshed after the compiling is completed.
 
-## Inital the Projekt
-if you have changed the config to your need go forward and run it in the shell
+## Initate the project
+After you have changed the config to your needs go forward and run it in the shell
 ```
 init.sh
 ```
 
-### what init.sh do
+### what init.sh does
 - the script first installs all NPM-Modules by running `npm install`
 - after that it builds the Modenizr
-- than it Copy all `Font-Files` from `Bootstrap` and `Font-Awesome` to the Public folder
+- than it copies all `Font-Files` from `Bootstrap` and `Font-Awesome` to the Public folder
 
 ## Run gulp
 Then run gulp and start developing
