@@ -27,7 +27,7 @@ If you need different libraries which are not placed in the `/asset/js/template`
 #### SASS Precompiler to CSS
 The SASS-Files from `/asset/saas` compile to an single CSS file.
 
-## Inital the Projekt
+## Initiate the project
 Run `npm i` to install all dependencies.
 
 ## Run NPM
