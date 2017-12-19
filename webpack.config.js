@@ -113,11 +113,12 @@ class WebpackConfig {
             options: {
                 name: path => {
                     if (!/node_modules|bower_components/.test(path)) {
-                        return '../fonts/[name].[ext]?[hash]';
+                        return '../fonts/[name].[ext]?[hash]'.replace(/@/g, '');
                     }
 
                     return '../fonts/' + path
                         .replace(/\\/g, '/')
+                        .replace(/@/g, '')
                         .replace(
                             /((.*(node_modules|bower_components))|fonts|font|assets)\//g, ''
                         ) + '?[hash]';

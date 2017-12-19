@@ -42,8 +42,8 @@
   },
   "dependencies": {
     "@fancyapps/fancybox": "git+https://github.com/fancyapps/fancybox.git",
+    "@fortawesome/fontawesome-free-webfonts": "latest",
     "bootstrap": "^4.0.0-beta",
-    "font-awesome": "latest",
     "hamburgers": "latest",
     "install": "^0.10.1",
     "jquery": "latest",

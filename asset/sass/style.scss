@@ -10,7 +10,10 @@
 @import "~hamburgers/_sass/hamburgers/hamburgers";
 
 /* Icon Font */
-@import "~font-awesome/scss/font-awesome";
+@import "~@fortawesome/fontawesome-free-webfonts/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free-webfonts/scss/fa-brands";
+@import "~@fortawesome/fontawesome-free-webfonts/scss/fa-regular";
+@import "~@fortawesome/fontawesome-free-webfonts/scss/fa-solid";
 
 /* Social Share */
 @import "rrssb/rrssb";

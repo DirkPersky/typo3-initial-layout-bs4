@@ -1,3 +1,8 @@
+[globalVar = TSFE : beUserLogin > 0]
+    #FE_Edit
+    lib.gridelements.defaultGridSetup.stdWrap < lib.fluidContent.stdWrap
+[global]
+
 # Überschriften der Gridelemente einblenden
 tt_content.gridelements_pi1.20.10.setup{
 

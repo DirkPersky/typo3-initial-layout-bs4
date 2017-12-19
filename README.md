@@ -6,7 +6,7 @@ This project should help you to start developing with SASS and minified JavaScri
 
 ## Default used NPM-Modules
 - [Bootstrap](http://getbootstrap.com/)
-- [Font Awesome](https://fortawesome.github.io/Font-Awesome/)
+- [Font Awesome 5](https://fontawesome.com/)
 - [Lazysizes](https://github.com/aFarkas/lazysizes)
 - [Modernizr](https://modernizr.com)
 - [Waypoints](http://imakewebthings.com/waypoints/)

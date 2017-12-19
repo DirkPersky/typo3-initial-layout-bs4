@@ -439,7 +439,7 @@
 				}
 
 				&:before {
-					@extend .fa;
+					@extend .fas;
 					@extend .fa-angle-left;
 
 					display: flex;
@@ -513,7 +513,7 @@
 				}
 
 				&:before {
-					@extend .fa;
+					@extend .fas;
 					@extend .fa-angle-right
 				}
 			}
