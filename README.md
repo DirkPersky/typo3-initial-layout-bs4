@@ -21,11 +21,11 @@ You can config needed [Modernizr](https://modernizr.com/) options in the file:
 ```
 
 #### JavaScript
-All JavaScript´s from the `/assets/js/template` and `/assets/js/jquery` folder structure will be combined to a single JavaScript File. You can define options to minify this result by default.
-If you need different libraries which are not placed in the `/assets/js/template` or `/assets/js/jquery` folders you can add references in `/assets/js/script.js`.
+All JavaScript´s from the `/asset/js/template` and `/asset/js/jquery` folder structure will be combined to a single JavaScript File. You can define options to minify this result by default.
+If you need different libraries which are not placed in the `/asset/js/template` or `/asset/js/jquery` folders you can add references in `/asset/js/script.js`.
 
 #### SASS Precompiler to CSS
-The SASS-Files from `/assets/saas` compile to an single CSS file.
+The SASS-Files from `/asset/saas` compile to an single CSS file.
 
 ## Inital the Projekt
 Run `npm i` to install all dependencies.
