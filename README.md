@@ -1,8 +1,8 @@
-# Start Developing with SASS & Combined JavaScript Files for TYPO3
-This Porjekt shoud help you to start developing with SASS and minifyed JavaScripts to get an high Google Page Insight Ranking.
+# Start Developing with SASS & combined JavaScript files for TYPO3
+This project should help you to start developing with SASS and minified JavaScript to get an high [Google PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) Ranking.
 
 ## Required
-- NPM-Packacke Manager
+- NPM-Package manager
 
 ## Default used NPM-Modules
 - [Bootstrap](http://getbootstrap.com/)
@@ -12,26 +12,26 @@ This Porjekt shoud help you to start developing with SASS and minifyed JavaScrip
 - [Waypoints](http://imakewebthings.com/waypoints/)
 
 ## Download & Config
-Clone this Projekt to your Remote-Device and config all relevant Options
+Clone this project to your remote-device and configure all relevant options
 
 ### Modernizr
-You can config your needed [Modernizr](https://modernizr.com/) options in the file:
+You can config needed [Modernizr](https://modernizr.com/) options in the file:
 ```
 /webpack.config.js
 ```
 
-#### JavaScripts
-All JavaScript´s from the `/asses/js/template` and `/asses/js/jquery` Folder Strukture will be Combined to an singel JavaScript File. You cann define options to Minify this Result by setup:
-If you need Diferent Libeys which are not places in the `/asses/js/template` or `/asses/js/jquery` Folder you can add this referenzen in the `/asses/js/script.js`.
+#### JavaScript
+All JavaScript´s from the `/asset/js/template` and `/asset/js/jquery` folder structure will be combined to a single JavaScript File. You can define options to minify this result by default.
+If you need different libraries which are not placed in the `/asset/js/template` or `/asset/js/jquery` folders you can add references in `/asset/js/script.js`.
 
 #### SASS Precompiler to CSS
-The SASS-File from `/asses/css/style.scss` compiled to an Single CSS File. You can define the Output bei configure:
+The SASS-Files from `/asset/saas` compile to an single CSS file.
 
-## Inital the Projekt
-run `npm i` to install all Dependencies.
+## Initiate the project
+Run `npm i` to install all dependencies.
 
 ## Run NPM
-at least run NPM and chouse your developing method
+Lastly run NPM and choose your developing method:
 ```
 npm run dev
 npm run watch
@@ -39,4 +39,4 @@ npm run prod
 ```
 
 ## Please give me feedback
-I would appreciate any kind of feedback or ideas for further developments to keep improving the Starterkit for your needs.
+I would appreciate any kind of feedback or ideas for further developments to keep improving the starterkit for your needs.
