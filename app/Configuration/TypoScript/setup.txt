@@ -128,7 +128,7 @@ lib.nav {
 						cObject {
 							5 = TEXT
 							5 {
-								value.field = title
+								value.field = nav_title//title
 
 								typolink {
 									section.field = subtitle
