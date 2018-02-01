@@ -31,6 +31,12 @@ plugin.tx_csseo {
     }
     # Analytics
     tracking.googleAnalytics =
+    # hreflang config
+    hreflang {
+        enable = 1
+        ids = 0,0
+        keys = x-default,de
+    }
     # Default Social Image
     social.defaultImage = /fileadmin/Mysite4/app/Resources/Public/img/logo.png
 }

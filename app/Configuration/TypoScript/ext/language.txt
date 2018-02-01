@@ -1,9 +1,9 @@
 # Language
-	temp.language = TEXT
-	temp.language.value = <img src="typo3/sysext/core/Resources/Public/Icons/Flags/SVG/DE.svg" alt="Deutsch"/> Deutsch
+temp.language = TEXT
+temp.language.value = <img src="typo3/sysext/core/Resources/Public/Icons/Flags/SVG/DE.svg" alt="Deutsch"/> Deutsch
 
-	temp.languageText = TEXT
-	temp.languageText.value = Bitte wählen Sie Ihre Sprache
+temp.languageText = TEXT
+temp.languageText.value = Bitte wählen Sie Ihre Sprache
 
 #########################################
 # Spracherkennung(s-Plugin) aktivieren
@@ -176,42 +176,6 @@ lib.sprache {
 	}
 
 	30 =< plugin.tx_rlmplanguagedetection_pi1
-}
-################################
-### Google Meta Informations ###
-################################
-page.headerData.444 = HMENU
-page.headerData.444 {
-	
-special = language
-special.value = 0,0,1,2
-	1 = TMENU
-	1 {
-		NO = 1
-		NO {
-			stdWrap.cObject = TEXT
-			stdWrap.cObject {
-				value = x-default || de || en || nl
-			}
-			linkWrap = <link rel="alternate" hreflang="|
-			doNotLinkIt = 1
-			after.cObject = TEXT
-			after.cObject {
-				stdWrap {
-					wrap = " href="|" />
-					typolink {
-						parameter.data = page:uid
-						additionalParams = &L=0 || &L=0 || &L=1 || &L=2
-						returnLast = url
-						#inkl baseurl
-						forceAbsoluteUrl = 1
-						#z.b. tt_news
-						addQueryString = 1
-					}
-				}
-			}
-		}
-	}
 }
 
 #########################
