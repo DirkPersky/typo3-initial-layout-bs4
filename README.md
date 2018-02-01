@@ -2,10 +2,20 @@
 This project should help you to start developing with SASS and minified JavaScript to get an high [Google PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) Ranking.
 
 ## Required
-- NPM-Package manager
+- [NPM-Package manager](https://nodejs.org/)
+- [TYPO3 8.7.9+](https://typo3.org/download/)
+
+## Recommended TYPO3 Extensions
+- [cs_seo](https://extensions.typo3.org/extension/cs_seo/)
+- [gridelements](https://extensions.typo3.org/extension/gridelements/)
+- [rte_ckeditor_fontawesome](https://extensions.typo3.org/extension/rte_ckeditor_fontawesome/)
+- [news](https://extensions.typo3.org/extension/news/)
+- [recaptcha](https://extensions.typo3.org/extension/recaptcha/)
+- [scriptmerger](https://extensions.typo3.org/extension/scriptmerger/)
+- [sourceopt](https://extensions.typo3.org/extension/sourceopt/)
 
 ## Default used NPM-Modules
-- [Bootstrap](http://getbootstrap.com/)
+- [Bootstrap 4](http://getbootstrap.com/)
 - [Font Awesome 5](https://fontawesome.com/)
 - [Lazysizes](https://github.com/aFarkas/lazysizes)
 - [Modernizr](https://modernizr.com)
