@@ -10,8 +10,6 @@ page.10 {
         bodyclass = TEXT
         bodyclass.value = {$template.style}
         bodyclass.insertData = 1
-
-        newsImage < lib.newsImage
     }
 
 	file.cObject = CASE

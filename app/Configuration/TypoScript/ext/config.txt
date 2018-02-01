@@ -1,8 +1,6 @@
-/*
-#############################
-######## PAGE CONFIG ########
-#############################
-*/
+###################
+### PAGE CONFIG ###
+###################
 config  {
   admPanel = 0
   // set doctype to html5
@@ -58,28 +56,9 @@ config  {
   spamProtectEmailAddresses_atSubst = (at)
 }
 
-/*
-############################
-###### HEADER TITLE ########
-############################
-*/
-page.typeNum = 0
-page.config.noPageTitle = 1
-page.headerData.10 = TEXT
-page.headerData.10 {
-  field = subtitle // title
-  noTrimWrap = |<title>| - {$meta.title}</title>|
-  stdWrap.stripHtml = 1
-}
-
-/*
-##########################
-####### META DATA ########
-##########################
-
-# to add "levelfield :-1, ...., slide" for description and keywords extend the Localconf.php
-# $TYPO3_CONF_VARS['FE']['addRootLineFields'] = 'keywords,description,abstract';
-*/
+#################
+### META DATA ###
+#################
 page.meta.author.ifEmpty = {$meta.author}
 page.meta.viewport.ifEmpty = {$meta.viewport}
 
@@ -87,44 +66,10 @@ page.meta.keywords{
   data = page:keywords
   ifEmpty.data = levelfield :-1, keywords, slide
 }
-page.meta.description{
-  data = page:description
-  ifEmpty.data = levelfield :-1, description, slide
-}
-page.meta.robots{
-  data = page:abstract
-  ifEmpty.data = levelfield :-1, abstract, slide
-}
-/*
-page.meta.keywords {
-    # Set 'current' value
-    setCurrent = {$meta.keywords}
-    # Set content to match current
-    current = 1
-    # Prepend page keywords
-    prepend = TEXT
-    prepend {
-        data = page:keywords
-        # if empty, return immediately
-        trim = 1
-        required = 1
-        # wrap it
-        innerWrap {
-            # wrap only if {$meta.keywords} is not empty
-            if.isTrue.current = 1
-            # We must return a wrap pattern here
-            append = TEXT
-            append.value = |,
-        }
-    }
-}
-*/
-/*
-######################
-###### FAVICON #######
-######################
-*/
-#page.shortcutIcon = {$path.template}Public/favicon.png
+
+###############
+### FAVICON ###
+###############
 page.headerData.1337 = COA
 page.headerData.1337 {
   10 = TEXT
@@ -139,11 +84,9 @@ page.headerData.1337 {
   }
 }
 
-/*
-#########################
-###### BAR COLOR ########
-#########################
-*/
+#################
+### BAR COLOR ###
+#################
 page.headerData.101 = COA
 page.headerData.101 {
   10 = TEXT
@@ -162,11 +105,10 @@ page.headerData.101 {
     wrap = <meta name="apple-mobile-web-app-status-bar-style" content="|">
   }
 }
-/*
+
 ########################
 ### BODY-TAG PAGE ID ###
 ########################
-*/
 page{
   bodyTag >
   bodyTagCObject = TEXT
@@ -176,11 +118,9 @@ page{
 
 plugin.tx_indexedsearch._DEFAULT_PI_VARS.lang = 0
 
-/*
 #######################
 ### WERTE BERECHNEN ###
 #######################
-*/
 lib.math = TEXT
   lib.math {
   current = 1

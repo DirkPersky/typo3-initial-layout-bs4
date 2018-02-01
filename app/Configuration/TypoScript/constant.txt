@@ -1,13 +1,3 @@
-########################
-### DEFAULT CONSTANT ###
-########################
-meta {
-    title =
-    theme-color =
-    author = Gutenberghaus, Stadlohn
-    viewport =  width=device-width, initial-scale=1.0
-}
-
 #########################
 ### Navigation Config ###
 #########################
@@ -16,6 +6,28 @@ nav {
 	exclude = 
 	footer = 
 	cookie = 
+}
+
+##############
+### CS_SEO ###
+##############
+meta {
+    theme-color =
+    author = Gutenberghaus, Stadlohn
+    viewport =  width=device-width, initial-scale=1.0
+}
+
+plugin.tx_csseo {
+    sitetitle =
+
+    sitemap {
+        pages.rootPid =
+        extensions.news {
+            storagePid =
+            detailPid =
+            languageUids = 0
+        }
+    }
 }
 
 ################
