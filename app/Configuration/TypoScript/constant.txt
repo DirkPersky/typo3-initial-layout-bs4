@@ -18,8 +18,9 @@ meta {
 }
 
 plugin.tx_csseo {
+    # Page Pref Title
     sitetitle =
-
+    # Sitemap.xml
     sitemap {
         pages.rootPid =
         extensions.news {
@@ -28,6 +29,10 @@ plugin.tx_csseo {
             languageUids = 0
         }
     }
+    # Analytics
+    tracking.googleAnalytics =
+    # Default Social Image
+    social.defaultImage = /fileadmin/Mysite4/app/Resources/Public/img/logo.png
 }
 
 ################
