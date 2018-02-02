@@ -1,26 +1,21 @@
-
-###############
-### FE Edit ###
-###############
+########################
+### frontend_editing ###
+########################
 [globalVar = TSFE : beUserLogin> 0]
-    config {
-        admPanel = 1
-        module.edit.forceDisplayFieldIcons=1
-        hide=1
-        override.tsdebug.forceTemplateParsing = 1
-    }
-    page.config.admPanel = 1
-    page.CSS_inlineStyle (
-        .typo3-feedit-element {
-            display: initial;
+	config.frontend_editing = 1
+
+	plugin.tx_scriptmerger {
+		css.enable = 0
+		javascript.enable = 0
+	}
+
+	page.CSS_inlineStyle (
+        .t3-frontend-editing__inline-actions .icon-size-small img {
+        	margin: 0;
         }
-        .btn span.icon-markup img {
-            height: 15px;
-        }
-        .typo3-feedit-element .btn.content-link,
-        .typo3-editPanel .btn {
-            padding-right: 10px;
-            padding-left: 10px;
-        }
-    )
-[global]
+
+		.t3-frontend-editing__inline-actions {
+			font-size: 20px !important;
+		}
+	)
+[end]

@@ -14,6 +14,7 @@ This project should help you to start developing with SASS and minified JavaScri
 - [scriptmerger](https://extensions.typo3.org/extension/scriptmerger/)
 - [sourceopt](https://extensions.typo3.org/extension/sourceopt/)
 - [rlmp_language_detection](https://extensions.typo3.org/extension/rlmp_language_detection/)
+- [frontend_editing](https://extensions.typo3.org/extension/frontend_editing/)
 
 ## Default used NPM-Modules
 - [Bootstrap 4](http://getbootstrap.com/)
