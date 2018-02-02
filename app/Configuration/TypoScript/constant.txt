@@ -7,22 +7,23 @@ nav {
 	footer = 
 	cookie = 
 }
-
-##############
-### CS_SEO ###
-##############
+###########
+### SEO ###
+###########
 meta {
     theme-color =
     author = Gutenberghaus, Stadlohn
     viewport =  width=device-width, initial-scale=1.0
 }
-
 plugin.tx_csseo {
     # Page Pref Title
     sitetitle =
     # Sitemap.xml
     sitemap {
-        pages.rootPid =
+        pages {
+            rootPid =
+            languageUids = 0
+        }
         extensions.news {
             storagePid =
             detailPid =
