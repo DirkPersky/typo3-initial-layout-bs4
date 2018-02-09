@@ -187,8 +187,8 @@ class WebpackConfig {
             this.webpackConfig.plugins.push(
                 new UglifyJSPlugin({
                     sourceMap: true,
-                    compress: { warnings: false, drop_console: true },
-                    output: { comments: false }
+                    // compress: { warnings: false, drop_console: true },
+                    // output: { comments: false }
                 })
             );
         }
