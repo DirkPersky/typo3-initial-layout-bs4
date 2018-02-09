@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "npm run development",
-    "development": "npm run serve | npm run watch",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules",
     "serve": "webpack-dev-server --config=server.js",
     "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules",
     "prod": "npm run production",
