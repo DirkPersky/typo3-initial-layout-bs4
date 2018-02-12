@@ -1,12 +1,11 @@
 {
   "name": "TYPO3-initial-layout-bs4",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "NPM Integration with webpack",
   "main": "index.js",
   "scripts": {
     "dev": "npm run development",
     "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules",
-    "serve": "webpack-dev-server --config=server.js",
     "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules",
     "prod": "npm run production",
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules"
@@ -29,16 +28,12 @@
     "extract-text-webpack-plugin": "latest",
     "file-loader": "latest",
     "friendly-errors-webpack-plugin": "latest",
-    "i": "^0.3.5",
-    "img-loader": "latest",
     "jshint": "latest",
-    "modernizr-webpack-plugin": "^1.0.6",
+    "modernizr-webpack-plugin": "latest",
     "node-sass": "latest",
-    "npm": "^5.4.2",
     "sass-loader": "latest",
     "uglifyjs-webpack-plugin": "latest",
-    "webpack": "latest",
-    "webpack-dev-server": "latest"
+    "webpack": "latest"
   },
   "dependencies": {
     "@fancyapps/fancybox": "git+https://github.com/fancyapps/fancybox.git",

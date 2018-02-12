@@ -146,20 +146,6 @@ class WebpackConfig {
                         },
                         publicPath: ''
                     }
-                },
-                {
-                    loader: 'img-loader',
-                    options: {
-                        enabled: true,
-                        gifsicle: {
-                            interlaced: false
-                        },
-                        mozjpeg: {
-                            progressive: true,
-                        },
-                        optipng: {},
-                        svgo: {}
-                    }
                 }
             ]
         });
