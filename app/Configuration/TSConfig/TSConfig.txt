@@ -16,13 +16,6 @@ mod.SHARED {
   defaultLanguagelabel = Deutsch
 }
 
-############################################
-### replace Meta Abstract to Meta Robots ###
-############################################
-TCEFORM.pages.abstract {
-	label = Meta Robots
-}
-
 TCEFORM.tt_content.imagewidth.config.range.upper = 2000
 
 ########################################

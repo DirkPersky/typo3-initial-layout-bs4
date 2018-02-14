@@ -1409,7 +1409,7 @@
 									<numIndex index="7"><numIndex index="0">Nur sichtbar auf normal</numIndex><numIndex index="1">visible-md</numIndex></numIndex>
 									<numIndex index="8"><numIndex index="0">Nur sichtbar auf sehr groß</numIndex><numIndex index="1">visible-lg</numIndex></numIndex>
 								</items>
-								<maxitems>3</maxitems>
+								<maxitems>5</maxitems>
 								<size>8</size>
 								<default></default>
 							</config>
@@ -1430,7 +1430,7 @@
 									<numIndex index="7"><numIndex index="0">Nur sichtbar auf normal</numIndex><numIndex index="1">visible-md</numIndex></numIndex>
 									<numIndex index="8"><numIndex index="0">Nur sichtbar auf sehr groß</numIndex><numIndex index="1">visible-lg</numIndex></numIndex>
 								</items>
-								<maxitems>3</maxitems>
+								<maxitems>5</maxitems>
 								<size>8</size>
 								<default></default>
 							</config>
@@ -1451,7 +1451,7 @@
 									<numIndex index="7"><numIndex index="0">Nur sichtbar auf normal</numIndex><numIndex index="1">visible-md</numIndex></numIndex>
 									<numIndex index="8"><numIndex index="0">Nur sichtbar auf sehr groß</numIndex><numIndex index="1">visible-lg</numIndex></numIndex>
 								</items>
-								<maxitems>3</maxitems>
+								<maxitems>5</maxitems>
 								<size>8</size>
 								<default></default>
 							</config>
@@ -1472,7 +1472,7 @@
 									<numIndex index="7"><numIndex index="0">Nur sichtbar auf normal</numIndex><numIndex index="1">visible-md</numIndex></numIndex>
 									<numIndex index="8"><numIndex index="0">Nur sichtbar auf sehr groß</numIndex><numIndex index="1">visible-lg</numIndex></numIndex>
 								</items>
-								<maxitems>3</maxitems>
+								<maxitems>5</maxitems>
 								<size>8</size>
 								<default></default>
 							</config>
@@ -1493,7 +1493,7 @@
 									<numIndex index="7"><numIndex index="0">Nur sichtbar auf normal</numIndex><numIndex index="1">visible-md</numIndex></numIndex>
 									<numIndex index="8"><numIndex index="0">Nur sichtbar auf sehr groß</numIndex><numIndex index="1">visible-lg</numIndex></numIndex>
 								</items>
-								<maxitems>3</maxitems>
+								<maxitems>5</maxitems>
 								<size>8</size>
 								<default></default>
 							</config>
@@ -1514,7 +1514,7 @@
 									<numIndex index="7"><numIndex index="0">Nur sichtbar auf normal</numIndex><numIndex index="1">visible-md</numIndex></numIndex>
 									<numIndex index="8"><numIndex index="0">Nur sichtbar auf sehr groß</numIndex><numIndex index="1">visible-lg</numIndex></numIndex>
 								</items>
-								<maxitems>3</maxitems>
+								<maxitems>5</maxitems>
 								<size>8</size>
 								<default></default>
 							</config>
