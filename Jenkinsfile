@@ -6,7 +6,8 @@ pipeline {
     PASSWD = '{$PASSWD}'
     DIR = '/htdocs/fileadmin'
     PROJEKT = '{$PROJEKT}'
-    DEPLOY_TO = 'dev'
+    DEPLOY_TO =
+    FORCE_INSTALL = 'false'
   }
   stages {
     stage('NPM Init') {
@@ -16,13 +17,34 @@ pipeline {
             sh 'npm -v'
           }
         }
-        stage('NPM Install') {
+        stage('get caches NPM Dir') {
           steps {
-            sh 'npm set progress=false && npm i --no-optional'
+            sh '[ -d "../../../cache/$PROJEKT" ] && mv ../../../cache/$PROJEKT node_modules/ || echo "Folder Not Exist"'
           }
         }
       }
     }
+    stage('NPM Install/Update') {
+        parallel {
+            stage('NPM Install'){
+                when {
+                    environment name: 'FORCE_INSTALL', value: 'true'
+                }
+                steps {
+                    sh 'npm set progress=false && npm install --no-optional'
+                }
+            }
+            stage('NPM Update'){
+                when {
+                    environment name: 'FORCE_INSTALL', value: 'false'
+                }
+                steps {
+                    sh '[ ! -d "./node_modules" ] && npm set progress=false && npm install --no-optional || echo "Update skipped"'
+                }
+            }
+        }
+    }
+
     stage('Deploy') {
         parallel {
             stage('Deploy Prod') {
@@ -61,20 +83,36 @@ pipeline {
       }
     }
     stage('Clear') {
-      steps {
-        cleanWs(cleanWhenAborted: true, cleanWhenFailure: true, cleanWhenNotBuilt: true, cleanWhenSuccess: true, cleanWhenUnstable: true, deleteDirs: true, cleanupMatrixParent: true)
-      }
+        parallel {
+            stage('Clear Prod') {
+                when {
+                    environment name: 'DEPLOY_TO', value: 'prod'
+                }
+                steps {
+                   cleanWs(cleanWhenAborted: true, cleanWhenFailure: true, cleanWhenNotBuilt: true, cleanWhenSuccess: true, cleanWhenUnstable: true, deleteDirs: true, cleanupMatrixParent: true)
+               }
+            }
+            stage('Clear Dev') {
+                when {
+                    environment name: 'DEPLOY_TO', value: 'dev'
+                }
+                steps {
+                    sh '[ ! -d "../../../cache/$PROJEKT" ] && mv node_modules/ ../../../cache/$PROJEKT || echo "Folder Exist cant move"'
+                    cleanWs(cleanWhenAborted: true, cleanWhenFailure: true, cleanWhenNotBuilt: true, cleanWhenSuccess: true, cleanWhenUnstable: true, deleteDirs: true, cleanupMatrixParent: true)
+                }
+            }
+        }
     }
   }
   post {
     success {
-      echo 'ShareUrLoc-Client is Deployed'
+      echo 'Client is Deployed'
     }
     failure {
       echo 'This will run only if failed'
     }
     changed {
-      echo 'ShareUrLoc-Client Status of Build changed'
+      echo 'Client Status of Build changed'
     }
   }
 }
