@@ -9,6 +9,7 @@ page = PAGE
 	<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/sozial.txt">
 	<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/gridElements.txt">
 	<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/cookie.txt">
+	<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/search.txt">
 
 ########################
 ### Optionale Script ###
@@ -170,17 +171,6 @@ lib.nav {
 	}
 }
 
-lib.searchBtn = TEXT
-lib.searchBtn {
-    value = <i class="fa fa-search"></i>
-    typolink = 1
-    typolink {
-        parameter = #navbarSearch
-        ATagParams = data-toggle="collapse" data-target="#navbarSearch"
-    }
-}
-
-
 lib.footerNav = COA
 lib.footerNav {
     10 < temp.cPos
@@ -215,26 +205,6 @@ lib.copyr {
     data = date:U
     strftime =%Y
     noTrimWrap = |&copy; 2018 - | web kon Internetagentur|
-}
-##############
-### Search ###
-##############
-lib.search = USER
-lib.search {
-    userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
-    vendorName = TYPO3\CMS
-    extensionName = IndexedSearch
-    pluginName = Pi2
-    switchableControllerActions {
-        Search {
-            1 = form
-            2 = search
-        }
-    }
-
-    view =< plugin.tx_indexedsearch.view
-    settings =< plugin.tx_indexedsearch.settings
-    settings.headlineStyle = 1
 }
 #####################
 ### Load Template ###

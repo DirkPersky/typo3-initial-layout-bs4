@@ -1,3 +1,86 @@
+/**
+ * Dynamic Form Loading
+ */
+div[search-loading] {
+  [form-input] {
+    transition: all .4s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+    width: 0;
+
+    &.show {
+      opacity: 1;
+      visibility: visible;
+      width: 200px;
+    }
+
+    .focus-bar {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      overflow: hidden;
+      height: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:before {
+        content: '';
+        display: block;
+        background-color: #2473be;
+        transition: all .4s ease-in-out;
+        height: 100%;
+        width: 0;
+      }
+    }
+
+    .form-control {
+      background-color: transparent;
+      box-shadow: none;
+      border-radius: 0;
+      border-right: 0;
+      border-left: 0;
+      border-top: 0;
+
+      &:focus + .focus-bar:before {
+        width: 100%;
+      }
+    }
+
+    form {
+      position: relative;
+    }
+  }
+
+  $size: 40px;
+  a {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    transition-duration: .3s;
+    background-color: #fff;
+    border-radius: 50%;
+    font-size: .9rem;
+    cursor: pointer;
+    color: inherit;
+    height: $size;
+    width: $size;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    z-index: 40;
+
+    &:hover {
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+      background-color: #f2f2f2;
+    }
+  }
+}
+/**
+ * Default TX Search Layout
+ */
 .tx-indexedsearch-res {
   padding-top: 30px;
 
