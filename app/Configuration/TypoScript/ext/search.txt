@@ -1,0 +1,47 @@
+###############################
+### Link for Search Loading ###
+###############################
+lib.search = TEXT
+lib.search.typolink {
+	parameter = {$plugin.tx_indexedsearch.settings.targetPid}
+	returnLast = url
+}
+########################
+### Search Only Page ###
+########################
+[globalVar = TSFE:type = 9718]
+  # https://docs.typo3.org/typo3cms/extensions/news/3.0.0/Main/Administration/Rss/Index.html
+  config {
+    xhtml_cleaning = none
+    admPanel = 0
+    metaCharset = utf-8
+    disablePrefixComment = 1
+  }
+
+  pageSearch = PAGE
+  pageSearch {
+    typeNum = 9718
+
+	headerData.654 = COA
+    headerData.654.15 = TEXT
+    headerData.654.15.value = <meta name="robots" content="noindex,follow">
+
+    20 = USER
+    20 {
+      userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+      vendorName = TYPO3\CMS
+      extensionName = IndexedSearch
+      pluginName = Pi2
+      switchableControllerActions {
+        Search {
+          1 = form
+          2 = search
+        }
+      }
+
+      view =< plugin.tx_indexedsearch.view
+      settings =< plugin.tx_indexedsearch.settings
+      settings.headlineStyle = 1
+    }
+  }
+[global]
