@@ -3,7 +3,7 @@ TCEFORM {
 		imagecols {
 			removeItems = 8
 			addItems.12 = 12
-			addItems.13 = auto
+			addItems.9999 = auto
 		}
 	}
 }
