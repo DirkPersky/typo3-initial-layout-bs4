@@ -1,6 +1,6 @@
 {
   "name": "TYPO3-initial-layout-bs4",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "NPM Integration with webpack",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "development": "webpack --hide-modules --mode development",
     "watch": "webpack --watch --progress --hide-modules --mode development",
     "prod": "npm run production",
-    "production": "webpack -hide-modules --mode production"
+    "production": "webpack --hide-modules --mode production"
   },
   "repository": {
     "type": "git",
@@ -31,7 +31,6 @@
     "modernizr-webpack-plugin": "latest",
     "node-sass": "latest",
     "sass-loader": "latest",
-    "uglifyjs-webpack-plugin": "latest",
     "webpack": "latest",
     "webpack-cli": "latest"
   },

@@ -1,6 +1,5 @@
 const path = require('path');
 let FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
-let UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 let ExtractTextPlugin = require('extract-text-webpack-plugin');
 let ModernizrWebpackPlugin = require('modernizr-webpack-plugin');
 
@@ -45,6 +44,12 @@ class WebpackConfig {
                 rules: []
             }
         };
+        // Uglify & Compress JS
+        if(this.isProduction()) {
+            this.webpackConfig.optimization = {
+                minimize: true
+            };
+        }
     }
     isProduction(){
         return (!process.env.NODE_ENV || process.env.NODE_ENV === 'production') ? true: false;
@@ -168,16 +173,6 @@ class WebpackConfig {
                 this.config.modernizr
             )
         );
-        // Uglify & Compress JS
-        if(this.isProduction()) {
-            this.webpackConfig.plugins.push(
-                new UglifyJSPlugin({
-                    sourceMap: true,
-                    // compress: { warnings: false, drop_console: true },
-                    // output: { comments: false }
-                })
-            );
-        }
         // say ExtractTextPlugin to export his results to style.css
         this.webpackConfig.plugins.push(
             new ExtractTextPlugin({ // define where to save the file
