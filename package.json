@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "npm run development",
-    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules",
-    "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules",
+    "development": "webpack --hide-modules --mode development",
+    "watch": "webpack --watch --progress --hide-modules --mode development",
     "prod": "npm run production",
-    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules"
+    "production": "webpack -hide-modules --mode production"
   },
   "repository": {
     "type": "git",
@@ -23,9 +23,8 @@
     "babel-core": "latest",
     "babel-loader": "latest",
     "babel-preset-env": "latest",
-    "cross-env": "latest",
     "css-loader": "latest",
-    "extract-text-webpack-plugin": "latest",
+    "extract-text-webpack-plugin": "next",
     "file-loader": "latest",
     "friendly-errors-webpack-plugin": "latest",
     "jshint": "latest",
@@ -33,7 +32,8 @@
     "node-sass": "latest",
     "sass-loader": "latest",
     "uglifyjs-webpack-plugin": "latest",
-    "webpack": "latest"
+    "webpack": "latest",
+    "webpack-cli": "latest"
   },
   "dependencies": {
     "@fancyapps/fancybox": "git+https://github.com/fancyapps/fancybox.git",
