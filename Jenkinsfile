@@ -6,7 +6,7 @@ pipeline {
     PASSWD = '{$PASSWD}'
     DIR = '/htdocs/fileadmin'
     PROJEKT = '{$PROJEKT}'
-    DEPLOY_TO =
+    DEPLOY_TO = 'dev'
     FORCE_INSTALL = 'false'
   }
   stages {
