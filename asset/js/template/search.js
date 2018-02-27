@@ -10,6 +10,8 @@ jQuery(function ($) {
             formSelector: '[form-input]',
             inputSelector: '#tx-indexedsearch-searchbox-sword',
             parentFormSelector: '#tx_indexedsearch',
+            onError :null,
+            onSuccess:null,
         }, options);
         $(this).each(function (index, element) {
             /**
@@ -17,7 +19,7 @@ jQuery(function ($) {
              */
             var parent = $(element),
                 submitBtn = parent.find(settings.submitSelector),
-                href = submitBtn.attr('href'),
+                href = parent.data('href'),
                 targetContainer = parent.find(settings.formSelector),
                 ajaxTimer = null;
             // Load Form from URL
@@ -69,6 +71,10 @@ jQuery(function ($) {
                     // Submit form now
                     content.submit();
                 });
+                // call Success Handling
+                if(settings.onSuccess) {
+                    settings.onSuccess(parent, content);
+                }
             }
             /**
              * On Error Link to Form on Button Click
@@ -79,13 +85,28 @@ jQuery(function ($) {
                     // ridirect now
                     window.location = href;
                 });
+                // call Error Handling
+                if(settings.onError) {
+                    settings.onError(parent);
+                }
             }
         });
     };
     /**
      * Bind Dynamic Searchform Loadind to Element
      */
+    $('.search[search-loading]').searchLoading({
+        type: 9718,
+    });
     $('[search-loading]').searchLoading({
-        type: 9718
+        type: 9718,
+        onError: function (element, href) {
+            $('div[data-target="#collapseSearch"]').on('click',(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+
+                window.location = href;
+            });
+        }
     });
 });

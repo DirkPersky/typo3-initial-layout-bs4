@@ -15,8 +15,6 @@
 
                 var _input = self.find('input[name="tx_indexedsearch_pi2[search][sword]"]');
                 if(_input.length) {
-                    _input.attr('placeholder', 'Search');
-
                     setTimeout(function () {
                         _input.focus();
                     }, 400)

@@ -1,7 +1,7 @@
 /**
  * Dynamic Form Loading
  */
-div[search-loading] {
+div.search[search-loading] {
   [form-input] {
     transition: all .4s ease-in-out;
     visibility: hidden;

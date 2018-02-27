@@ -41,7 +41,6 @@ lib.search.typolink {
 
       view =< plugin.tx_indexedsearch.view
       settings =< plugin.tx_indexedsearch.settings
-      settings.headlineStyle = 1
     }
   }
 [global]
