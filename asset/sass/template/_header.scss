@@ -151,6 +151,10 @@
 		.search-container {
 			padding: 25px 0;
 
+			form {
+				position: relative;
+			}
+
 			.form-control {
 				background-color: transparent;
 				border: 0;
@@ -158,6 +162,33 @@
 				color: white;
 				font-size: 21px;
 				line-height: 28px;
+
+				+ .focus-bar {
+					position: absolute;
+					bottom: 0;
+					right: 0;
+					left: 0;
+
+					height: 2px;
+
+					display: flex;
+					justify-content: center;
+					align-items: center;
+
+					&:before {
+						content: '';
+						display: block;
+						height: 100%;
+						width: 0%;
+						transition: all .4s ease-in-out;
+
+						background-color: theme-color('primary');
+					}
+				}
+
+				&:focus + .focus-bar:before {
+					width: 100%;
+				}
 			}
 
 			.input-group-btn {
