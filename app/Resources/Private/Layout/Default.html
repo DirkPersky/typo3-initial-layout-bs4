@@ -20,7 +20,9 @@
                         </ul>
                     </div>
                 </div>
-                <f:cObject typoscriptObjectPath="lib.search"/>
+
+                <f:render partial="SearchNav" />
+
                 <div class="nav-right">
                     <div class="search" data-toggle="collapse" data-target="#collapseSearch">
                         <i class="fa fa-search"></i>
@@ -37,48 +39,11 @@
             </div>
         </div>
     </nav>
-    <nav class="navbar nav-inline fixed-top" role="navigation" style="margin-top: 80px">
-        <div class="container">
-            <div class="brand">
-                <a href="<f:cObject typoscriptObjectPath=" lib.home" />" class="navbar-brand float-left">
-                <img src="fileadmin/Mysite4/app/Resources/Public/img/logo.png" class="logo">
-                </a>
-            </div>
-            <div class="nav-bars">
-                <div class="collapse navbar-toggleable" id="navbarResponsive2">
-                    <ul class="nav navbar-nav">
-                        <f:cObject typoscriptObjectPath="lib.nav"/>
-                    </ul>
-                </div>
-                <div class="search-toggleable collapse show" id="collapseSearch" aria-expanded="true" style="">
-                    <div class="search-container">
-                        <div class="container">
-                            <f:render partial="SearchNav" />
-                        </div>
-                    </div>
-                </div>
-                <div class="nav-right">
-                    <div class="search" data-toggle="collapse" data-target="#collapseSearch">
-                        <i class="fa fa-search"></i>
-                    </div>
-                    <button class="navbar-toggler hamburger hamburger--collapse float-right" type="button"
-                            aria-label="Menu"
-                            aria-controls="navigation" data-toggle="collapse" data-target="#navbarResponsive2">
-                    <span class="hamburger-box">
-                        <span class="hamburger-inner"></span>
-                    </span>
-                        <span class="menu-title">Menü</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
 </header>
 
 <section class="slider">
     <f:cObject typoscriptObjectPath="lib.slider"/>
 </section>
-
 
 <!-- get Content -->
 <f:render section="body"/>
