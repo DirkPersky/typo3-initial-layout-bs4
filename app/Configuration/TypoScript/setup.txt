@@ -10,11 +10,11 @@ page = PAGE
 	<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/gridElements.txt">
 	<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/cookie.txt">
 	<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/search.txt">
+	<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/FEEdit.txt">
 
 ########################
 ### Optionale Script ###
 ########################
-	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/FEEdit.txt">
 	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/breadcrumb.txt">
 	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/language.txt">
 	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/pageteaser.txt">
