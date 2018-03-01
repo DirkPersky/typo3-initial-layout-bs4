@@ -12,4 +12,5 @@ page.includeCSS {
 page.includeJSFooter {
   modernizr = {$path.template}Public/js/modernizr.min.js
   template = {$path.template}Public/js/script.min.js
+  654 > # remove CS_SEO Tag Manager
 }
