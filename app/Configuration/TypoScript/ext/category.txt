@@ -1,15 +1,15 @@
-lib.contentElement.variables {
+lib.contentElement.variables{
      produkt_category = CONTENT
      produkt_category {
        table = sys_category
        select {
          pidInList = 1
-         selectFields = sys_file.uid, sys_file.identifier, sys_file_reference.title as fTitle, sys_category.title
-         join = sys_category_record_mm ON sys_category_record_mm.uid_local = sys_category.uid JOIN sys_file_reference ON sys_file_reference.uid_foreign = sys_category.uid JOIN sys_file ON sys_file.uid = sys_file_reference.uid_local
+         selectFields = sys_file_reference.uid as fid, sys_file_reference.title as fTitle, sys_category.title
+         join = sys_category_record_mm ON sys_category_record_mm.uid_local = sys_category.uid JOIN sys_file_reference ON sys_file_reference.uid_foreign = sys_category.uid
 
-         where.data = field:pid
+        where.data = field:pid
          where.intval = 1
-         where.wrap = sys_file_reference.tablenames= 'sys_category' AND sys_file_reference.deleted= 0 AND sys_category_record_mm.uid_foreign=|
+         where.wrap = sys_file_reference.tablenames = 'sys_category' AND sys_file_reference.deleted = 0 AND sys_category_record_mm.tablenames = 'pages' AND sys_category_record_mm.uid_foreign=|
 
          orderBy = sys_category_record_mm.sorting_foreign
          languageField = 0 # disable translation handling of sys_category
@@ -20,7 +20,7 @@ lib.contentElement.variables {
          5 = IMAGE
          5 {
            file {
-             import.field = uid
+             import.data = field:fid
              treatIdAsReference = 1
            }
 
