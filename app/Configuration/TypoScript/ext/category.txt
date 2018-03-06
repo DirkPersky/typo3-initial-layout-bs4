@@ -1,35 +1,33 @@
-lib.contentElement.variables{
- produkt_category = CONTENT
- produkt_category {
-   table = sys_category
-   select {
+lib.contentElement.variables {
+     produkt_category = CONTENT
+     produkt_category {
+       table = sys_category
+       select {
+         pidInList = 1
+         selectFields = sys_file.uid, sys_file.identifier, sys_file_reference.title as fTitle, sys_category.title
+         join = sys_category_record_mm ON sys_category_record_mm.uid_local = sys_category.uid JOIN sys_file_reference ON sys_file_reference.uid_foreign = sys_category.uid JOIN sys_file ON sys_file.uid = sys_file_reference.uid_local
 
-     pidInList = 1
-     selectFields = sys_file.uid, sys_file.identifier, sys_file_reference.title as fTitle, sys_category.title
-     join = sys_category_record_mm ON sys_category_record_mm.uid_local = sys_category.uid JOIN sys_file_reference ON sys_file_reference.uid_foreign = sys_category.uid JOIN sys_file ON sys_file.uid = sys_file_reference.uid_local
+         where.data = field:pid
+         where.intval = 1
+         where.wrap = sys_file_reference.tablenames= 'sys_category' AND sys_file_reference.deleted= 0 AND sys_category_record_mm.uid_foreign=|
 
-     where.data = field:pid
-     where.intval = 1
-     where.wrap = sys_file_reference.tablenames= 'sys_category' AND sys_file_reference.deleted= 0 AND sys_category_record_mm.uid_foreign=|
-
-     orderBy = sys_category_record_mm.sorting_foreign
-     languageField = 0 # disable translation handling of sys_category
-   }
-
-   renderObj = COA
-   renderObj {
-
-     5 = IMAGE
-     5 {
-       file {
-         import.field = uid
-         treatIdAsReference = 1
+         orderBy = sys_category_record_mm.sorting_foreign
+         languageField = 0 # disable translation handling of sys_category
        }
 
-       altText.field = fTitle // title
-       titleText.field = fTitle // title
+       renderObj = COA
+       renderObj {
+         5 = IMAGE
+         5 {
+           file {
+             import.field = uid
+             treatIdAsReference = 1
+           }
 
-       params = class="category-image"
-     }
-  }
+           altText.field = fTitle // title
+           titleText.field = fTitle // title
+           params = class="category-image"
+         }
+      }
+    }
 }
