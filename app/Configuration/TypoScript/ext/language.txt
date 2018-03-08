@@ -1,6 +1,6 @@
 # Language
 temp.language = TEXT
-temp.language.value = <img src="typo3/sysext/core/Resources/Public/Icons/Flags/SVG/DE.svg" alt="Deutsch"/> Deutsch
+temp.language.value = <img src="typo3/sysext/core/Resources/Public/Icons/Flags/PNG/DE.png" alt="Deutsch"/> Deutsch
 
 temp.languageText = TEXT
 temp.languageText.value = Bitte wählen Sie Ihre Sprache
@@ -68,7 +68,7 @@ plugin.tx_rlmplanguagedetection_pi1 {
 	config.locale_all = en_EN.UTF-8
 	config.htmlTag_langKey = en
 
-	temp.language.value = <img src="typo3/sysext/core/Resources/Public/Icons/Flags/SVG/GB.svg" alt="Englisch"/> English
+	temp.language.value = <img src="typo3/sysext/core/Resources/Public/Icons/Flags/PNG/GB.png" alt="Englisch"/> English
 
 	temp.languageText.value = Please select a language
 
@@ -108,7 +108,7 @@ temp.languagemenu {
 
 			  stdWrap {
 				# Link Title ändern
-			  	override = <img src="{$path.baseURL}typo3/sysext/core/Resources/Public/Icons/Flags/SVG/DE.svg" alt="Deutsch" /> Deutsch ||  <img src="{$path.baseURL}typo3/sysext/core/Resources/Public/Icons/Flags/SVG/GB.svg" alt="Englisch" /> Englisch
+			  	override = <img src="{$path.baseURL}typo3/sysext/core/Resources/Public/Icons/Flags/PNG/DE.png" alt="Deutsch" /> Deutsch ||  <img src="{$path.baseURL}typo3/sysext/core/Resources/Public/Icons/Flags/PNG/GB.png" alt="Englisch" /> Englisch
 
 				typolink {
 					# Nun wird der Link mit den aktuellen GET-Parametern neu aufgebaut

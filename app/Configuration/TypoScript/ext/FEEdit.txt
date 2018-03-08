@@ -3,6 +3,8 @@
 ########################
 [globalVar = TSFE : beUserLogin> 0]
 	config.frontend_editing = 1
+	# Show Error's
+	config.contentObjectExceptionHandler = 0
 
 	plugin.tx_scriptmerger {
 		css.enable = 0
