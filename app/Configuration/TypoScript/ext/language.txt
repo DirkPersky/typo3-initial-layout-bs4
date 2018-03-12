@@ -9,13 +9,161 @@ temp.languageText.value = Bitte wählen Sie Ihre Sprache
 # Spracherkennung(s-Plugin) aktivieren
 #########################################
 plugin.tx_rlmplanguagedetection_pi1 {
+	useOneTreeMethod = 1
 	defaultLang = de
+
+    languageAliases >
+    languageAliases {
+		# Sprache,Fallback
+        ab = ab,en
+        aa = aa,en
+        af = af,en
+        sq = sq,en
+        am = am,en
+        ar = ar,en
+        hy = hy,en
+        as = as,en
+        ay = ay,en
+        az = az,en
+        ba = ba,en
+        eu = eu,en
+        bn = bn,en
+        dz = dz,en
+        bh = bh,en
+        bi = bi,en
+        br = br,en
+        bg = bg,en
+        my = my,en
+        be = be,en
+        km = km,en
+        ca = ca,en
+        zh = zh,en
+        zh = zh,en
+        co = co,en
+        hr = hr,en
+        cs = cs,en
+        da = da,en
+        nl = nl,en
+        en = en
+        eo = eo,en
+        et = et,en
+        fo = fo,en
+        fa = fa,en
+        fj = fj,en
+        fi = fi,en
+        fr = fr,en
+        fy = fy,en
+        gl = gl,en
+        gd = gd,en
+        gv = gv,en
+        ka = ka,en
+        de = de,en
+        el = el,en
+        kl = kl,en
+        gn = gn,en
+        gu = gu,en
+        ha = ha,en
+        he = he,en
+        hi = hi,en
+        hu = hu,en
+        is = is,en
+        id = id,en
+        ia = ia,en
+        ie = ie,en
+        iu = iu,en
+        ik = ik,en
+        ga = ga,en
+        it = it,en
+        ja = ja,en
+        kn = kn,en
+        ks = ks,en
+        kk = kk,en
+        rw = rw,en
+        ky = ky,en
+        rn = rn,en
+        ko = ko,en
+        ku = ku,en
+        lo = lo,en
+        la = la,en
+        lv = lv,en
+        li = li,en
+        ln = ln,en
+        lt = lt,en
+        mk = mk,en
+        mg = mg,en
+        ms = ms,en
+        ml = ml,en
+        mt = mt,en
+        mi = mi,en
+        mr = mr,en
+        mo = mo,en
+        mn = mn,en
+        na = na,en
+        ne = ne,en
+        no = no,en
+        oc = oc,en
+        or = or,en
+        om = om,en
+        ps = ps,en
+        pl = pl,en
+        pt = pt,en
+        pa = pa,en
+        qu = qu,en
+        rm = rm,en
+        ro = ro,en
+        ru = ru,en
+        sm = sm,en
+        sg = sg,en
+        sa = sa,en
+        sr = sr,en
+        sh = sh,en
+        st = st,en
+        tn = tn,en
+        sn = sn,en
+        sd = sd,en
+        si = si,en
+        ss = ss,en
+        sk = sk,en
+        sl = sl,en
+        so = so,en
+        es = es,en
+        su = su,en
+        sw = sw,en
+        sv = sv,en
+        tl = tl,en
+        tg = tg,en
+        ta = ta,en
+        tt = tt,en
+        te = te,en
+        th = th,en
+        bo = bo,en
+        ti = ti,en
+        to = to,en
+        ts = ts,en
+        tr = tr,en
+        tk = tk,en
+        tw = tw,en
+        ug = ug,en
+        uk = uk,en
+        ur = ur,en
+        uz = uz,en
+        vi = vi,en
+        vo = vo,en
+        cy = cy,en
+        wo = wo,en
+        xh = xh,en
+        yi = yi,en
+        yo = yo,en
+        zu = zu,en
+    }
+
 	dontBreakIfLanguageIsAlreadySelected = 1
 	dontBreakIfLanguageAlreadySelected = 1
 
-	countryCodeToLanguageCode  {
+	countryCodeToLanguageCode {
 		us = en
 		gb = en
+		en = en
 		nz = en
 		au = en
 		ie = en
@@ -28,9 +176,8 @@ plugin.tx_rlmplanguagedetection_pi1 {
 		nl = nl
 		es = en
 		zh = en
+        pl = en
 	}
-
-	forceRedirect = 1
 }
 
 ################
