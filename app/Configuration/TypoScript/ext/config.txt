@@ -72,16 +72,21 @@ page.meta.keywords{
 ###############
 page.headerData.1337 = COA
 page.headerData.1337 {
-  10 = TEXT
-  10 {
-    value = {$path.template}Public/{$favicon}
-    wrap = <link rel="shortcut icon" href="|" type="image/png; charset=binary">
-  }
-  20 = TEXT
-  20 {
-    value = {$path.template}Public/{$favicon}
-    wrap = <link rel="icon" href="|" type="image/png; charset=binary">
-  }
+    10 = TEXT
+    10 {
+        value = {$path.template}Public/{$favicon}
+        wrap = <link rel="shortcut icon" href="|" type="image/png; charset=binary">
+    }
+    20 = TEXT
+    20 {
+        value = {$path.template}Public/{$favicon}
+        wrap = <link rel="icon" href="|" type="image/png; charset=binary">
+    }
+    30 = TEXT
+    30 {
+        value = {$path.template}Public/{$favicon}
+        wrap = <link rel="apple-touch-icon" href="|" type="image/png; charset=binary">
+    }
 }
 
 #################
