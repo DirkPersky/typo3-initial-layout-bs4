@@ -1,53 +1,49 @@
-mod {
-    web_layout {
-        BackendLayouts {
-            1 {
-                title = Default
-                config {
-                    backend_layout {
-                        colCount = 4
-                        rowCount = 3
-                        rows {
-                            1 {
-                                columns {
-                                    1 {
-                                        name = Slider
-                                        colPos = 1
-                                        colspan = 4
+mod.web_layout.BackendLayouts {
+  1 {
+    title = Default
+    icon = EXT:core/Resources/Public/Icons/T3Icons/mimetypes/mimetypes-x-backend_layout.svg
+    config {
+      backend_layout {
+        colCount = 4
+        rowCount = 3
+        rows {
+          1 {
+            columns {
+              1 {
+                name = Slider
+                colPos = 1
+                colspan = 4
 
-                                        allowed = gridelements_pi1, textmedia
-                                        allowedGridTypes = bs3-carousel_container
-                                    }
-                                }
-                            }
-                            2 {
-                                columns {
-                                    1 {
-                                        name = Content
-                                        colPos = 0
-                                        colspan = 4
-                                    }
-                               }
-                            }
-                            3 {
-                                columns {
-                                    1 {
-                                        name = Footer: Spalte 1
-                                        colPos = 2
-                                        colspan = 2
-                                    }
-                                    2 {
-                                        name = Footer: Spalte 2
-                                        colPos = 3
-                                        colspan = 2
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                icon =
+                allowed = gridelements_pi1, textmedia
+                allowedGridTypes = bs3-carousel_container
+              }
             }
+          }
+          2 {
+            columns {
+              1 {
+                name = Content
+                colPos = 0
+                colspan = 4
+              }
+           }
+          }
+          3 {
+            columns {
+              1 {
+                name = Footer: Spalte 1
+                colPos = 2
+                colspan = 2
+              }
+              2 {
+                name = Footer: Spalte 2
+                colPos = 3
+                colspan = 2
+              }
+            }
+          }
         }
+      }
     }
+  }
 }

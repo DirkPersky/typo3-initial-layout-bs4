@@ -57,6 +57,10 @@ jQuery(function ($) {
                     // Remove Fieldset
                     content.find('fieldset').remove();
                 }
+                // clear & remove IDS
+                content.attr('id', 'ajax-form-loaded');
+                content.find('input').removeAttr('id');
+                content.find('select').removeAttr('id');
                 // Write to HTMl
                 targetContainer.append(
                     content

@@ -1,8 +1,8 @@
 #############################
-### Sozial Share Override ###
+### Social Share Override ###
 #############################
-lib.sozial = COA
-lib.sozial {
+lib.social = COA
+lib.social {
 	titel = TEXT
 	titel {
 		data = page:subtitle
@@ -28,9 +28,9 @@ lib.sozial {
 ###############
 [globalVar = GP:tx_news_pi1 > 0] && [globalVar = GP:tx_news_pi1|action = detail]
     #############################
-    ### Sozial Share Override ###
+    ### Social Share Override ###
     #############################
-    lib.sozial {
+    lib.social {
         titel = COA
         titel {
             5 = RECORDS
@@ -88,7 +88,7 @@ lib.sozial {
     #######################
     # disable title tag
     page.headerData.654.5 >
-    page.headerData.654.5 < lib.sozial.titel
+    page.headerData.654.5 < lib.social.titel
     page.headerData.654.5.wrap = <title>|</title>
 
     # remove meta description
@@ -99,18 +99,18 @@ lib.sozial {
 
     # twitter tags
     page.headerData.654.40 {
-        10 < lib.sozial.titel
+        10 < lib.social.titel
         10 {
             htmlSpecialChars = 1
             wrap = <meta name="twitter:title" content="|" />
         }
 
-        20  < lib.sozial.desc
+        20  < lib.social.desc
         20 {
             wrap = <meta name="twitter:description" content="|" />
         }
 
-        40  < lib.sozial.media
+        40  < lib.social.media
         40 {
             wrap = <meta property="twitter:image" content="|" />
         }
