@@ -1,3 +1,28 @@
+plugin.tx_indexedsearch {
+  # Override Language
+	_LOCAL_LANG.default {
+		displayResults.page =
+		displayResults.previous = Previous
+		displayResults.next = Next
+		# Next and Prev Arrows
+		#displayResults.previous = «
+		#displayResults.next = »
+	}
+	_LOCAL_LANG.de {
+		displayResults.page =
+	    displayResults.previous = Zurück
+		displayResults.next = Weiter
+		# Next and Prev Arrows
+		#displayResults.previous = «
+		#displayResults.next = »
+	}
+
+    # Number of Pages in Pagination
+	settings {
+		page_links = 5
+	}
+}
+
 ###############################
 ### Link for Search Loading ###
 ###############################
