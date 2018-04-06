@@ -13,6 +13,7 @@ This project should help you to start developing with SASS and minified JavaScri
 - [recaptcha](https://extensions.typo3.org/extension/recaptcha/)
 - [scriptmerger](https://extensions.typo3.org/extension/scriptmerger/)
 - [sourceopt](https://extensions.typo3.org/extension/sourceopt/)
+- [staticfilecache](https://github.com/lochmueller/staticfilecache/)
 - [rlmp_language_detection](https://extensions.typo3.org/extension/rlmp_language_detection/)
 - [frontend_editing](https://extensions.typo3.org/extension/frontend_editing/)
 

@@ -18,7 +18,8 @@ lib.breadcrumb {
         1 {
           NO = 1
           NO {
-            ATagParams = title="{field:subtitle}"
+            ATagParams = title="{field:subtitle//field:title}"
+            allStdWrap.insertData = 1
             wrapItemAndSub = <li class="breadcrumb-item">|</li>
             stdWrap.stripHtml = 1
 
