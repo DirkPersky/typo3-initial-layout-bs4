@@ -24,7 +24,7 @@
     "babel-loader": "latest",
     "babel-preset-env": "latest",
     "css-loader": "latest",
-    "extract-text-webpack-plugin": "next",
+    "extract-text-webpack-plugin": "latest",
     "file-loader": "latest",
     "friendly-errors-webpack-plugin": "latest",
     "jshint": "latest",
