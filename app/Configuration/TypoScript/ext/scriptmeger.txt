@@ -8,14 +8,14 @@ page {
     # Inline CSS::__Above the fold__::Mobile
     110 = TEMPLATE
     110 {
-      stdWrap.wrap = <style type="text/css" media="(max-width: 991px)">|</style>
+      stdWrap.wrap = <style type="text/css" media="(max-width: 991px)" data-ignore="1">|</style>
       template = FILE
       template.file = {$path.template}Public/css/abovethefold-xs.css
     }
     # Inline CSS::__Above the fold__::Desktop
     120 = TEMPLATE
     120 {
-      stdWrap.wrap = <style type="text/css" media="(min-width: 992px)">|</style>
+      stdWrap.wrap = <style type="text/css" media="(min-width: 992px)" data-ignore="1">|</style>
       template = FILE
       template.file = {$path.template}Public/css/abovethefold.css
     }
