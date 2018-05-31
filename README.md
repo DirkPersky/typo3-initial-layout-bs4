@@ -6,16 +6,24 @@ This project should help you to start developing with SASS and minified JavaScri
 - [TYPO3 8.7.9+](https://typo3.org/download/)
 
 ## Recommended TYPO3 Extensions
-- [cs_seo](https://extensions.typo3.org/extension/cs_seo/)
+**basics**
 - [gridelements](https://extensions.typo3.org/extension/gridelements/)
-- [rte_ckeditor_fontawesome](https://extensions.typo3.org/extension/rte_ckeditor_fontawesome/)
-- [news](https://extensions.typo3.org/extension/news/)
-- [recaptcha](https://extensions.typo3.org/extension/recaptcha/)
+- [dp_cookieconsent](https://github.com/DirkPersky/typo3-dp_cookieconsent)
+- [cs_seo](https://extensions.typo3.org/extension/cs_seo/)
+- [realurl](https://extensions.typo3.org/extension/realurl/)
+
+**performance**
 - [scriptmerger](https://extensions.typo3.org/extension/scriptmerger/)
 - [sourceopt](https://extensions.typo3.org/extension/sourceopt/)
-- [staticfilecache](https://github.com/lochmueller/staticfilecache/)
+- [staticfilecache from **GitHub**](https://github.com/lochmueller/staticfilecache/)
+
+**optional**
+- [rte_ckeditor_fontawesome](https://github.com/DirkPersky/typo3-rte-ckeditor-fontawesome)
+- [news](https://extensions.typo3.org/extension/news/)
+- [recaptcha](https://extensions.typo3.org/extension/recaptcha/)
 - [rlmp_language_detection](https://extensions.typo3.org/extension/rlmp_language_detection/)
 - [frontend_editing](https://extensions.typo3.org/extension/frontend_editing/)
+
 
 ## Default used NPM-Modules
 - [Bootstrap 4](http://getbootstrap.com/)

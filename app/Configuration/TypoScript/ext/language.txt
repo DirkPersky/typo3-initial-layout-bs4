@@ -222,11 +222,6 @@ plugin.tx_rlmplanguagedetection_pi1 {
 	# Spracherkennung deaktivieren
 	plugin.tx_rlmplanguagedetection_pi1 >
 	plugin.tx_indexedsearch._DEFAULT_PI_VARS.lang = 1
-
-	page.headerData.130.10.10.value = This website uses cookies to ensure you get the best experience on our website
-	page.headerData.130.10.20.value = Got it!
-	page.headerData.130.10.30.value = More info
-
 [global]
 
 #####################

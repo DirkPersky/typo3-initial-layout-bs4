@@ -4,8 +4,32 @@
 nav {
 	homeUid = 
 	exclude = 
-	footer = 
-	cookie = 
+	footer =
+}
+##############
+### Cookie ###
+##############
+plugin.tx_cookieconsent.settings {
+    # PID to Data Protection
+    url =
+    # Position
+    position = bottom-right
+    # dismiss on scroll (in PX)
+    dismissOnScroll = 1000
+    palette {
+        popup {
+            # Bar: Background color
+            background = #444
+            # Bar: text color
+            text = #fff
+        }
+        button {
+            # Button: Background color
+            background = #b81839
+            # Button: text color
+            text = #fff
+        }
+    }
 }
 ###########
 ### SEO ###
