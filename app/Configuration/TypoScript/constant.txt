@@ -101,6 +101,9 @@ styles.content.imgtext.colPos2.maxW	= 1960
 styles.content.imgtext.colPos3.maxW	= 1960
 styles.content.textmedia.maxW = 1960
 styles.content.textmedia.maxWInText = 1960
+# lightbox Size
+styles.content.textmedia.linkWrap.width= 1400m
+styles.content.textmedia.linkWrap.height= 800m
 
 #####################################
 ### Standard-Überschriften als H2 ###
