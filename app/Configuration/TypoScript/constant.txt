@@ -181,6 +181,14 @@ rss {
 plugin.tx_ckeditor_fontawesome.loadCSS = 0
 plugin.tx_iconfont.cssFile =
 
+#################
+### Powermail ###
+#################
+plugin.tx_powermail.settings.misc {
+    htmlForHtmlFields = 1
+    htmlForLabels = 1
+}
+
 ###########################
 ### Google Maps Api Key ###
 ###########################
