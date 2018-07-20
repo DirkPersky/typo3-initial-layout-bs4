@@ -19,7 +19,7 @@ switch ($system) {
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['extCache'] = '0';
         break;
     case 1:
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['displayErrors'] = '2';
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['displayErrors'] = '1';
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['devIPmask'] = '127.0.0.*';
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['errorHandler'] = 'TYPO3\CMS\Core\Error\ErrorHandler';
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['systemLogLevel'] = '2';
