@@ -37,7 +37,7 @@ tt_content.table.20 {
                         enable = 1
 
                         linkParams.ATagParams {
-                            dataWrap = class = "fancybox" data-fancybox-group="group{field:uid}"
+                            dataWrap = class = "fancybox" data-fancybox="group{file:current:uid_foreign}"
                         }
                     }
                 }
