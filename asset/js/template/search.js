@@ -49,7 +49,10 @@ jQuery(function ($) {
                 var input = content.find(settings.inputSelector);
                 // Clear Index Search HTMl
                 if(settings.clearHTML) {
-                    content.find('.tx-indexedsearch-search-submit').remove();
+                    // move Submit Button
+                    var submit = content.find('.tx-indexedsearch-search-submit');
+                    submit.hide();
+                    content.append( submit );
                     // append Input to Form
                     content.append(input.detach());
                     // add Focus bar after Input
