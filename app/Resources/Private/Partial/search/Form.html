@@ -21,7 +21,7 @@
 			<div class="form-group row">
 				<label for="tx-indexedsearch-searchbox-sword" class="col-sm-2 col-form-label"><f:translate key="form.searchFor" />:</label>
 				<div class="col-sm-10">
-					<f:form.textfield name="search[sword]" value="{sword}" id="tx-indexedsearch-searchbox-sword" class="form-control" placeholder="{f:translate(key: 'form.searchFor')}"/>
+					<f:form.textfield name="search[sword]" value="{sword}" id="tx-indexedsearch-searchbox-sword" class="form-control" placeholder="{f:translate(key: 'form.searchFor')}" additionalAttributes="{aria-label: 'search for'}"/>
 				</div>
 			</div>
 			<f:if condition="{searchParams.extendedSearch}">
