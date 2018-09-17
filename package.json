@@ -1,6 +1,6 @@
 {
   "name": "TYPO3-initial-layout-bs4",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "NPM Integration with webpack",
   "main": "index.js",
   "scripts": {
@@ -20,11 +20,11 @@
   "author": "Dirk Persky",
   "license": "ISC",
   "devDependencies": {
-    "babel-core": "latest",
+    "@babel/core": "latest",
+    "@babel/preset-env": "latest",
     "babel-loader": "latest",
-    "babel-preset-env": "latest",
     "css-loader": "latest",
-    "extract-text-webpack-plugin": "latest",
+    "extract-text-webpack-plugin": "next",
     "file-loader": "latest",
     "friendly-errors-webpack-plugin": "latest",
     "jshint": "latest",
@@ -35,7 +35,7 @@
     "webpack-cli": "latest"
   },
   "dependencies": {
-    "@fancyapps/fancybox": "git+https://github.com/fancyapps/fancybox.git",
+    "@fancyapps/fancybox": "latest",
     "@fortawesome/fontawesome-free-webfonts": "latest",
     "bootstrap": "latest",
     "hamburgers": "latest",
@@ -44,6 +44,7 @@
     "jquery.finger": "latest",
     "lazysizes": "latest",
     "modernizr": "latest",
+    "npm": "latest",
     "popper.js": "latest",
     "rrssb": "latest",
     "tether": "latest",
