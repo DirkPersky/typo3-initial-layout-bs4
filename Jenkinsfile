@@ -4,7 +4,7 @@ pipeline {
     HOST = 'ftp.gutenberghaus.de'
     USER = '{$USER}'
     PASSWD = '{$PASSWD}'
-    DIR = '/htdocs/fileadmin'
+    DIR = '/htdocs/public/fileadmin'
     PROJEKT = '{$PROJEKT}'
     DEPLOY_TO = 'dev'
     FORCE_INSTALL = 'false'

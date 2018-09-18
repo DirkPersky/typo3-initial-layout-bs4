@@ -50,6 +50,7 @@ The SASS-Files from `/asset/saas` compile to an single CSS file.
 
 ## Initiate the project
 Run `npm i` to install all dependencies.
+Modify the `Jenkinsfile` and set the Webhook for it `http://{$URL}/bitbucket-scmsource-hook/notify`
 
 ## Run NPM
 Lastly run NPM and choose your developing method:
