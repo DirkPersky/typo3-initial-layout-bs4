@@ -1070,15 +1070,15 @@
                                     <numIndex index="4"><numIndex index="0">verstecken ab Tablet (Quer)</numIndex><numIndex index="1">d-lg-none</numIndex></numIndex>
                                     <numIndex index="5"><numIndex index="0">verstecken ab Desktop (Groß)</numIndex><numIndex index="1">d-xl-none</numIndex></numIndex>
 
-                                    <numIndex index="6"><numIndex index="0">sichtbar ab Mobile</numIndex><numIndex index="1">d-block</numIndex></numIndex>
-                                    <numIndex index="7"><numIndex index="0">sichtbar ab Mobile (Quer)</numIndex><numIndex index="1">d-sm-block</numIndex></numIndex>
-                                    <numIndex index="8"><numIndex index="0">sichtbar ab Tablet (Hoch)</numIndex><numIndex index="1">d-md-block</numIndex></numIndex>
-                                    <numIndex index="9"><numIndex index="0">sichtbar ab Tablet (Quer)</numIndex><numIndex index="1">d-lg-block</numIndex></numIndex>
-                                    <numIndex index="10"><numIndex index="0">sichtbar Desktop (Groß)</numIndex><numIndex index="1">d-xl-block</numIndex></numIndex>
+                                    <numIndex index="6"><numIndex index="0">sichtbar ab Mobile</numIndex><numIndex index="1">d-flex</numIndex></numIndex>
+                                    <numIndex index="7"><numIndex index="0">sichtbar ab Mobile (Quer)</numIndex><numIndex index="1">d-sm-flex</numIndex></numIndex>
+                                    <numIndex index="8"><numIndex index="0">sichtbar ab Tablet (Hoch)</numIndex><numIndex index="1">d-md-flex</numIndex></numIndex>
+                                    <numIndex index="9"><numIndex index="0">sichtbar ab Tablet (Quer)</numIndex><numIndex index="1">d-lg-flex</numIndex></numIndex>
+                                    <numIndex index="10"><numIndex index="0">sichtbar Desktop (Groß)</numIndex><numIndex index="1">d-xl-flex</numIndex></numIndex>
                                 </items>
                                 <maxitems>6</maxitems>
                                 <size>10</size>
-                                <default>d-block</default>
+                                <default></default>
 							</config>
 						</TCEforms>
 					</visibility_element>
