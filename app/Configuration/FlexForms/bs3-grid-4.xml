@@ -246,9 +246,9 @@
                             </config>
                         </TCEforms>
                     </width_column_lg_4>
-                    <equalHeight type="array">
+                    <vend type="array">
                         <TCEforms type="array">
-                            <label>Gleiche Höhe für alle Spalten</label>
+                            <label>Vertical: End</label>
                             <config type="array">
                                 <type>check</type>
                                 <items>
@@ -259,7 +259,7 @@
                                 </items>
                             </config>
                         </TCEforms>
-                    </equalHeight>
+                    </vend>
                     <vcenter type="array">
                         <TCEforms type="array">
                             <label>Vertical: Center</label>
@@ -1060,14 +1060,14 @@
 							<config type="array">
 								<type>select</type>
 								<items>
-									<numIndex index="1"><numIndex index="0">Nicht sichtbar auf sehr klein</numIndex><numIndex index="1">hidden-xs</numIndex></numIndex>
-									<numIndex index="2"><numIndex index="0">Nicht sichtbar auf klein</numIndex><numIndex index="1">hidden-sm</numIndex></numIndex>
-									<numIndex index="3"><numIndex index="0">Nicht sichtbar auf normal</numIndex><numIndex index="1">hidden-md</numIndex></numIndex>
-									<numIndex index="4"><numIndex index="0">Nicht sichtbar auf sehr groß</numIndex><numIndex index="1">hidden-lg</numIndex></numIndex>
-									<numIndex index="5"><numIndex index="0">Nur sichtbar auf sehr klein</numIndex><numIndex index="1">visible-xs</numIndex></numIndex>
-									<numIndex index="6"><numIndex index="0">Nur sichtbar auf klein</numIndex><numIndex index="1">visible-sm</numIndex></numIndex>
-									<numIndex index="7"><numIndex index="0">Nur sichtbar auf normal</numIndex><numIndex index="1">visible-md</numIndex></numIndex>
-									<numIndex index="8"><numIndex index="0">Nur sichtbar auf sehr groß</numIndex><numIndex index="1">visible-lg</numIndex></numIndex>
+									<numIndex index="1"><numIndex index="0">Nicht sichtbar auf sehr klein</numIndex><numIndex index="1">d-none d-md-block</numIndex></numIndex>
+									<numIndex index="2"><numIndex index="0">Nicht sichtbar auf klein</numIndex><numIndex index="1">d-md-none d-lg-block</numIndex></numIndex>
+									<numIndex index="3"><numIndex index="0">Nicht sichtbar auf normal</numIndex><numIndex index="1">d-lg-none d-xl-block</numIndex></numIndex>
+									<numIndex index="4"><numIndex index="0">Nicht sichtbar auf sehr groß</numIndex><numIndex index="1">d-xl-none</numIndex></numIndex>
+									<numIndex index="5"><numIndex index="0">Nur sichtbar auf sehr klein</numIndex><numIndex index="1">d-md-none</numIndex></numIndex>
+									<numIndex index="6"><numIndex index="0">Nur sichtbar auf klein</numIndex><numIndex index="1">d-none d-md-block d-lg-none</numIndex></numIndex>
+									<numIndex index="7"><numIndex index="0">Nur sichtbar auf normal</numIndex><numIndex index="1">d-none d-lg-block d-xl-none</numIndex></numIndex>
+									<numIndex index="8"><numIndex index="0">Nur sichtbar auf sehr groß</numIndex><numIndex index="1">d-none d-xl-block</numIndex></numIndex>
 								</items>
 								<maxitems>5</maxitems>
 								<size>8</size>
@@ -1081,14 +1081,14 @@
 							<config type="array">
 								<type>select</type>
 								<items>
-									<numIndex index="1"><numIndex index="0">Nicht sichtbar auf sehr klein</numIndex><numIndex index="1">hidden-xs</numIndex></numIndex>
-									<numIndex index="2"><numIndex index="0">Nicht sichtbar auf klein</numIndex><numIndex index="1">hidden-sm</numIndex></numIndex>
-									<numIndex index="3"><numIndex index="0">Nicht sichtbar auf normal</numIndex><numIndex index="1">hidden-md</numIndex></numIndex>
-									<numIndex index="4"><numIndex index="0">Nicht sichtbar auf sehr groß</numIndex><numIndex index="1">hidden-lg</numIndex></numIndex>
-									<numIndex index="5"><numIndex index="0">Nur sichtbar auf sehr klein</numIndex><numIndex index="1">visible-xs</numIndex></numIndex>
-									<numIndex index="6"><numIndex index="0">Nur sichtbar auf klein</numIndex><numIndex index="1">visible-sm</numIndex></numIndex>
-									<numIndex index="7"><numIndex index="0">Nur sichtbar auf normal</numIndex><numIndex index="1">visible-md</numIndex></numIndex>
-									<numIndex index="8"><numIndex index="0">Nur sichtbar auf sehr groß</numIndex><numIndex index="1">visible-lg</numIndex></numIndex>
+									<numIndex index="1"><numIndex index="0">Nicht sichtbar auf sehr klein</numIndex><numIndex index="1">d-none d-md-block</numIndex></numIndex>
+									<numIndex index="2"><numIndex index="0">Nicht sichtbar auf klein</numIndex><numIndex index="1">d-md-none d-lg-block</numIndex></numIndex>
+									<numIndex index="3"><numIndex index="0">Nicht sichtbar auf normal</numIndex><numIndex index="1">d-lg-none d-xl-block</numIndex></numIndex>
+									<numIndex index="4"><numIndex index="0">Nicht sichtbar auf sehr groß</numIndex><numIndex index="1">d-xl-none</numIndex></numIndex>
+									<numIndex index="5"><numIndex index="0">Nur sichtbar auf sehr klein</numIndex><numIndex index="1">d-md-none</numIndex></numIndex>
+									<numIndex index="6"><numIndex index="0">Nur sichtbar auf klein</numIndex><numIndex index="1">d-none d-md-block d-lg-none</numIndex></numIndex>
+									<numIndex index="7"><numIndex index="0">Nur sichtbar auf normal</numIndex><numIndex index="1">d-none d-lg-block d-xl-none</numIndex></numIndex>
+									<numIndex index="8"><numIndex index="0">Nur sichtbar auf sehr groß</numIndex><numIndex index="1">d-none d-xl-block</numIndex></numIndex>
 								</items>
 								<maxitems>5</maxitems>
 								<size>8</size>
@@ -1102,14 +1102,14 @@
 							<config type="array">
 								<type>select</type>
 								<items>
-									<numIndex index="1"><numIndex index="0">Nicht sichtbar auf sehr klein</numIndex><numIndex index="1">hidden-xs</numIndex></numIndex>
-									<numIndex index="2"><numIndex index="0">Nicht sichtbar auf klein</numIndex><numIndex index="1">hidden-sm</numIndex></numIndex>
-									<numIndex index="3"><numIndex index="0">Nicht sichtbar auf normal</numIndex><numIndex index="1">hidden-md</numIndex></numIndex>
-									<numIndex index="4"><numIndex index="0">Nicht sichtbar auf sehr groß</numIndex><numIndex index="1">hidden-lg</numIndex></numIndex>
-									<numIndex index="5"><numIndex index="0">Nur sichtbar auf sehr klein</numIndex><numIndex index="1">visible-xs</numIndex></numIndex>
-									<numIndex index="6"><numIndex index="0">Nur sichtbar auf klein</numIndex><numIndex index="1">visible-sm</numIndex></numIndex>
-									<numIndex index="7"><numIndex index="0">Nur sichtbar auf normal</numIndex><numIndex index="1">visible-md</numIndex></numIndex>
-									<numIndex index="8"><numIndex index="0">Nur sichtbar auf sehr groß</numIndex><numIndex index="1">visible-lg</numIndex></numIndex>
+									<numIndex index="1"><numIndex index="0">Nicht sichtbar auf sehr klein</numIndex><numIndex index="1">d-none d-md-block</numIndex></numIndex>
+									<numIndex index="2"><numIndex index="0">Nicht sichtbar auf klein</numIndex><numIndex index="1">d-md-none d-lg-block</numIndex></numIndex>
+									<numIndex index="3"><numIndex index="0">Nicht sichtbar auf normal</numIndex><numIndex index="1">d-lg-none d-xl-block</numIndex></numIndex>
+									<numIndex index="4"><numIndex index="0">Nicht sichtbar auf sehr groß</numIndex><numIndex index="1">d-xl-none</numIndex></numIndex>
+									<numIndex index="5"><numIndex index="0">Nur sichtbar auf sehr klein</numIndex><numIndex index="1">d-md-none</numIndex></numIndex>
+									<numIndex index="6"><numIndex index="0">Nur sichtbar auf klein</numIndex><numIndex index="1">d-none d-md-block d-lg-none</numIndex></numIndex>
+									<numIndex index="7"><numIndex index="0">Nur sichtbar auf normal</numIndex><numIndex index="1">d-none d-lg-block d-xl-none</numIndex></numIndex>
+									<numIndex index="8"><numIndex index="0">Nur sichtbar auf sehr groß</numIndex><numIndex index="1">d-none d-xl-block</numIndex></numIndex>
 								</items>
 								<maxitems>5</maxitems>
 								<size>8</size>
@@ -1123,14 +1123,14 @@
 							<config type="array">
 								<type>select</type>
 								<items>
-									<numIndex index="1"><numIndex index="0">Nicht sichtbar auf sehr klein</numIndex><numIndex index="1">hidden-xs</numIndex></numIndex>
-									<numIndex index="2"><numIndex index="0">Nicht sichtbar auf klein</numIndex><numIndex index="1">hidden-sm</numIndex></numIndex>
-									<numIndex index="3"><numIndex index="0">Nicht sichtbar auf normal</numIndex><numIndex index="1">hidden-md</numIndex></numIndex>
-									<numIndex index="4"><numIndex index="0">Nicht sichtbar auf sehr groß</numIndex><numIndex index="1">hidden-lg</numIndex></numIndex>
-									<numIndex index="5"><numIndex index="0">Nur sichtbar auf sehr klein</numIndex><numIndex index="1">visible-xs</numIndex></numIndex>
-									<numIndex index="6"><numIndex index="0">Nur sichtbar auf klein</numIndex><numIndex index="1">visible-sm</numIndex></numIndex>
-									<numIndex index="7"><numIndex index="0">Nur sichtbar auf normal</numIndex><numIndex index="1">visible-md</numIndex></numIndex>
-									<numIndex index="8"><numIndex index="0">Nur sichtbar auf sehr groß</numIndex><numIndex index="1">visible-lg</numIndex></numIndex>
+									<numIndex index="1"><numIndex index="0">Nicht sichtbar auf sehr klein</numIndex><numIndex index="1">d-none d-md-block</numIndex></numIndex>
+									<numIndex index="2"><numIndex index="0">Nicht sichtbar auf klein</numIndex><numIndex index="1">d-md-none d-lg-block</numIndex></numIndex>
+									<numIndex index="3"><numIndex index="0">Nicht sichtbar auf normal</numIndex><numIndex index="1">d-lg-none d-xl-block</numIndex></numIndex>
+									<numIndex index="4"><numIndex index="0">Nicht sichtbar auf sehr groß</numIndex><numIndex index="1">d-xl-none</numIndex></numIndex>
+									<numIndex index="5"><numIndex index="0">Nur sichtbar auf sehr klein</numIndex><numIndex index="1">d-md-none</numIndex></numIndex>
+									<numIndex index="6"><numIndex index="0">Nur sichtbar auf klein</numIndex><numIndex index="1">d-none d-md-block d-lg-none</numIndex></numIndex>
+									<numIndex index="7"><numIndex index="0">Nur sichtbar auf normal</numIndex><numIndex index="1">d-none d-lg-block d-xl-none</numIndex></numIndex>
+									<numIndex index="8"><numIndex index="0">Nur sichtbar auf sehr groß</numIndex><numIndex index="1">d-none d-xl-block</numIndex></numIndex>
 								</items>
 								<maxitems>5</maxitems>
 								<size>8</size>
@@ -1144,14 +1144,14 @@
 							<config type="array">
 								<type>select</type>
 								<items>
-									<numIndex index="1"><numIndex index="0">Nicht sichtbar auf sehr klein</numIndex><numIndex index="1">hidden-xs</numIndex></numIndex>
-									<numIndex index="2"><numIndex index="0">Nicht sichtbar auf klein</numIndex><numIndex index="1">hidden-sm</numIndex></numIndex>
-									<numIndex index="3"><numIndex index="0">Nicht sichtbar auf normal</numIndex><numIndex index="1">hidden-md</numIndex></numIndex>
-									<numIndex index="4"><numIndex index="0">Nicht sichtbar auf sehr groß</numIndex><numIndex index="1">hidden-lg</numIndex></numIndex>
-									<numIndex index="5"><numIndex index="0">Nur sichtbar auf sehr klein</numIndex><numIndex index="1">visible-xs</numIndex></numIndex>
-									<numIndex index="6"><numIndex index="0">Nur sichtbar auf klein</numIndex><numIndex index="1">visible-sm</numIndex></numIndex>
-									<numIndex index="7"><numIndex index="0">Nur sichtbar auf normal</numIndex><numIndex index="1">visible-md</numIndex></numIndex>
-									<numIndex index="8"><numIndex index="0">Nur sichtbar auf sehr groß</numIndex><numIndex index="1">visible-lg</numIndex></numIndex>
+									<numIndex index="1"><numIndex index="0">Nicht sichtbar auf sehr klein</numIndex><numIndex index="1">d-none d-md-block</numIndex></numIndex>
+									<numIndex index="2"><numIndex index="0">Nicht sichtbar auf klein</numIndex><numIndex index="1">d-md-none d-lg-block</numIndex></numIndex>
+									<numIndex index="3"><numIndex index="0">Nicht sichtbar auf normal</numIndex><numIndex index="1">d-lg-none d-xl-block</numIndex></numIndex>
+									<numIndex index="4"><numIndex index="0">Nicht sichtbar auf sehr groß</numIndex><numIndex index="1">d-xl-none</numIndex></numIndex>
+									<numIndex index="5"><numIndex index="0">Nur sichtbar auf sehr klein</numIndex><numIndex index="1">d-md-none</numIndex></numIndex>
+									<numIndex index="6"><numIndex index="0">Nur sichtbar auf klein</numIndex><numIndex index="1">d-none d-md-block d-lg-none</numIndex></numIndex>
+									<numIndex index="7"><numIndex index="0">Nur sichtbar auf normal</numIndex><numIndex index="1">d-none d-lg-block d-xl-none</numIndex></numIndex>
+									<numIndex index="8"><numIndex index="0">Nur sichtbar auf sehr groß</numIndex><numIndex index="1">d-none d-xl-block</numIndex></numIndex>
 								</items>
 								<maxitems>5</maxitems>
 								<size>8</size>
