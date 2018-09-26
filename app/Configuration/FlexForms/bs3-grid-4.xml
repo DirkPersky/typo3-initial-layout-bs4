@@ -4,276 +4,35 @@
 		<langDisable>1</langDisable>
 	</meta>
 	<sheets>
-		<general>
+        <general>
             <ROOT type="array">
                 <TCEforms>
-                    <sheetTitle>Spalten (normal)</sheetTitle>
+                    <sheetTitle>CSS-Class</sheetTitle>
                 </TCEforms>
                 <el type="array">
-                    <width_column_lg_1 type="array">
+                    <valign type="array">
                         <TCEforms type="array">
-                            <label>Breite Spalte 1</label>
+                            <label>Vertical Align</label>
                             <config type="array">
                                 <type>select</type>
                                 <items type="array">
                                     <numIndex index="0" type="array">
-                                        <numIndex index="0">1/12</numIndex>
-                                        <numIndex index="1">col-lg-1</numIndex>
+                                        <numIndex index="0">Default</numIndex>
+                                        <numIndex index="1"></numIndex>
                                     </numIndex>
                                     <numIndex index="1" type="array">
-                                        <numIndex index="0">2/12</numIndex>
-                                        <numIndex index="1">col-lg-2</numIndex>
+                                        <numIndex index="0">Center</numIndex>
+                                        <numIndex index="1">align-items-center</numIndex>
                                     </numIndex>
                                     <numIndex index="2" type="array">
-                                        <numIndex index="0">3/12</numIndex>
-                                        <numIndex index="1">col-lg-3</numIndex>
-                                    </numIndex>
-                                    <numIndex index="3" type="array">
-                                        <numIndex index="0">4/12</numIndex>
-                                        <numIndex index="1">col-lg-4</numIndex>
-                                    </numIndex>
-                                    <numIndex index="4" type="array">
-                                        <numIndex index="0">5/12</numIndex>
-                                        <numIndex index="1">col-lg-5</numIndex>
-                                    </numIndex>
-                                    <numIndex index="5" type="array">
-                                        <numIndex index="0">6/12</numIndex>
-                                        <numIndex index="1">col-lg-6</numIndex>
-                                    </numIndex>
-                                    <numIndex index="6" type="array">
-                                        <numIndex index="0">7/12</numIndex>
-                                        <numIndex index="1">col-lg-7</numIndex>
-                                    </numIndex>
-                                    <numIndex index="7" type="array">
-                                        <numIndex index="0">8/12</numIndex>
-                                        <numIndex index="1">col-lg-8</numIndex>
-                                    </numIndex>
-                                    <numIndex index="8" type="array">
-                                        <numIndex index="0">9/12</numIndex>
-                                        <numIndex index="1">col-lg-9</numIndex>
-                                    </numIndex>
-                                    <numIndex index="9" type="array">
-                                        <numIndex index="0">10/12</numIndex>
-                                        <numIndex index="1">col-lg-10</numIndex>
-                                    </numIndex>
-                                    <numIndex index="10" type="array">
-                                        <numIndex index="0">11/12</numIndex>
-                                        <numIndex index="1">col-lg-11</numIndex>
-                                    </numIndex>
-                                    <numIndex index="11" type="array">
-                                        <numIndex index="0">12/12</numIndex>
-                                        <numIndex index="1">col-lg-12</numIndex>
+                                        <numIndex index="0">End</numIndex>
+                                        <numIndex index="1">align-items-end</numIndex>
                                     </numIndex>
                                 </items>
-                                <default>col-lg-3</default>
+                                <default></default>
                             </config>
                         </TCEforms>
-                    </width_column_lg_1>
-                    <width_column_lg_2 type="array">
-                        <TCEforms type="array">
-                            <label>Breite Spalte 2</label>
-                            <config type="array">
-                                <type>select</type>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">1/12</numIndex>
-                                        <numIndex index="1">col-lg-1</numIndex>
-                                    </numIndex>
-                                    <numIndex index="1" type="array">
-                                        <numIndex index="0">2/12</numIndex>
-                                        <numIndex index="1">col-lg-2</numIndex>
-                                    </numIndex>
-                                    <numIndex index="2" type="array">
-                                        <numIndex index="0">3/12</numIndex>
-                                        <numIndex index="1">col-lg-3</numIndex>
-                                    </numIndex>
-                                    <numIndex index="3" type="array">
-                                        <numIndex index="0">4/12</numIndex>
-                                        <numIndex index="1">col-lg-4</numIndex>
-                                    </numIndex>
-                                    <numIndex index="4" type="array">
-                                        <numIndex index="0">5/12</numIndex>
-                                        <numIndex index="1">col-lg-5</numIndex>
-                                    </numIndex>
-                                    <numIndex index="5" type="array">
-                                        <numIndex index="0">6/12</numIndex>
-                                        <numIndex index="1">col-lg-6</numIndex>
-                                    </numIndex>
-                                    <numIndex index="6" type="array">
-                                        <numIndex index="0">7/12</numIndex>
-                                        <numIndex index="1">col-lg-7</numIndex>
-                                    </numIndex>
-                                    <numIndex index="7" type="array">
-                                        <numIndex index="0">8/12</numIndex>
-                                        <numIndex index="1">col-lg-8</numIndex>
-                                    </numIndex>
-                                    <numIndex index="8" type="array">
-                                        <numIndex index="0">9/12</numIndex>
-                                        <numIndex index="1">col-lg-9</numIndex>
-                                    </numIndex>
-                                    <numIndex index="9" type="array">
-                                        <numIndex index="0">10/12</numIndex>
-                                        <numIndex index="1">col-lg-10</numIndex>
-                                    </numIndex>
-                                    <numIndex index="10" type="array">
-                                        <numIndex index="0">11/12</numIndex>
-                                        <numIndex index="1">col-lg-11</numIndex>
-                                    </numIndex>
-                                    <numIndex index="11" type="array">
-                                        <numIndex index="0">12/12</numIndex>
-                                        <numIndex index="1">col-lg-12</numIndex>
-                                    </numIndex>
-                                </items>
-                                <default>col-lg-3</default>
-                            </config>
-                        </TCEforms>
-                    </width_column_lg_2>
-                    <width_column_lg_3 type="array">
-                        <TCEforms type="array">
-                            <label>Breite Spalte 3</label>
-                            <config type="array">
-                                <type>select</type>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">1/12</numIndex>
-                                        <numIndex index="1">col-lg-1</numIndex>
-                                    </numIndex>
-                                    <numIndex index="1" type="array">
-                                        <numIndex index="0">2/12</numIndex>
-                                        <numIndex index="1">col-lg-2</numIndex>
-                                    </numIndex>
-                                    <numIndex index="2" type="array">
-                                        <numIndex index="0">3/12</numIndex>
-                                        <numIndex index="1">col-lg-3</numIndex>
-                                    </numIndex>
-                                    <numIndex index="3" type="array">
-                                        <numIndex index="0">4/12</numIndex>
-                                        <numIndex index="1">col-lg-4</numIndex>
-                                    </numIndex>
-                                    <numIndex index="4" type="array">
-                                        <numIndex index="0">5/12</numIndex>
-                                        <numIndex index="1">col-lg-5</numIndex>
-                                    </numIndex>
-                                    <numIndex index="5" type="array">
-                                        <numIndex index="0">6/12</numIndex>
-                                        <numIndex index="1">col-lg-6</numIndex>
-                                    </numIndex>
-                                    <numIndex index="6" type="array">
-                                        <numIndex index="0">7/12</numIndex>
-                                        <numIndex index="1">col-lg-7</numIndex>
-                                    </numIndex>
-                                    <numIndex index="7" type="array">
-                                        <numIndex index="0">8/12</numIndex>
-                                        <numIndex index="1">col-lg-8</numIndex>
-                                    </numIndex>
-                                    <numIndex index="8" type="array">
-                                        <numIndex index="0">9/12</numIndex>
-                                        <numIndex index="1">col-lg-9</numIndex>
-                                    </numIndex>
-                                    <numIndex index="9" type="array">
-                                        <numIndex index="0">10/12</numIndex>
-                                        <numIndex index="1">col-lg-10</numIndex>
-                                    </numIndex>
-                                    <numIndex index="10" type="array">
-                                        <numIndex index="0">11/12</numIndex>
-                                        <numIndex index="1">col-lg-11</numIndex>
-                                    </numIndex>
-                                    <numIndex index="11" type="array">
-                                        <numIndex index="0">12/12</numIndex>
-                                        <numIndex index="1">col-lg-12</numIndex>
-                                    </numIndex>
-                                </items>
-                                <default>col-lg-3</default>
-                            </config>
-                        </TCEforms>
-                    </width_column_lg_3>
-                    <width_column_lg_4 type="array">
-                        <TCEforms type="array">
-                            <label>Breite Spalte 4</label>
-                            <config type="array">
-                                <type>select</type>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">1/12</numIndex>
-                                        <numIndex index="1">col-lg-1</numIndex>
-                                    </numIndex>
-                                    <numIndex index="1" type="array">
-                                        <numIndex index="0">2/12</numIndex>
-                                        <numIndex index="1">col-lg-2</numIndex>
-                                    </numIndex>
-                                    <numIndex index="2" type="array">
-                                        <numIndex index="0">3/12</numIndex>
-                                        <numIndex index="1">col-lg-3</numIndex>
-                                    </numIndex>
-                                    <numIndex index="3" type="array">
-                                        <numIndex index="0">4/12</numIndex>
-                                        <numIndex index="1">col-lg-4</numIndex>
-                                    </numIndex>
-                                    <numIndex index="4" type="array">
-                                        <numIndex index="0">5/12</numIndex>
-                                        <numIndex index="1">col-lg-5</numIndex>
-                                    </numIndex>
-                                    <numIndex index="5" type="array">
-                                        <numIndex index="0">6/12</numIndex>
-                                        <numIndex index="1">col-lg-6</numIndex>
-                                    </numIndex>
-                                    <numIndex index="6" type="array">
-                                        <numIndex index="0">7/12</numIndex>
-                                        <numIndex index="1">col-lg-7</numIndex>
-                                    </numIndex>
-                                    <numIndex index="7" type="array">
-                                        <numIndex index="0">8/12</numIndex>
-                                        <numIndex index="1">col-lg-8</numIndex>
-                                    </numIndex>
-                                    <numIndex index="8" type="array">
-                                        <numIndex index="0">9/12</numIndex>
-                                        <numIndex index="1">col-lg-9</numIndex>
-                                    </numIndex>
-                                    <numIndex index="9" type="array">
-                                        <numIndex index="0">10/12</numIndex>
-                                        <numIndex index="1">col-lg-10</numIndex>
-                                    </numIndex>
-                                    <numIndex index="10" type="array">
-                                        <numIndex index="0">11/12</numIndex>
-                                        <numIndex index="1">col-lg-11</numIndex>
-                                    </numIndex>
-                                    <numIndex index="11" type="array">
-                                        <numIndex index="0">12/12</numIndex>
-                                        <numIndex index="1">col-lg-12</numIndex>
-                                    </numIndex>
-                                </items>
-                                <default>col-lg-3</default>
-                            </config>
-                        </TCEforms>
-                    </width_column_lg_4>
-                    <vend type="array">
-                        <TCEforms type="array">
-                            <label>Vertical: End</label>
-                            <config type="array">
-                                <type>check</type>
-                                <items>
-                                    <numIndex index="0">
-                                        <numIndex index="0">Aktiviert</numIndex>
-                                        <numIndex index="1">1</numIndex>
-                                    </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
-                    </vend>
-                    <vcenter type="array">
-                        <TCEforms type="array">
-                            <label>Vertical: Center</label>
-                            <config type="array">
-                                <type>check</type>
-                                <items>
-                                    <numIndex index="0">
-                                        <numIndex index="0">Aktiviert</numIndex>
-                                        <numIndex index="1">1</numIndex>
-                                    </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
-                    </vcenter>
+                    </valign>
                     <class type="array">
                         <TCEforms type="array">
                             <label>CSS-Class</label>
@@ -331,11 +90,11 @@
                     </class_col4>
                 </el>
             </ROOT>
-		</general>
+        </general>
 		<columns_xs>
 			<ROOT type="array">
 				<TCEforms>
-					<sheetTitle>Spalten (Handy Hoch)</sheetTitle>
+                    <sheetTitle>Mobile</sheetTitle>
 				</TCEforms>
 				<el type="array">
 					<width_column_xs_1 type="array">
@@ -436,7 +195,7 @@
 		<columns_sm>
 			<ROOT type="array">
 				<TCEforms>
-					<sheetTitle>Spalten (Handy Query)</sheetTitle>
+                    <sheetTitle>Mobile (Quer)</sheetTitle>
 				</TCEforms>
 				<el type="array">
 					<width_column_sm_1 type="array">
@@ -537,7 +296,7 @@
 		<columns_md>
             <ROOT type="array">
                 <TCEforms>
-                    <sheetTitle>Spalten (Tablet Hoch)</sheetTitle>
+                    <sheetTitle>Tablet (Hoch)</sheetTitle>
                 </TCEforms>
                 <el type="array">
                     <width_column_md_1 type="array">
@@ -791,10 +550,255 @@
                 </el>
             </ROOT>
 		</columns_md>
+        <columns_lg>
+            <ROOT type="array">
+                <TCEforms>
+                    <sheetTitle>Tablet (Quer / Normal)</sheetTitle>
+                </TCEforms>
+                <el type="array">
+                    <width_column_lg_1 type="array">
+                        <TCEforms type="array">
+                            <label>Breite Spalte 1</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">1/12</numIndex>
+                                        <numIndex index="1">col-lg-1</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">2/12</numIndex>
+                                        <numIndex index="1">col-lg-2</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">3/12</numIndex>
+                                        <numIndex index="1">col-lg-3</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">4/12</numIndex>
+                                        <numIndex index="1">col-lg-4</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4" type="array">
+                                        <numIndex index="0">5/12</numIndex>
+                                        <numIndex index="1">col-lg-5</numIndex>
+                                    </numIndex>
+                                    <numIndex index="5" type="array">
+                                        <numIndex index="0">6/12</numIndex>
+                                        <numIndex index="1">col-lg-6</numIndex>
+                                    </numIndex>
+                                    <numIndex index="6" type="array">
+                                        <numIndex index="0">7/12</numIndex>
+                                        <numIndex index="1">col-lg-7</numIndex>
+                                    </numIndex>
+                                    <numIndex index="7" type="array">
+                                        <numIndex index="0">8/12</numIndex>
+                                        <numIndex index="1">col-lg-8</numIndex>
+                                    </numIndex>
+                                    <numIndex index="8" type="array">
+                                        <numIndex index="0">9/12</numIndex>
+                                        <numIndex index="1">col-lg-9</numIndex>
+                                    </numIndex>
+                                    <numIndex index="9" type="array">
+                                        <numIndex index="0">10/12</numIndex>
+                                        <numIndex index="1">col-lg-10</numIndex>
+                                    </numIndex>
+                                    <numIndex index="10" type="array">
+                                        <numIndex index="0">11/12</numIndex>
+                                        <numIndex index="1">col-lg-11</numIndex>
+                                    </numIndex>
+                                    <numIndex index="11" type="array">
+                                        <numIndex index="0">12/12</numIndex>
+                                        <numIndex index="1">col-lg-12</numIndex>
+                                    </numIndex>
+                                </items>
+                                <default>col-lg-3</default>
+                            </config>
+                        </TCEforms>
+                    </width_column_lg_1>
+                    <width_column_lg_2 type="array">
+                        <TCEforms type="array">
+                            <label>Breite Spalte 2</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">1/12</numIndex>
+                                        <numIndex index="1">col-lg-1</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">2/12</numIndex>
+                                        <numIndex index="1">col-lg-2</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">3/12</numIndex>
+                                        <numIndex index="1">col-lg-3</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">4/12</numIndex>
+                                        <numIndex index="1">col-lg-4</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4" type="array">
+                                        <numIndex index="0">5/12</numIndex>
+                                        <numIndex index="1">col-lg-5</numIndex>
+                                    </numIndex>
+                                    <numIndex index="5" type="array">
+                                        <numIndex index="0">6/12</numIndex>
+                                        <numIndex index="1">col-lg-6</numIndex>
+                                    </numIndex>
+                                    <numIndex index="6" type="array">
+                                        <numIndex index="0">7/12</numIndex>
+                                        <numIndex index="1">col-lg-7</numIndex>
+                                    </numIndex>
+                                    <numIndex index="7" type="array">
+                                        <numIndex index="0">8/12</numIndex>
+                                        <numIndex index="1">col-lg-8</numIndex>
+                                    </numIndex>
+                                    <numIndex index="8" type="array">
+                                        <numIndex index="0">9/12</numIndex>
+                                        <numIndex index="1">col-lg-9</numIndex>
+                                    </numIndex>
+                                    <numIndex index="9" type="array">
+                                        <numIndex index="0">10/12</numIndex>
+                                        <numIndex index="1">col-lg-10</numIndex>
+                                    </numIndex>
+                                    <numIndex index="10" type="array">
+                                        <numIndex index="0">11/12</numIndex>
+                                        <numIndex index="1">col-lg-11</numIndex>
+                                    </numIndex>
+                                    <numIndex index="11" type="array">
+                                        <numIndex index="0">12/12</numIndex>
+                                        <numIndex index="1">col-lg-12</numIndex>
+                                    </numIndex>
+                                </items>
+                                <default>col-lg-3</default>
+                            </config>
+                        </TCEforms>
+                    </width_column_lg_2>
+                    <width_column_lg_3 type="array">
+                        <TCEforms type="array">
+                            <label>Breite Spalte 3</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">1/12</numIndex>
+                                        <numIndex index="1">col-lg-1</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">2/12</numIndex>
+                                        <numIndex index="1">col-lg-2</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">3/12</numIndex>
+                                        <numIndex index="1">col-lg-3</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">4/12</numIndex>
+                                        <numIndex index="1">col-lg-4</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4" type="array">
+                                        <numIndex index="0">5/12</numIndex>
+                                        <numIndex index="1">col-lg-5</numIndex>
+                                    </numIndex>
+                                    <numIndex index="5" type="array">
+                                        <numIndex index="0">6/12</numIndex>
+                                        <numIndex index="1">col-lg-6</numIndex>
+                                    </numIndex>
+                                    <numIndex index="6" type="array">
+                                        <numIndex index="0">7/12</numIndex>
+                                        <numIndex index="1">col-lg-7</numIndex>
+                                    </numIndex>
+                                    <numIndex index="7" type="array">
+                                        <numIndex index="0">8/12</numIndex>
+                                        <numIndex index="1">col-lg-8</numIndex>
+                                    </numIndex>
+                                    <numIndex index="8" type="array">
+                                        <numIndex index="0">9/12</numIndex>
+                                        <numIndex index="1">col-lg-9</numIndex>
+                                    </numIndex>
+                                    <numIndex index="9" type="array">
+                                        <numIndex index="0">10/12</numIndex>
+                                        <numIndex index="1">col-lg-10</numIndex>
+                                    </numIndex>
+                                    <numIndex index="10" type="array">
+                                        <numIndex index="0">11/12</numIndex>
+                                        <numIndex index="1">col-lg-11</numIndex>
+                                    </numIndex>
+                                    <numIndex index="11" type="array">
+                                        <numIndex index="0">12/12</numIndex>
+                                        <numIndex index="1">col-lg-12</numIndex>
+                                    </numIndex>
+                                </items>
+                                <default>col-lg-3</default>
+                            </config>
+                        </TCEforms>
+                    </width_column_lg_3>
+                    <width_column_lg_4 type="array">
+                        <TCEforms type="array">
+                            <label>Breite Spalte 4</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">1/12</numIndex>
+                                        <numIndex index="1">col-lg-1</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">2/12</numIndex>
+                                        <numIndex index="1">col-lg-2</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">3/12</numIndex>
+                                        <numIndex index="1">col-lg-3</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">4/12</numIndex>
+                                        <numIndex index="1">col-lg-4</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4" type="array">
+                                        <numIndex index="0">5/12</numIndex>
+                                        <numIndex index="1">col-lg-5</numIndex>
+                                    </numIndex>
+                                    <numIndex index="5" type="array">
+                                        <numIndex index="0">6/12</numIndex>
+                                        <numIndex index="1">col-lg-6</numIndex>
+                                    </numIndex>
+                                    <numIndex index="6" type="array">
+                                        <numIndex index="0">7/12</numIndex>
+                                        <numIndex index="1">col-lg-7</numIndex>
+                                    </numIndex>
+                                    <numIndex index="7" type="array">
+                                        <numIndex index="0">8/12</numIndex>
+                                        <numIndex index="1">col-lg-8</numIndex>
+                                    </numIndex>
+                                    <numIndex index="8" type="array">
+                                        <numIndex index="0">9/12</numIndex>
+                                        <numIndex index="1">col-lg-9</numIndex>
+                                    </numIndex>
+                                    <numIndex index="9" type="array">
+                                        <numIndex index="0">10/12</numIndex>
+                                        <numIndex index="1">col-lg-10</numIndex>
+                                    </numIndex>
+                                    <numIndex index="10" type="array">
+                                        <numIndex index="0">11/12</numIndex>
+                                        <numIndex index="1">col-lg-11</numIndex>
+                                    </numIndex>
+                                    <numIndex index="11" type="array">
+                                        <numIndex index="0">12/12</numIndex>
+                                        <numIndex index="1">col-lg-12</numIndex>
+                                    </numIndex>
+                                </items>
+                                <default>col-lg-3</default>
+                            </config>
+                        </TCEforms>
+                    </width_column_lg_4>
+                </el>
+            </ROOT>
+        </columns_lg>
 		<columns_xl>
             <ROOT type="array">
                 <TCEforms>
-                    <sheetTitle>Spalten (sehr groß)</sheetTitle>
+                    <sheetTitle>Desktop (Groß)</sheetTitle>
                 </TCEforms>
                 <el type="array">
                     <width_column_xl_1 type="array">
@@ -1058,20 +1062,23 @@
 						<TCEforms type="array">
 							<label>Komplettes Element</label>
 							<config type="array">
-								<type>select</type>
-								<items>
-									<numIndex index="1"><numIndex index="0">Nicht sichtbar auf sehr klein</numIndex><numIndex index="1">d-none d-md-block</numIndex></numIndex>
-									<numIndex index="2"><numIndex index="0">Nicht sichtbar auf klein</numIndex><numIndex index="1">d-md-none d-lg-block</numIndex></numIndex>
-									<numIndex index="3"><numIndex index="0">Nicht sichtbar auf normal</numIndex><numIndex index="1">d-lg-none d-xl-block</numIndex></numIndex>
-									<numIndex index="4"><numIndex index="0">Nicht sichtbar auf sehr groß</numIndex><numIndex index="1">d-xl-none</numIndex></numIndex>
-									<numIndex index="5"><numIndex index="0">Nur sichtbar auf sehr klein</numIndex><numIndex index="1">d-md-none</numIndex></numIndex>
-									<numIndex index="6"><numIndex index="0">Nur sichtbar auf klein</numIndex><numIndex index="1">d-none d-md-block d-lg-none</numIndex></numIndex>
-									<numIndex index="7"><numIndex index="0">Nur sichtbar auf normal</numIndex><numIndex index="1">d-none d-lg-block d-xl-none</numIndex></numIndex>
-									<numIndex index="8"><numIndex index="0">Nur sichtbar auf sehr groß</numIndex><numIndex index="1">d-none d-xl-block</numIndex></numIndex>
-								</items>
-								<maxitems>5</maxitems>
-								<size>8</size>
-								<default></default>
+                                <type>select</type>
+                                <items>
+                                    <numIndex index="1"><numIndex index="0">verstecken ab Mobile</numIndex><numIndex index="1">d-none</numIndex></numIndex>
+                                    <numIndex index="2"><numIndex index="0">verstecken ab Mobile (Quer)</numIndex><numIndex index="1">d-sm-none</numIndex></numIndex>
+                                    <numIndex index="3"><numIndex index="0">verstecken ab Tablet (Hoch)</numIndex><numIndex index="1">d-md-none</numIndex></numIndex>
+                                    <numIndex index="4"><numIndex index="0">verstecken ab Tablet (Quer)</numIndex><numIndex index="1">d-lg-none</numIndex></numIndex>
+                                    <numIndex index="5"><numIndex index="0">verstecken ab Desktop (Groß)</numIndex><numIndex index="1">d-xl-none</numIndex></numIndex>
+
+                                    <numIndex index="6"><numIndex index="0">sichtbar ab Mobile</numIndex><numIndex index="1">d-block</numIndex></numIndex>
+                                    <numIndex index="7"><numIndex index="0">sichtbar ab Mobile (Quer)</numIndex><numIndex index="1">d-sm-block</numIndex></numIndex>
+                                    <numIndex index="8"><numIndex index="0">sichtbar ab Tablet (Hoch)</numIndex><numIndex index="1">d-md-block</numIndex></numIndex>
+                                    <numIndex index="9"><numIndex index="0">sichtbar ab Tablet (Quer)</numIndex><numIndex index="1">d-lg-block</numIndex></numIndex>
+                                    <numIndex index="10"><numIndex index="0">sichtbar Desktop (Groß)</numIndex><numIndex index="1">d-xl-block</numIndex></numIndex>
+                                </items>
+                                <maxitems>6</maxitems>
+                                <size>10</size>
+                                <default>d-block</default>
 							</config>
 						</TCEforms>
 					</visibility_element>
@@ -1079,20 +1086,23 @@
 						<TCEforms type="array">
 							<label>Spalte 1</label>
 							<config type="array">
-								<type>select</type>
-								<items>
-									<numIndex index="1"><numIndex index="0">Nicht sichtbar auf sehr klein</numIndex><numIndex index="1">d-none d-md-block</numIndex></numIndex>
-									<numIndex index="2"><numIndex index="0">Nicht sichtbar auf klein</numIndex><numIndex index="1">d-md-none d-lg-block</numIndex></numIndex>
-									<numIndex index="3"><numIndex index="0">Nicht sichtbar auf normal</numIndex><numIndex index="1">d-lg-none d-xl-block</numIndex></numIndex>
-									<numIndex index="4"><numIndex index="0">Nicht sichtbar auf sehr groß</numIndex><numIndex index="1">d-xl-none</numIndex></numIndex>
-									<numIndex index="5"><numIndex index="0">Nur sichtbar auf sehr klein</numIndex><numIndex index="1">d-md-none</numIndex></numIndex>
-									<numIndex index="6"><numIndex index="0">Nur sichtbar auf klein</numIndex><numIndex index="1">d-none d-md-block d-lg-none</numIndex></numIndex>
-									<numIndex index="7"><numIndex index="0">Nur sichtbar auf normal</numIndex><numIndex index="1">d-none d-lg-block d-xl-none</numIndex></numIndex>
-									<numIndex index="8"><numIndex index="0">Nur sichtbar auf sehr groß</numIndex><numIndex index="1">d-none d-xl-block</numIndex></numIndex>
-								</items>
-								<maxitems>5</maxitems>
-								<size>8</size>
-								<default></default>
+                                <type>select</type>
+                                <items>
+                                    <numIndex index="1"><numIndex index="0">verstecken ab Mobile</numIndex><numIndex index="1">d-none</numIndex></numIndex>
+                                    <numIndex index="2"><numIndex index="0">verstecken ab Mobile (Quer)</numIndex><numIndex index="1">d-sm-none</numIndex></numIndex>
+                                    <numIndex index="3"><numIndex index="0">verstecken ab Tablet (Hoch)</numIndex><numIndex index="1">d-md-none</numIndex></numIndex>
+                                    <numIndex index="4"><numIndex index="0">verstecken ab Tablet (Quer)</numIndex><numIndex index="1">d-lg-none</numIndex></numIndex>
+                                    <numIndex index="5"><numIndex index="0">verstecken ab Desktop (Groß)</numIndex><numIndex index="1">d-xl-none</numIndex></numIndex>
+
+                                    <numIndex index="6"><numIndex index="0">sichtbar ab Mobile</numIndex><numIndex index="1">d-block</numIndex></numIndex>
+                                    <numIndex index="7"><numIndex index="0">sichtbar ab Mobile (Quer)</numIndex><numIndex index="1">d-sm-block</numIndex></numIndex>
+                                    <numIndex index="8"><numIndex index="0">sichtbar ab Tablet (Hoch)</numIndex><numIndex index="1">d-md-block</numIndex></numIndex>
+                                    <numIndex index="9"><numIndex index="0">sichtbar ab Tablet (Quer)</numIndex><numIndex index="1">d-lg-block</numIndex></numIndex>
+                                    <numIndex index="10"><numIndex index="0">sichtbar Desktop (Groß)</numIndex><numIndex index="1">d-xl-block</numIndex></numIndex>
+                                </items>
+                                <maxitems>6</maxitems>
+                                <size>10</size>
+                                <default>d-block</default>
 							</config>
 						</TCEforms>
 					</visibility_col1>
@@ -1100,20 +1110,23 @@
 						<TCEforms type="array">
 							<label>Spalte 2</label>
 							<config type="array">
-								<type>select</type>
-								<items>
-									<numIndex index="1"><numIndex index="0">Nicht sichtbar auf sehr klein</numIndex><numIndex index="1">d-none d-md-block</numIndex></numIndex>
-									<numIndex index="2"><numIndex index="0">Nicht sichtbar auf klein</numIndex><numIndex index="1">d-md-none d-lg-block</numIndex></numIndex>
-									<numIndex index="3"><numIndex index="0">Nicht sichtbar auf normal</numIndex><numIndex index="1">d-lg-none d-xl-block</numIndex></numIndex>
-									<numIndex index="4"><numIndex index="0">Nicht sichtbar auf sehr groß</numIndex><numIndex index="1">d-xl-none</numIndex></numIndex>
-									<numIndex index="5"><numIndex index="0">Nur sichtbar auf sehr klein</numIndex><numIndex index="1">d-md-none</numIndex></numIndex>
-									<numIndex index="6"><numIndex index="0">Nur sichtbar auf klein</numIndex><numIndex index="1">d-none d-md-block d-lg-none</numIndex></numIndex>
-									<numIndex index="7"><numIndex index="0">Nur sichtbar auf normal</numIndex><numIndex index="1">d-none d-lg-block d-xl-none</numIndex></numIndex>
-									<numIndex index="8"><numIndex index="0">Nur sichtbar auf sehr groß</numIndex><numIndex index="1">d-none d-xl-block</numIndex></numIndex>
-								</items>
-								<maxitems>5</maxitems>
-								<size>8</size>
-								<default></default>
+                                <type>select</type>
+                                <items>
+                                    <numIndex index="1"><numIndex index="0">verstecken ab Mobile</numIndex><numIndex index="1">d-none</numIndex></numIndex>
+                                    <numIndex index="2"><numIndex index="0">verstecken ab Mobile (Quer)</numIndex><numIndex index="1">d-sm-none</numIndex></numIndex>
+                                    <numIndex index="3"><numIndex index="0">verstecken ab Tablet (Hoch)</numIndex><numIndex index="1">d-md-none</numIndex></numIndex>
+                                    <numIndex index="4"><numIndex index="0">verstecken ab Tablet (Quer)</numIndex><numIndex index="1">d-lg-none</numIndex></numIndex>
+                                    <numIndex index="5"><numIndex index="0">verstecken ab Desktop (Groß)</numIndex><numIndex index="1">d-xl-none</numIndex></numIndex>
+
+                                    <numIndex index="6"><numIndex index="0">sichtbar ab Mobile</numIndex><numIndex index="1">d-block</numIndex></numIndex>
+                                    <numIndex index="7"><numIndex index="0">sichtbar ab Mobile (Quer)</numIndex><numIndex index="1">d-sm-block</numIndex></numIndex>
+                                    <numIndex index="8"><numIndex index="0">sichtbar ab Tablet (Hoch)</numIndex><numIndex index="1">d-md-block</numIndex></numIndex>
+                                    <numIndex index="9"><numIndex index="0">sichtbar ab Tablet (Quer)</numIndex><numIndex index="1">d-lg-block</numIndex></numIndex>
+                                    <numIndex index="10"><numIndex index="0">sichtbar Desktop (Groß)</numIndex><numIndex index="1">d-xl-block</numIndex></numIndex>
+                                </items>
+                                <maxitems>6</maxitems>
+                                <size>10</size>
+                                <default>d-block</default>
 							</config>
 						</TCEforms>
 					</visibility_col2>
@@ -1121,20 +1134,23 @@
 						<TCEforms type="array">
 							<label>Spalte 3</label>
 							<config type="array">
-								<type>select</type>
-								<items>
-									<numIndex index="1"><numIndex index="0">Nicht sichtbar auf sehr klein</numIndex><numIndex index="1">d-none d-md-block</numIndex></numIndex>
-									<numIndex index="2"><numIndex index="0">Nicht sichtbar auf klein</numIndex><numIndex index="1">d-md-none d-lg-block</numIndex></numIndex>
-									<numIndex index="3"><numIndex index="0">Nicht sichtbar auf normal</numIndex><numIndex index="1">d-lg-none d-xl-block</numIndex></numIndex>
-									<numIndex index="4"><numIndex index="0">Nicht sichtbar auf sehr groß</numIndex><numIndex index="1">d-xl-none</numIndex></numIndex>
-									<numIndex index="5"><numIndex index="0">Nur sichtbar auf sehr klein</numIndex><numIndex index="1">d-md-none</numIndex></numIndex>
-									<numIndex index="6"><numIndex index="0">Nur sichtbar auf klein</numIndex><numIndex index="1">d-none d-md-block d-lg-none</numIndex></numIndex>
-									<numIndex index="7"><numIndex index="0">Nur sichtbar auf normal</numIndex><numIndex index="1">d-none d-lg-block d-xl-none</numIndex></numIndex>
-									<numIndex index="8"><numIndex index="0">Nur sichtbar auf sehr groß</numIndex><numIndex index="1">d-none d-xl-block</numIndex></numIndex>
-								</items>
-								<maxitems>5</maxitems>
-								<size>8</size>
-								<default></default>
+                                <type>select</type>
+                                <items>
+                                    <numIndex index="1"><numIndex index="0">verstecken ab Mobile</numIndex><numIndex index="1">d-none</numIndex></numIndex>
+                                    <numIndex index="2"><numIndex index="0">verstecken ab Mobile (Quer)</numIndex><numIndex index="1">d-sm-none</numIndex></numIndex>
+                                    <numIndex index="3"><numIndex index="0">verstecken ab Tablet (Hoch)</numIndex><numIndex index="1">d-md-none</numIndex></numIndex>
+                                    <numIndex index="4"><numIndex index="0">verstecken ab Tablet (Quer)</numIndex><numIndex index="1">d-lg-none</numIndex></numIndex>
+                                    <numIndex index="5"><numIndex index="0">verstecken ab Desktop (Groß)</numIndex><numIndex index="1">d-xl-none</numIndex></numIndex>
+
+                                    <numIndex index="6"><numIndex index="0">sichtbar ab Mobile</numIndex><numIndex index="1">d-block</numIndex></numIndex>
+                                    <numIndex index="7"><numIndex index="0">sichtbar ab Mobile (Quer)</numIndex><numIndex index="1">d-sm-block</numIndex></numIndex>
+                                    <numIndex index="8"><numIndex index="0">sichtbar ab Tablet (Hoch)</numIndex><numIndex index="1">d-md-block</numIndex></numIndex>
+                                    <numIndex index="9"><numIndex index="0">sichtbar ab Tablet (Quer)</numIndex><numIndex index="1">d-lg-block</numIndex></numIndex>
+                                    <numIndex index="10"><numIndex index="0">sichtbar Desktop (Groß)</numIndex><numIndex index="1">d-xl-block</numIndex></numIndex>
+                                </items>
+                                <maxitems>6</maxitems>
+                                <size>10</size>
+                                <default>d-block</default>
 							</config>
 						</TCEforms>
 					</visibility_col3>
@@ -1142,20 +1158,23 @@
 						<TCEforms type="array">
 							<label>Spalte 4</label>
 							<config type="array">
-								<type>select</type>
-								<items>
-									<numIndex index="1"><numIndex index="0">Nicht sichtbar auf sehr klein</numIndex><numIndex index="1">d-none d-md-block</numIndex></numIndex>
-									<numIndex index="2"><numIndex index="0">Nicht sichtbar auf klein</numIndex><numIndex index="1">d-md-none d-lg-block</numIndex></numIndex>
-									<numIndex index="3"><numIndex index="0">Nicht sichtbar auf normal</numIndex><numIndex index="1">d-lg-none d-xl-block</numIndex></numIndex>
-									<numIndex index="4"><numIndex index="0">Nicht sichtbar auf sehr groß</numIndex><numIndex index="1">d-xl-none</numIndex></numIndex>
-									<numIndex index="5"><numIndex index="0">Nur sichtbar auf sehr klein</numIndex><numIndex index="1">d-md-none</numIndex></numIndex>
-									<numIndex index="6"><numIndex index="0">Nur sichtbar auf klein</numIndex><numIndex index="1">d-none d-md-block d-lg-none</numIndex></numIndex>
-									<numIndex index="7"><numIndex index="0">Nur sichtbar auf normal</numIndex><numIndex index="1">d-none d-lg-block d-xl-none</numIndex></numIndex>
-									<numIndex index="8"><numIndex index="0">Nur sichtbar auf sehr groß</numIndex><numIndex index="1">d-none d-xl-block</numIndex></numIndex>
-								</items>
-								<maxitems>5</maxitems>
-								<size>8</size>
-								<default></default>
+                                <type>select</type>
+                                <items>
+                                    <numIndex index="1"><numIndex index="0">verstecken ab Mobile</numIndex><numIndex index="1">d-none</numIndex></numIndex>
+                                    <numIndex index="2"><numIndex index="0">verstecken ab Mobile (Quer)</numIndex><numIndex index="1">d-sm-none</numIndex></numIndex>
+                                    <numIndex index="3"><numIndex index="0">verstecken ab Tablet (Hoch)</numIndex><numIndex index="1">d-md-none</numIndex></numIndex>
+                                    <numIndex index="4"><numIndex index="0">verstecken ab Tablet (Quer)</numIndex><numIndex index="1">d-lg-none</numIndex></numIndex>
+                                    <numIndex index="5"><numIndex index="0">verstecken ab Desktop (Groß)</numIndex><numIndex index="1">d-xl-none</numIndex></numIndex>
+
+                                    <numIndex index="6"><numIndex index="0">sichtbar ab Mobile</numIndex><numIndex index="1">d-block</numIndex></numIndex>
+                                    <numIndex index="7"><numIndex index="0">sichtbar ab Mobile (Quer)</numIndex><numIndex index="1">d-sm-block</numIndex></numIndex>
+                                    <numIndex index="8"><numIndex index="0">sichtbar ab Tablet (Hoch)</numIndex><numIndex index="1">d-md-block</numIndex></numIndex>
+                                    <numIndex index="9"><numIndex index="0">sichtbar ab Tablet (Quer)</numIndex><numIndex index="1">d-lg-block</numIndex></numIndex>
+                                    <numIndex index="10"><numIndex index="0">sichtbar Desktop (Groß)</numIndex><numIndex index="1">d-xl-block</numIndex></numIndex>
+                                </items>
+                                <maxitems>6</maxitems>
+                                <size>10</size>
+                                <default>d-block</default>
 							</config>
 						</TCEforms>
 					</visibility_col4>
