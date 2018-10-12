@@ -141,7 +141,7 @@ plugin.tx_scriptmerger {
         mergedFilePosition = </body>
         compress.enable = 0
         postUrlProcessing {
-            pattern = /(\.\.\/\.\.\/fileadmin)/i
+            pattern = /(.*\/fileadmin)/i
             replacement = {$path.baseURL}fileadmin
         }
     }
