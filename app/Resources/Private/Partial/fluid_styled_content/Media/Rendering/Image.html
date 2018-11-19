@@ -31,9 +31,6 @@
             >
         </f:if>
 
-        <source
-                srcset="<f:uri.image image="{file}" width="480" maxWidth="{data.imagewidth}" maxHeight="{data.imageheight}" cropVariant="mobile" />"
-        >
-        <f:image class="img-fluid lazyload" image="{file}" width="80" maxWidth="{data.imagewidth}" maxHeight="{data.imageheight}" cropVariant="mobile"/>
+        <img class="img-fluid lazyload" data-src="<f:uri.image image="{file}" width="480" maxWidth="{data.imagewidth}" maxHeight="{data.imageheight}" cropVariant="mobile" />" width="{dimensions.width}" height="{dimensions.height}" />
     </picture>
 </html>
