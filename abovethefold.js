@@ -1,12 +1,26 @@
 const penthouse = require('penthouse');
 const CleanCSS = require('clean-css');
 const fs = require('fs');
-
+/**
+ * Parsing URL
+ * @type {string[]}
+ */
 const urls = [
     'example.de',
     'example.de/imprint'
 ];
-
+/**
+ * Path where css will be saved
+ * @type {{mobile: string, desktop: string}}
+ */
+const outFiles = {
+    mobile: 'app/Resources/Public/css/abovethefold-xs.css',
+    desktop: 'app/Resources/Public/css/abovethefold.css'
+};
+/**
+ * Above The Fild Config
+ * @type {{css: string, width: number, height: number, propertiesToRemove: string[]}}
+ */
 const penthouseOptions = {
     css: 'app/Resources/Public/css/style.css',
 
@@ -24,14 +38,20 @@ const penthouseOptions = {
         'src'
     ],
 };
-
+/**
+ * Above The fold Config for Mobile
+ * @type {{css: string, width: number, height: number, propertiesToRemove: string[]}}
+ */
 const penthouseMobileOptions = {
     ...penthouseOptions,
 
     width: 375,  // viewport width
     height: 667,  // viewport height
 };
-
+/**
+ * CSS Optimierung
+ * @type {{level: {"1": {all: boolean}, "2": {all: boolean}}, inline: string[], fetch: CSSOptions.fetch}}
+ */
 const CSSOptions = {
     level: {
         1: {all: true},
@@ -43,12 +63,14 @@ const CSSOptions = {
         callback(null, '');
     }
 };
-
+/**
+ * CSS Temp store
+ * @type {{mobile: Array, desktop: Array}}
+ */
 let CSS = {
     mobile: [],
     desktop: []
 };
-
 // recursively generates critical css for one url at the time,
 // until all urls have been handled
 function startNewJob (options, _urls, key) {
@@ -57,7 +79,7 @@ function startNewJob (options, _urls, key) {
         // no more new jobs to process (might still be jobs currently in process)
         return Promise.resolve()
     }
-
+    // run penthouse
     return penthouse({
         url,
         ...options
@@ -80,10 +102,10 @@ Promise.all([
 ]).then(() => {
     // Create Desktop CSS
     new CleanCSS(CSSOptions).minify( CSS.desktop.join(''), function (error, output) {
-        fs.writeFileSync('app/Resources/Public/css/abovethefold.css', '/*Desktop*/'+output.styles);
+        fs.writeFileSync(outFiles.desktop, '/*Desktop*/'+output.styles);
     });
     // Create Mobile CSS
     new CleanCSS(CSSOptions).minify( CSS.mobile.join(''), function (error, output) {
-        fs.writeFileSync('app/Resources/Public/css/abovethefold-xs.css', '/*Mobile*/'+output.styles);
+        fs.writeFileSync(outFiles.mobile, '/*Mobile*/'+output.styles);
     });
 });
