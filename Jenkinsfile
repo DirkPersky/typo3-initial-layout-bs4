@@ -8,6 +8,7 @@ pipeline {
     PROJEKT = '{$PROJEKT}'
     DEPLOY_TO = 'dev'
     FORCE_INSTALL = 'false'
+    ABOVE_THE_FOLD = 'false'
   }
   stages {
     stage('NPM Init') {
@@ -63,6 +64,14 @@ pipeline {
                     sh 'npm run dev'
                 }
             }
+        }
+    }
+     stage('AboveTheFold') {
+        when {
+            environment name: 'ABOVE_THE_FOLD', value: 'true'
+        }
+        steps {
+            sh 'npm run css'
         }
     }
     stage('Update') {
