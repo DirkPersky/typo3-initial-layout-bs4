@@ -9,6 +9,10 @@ const urls = [
     'example.de',
     'example.de/imprint'
 ];
+/** urls for Mobile **/
+const mobileUrls = [
+    ...urls
+];
 /**
  * Path where css will be saved
  * @type {{mobile: string, desktop: string}}
@@ -98,7 +102,7 @@ Promise.all([
     // Start Desktop Jobs
     startNewJob(penthouseOptions, urls, 'desktop'),
     // Start Mobile Jobs
-    startNewJob(penthouseMobileOptions, urls, 'mobile'),
+    startNewJob(penthouseMobileOptions, mobileUrls, 'mobile'),
 ]).then(() => {
     // Create Desktop CSS
     new CleanCSS(CSSOptions).minify( CSS.desktop.join(''), function (error, output) {
