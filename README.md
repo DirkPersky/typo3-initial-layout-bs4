@@ -3,14 +3,13 @@ This project should help you to start developing with SASS and minified JavaScri
 
 ## Required
 - [NPM-Package manager](https://nodejs.org/)
-- [TYPO3 8.7.9+](https://typo3.org/download/)
+- [TYPO3 9.5+](https://typo3.org/download/)
 
 ## Recommended TYPO3 Extensions
 **basics**
 - [gridelements](https://extensions.typo3.org/extension/gridelements/)
 - [dp_cookieconsent](https://github.com/DirkPersky/typo3-dp_cookieconsent)
 - [cs_seo](https://extensions.typo3.org/extension/cs_seo/)
-- [realurl](https://extensions.typo3.org/extension/realurl/)
 
 **performance**
 - [scriptmerger](https://extensions.typo3.org/extension/scriptmerger/)
@@ -20,9 +19,7 @@ This project should help you to start developing with SASS and minified JavaScri
 **optional**
 - [rte_ckeditor_fontawesome](https://github.com/DirkPersky/typo3-rte-ckeditor-fontawesome)
 - [news](https://extensions.typo3.org/extension/news/)
-- [recaptcha](https://extensions.typo3.org/extension/recaptcha/)
 - [rlmp_language_detection](https://extensions.typo3.org/extension/rlmp_language_detection/)
-- [frontend_editing](https://extensions.typo3.org/extension/frontend_editing/)
 
 
 ## Default used NPM-Modules
@@ -59,6 +56,36 @@ npm run dev
 npm run watch
 npm run prod
 ```
+
+## Seo
+TYPO 9.5 LTS Config.
+Sites > Static Routes
+
+### Robots.txt
+Static Text
+```
+User-Agent: *
+Allow: /
+
+# folders
+Disallow: /typo3/
+Disallow: /typo3conf/
+Allow: /typo3conf/ext/
+Allow: /typo3temp/
+
+# parameters
+Disallow: /*?id=*               # non-realurl URLs
+Disallow: /*cHash               # no cHash
+Disallow: /*tx_powermail_pi1    # no powermail thanks pages
+Disallow: /*tx_form_formframework    # no forms
+
+# sitemap
+Sitemap: http://example.org/sitemap.xml
+```
+
+## Sitemapl.xml
+Page
+```http://example.org/?type=1533906435```
 
 ## Please give me feedback
 I would appreciate any kind of feedback or ideas for further developments to keep improving the starterkit for your needs.
