@@ -8,7 +8,8 @@
     "development": "webpack --hide-modules --mode development",
     "watch": "webpack --watch --progress --hide-modules --mode development",
     "prod": "npm run production",
-    "production": "webpack --hide-modules --mode production"
+    "production": "webpack --hide-modules --mode production",
+    "css": "node abovethefold.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
     "@babel/core": "latest",
     "@babel/preset-env": "latest",
     "babel-loader": "latest",
+    "clean-css": "latest",
     "css-loader": "latest",
     "extract-text-webpack-plugin": "next",
     "file-loader": "latest",
@@ -30,6 +32,7 @@
     "jshint": "latest",
     "modernizr-webpack-plugin": "latest",
     "node-sass": "latest",
+    "penthouse": "latest",
     "sass-loader": "latest",
     "webpack": "latest",
     "webpack-cli": "latest"

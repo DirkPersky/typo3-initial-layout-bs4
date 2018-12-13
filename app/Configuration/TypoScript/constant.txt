@@ -16,6 +16,8 @@ plugin.tx_cookieconsent.settings {
     position = bottom-right
     # dismiss on scroll (in PX)
     dismissOnScroll = 1000
+    # tpye auswahl
+    type = opt-out
     palette {
         popup {
             # Bar: Background color
@@ -135,13 +137,18 @@ plugin.tx_scriptmerger {
         mergedHeadFilePosition = </body>
         compress.enable = 0
         minify.enable = 1
+	    minify.useJShrink = 1
+	    minify.ignore >
+	    merge.ignore >
         parseBody = 1
     }
     css {
         mergedFilePosition = </body>
         compress.enable = 0
+	merge.ignore >
+	minify.ignore >
         postUrlProcessing {
-            pattern = /(\.\.\/\.\.\/fileadmin)/i
+            pattern = /(.*\/fileadmin)/i
             replacement = {$path.baseURL}fileadmin
         }
     }
