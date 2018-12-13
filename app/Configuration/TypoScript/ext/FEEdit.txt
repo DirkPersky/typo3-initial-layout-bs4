@@ -6,18 +6,10 @@
 	# Show Error's
 	config.contentObjectExceptionHandler = 0
 
+    config.admPanel = 1
+
 	plugin.tx_scriptmerger {
 		css.enable = 0
 		javascript.enable = 0
 	}
-
-	page.CSS_inlineStyle (
-        .t3-frontend-editing__inline-actions .icon-size-small img {
-        	margin: 0;
-        }
-
-		.t3-frontend-editing__inline-actions {
-			font-size: 20px !important;
-		}
-	)
 [end]

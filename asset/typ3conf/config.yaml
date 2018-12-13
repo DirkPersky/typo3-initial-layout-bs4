@@ -1,0 +1,54 @@
+rootPageId: 1
+base: /
+baseVariants: {  }
+languages:
+  -
+    title: Deutsch
+    enabled: true
+    languageId: '0'
+    base: /
+    typo3Language: de
+    locale: de_DE.UTF-8
+    iso-639-1: de
+    navigationTitle: German
+    hreflang: de-DE
+    direction: ltr
+    flag: de
+errorHandling:
+  -
+    errorCode: '404'
+    errorHandler: Fluid
+    errorFluidTemplate: fileadmin/Mysite4/app/Resources/Private/Layout/404.html
+    errorFluidTemplatesRootPath: ''
+    errorFluidLayoutsRootPath: ''
+    errorFluidPartialsRootPath: ''
+  -
+    errorCode: '500'
+    errorHandler: Fluid
+    errorFluidTemplate: fileadmin/Mysite4/app/Resources/Private/Layout/500.html
+    errorFluidTemplatesRootPath: ''
+    errorFluidLayoutsRootPath: ''
+    errorFluidPartialsRootPath: ''
+routes:
+  -
+    route: robots.txt
+    type: staticText
+    content: "User-Agent: *\r\nAllow: /\r\n\r\n# folders\r\nDisallow: /typo3/\r\nDisallow: /typo3conf/\r\nAllow: /typo3conf/ext/\r\nAllow: /typo3temp/\r\n\r\n# parameters\r\nDisallow: /*?id=*               # non-realurl URLs\r\nDisallow: /*cHash               # no cHash\r\nDisallow: /*tx_powermail_pi1    # no powermail thanks pages\r\nDisallow: /*tx_form_formframework    # no forms\r\n\r\n# sitemap\r\nSitemap: http://dp-dvelop.de/sitemap.xml"
+  -
+    route: sitemap.xml
+    type: uri
+    source: 'http://dp-dvelop.de/?type=1533906435'
+routeEnhancers:
+  NewsPlugin:
+    type: Extbase
+    limitToPages: [8]
+    extension: News
+    plugin: Pi1
+    routes:
+      - { routePath: '/{news_title}', _controller: 'News::detail', _arguments: {'news_title': 'news'} }
+    defaultController: 'News::detail'
+    aspects:
+      news_title:
+        type: PersistedAliasMapper
+        tableName: 'tx_news_domain_model_news'
+        routeFieldName: 'path_segment'
