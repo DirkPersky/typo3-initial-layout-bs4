@@ -89,3 +89,8 @@ Page
 
 ## Please give me feedback
 I would appreciate any kind of feedback or ideas for further developments to keep improving the starterkit for your needs.
+
+## BeUser Config:
+```
+options.pageTree.showNavTitle = 1
+```
