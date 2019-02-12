@@ -1,70 +1,73 @@
 
 lib.breadcrumb = COA
 lib.breadcrumb {
-    wrap = <ol class="breadcrumb">|</ol>
-    10 = TEXT
+    10 = COA
     10 {
-        value = Sie sind hier: &nbsp;
-        wrap = <li class="breadcrumb-item active">|</li>
-    }
-    10 >
-    20 = HMENU
-    20 {
-        special = rootline
-        special.range = 0 | -1
-        includeNotInMenu = 1
+        wrap = <ol class="breadcrumb">|</ol>
+        10 = TEXT
+        10 {
+            value = Sie sind hier: &nbsp;
+            wrap = <li class="breadcrumb-item active">|</li>
+        }
+        10 >
+        20 = HMENU
+        20 {
+            special = rootline
+            special.range = 0 | -1
+            includeNotInMenu = 1
 
-        1 = TMENU
-        1 {
-          NO = 1
-          NO {
-            ATagParams = title="{field:subtitle//field:title}"
-            allStdWrap.insertData = 1
-            wrapItemAndSub = <li class="breadcrumb-item">|</li>
-            stdWrap.stripHtml = 1
+            1 = TMENU
+            1 {
+              NO = 1
+              NO {
+                ATagParams = title="{field:subtitle//field:title}"
+                allStdWrap.insertData = 1
+                wrapItemAndSub = <li class="breadcrumb-item">|</li>
+                stdWrap.stripHtml = 1
 
-            #################################
-    				### HTML Direkt Link / Anchor ###
-    				#################################
-              doNotLinkIt = 1
-              doNotLinkIt.if {
-                value = 3
-                equals.field = doktype
-              }
+                #################################
+                        ### HTML Direkt Link / Anchor ###
+                        #################################
+                  doNotLinkIt = 1
+                  doNotLinkIt.if {
+                    value = 3
+                    equals.field = doktype
+                  }
 
-              stdWrap {
-                cObject = COA
-                cObject {
-                  5 = TEXT
-                  5 {
-                    value.field = title
-                    stdWrap.stripHtml = 1
+                  stdWrap {
+                    cObject = COA
+                    cObject {
+                      5 = TEXT
+                      5 {
+                        value.field = title
+                        stdWrap.stripHtml = 1
 
-                    typolink {
-                      section.field = subtitle
-                      parameter.field = url
-                      title.field = title
-                      ATagParams = data-link="true"
+                        typolink {
+                          section.field = subtitle
+                          parameter.field = url
+                          title.field = title
+                          ATagParams = data-link="true"
 
-                      if {
-                        value = 3
-                        equals.field = doktype
+                          if {
+                            value = 3
+                            equals.field = doktype
+                          }
+                        }
                       }
                     }
                   }
-                }
+                ### end stdWrap
               }
-            ### end stdWrap
-          }
 
-          CUR = 1
-          CUR.doNotLinkIt = 1
-          CUR.stdWrap.stripHtml = 1
-          CUR.wrapItemAndSub = <li class="breadcrumb-item active">|</li>
+              CUR = 1
+              CUR.doNotLinkIt = 1
+              CUR.stdWrap.stripHtml = 1
+              CUR.wrapItemAndSub = <li class="breadcrumb-item active">|</li>
+            }
         }
     }
 }
 
 [globalVar = TSFE:id = {$nav.homeUid}]
-    lib.breadcrumb >
+    lib.breadcrumb.10 >
 [global]
