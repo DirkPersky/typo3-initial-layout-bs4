@@ -184,17 +184,6 @@ plugin.tx_rlmplanguagedetection_pi1 {
 ### SPRACHEN ###
 ################
 [globalVar = GP:L = 0]
-	config.htmlTag_stdWrap.cObject.20.value = de
-	page.config.sys_language_uid = 0
-	page.config.language = de
-	page.config.locale_all = de_DE.UTF-8
-	page.config.htmlTag_langKey = de
-
-	config.sys_language_uid = 0
-	config.language = de
-	config.locale_all = de_DE.UTF-8
-	config.htmlTag_langKey = de
-
 	# Spracherkennung deaktivieren
 	plugin.tx_rlmplanguagedetection_pi1 >
 	plugin.tx_indexedsearch._DEFAULT_PI_VARS.lang = 0
@@ -204,17 +193,6 @@ plugin.tx_rlmplanguagedetection_pi1 {
 
 [globalVar = GP:L = 1]
 	# EN
-	config.htmlTag_stdWrap.cObject.20.value = en
-	page.config.sys_language_uid = 1
-	page.config.language = en
-	page.config.locale_all = en_EN.UTF-8
-	page.config.htmlTag_langKey = en
-
-	config.sys_language_uid = 1
-	config.language = en
-	config.locale_all = en_EN.UTF-8
-	config.htmlTag_langKey = en
-
 	temp.language.value = <img src="typo3/sysext/core/Resources/Public/Icons/Flags/PNG/GB.png" alt="Englisch"/> English
 
 	temp.languageText.value = Please select a language
