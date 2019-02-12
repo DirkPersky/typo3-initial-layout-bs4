@@ -24,7 +24,6 @@ config  {
     }
   }
 
-  htmlTag_langKey = de
   xmlprologue = none
   xhtml_cleaning = all
 
@@ -45,13 +44,7 @@ config  {
 
   uniqueLinkVars = 1
   linkVars = L
-  language = de
-  locale_all = de_DE
-  sys_language_uid = 0
-  sys_language_overlay = 1
-  sys_language_mode = content_fallback; 1,0
-  sys_language_fallBackOrder = 1,0
-
+  
   spamProtectEmailAddresses = 2
   spamProtectEmailAddresses_atSubst = (at)
 }
