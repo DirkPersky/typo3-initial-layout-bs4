@@ -58,6 +58,7 @@ plugin.tx_csseo {
     }
     # Analytics
     tracking.googleAnalytics =
+    tracking.googleTagManager =
     # hreflang config now from core
     hreflang.enable = 0
     # Default Social Image
