@@ -27,3 +27,26 @@ TCEFORM.tt_content.header_layout {
 TCEFORM.tt_content.layout {
 	addItems.6 = Carousel(Slider)
 }
+
+
+#################
+### powermail ###
+#################
+TCEFORM.tx_powermail_domain_model_field {
+    css {
+        addItems {
+                layout4 = 50%
+                layout5 = 50% no Label
+            }
+        }
+    }
+}
+TCEFORM.tx_powermail_domain_model_page {
+    css {
+        addItems {
+                layout4 = 50%
+                layout5 = 50% no Label
+            }
+        }
+    }
+}
