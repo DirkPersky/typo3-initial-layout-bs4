@@ -113,3 +113,112 @@
     @extend .btn-secondary;
   }
 }
+
+/**
+ * Powermail Produkt mails
+ */
+.tx-powermail {
+  h3 {
+    width: 100%;
+  }
+
+  .powermail_form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin: 0 -10px;
+
+    .powermail_fieldset {
+      flex: 0 0 100%;
+      max-width: 100%;
+      padding: 0 10px;
+
+      &.layout4, &.layout5 {
+        @media screen and (min-width: 550px) {
+          flex: 0 0 50%;
+          max-width: 50%;
+        }
+      }
+    }
+  }
+
+  .powermail_fieldset > div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    margin: 0 -10px;
+
+    .powermail_fieldwrap {
+      flex: 0 0 100%;
+      max-width: 100%;
+
+      padding: 0 10px;
+
+      &.layout4, &.layout5 {
+        @media screen and (min-width: 550px) {
+          flex: 0 0 50%;
+          max-width: 50%;
+        }
+      }
+    }
+  }
+
+  .powermail_fieldset .powermail_legend {
+    font-size: 24px;
+
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #1d81c8;
+    border-bottom: 1px solid #eceeef;
+
+    padding: 10px 0;
+    font-weight: 300;
+  }
+
+  .powermail_fieldwrap_type_file .powermail_field {
+    text-align: left;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 0.5rem 0.75rem;
+  }
+
+  position: relative;
+
+  .powermail_progressbar {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0,0,0,.7);
+
+    .powermail_progress {
+      width: 80%;
+      max-width: 300px;
+      height: 20px;
+
+
+      webkit-animation: progress-bar-stripes 1s linear infinite;
+      animation: progress-bar-stripes 1s linear infinite;
+
+      background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+      background-size: 1rem 1rem;
+
+      background-color: #1d81c8;
+    }
+
+  }
+}
