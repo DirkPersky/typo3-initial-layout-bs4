@@ -188,9 +188,17 @@ plugin.tx_iconfont.cssFile =
 #################
 ### Powermail ###
 #################
-plugin.tx_powermail.settings.misc {
-    htmlForHtmlFields = 1
-    htmlForLabels = 1
+plugin.tx_powermail {
+  settings.misc {
+     htmlForHtmlFields = 1
+     htmlForLabels = 1
+  }
+   
+  view {
+     templateRootPath = fileadmin/Mysite4/app/Resources/Private/Template/powermail/
+     partialRootPath = fileadmin/Mysite4/app/Resources/Private/Partial/powermail/
+     layoutRootPath = fileadmin/Mysite4/app/Resources/Private/Layout/powermail/
+  }
 }
 
 ###########################
