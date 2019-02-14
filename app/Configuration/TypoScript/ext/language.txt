@@ -183,15 +183,14 @@ plugin.tx_rlmplanguagedetection_pi1 {
 ################
 ### SPRACHEN ###
 ################
-[globalVar = GP:L = 0]
+[siteLanguage("hreflang") == "de"]
 	# Spracherkennung deaktivieren
 	plugin.tx_rlmplanguagedetection_pi1 >
 	plugin.tx_indexedsearch._DEFAULT_PI_VARS.lang = 0
 
-[global]
+[END]
 
-
-[globalVar = GP:L = 1]
+[siteLanguage("hreflang") == "en"]
 	# EN
 	temp.language.value = <img src="typo3/sysext/core/Resources/Public/Icons/Flags/PNG/GB.png" alt="Englisch"/> English
 
@@ -200,7 +199,7 @@ plugin.tx_rlmplanguagedetection_pi1 {
 	# Spracherkennung deaktivieren
 	plugin.tx_rlmplanguagedetection_pi1 >
 	plugin.tx_indexedsearch._DEFAULT_PI_VARS.lang = 1
-[global]
+[END]
 
 #####################
 ### LANGUAGE MENU ###
