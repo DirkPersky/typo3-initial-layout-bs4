@@ -41,14 +41,17 @@ routes:
 routeEnhancers:
   NewsPlugin:
     type: Extbase
-    limitToPages: [8]
+    limitToPages: [74,75,80]
     extension: News
     plugin: Pi1
     routes:
-      - { routePath: '/{news_title}', _controller: 'News::detail', _arguments: {'news_title': 'news'} }
-    defaultController: 'News::detail'
+      - { routePath: '/news/{news_title}', _controller: 'News::detail', _arguments: { news_title: news } }
+      - { routePath: '/newspage/{page}', _controller: 'News::list', _arguments: {'page': '@widget_0/currentPage'} }
+    defaultController: 'News::list'
+    defaults:
+      page: '0'
     aspects:
       news_title:
         type: PersistedAliasMapper
-        tableName: 'tx_news_domain_model_news'
-        routeFieldName: 'path_segment'
+        tableName: tx_news_domain_model_news
+        routeFieldName: path_segment
