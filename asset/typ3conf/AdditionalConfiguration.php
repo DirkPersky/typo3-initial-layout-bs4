@@ -50,6 +50,8 @@ switch ($system) {
 $GLOBALS['TYPO3_CONF_VARS']['FE']['cacheHash']['excludedParameters'] = array_merge(
     $GLOBALS['TYPO3_CONF_VARS']['FE']['cacheHash']['excludedParameters'],
     [
-        'tx_news_pi1[@widget_0][currentPage]'
+        'tx_news_pi1[@widget_0][currentPage]',
+        'tx_news_pi1[controller]',
+        'tx_news_pi1[action]'
     ]
 );
