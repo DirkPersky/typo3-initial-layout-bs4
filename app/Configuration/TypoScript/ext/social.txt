@@ -26,7 +26,7 @@ lib.social {
 ###############
 ### TX_NEWS ###
 ###############
-[globalVar = GP:tx_news_pi1 > 0] && [globalVar = GP:tx_news_pi1|action = detail]
+[(request.getQueryParams()['tx_news_pi1']) > 0 && (request.getQueryParams()['tx_news_pi1'])['action'] = detail]
     #############################
     ### Social Share Override ###
     #############################
@@ -115,4 +115,4 @@ lib.social {
             wrap = <meta property="twitter:image" content="|" />
         }
     }
-[end]
+[END]

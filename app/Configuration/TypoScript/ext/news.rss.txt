@@ -1,4 +1,4 @@
-[globalVar = TSFE:type = 9818]
+[(request.getQueryParams()['type']) = 9818 ]
 # https://docs.typo3.org/typo3cms/extensions/news/3.0.0/Main/Administration/Rss/Index.html
 config {
     disableAllHeaderCode = 1

@@ -1,7 +1,7 @@
 ########################
 ### frontend_editing ###
 ########################
-[globalVar = TSFE : beUserLogin> 0]
+[getTSFE().beUserLogin]
 	config.frontend_editing = 1
 	# Show Error's
 	config.contentObjectExceptionHandler = 0
@@ -12,4 +12,4 @@
 		css.enable = 0
 		javascript.enable = 0
 	}
-[end]
+[END]
