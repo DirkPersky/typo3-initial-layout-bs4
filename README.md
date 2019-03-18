@@ -92,5 +92,9 @@ I would appreciate any kind of feedback or ideas for further developments to kee
 
 ## BeUser Config:
 ```
+# Navigationstitel im Seitenbaum anzeigen
 options.pageTree.showNavTitle = 1
+
+# ID der Seite im Seitenbaum anzeigen
+options.pageTree.showPageIdWithTitle = 1
 ```
