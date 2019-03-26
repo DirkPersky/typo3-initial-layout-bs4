@@ -63,6 +63,28 @@ Sites > Static Routes
 
 ### Robots.txt
 Static Text
+#### Develop Robots
+```
+User-Agent: *
+Disallow: /
+Disallow: /*datenschutz$
+Disallow: /*impressum$
+Disallow: /*agb$
+
+User-Agent: Screaming Frog SEO Spider
+Allow: /
+Disallow: /*datenschutz$
+Disallow: /*impressum$
+Disallow: /*agb$
+
+User-Agent: Seobility
+Allow: /
+Disallow: /*datenschutz$
+Disallow: /*impressum$
+Disallow: /*agb$
+```
+
+#### Live Robots
 ```
 User-Agent: *
 Allow: /
