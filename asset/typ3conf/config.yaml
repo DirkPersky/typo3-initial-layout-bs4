@@ -39,19 +39,24 @@ routes:
     type: uri
     source: 'http://dp-dvelop.de/?type=1533906435'
 routeEnhancers:
-  NewsPlugin:
+  NewsDetail:
     type: Extbase
-    limitToPages: [74,75,80]
+    limitToPages: [74]
     extension: News
     plugin: Pi1
     routes:
-      - { routePath: '/news/{news_title}', _controller: 'News::detail', _arguments: { news_title: news } }
-      - { routePath: '/newspage/{page}', _controller: 'News::list', _arguments: {'page': '@widget_0/currentPage'} }
-    defaultController: 'News::list'
-    defaults:
-      page: '0'
+      - { routePath: '/news/{news_title}', _controller: 'News::detail', _arguments: {'news_title': 'news'} }
     aspects:
       news_title:
         type: PersistedAliasMapper
-        tableName: tx_news_domain_model_news
-        routeFieldName: path_segment
+        tableName: 'tx_news_domain_model_news'
+        routeFieldName: 'path_segment'
+  NewsList:
+    type: Plugin
+    routePath: '/newspage/{@widget_0/currentPage}'
+    namespace: 'tx_news_pi1'
+    aspects:
+      '@widget_0/currentPage':
+        type: StaticRangeMapper
+        start: '1'
+        end: '1000'
