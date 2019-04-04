@@ -1,47 +1,53 @@
-tt_content.table.20 {
-    innerStdWrap {
-        htmlSpecialChars = 0
-        parseFunc < lib.parseFunc
-        parseFunc {
-            allowTags := addToList(pic)
-            allowTags := addToList(load)
 
-            tags {
-                load = TEXT
-                load {
-                    current = 1
+#<f:cObject typoscriptObjectPath="lib.table" data="{cell}" />
 
-                    stdWrap.wrap = <i class="fa fa-download"></i> |
-                    stdWrap.wrap.override = <i class="fa fa-{parameters : fa}"></i> |
-                    stdWrap.wrap.override.insertData = 1
-                    stdWrap.wrap.override.if.isTrue.data = parameters : fa
+lib.table = TEXT
+lib.table {
+  current = 1
 
-                    typolink {
-                        target = _blank
-                        parameter.data = parameters : src
-                        ATagParams = class="various"
-                    }
-                }
-                pic = IMAGE
-                pic {
-                    file {
-                        import.current = 1
-                        width = 75c
-                        height = 75c
-                    }
-                    stripNL = 1
+  stdWrap {
+      htmlSpecialChars = 0
+      parseFunc < lib.parseFunc
+      parseFunc {
+          allowTags := addToList(pic)
+          allowTags := addToList(load)
 
-                    imageLinkWrap = 1
-                    imageLinkWrap {
-                        directImageLink = 1
-                        enable = 1
+          tags {
+              load = TEXT
+              load {
+                  current = 1
 
-                        linkParams.ATagParams {
-                            dataWrap = class = "fancybox" data-fancybox="group{file:current:uid_foreign}"
-                        }
-                    }
-                }
-            }
-        }
-    }
+                  stdWrap.wrap = <i class="fa fa-download"></i> |
+                  stdWrap.wrap.override = <i class="fa fa-{parameters : fa}"></i> |
+                  stdWrap.wrap.override.insertData = 1
+                  stdWrap.wrap.override.if.isTrue.data = parameters : fa
+
+                  typolink {
+                      target = _blank
+                      parameter.data = parameters : src
+                      ATagParams = class="various"
+                  }
+              }
+              pic = IMAGE
+              pic {
+                  file {
+                      import.current = 1
+                      width = 75c
+                      height = 75c
+                  }
+                  stripNL = 1
+
+                  imageLinkWrap = 1
+                  imageLinkWrap {
+                      directImageLink = 1
+                      enable = 1
+
+                      linkParams.ATagParams {
+                          dataWrap = class = "fancybox" data-fancybox="group{file:current:uid_foreign}"
+                      }
+                  }
+              }
+          }
+      }
+  }
 }
