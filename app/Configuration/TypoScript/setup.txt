@@ -82,73 +82,43 @@ lib.nav {
 				ATagParams = title="{field:subtitle}" class="nav-link"
 				allStdWrap.insertData = 1
 
-				########################
-				### Use Image in Nav ###
-				########################
-				/*
-					stdWrap.wrap.cObject = COA
-					stdWrap.wrap.cObject {
-
+				#################################
+				### HTML Direkt Link / Anchor ###
+				#################################
+				stdWrap {
+					cObject = COA
+					cObject {
 						10 = FILES
 						10 {
 							references {
-								table = pages
-								fieldName = media
+							    table = pages
+							    fieldName = media
 							}
 							renderObj = IMAGE
 							renderObj {
-								file {
-									import.data = file:current:publicUrl
-									maxW = 64
-									maxH = 64
-								}
+							    file {
+								import.data = file:current:publicUrl
+								maxH = 36
+							    }
 
-								titleText.data = file:current:title
-								altText.data = file:current:alternative
+							    titleText.data = file:current:title
+							    altText.data = file:current:alternative
 							}
 
 							required = 1
 							# start with first image
-						  begin = 0
-						  # show only XX images
-						  maxItems = 1
+							begin = 0
+							# show only XX images
+							maxItems = 1
 						}
 
 						20 = TEXT
-						20.value = <span>|</span>
-					}
-			  */
-
-				#################################
-				### HTML Direkt Link / Anchor ###
-				#################################
-					doNotLinkIt = 1
-					doNotLinkIt.if {
-						value = 3
-						equals.field = doktype
-					}
-
-					stdWrap {
-						cObject = COA
-						cObject {
-							5 = TEXT
-							5 {
-								value.field = nav_title//title
-
-								typolink {
-									section.field = subtitle
-									parameter.field = url
-									title.field = title
-									ATagParams = data-link="true" class="nav-link"
-
-									if {
-										value = 3
-										equals.field = doktype
-									}
-								}
-							}
+						20 {
+							value.field = nav_title//title
+							wrap = <span>|</span>
 						}
 					}
+				}
 				# end stdWrap
 			}
 
