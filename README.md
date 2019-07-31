@@ -112,6 +112,16 @@ Page
 ## Please give me feedback
 I would appreciate any kind of feedback or ideas for further developments to keep improving the starterkit for your needs.
 
+## Clear History
+```
+git checkout --orphan temp_branch
+git add -A
+git commit -am "the first commit"
+git branch -D master
+git branch -m master
+git push -f origin master
+```
+
 ## BeUser Config:
 ```
 # Navigationstitel im Seitenbaum anzeigen
