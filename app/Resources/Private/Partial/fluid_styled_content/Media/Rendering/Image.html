@@ -32,6 +32,20 @@
             >
         </f:if>
 
-        <img class="img-fluid lazyload" alt="{file.alternative}" title="{file.title}" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="<f:uri.image image="{file}" width="480" maxWidth="{data.imagewidth}" maxHeight="{data.imageheight}" cropVariant="mobile" />" width="{dimensions.width}" height="{dimensions.height}" />
+        <f:if condition="{data.imagewidth}">
+            <f:then>
+                <f:if condition="{data.imagewidth} < 480">
+                    <f:then>
+                        <img class="img-fluid lazyload" alt="{file.alternative -> f:format.stripTags()}" title="{file.title -> f:format.stripTags()}" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="<f:uri.image image="{file}" maxWidth="{data.imagewidth}" maxHeight="{data.imageheight}" cropVariant="mobile" />" width="{dimensions.width}" height="{dimensions.height}" />
+                    </f:then>
+                    <f:else>
+                        <img class="img-fluid lazyload" alt="{file.alternative -> f:format.stripTags()}" title="{file.title -> f:format.stripTags()}" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="<f:uri.image image="{file}" maxWidth="480" maxHeight="{data.imageheight}" cropVariant="mobile" />" width="{dimensions.width}" height="{dimensions.height}" />
+                    </f:else>
+                </f:if>
+            </f:then>
+            <f:else>
+                <img class="img-fluid lazyload" alt="{file.alternative -> f:format.stripTags()}" title="{file.title -> f:format.stripTags()}" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="<f:uri.image image="{file}" maxWidth="480" maxHeight="{data.imageheight}" cropVariant="mobile" />" width="{dimensions.width}" height="{dimensions.height}" />
+            </f:else>
+        </f:if>
     </picture>
 </html>
