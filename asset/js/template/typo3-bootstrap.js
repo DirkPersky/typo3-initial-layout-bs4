@@ -30,4 +30,24 @@
 
     $('#navbarResponsive,#collapseSearch').navigationBar();
 
+    $.fn.accordionCollape = function(){
+        var parent = $(this);
+
+        parent.map(function(i, e) {
+            var self = $(e),
+                target = self.attr('href'),
+                icon = self.data('icon');
+
+            $(target).on('show.bs.collapse', () => {
+                $(icon).addClass('in');
+            });
+
+            $(target).on('hide.bs.collapse', () => {
+                $(icon).removeClass('in');
+            });
+        })
+    };
+
+    $('a[data-icon]').accordionCollape();
+
 }(jQuery);

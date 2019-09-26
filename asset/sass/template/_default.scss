@@ -176,64 +176,42 @@ p:last-child {
   margin-bottom: 0;
 }
 
+
 /**
  * Format Accordion
  */
-.accordion-wrap {
-  &.panel-group {
-    .panel {
-      /** Format Panel as Card **/
-      @extend .card;
-      /** Style Card Header **/
-      .panel-heading {
-        @extend .card-body;
-        @include rem(padding, 10 15);
-        background-color: $style_border_color;
-        color: white;
+.card.card-accordion {
+  margin-bottom: .5rem;
+  .card-header {
+    position: relative;
+    display: block;
+    padding: .3rem 2rem .3rem .5rem;
+    text-decoration: none;
+    /** Define Toggle Icon **/
+    .icon {
+      @extend .fas;
 
-        a {
-          @extend .card-title;
-          margin-bottom: 0;
+      overflow: visible !important;
+      height: auto !important;
+      display: block;
 
-          text-decoration: none;
-          padding-left: 15px;
-          position: relative;
-          display: block;
-          color: inherit;
-          /** Define Toggle Icon **/
-          .icon {
-            @extend .fas;
+      position: absolute;
+      right: .5rem;
+      bottom: 0;
+      top: 0;
 
-            overflow: visible !important;
-            height: auto !important;
-            display: inline-block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-            position: absolute;
-            left: -5px;
-            top: 0;
-
-            &:before {
-              @extend .fa-plus;
-            }
-
-            &.in {
-              &:before {
-                @extend .fa-minus;
-              }
-            }
-          }
-        }
-        /** Normalize Header Styles **/
-        h1, h2, h3, h4, h5, h6 {
-          font-size: inherit;
-          color: inherit;
-          padding: 0;
-          margin: 0;
-        }
+      &:before {
+        @extend .fa-angle-down;
       }
-      /** Format Boady as card-body **/
-      .panel-body {
-        @extend .card-body;
+
+      &.in {
+        &:before {
+          @extend .fa-angle-up;
+        }
       }
     }
   }
