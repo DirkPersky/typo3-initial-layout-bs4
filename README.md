@@ -144,10 +144,10 @@ git push -f origin master
 
 ### BeUser Config:
 ```
-# Navigationstitel im Seitenbaum anzeigen
+# Show NavTitle in Pagetree
 options.pageTree.showNavTitle = 1
 
-# ID der Seite im Seitenbaum anzeigen
+# Show Page ID's in Pagetree
 options.pageTree.showPageIdWithTitle = 1
 ```
 
