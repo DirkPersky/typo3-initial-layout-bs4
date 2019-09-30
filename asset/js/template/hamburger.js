@@ -1,4 +1,4 @@
-!function($){
+ jQuery(function ($) {
   /**
    * Hamburger Button
    * Author: Dirk Persky
@@ -20,4 +20,4 @@
     $(this).hamburgerButton();
   });
 
-}(jQuery);
+});
