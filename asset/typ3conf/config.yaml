@@ -33,11 +33,11 @@ routes:
   -
     route: robots.txt
     type: staticText
-    content: "User-Agent: *\r\nAllow: /\r\n\r\n# folders\r\nDisallow: /typo3/\r\nDisallow: /typo3conf/\r\nAllow: /typo3conf/ext/\r\nAllow: /typo3temp/\r\n\r\n# parameters\r\nDisallow: /*?id=*               # non-realurl URLs\r\nDisallow: /*cHash               # no cHash\r\nDisallow: /*tx_powermail_pi1    # no powermail thanks pages\r\nDisallow: /*tx_form_formframework    # no forms\r\n\r\n# sitemap\r\nSitemap: http://dp-dvelop.de/sitemap.xml"
+    content: "User-Agent: *\r\nAllow: /\r\n\r\n# folders\r\nDisallow: /typo3/\r\nDisallow: /typo3conf/\r\nAllow: /typo3conf/ext/\r\nAllow: /typo3temp/\r\n\r\n# parameters\r\nDisallow: /*?id=*               # non-realurl URLs\r\nDisallow: /*cHash               # no cHash\r\nDisallow: /*tx_powermail_pi1    # no powermail thanks pages\r\nDisallow: /*tx_form_formframework    # no forms\r\n\r\n# sitemap\r\nSitemap: http://example.com/sitemap.xml"
   -
     route: sitemap.xml
     type: uri
-    source: 'http://dp-dvelop.de/?type=1533906435'
+    source: 'http://example.com/?type=1533906435'
 routeEnhancers:
   NewsDetail:
     type: Extbase
