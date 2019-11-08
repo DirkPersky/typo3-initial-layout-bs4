@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <T3DataStructure>
-  <meta type="array">
+	<meta type="array">
 		<langDisable>1</langDisable>
 	</meta>
 	<sheets>
@@ -24,14 +24,14 @@
 							<config type="array">
 								<type>select</type>
 								<items type="array">
-									<numIndex index="0" type="array"><numIndex index="0">Standard</numIndex><numIndex index="1">panel-default</numIndex></numIndex>
-									<numIndex index="1" type="array"><numIndex index="0">Wichtig (primary)</numIndex><numIndex index="1">panel-primary</numIndex></numIndex>
-									<numIndex index="2" type="array"><numIndex index="0">Erfolgreich (success)</numIndex><numIndex index="1">panel-success</numIndex></numIndex>
-									<numIndex index="3" type="array"><numIndex index="0">Information (info)</numIndex><numIndex index="1">panel-info</numIndex></numIndex>
-									<numIndex index="4" type="array"><numIndex index="0">Warnung (warning)</numIndex><numIndex index="1">panel-warning</numIndex></numIndex>
-									<numIndex index="5" type="array"><numIndex index="0">Vorsicht (danger)</numIndex><numIndex index="1">panel-danger</numIndex></numIndex>
+									<numIndex index="0" type="array"><numIndex index="0">Standard</numIndex><numIndex index="1">bg-default</numIndex></numIndex>
+									<numIndex index="1" type="array"><numIndex index="0">Wichtig (primary)</numIndex><numIndex index="1">bg-primary text-white</numIndex></numIndex>
+									<numIndex index="2" type="array"><numIndex index="0">Erfolgreich (success)</numIndex><numIndex index="1">bg-success text-white</numIndex></numIndex>
+									<numIndex index="3" type="array"><numIndex index="0">Information (info)</numIndex><numIndex index="1">bg-info</numIndex></numIndex>
+									<numIndex index="4" type="array"><numIndex index="0">Warnung (warning)</numIndex><numIndex index="1">bg-warning</numIndex></numIndex>
+									<numIndex index="5" type="array"><numIndex index="0">Vorsicht (danger)</numIndex><numIndex index="1">bg-danger text-white</numIndex></numIndex>
 								</items>
-								<default>panel-default</default>
+								<default>bg-danger text-white</default>
 							</config>
 						</TCEforms>
 					</style>

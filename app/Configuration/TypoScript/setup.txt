@@ -23,7 +23,7 @@ page = PAGE
 ### GO LIVE Scripte ###
 #######################
 	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/compress.txt">
-	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/scriptmeger.txt">
+	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/scriptmerger.txt">
 
 ####################
 ### Site Scripts ###
