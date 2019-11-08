@@ -22,6 +22,7 @@ temp.cPos {
     where = colPos=5
     begin=0
     languageField = sys_language_uid
+    orderBy = sorting
   }
 }
 ########################################################################
