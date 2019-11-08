@@ -93,11 +93,6 @@ plugin.tx_indexedsearch {
 ###################
 ### IMAGE WIDTH ###
 ###################
-styles.content.image.maxW			= 1960
-styles.content.imgtext.colPos0.maxW	= 1960
-styles.content.imgtext.colPos1.maxW	= 1960
-styles.content.imgtext.colPos2.maxW	= 1960
-styles.content.imgtext.colPos3.maxW	= 1960
 styles.content.textmedia.maxW = 1960
 styles.content.textmedia.maxWInText = 1960
 # lightbox Size
@@ -118,7 +113,7 @@ styles.content.imgtext.layoutKey = lazyloading
 ### TX_NEWS ###
 ###############
 plugin.tx_news {
-    storePidForSocalLink = 52 # Folder ID for social.txt & Twitter Opengraph
+    storePidForSocalLink =  # Folder ID for social.txt & Twitter Opengraph
     view {
         layoutRootPath = fileadmin/Mysite4/app/Resources/Private/Layout/news/
         partialRootPath = fileadmin/Mysite4/app/Resources/Private/Partial/news/

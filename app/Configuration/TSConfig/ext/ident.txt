@@ -50,3 +50,10 @@ TCEFORM.tx_powermail_domain_model_page {
         }
     }
 }
+
+############
+### news ###
+############
+tx_news.templateLayouts {
+    #2 = News Header Image
+}

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+  <meta type="array">
+    <langDisable>1</langDisable>
+  </meta>
+  <sheets>
+    <general>
+      <ROOT type="array">
+        <TCEforms>
+          <sheetTitle>Job Optionen</sheetTitle>
+        </TCEforms>
+        <el type="array">
+          <testtool>
+            <TCEforms type="array">
+              <label>Google Jobs Anzeige Testen</label>
+              <config type="array">
+                <type>none</type>
+                <default><![CDATA[https://search.google.com/structured-data/testing-tool/u/0/]]></default>
+              </config>
+            </TCEforms>
+          </testtool>
+
+          <filter type="array">
+            <TCEforms type="array">
+              <label>Arbeiten</label>
+              <config type="array">
+                <type>select</type>
+                <renderType>selectMultipleSideBySide</renderType>
+                <items>
+                  <numIndex index="0" type="array"><numIndex index="0">LLL:fileadmin/ardland/Resources/Private/Language/locallang.xlf:teilzeit</numIndex><numIndex index="1">teilzeit</numIndex></numIndex>
+                  <numIndex index="1" type="array"><numIndex index="0">LLL:fileadmin/ardland/Resources/Private/Language/locallang.xlf:vollzeit</numIndex><numIndex index="1">vollzeit</numIndex></numIndex>
+                </items>
+                <enableMultiSelectFilterTextfield>1</enableMultiSelectFilterTextfield>
+              </config>
+            </TCEforms>
+          </filter>
+          <skills type="array">
+            <TCEforms type="array">
+              <label>Skills (Komma getrennt)</label>
+              <config type="array">
+                <type>input</type>
+                <size>255</size>
+                <eval>trim</eval>
+                <default></default>
+              </config>
+            </TCEforms>
+          </skills>
+
+          <google_desc type="array">
+            <TCEforms type="array">
+              <label>Beschreibung</label>
+              <config>
+                <type>text</type>
+                <cols>24</cols>
+                <rows>3</rows>
+                <enableRichtext>1</enableRichtext>
+              </config>
+              <defaultExtras>richtext[*]:rte_transform[mode=ts_css]</defaultExtras>
+            </TCEforms>
+          </google_desc>
+
+        </el>
+      </ROOT>
+    </general>
+    <google_jobs>
+      <ROOT type="array">
+        <TCEforms>
+          <sheetTitle>Firma</sheetTitle>
+        </TCEforms>
+        <el type="array">
+          <hiring_name type="array">
+            <TCEforms type="array">
+              <label>Name</label>
+              <description>hiringOrganization</description>
+              <config type="array">
+                <type>input</type>
+                <size>255</size>
+                <eval>trim</eval>
+                <default><![CDATA[Küchen-Studio ARDLAND GmbH]]></default>
+              </config>
+            </TCEforms>
+          </hiring_name>
+
+          <hiring_logo type="array">
+            <TCEforms type="array">
+              <label>Logo</label>
+              <description>(hiringOrganization) Standard Logo Überschreiben</description>
+              <config type="array">
+                <type>group</type>
+                <internal_type>file</internal_type>
+                <allowed>jpg,gif,png</allowed>
+                <max_size>2000</max_size>
+                <uploadfolder>uploads/tx_gridelements</uploadfolder>
+                <show_thumbs>1</show_thumbs>
+                <size>1</size>
+                <minitems>0</minitems>
+                <maxitems>1</maxitems>
+              </config>
+            </TCEforms>
+          </hiring_logo>
+
+          <location_street type="array">
+            <TCEforms type="array">
+              <label>Straße</label>
+              <description>jobLocation</description>
+              <config type="array">
+                <type>input</type>
+                <size>255</size>
+                <eval>trim</eval>
+                <default>Bosinks Kamp 2</default>
+              </config>
+            </TCEforms>
+          </location_street>
+          <location_city type="array">
+            <TCEforms type="array">
+              <label>Stadt</label>
+              <description>jobLocation</description>
+              <config type="array">
+                <type>input</type>
+                <size>255</size>
+                <eval>trim</eval>
+                <default>Nordhorn</default>
+              </config>
+            </TCEforms>
+          </location_city>
+          <location_zip type="array">
+            <TCEforms type="array">
+              <label>PLZ</label>
+              <description>jobLocation</description>
+              <config type="array">
+                <type>input</type>
+                <size>255</size>
+                <eval>trim</eval>
+                <default>48531</default>
+              </config>
+            </TCEforms>
+          </location_zip>
+          <location_country type="array">
+            <TCEforms type="array">
+              <label>Land</label>
+              <description>jobLocation</description>
+              <config type="array">
+                <type>input</type>
+                <size>255</size>
+                <eval>trim</eval>
+                <default>DE</default>
+              </config>
+            </TCEforms>
+          </location_country>
+        </el>
+      </ROOT>
+    </google_jobs>
+  </sheets>
+</T3DataStructure>

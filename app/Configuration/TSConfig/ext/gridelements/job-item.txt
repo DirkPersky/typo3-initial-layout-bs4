@@ -1,0 +1,13 @@
+tx_gridelements.setup {
+  job-item {
+    title = Job-Element
+    description =
+    flexformDS = FILE:fileadmin/Mysite4/app/Configuration/FlexForms/job-item.xml
+    frame = 0
+
+    config {
+      colCount = 0
+      rowCount = 0
+    }
+  }
+}

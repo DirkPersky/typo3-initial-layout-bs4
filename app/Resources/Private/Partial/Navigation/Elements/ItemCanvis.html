@@ -1,0 +1,28 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+
+<li class="nav-item{f:if(condition:item.spacer, then:' spacer')}{f:if(condition:item.children, then:' dropdown')}{f:if(condition:'{item.current} || {item.active}', then:' active')}" {f:if(condition:item.children, then:' data-nav="true"')} >
+<f:if condition="{item.spacer}">
+    <f:then>
+        <span>{item.title}</span>
+    </f:then>
+    <f:else>
+        <f:render partial="Navigation/Elements/Link" arguments="{item: item}"/>
+    </f:else>
+</f:if>
+<f:if condition="{item.children}">
+    <f:render section="submenu" arguments="{submenu: item.children}"/>
+</f:if>
+</li>
+
+<f:section name="submenu">
+    <span class="dropdown-wrap">
+        <ul class="nav dropdown-nav">
+            <f:for each="{submenu}" as="subItem">
+                <f:render partial="Navigation/Elements/ItemCanvis" arguments="{item: subItem}"/>
+            </f:for>
+        </ul>
+    </span>
+</f:section>
+</html>

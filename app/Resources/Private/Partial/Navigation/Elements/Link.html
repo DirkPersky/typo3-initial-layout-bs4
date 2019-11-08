@@ -1,0 +1,23 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:if condition="{item.data.doktype} == 3">
+    <f:then>
+        <a href="{f:uri.typolink(parameter: '{item.data.url}')}" title="{item.data.title}" class="{f:if(condition:item-class, then:'{item-class}', else:'nav-link')}" data-link="true">
+    </f:then>
+    <f:else if="{item.data.target}">
+        <a href="{item.link}" target="{item.data.target}" title="{item.data.title}" class="{f:if(condition:item-class, then:'{item-class}', else:'nav-link')}">
+    </f:else>
+    <f:else if="{item.target}">
+        <a href="{item.link}" target="{item.target}" title="{item.data.title}" class="{f:if(condition:item-class, then:'{item-class}', else:'nav-link')}">
+    </f:else>
+    <f:else>
+        <a href="{item.link}" title="{item.data.title}" class="{f:if(condition:item-class, then:'{item-class}', else:'nav-link')}">
+    </f:else>
+</f:if>
+
+{item.title}
+</a>
+
+
+</html>

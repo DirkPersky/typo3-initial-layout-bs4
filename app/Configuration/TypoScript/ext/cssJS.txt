@@ -10,8 +10,11 @@ page.includeCSS {
 ### JS einbinden ###
 ####################
 page.includeJSFooter {
-  modernizr = {$path.template}Public/js/modernizr.min.js
-  template = {$path.template}Public/js/script.min.js
   remoteImprint = https://marketing.gutenberghaus.de/typo3brand/imprint.webkon.js
   654 > # remove CS_SEO Tag Manager
+}
+
+page.includeJS {
+  modernizr = {$path.template}Public/js/modernizr.min.js
+  template = {$path.template}Public/js/script.min.js
 }

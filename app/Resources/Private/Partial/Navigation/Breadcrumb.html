@@ -1,0 +1,11 @@
+<f:if condition="{menuBreadcrumb}">
+    <f:if condition="{menuBreadcrumb -> f:count()} > 1">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <f:for each="{menuBreadcrumb}" as="item">
+                    <f:render partial="Navigation/Elements/ItemBreadcrumb" arguments="{item: item}"/>
+                </f:for>
+            </ol>
+        </nav>
+    </f:if>
+</f:if>

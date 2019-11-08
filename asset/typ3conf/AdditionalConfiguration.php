@@ -42,6 +42,7 @@ switch ($system) {
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['enable_errorDLOG'] = '0';
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['enable_exceptionDLOG'] = '0';
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['enableDeprecationLog'] = '';
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['systemLogLevel'] = '3';
         break;
 }
 /**

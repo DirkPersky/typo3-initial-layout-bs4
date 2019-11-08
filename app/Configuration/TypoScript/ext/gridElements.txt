@@ -15,3 +15,4 @@ tt_content.gridelements_pi1.20.10.setup{
 <INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/gridelements/bs3-popover.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/gridelements/onepage.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/gridelements/popout.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/gridelements/job-item.txt">

@@ -12,6 +12,56 @@ page.10 {
         bodyclass.insertData = 1
     }
 
+    ##########################
+    ### DATA PREPROCESSING ###
+    ##########################
+    dataProcessing {
+        # Main Menu
+        10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+        10 {
+            special = list
+            special.value = {$nav.homeUid}
+
+            levels = 2
+            includeSpacer = 1
+            as = menuMain
+
+            excludeUidList = {$nav.exclude}
+            expandAll = 1
+        }
+        # Footer Menu
+        20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+        20 {
+            special = list
+            special.value = {$nav.footer}
+
+            levels = 1
+            includeSpacer = 1
+            as = footerMenu
+        }
+        # Language Menu
+        30 = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
+        30 {
+            languages = auto
+            as = menuLanguage
+        }
+        # Breadcrumb
+        40 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+        40 {
+          special = rootline
+          special.range = 0|-1
+          includeNotInMenu = 1
+          as = menuBreadcrumb
+        }
+        # News Breadcrumb Extend
+        50 = GeorgRinger\News\DataProcessing\AddNewsToMenuProcessor
+        50.menus = menuBreadcrumb
+    }
+
+    settings {
+      pidRoot = {$nav.homeUid}
+    }
+
 	file.cObject = CASE
 	file.cObject {
 	  key.data = levelfield:-1, backend_layout_next_level, slide

@@ -2,23 +2,13 @@
     <nav class="navbar nav-minimal fixed-top" role="navigation">
         <div class="container">
             <div class="brand">
-                <a href="<f:cObject typoscriptObjectPath=" lib.home" />" class="navbar-brand float-left">
-                <img src="fileadmin/Mysite4/app/Resources/Public/img/logo.png" class="logo">
-                </a>
+                <f:link.page pageUid="{settings.pidRoot}" class="navbar-brand float-left" title="Home">
+                    <img src="fileadmin/Mysite4/app/Resources/Public/img/logo.png" class="logo">
+                </f:link.page>
             </div>
             <div class="nav-bars">
                 <div class="collapse navbar-toggleable" id="navbarResponsive">
-                    <div class="header-nav">
-                        <div class="head-nav">
-                            <ul class="nav navbar-nav">
-                                <f:cObject typoscriptObjectPath="lib.nav"/>
-                            </ul>
-                        </div>
-
-                        <ul class="nav sub-nav">
-                            <f:cObject typoscriptObjectPath="lib.nav"/>
-                        </ul>
-                    </div>
+                    <f:render partial="Navigation/Main" arguments="{_all}"/>
                 </div>
 
                 <f:render partial="SearchNav" />
@@ -61,7 +51,7 @@
         </div>
         <nav class="nav-footer">
             <!-- footer nav -->
-            <f:cObject typoscriptObjectPath="lib.footerNav.30"/>
+            <f:render partial="Navigation/Footer" arguments="{_all}"/>
             <!-- Copyright -->
             <div class="copyr">
                 <f:cObject typoscriptObjectPath="lib.copyr"/>

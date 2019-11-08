@@ -1,0 +1,23 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:if condition="{menuMain}">
+    <ul class="nav navbar-nav">
+        <f:for each="{menuMain}" as="mainItem">
+            <li class="nav-item {f:if(condition:mainItem.current, then:' active')}">
+                <f:render partial="Navigation/Elements/Link" arguments="{item: mainItem}"/>
+            </li>
+            <f:if condition="{mainItem.children}">
+                <f:render section="submenu" arguments="{submenu: mainItem.children}"/>
+            </f:if>
+        </f:for>
+    </ul>
+</f:if>
+
+<f:section name="submenu">
+    <f:for each="{submenu}" as="subItem">
+         <f:render partial="Navigation/Elements/ItemCanvis" arguments="{item: subItem}"/>
+    </f:for>
+</f:section>
+
+</html>

@@ -1,75 +1,12 @@
 ##########################
-### styles.image width ###
-##########################
-tt_content.image.20.maxW.cObject = CASE
-tt_content.image.20.maxW.cObject {
-key.field = colPos
-
-  default = TEXT
-  default.value = {$styles.content.image.maxW}
-
-  ## Normal
-  0 = TEXT
-  0.value = {$styles.content.imgtext.colPos0.maxW}
-  ## Left
-  1 = TEXT
-  1.value = {$styles.content.imgtext.colPos1.maxW}
-  ## Right
-  2 = TEXT
-  2.value = {$styles.content.imgtext.colPos2.maxW}
-  ## Border
-  3 = TEXT
-  3.value = {$styles.content.imgtext.colPos3.maxW}
-}
-###############################
-### styles.content.getRight ###
-###############################
-lib.right = COA
-lib.right {
-  5 = LOAD_REGISTER
-
-  5.maxImageWidth = {$styles.content.imgtext.colPos2.maxW}
-  5.contentWidth = {$styles.content.imgtext.colPos2.maxW}
-
-  10 < styles.content.getRight
-  15 = RESTORE_REGISTER
-}
-##############################
-### styles.content.getLeft ###
-##############################
-lib.left = COA
-lib.left {
-  5 = LOAD_REGISTER
-
-  5.maxImageWidth = {$styles.content.imgtext.colPos1.maxW}
-  5.contentWidth = {$styles.content.imgtext.colPos1.maxW}
-
-  10 < styles.content.getLeft
-  15 = RESTORE_REGISTER
-}
-################################
-### styles.content.getBorder ###
-################################
-temp.border = COA
-temp.border {
-  5 = LOAD_REGISTER
-
-  5.maxImageWidth = {$styles.content.imgtext.colPos3.maxW}
-  5.contentWidth = {$styles.content.imgtext.colPos3.maxW}
-
-  10 < styles.content.getBorder
-  10.slide = -1
-  15 = RESTORE_REGISTER
-}
-##########################
 ### styles.content.get ###
 ##########################
 lib.content = COA
 lib.content {
   5 = LOAD_REGISTER
 
-  5.maxImageWidth = {$styles.content.imgtext.colPos0.maxW}
-  5.contentWidth = {$styles.content.imgtext.colPos0.maxW}
+  5.maxImageWidth = {$styles.content.textmedia.maxW}
+  5.contentWidth = {$styles.content.textmedia.maxW}
 
   10 < styles.content.get
   15 = RESTORE_REGISTER

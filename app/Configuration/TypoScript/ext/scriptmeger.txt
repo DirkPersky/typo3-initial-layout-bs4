@@ -21,3 +21,10 @@ page {
     }
   }
 }
+
+##########################
+### Performance Config ###
+##########################
+config.sendCacheHeaders = 1
+config.enableContentLengthHeader = 1
+config.no_cache=0

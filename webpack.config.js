@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 let FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 let ExtractTextPlugin = require('extract-text-webpack-plugin');
 let ModernizrWebpackPlugin = require('modernizr-webpack-plugin');
@@ -42,6 +43,9 @@ class WebpackConfig {
             plugins: [],
             module: {
                 rules: []
+            },
+            resolve: {
+                extensions: [".ts", ".tsx", ".js"]
             }
         };
         // Uglify & Compress JS
@@ -71,7 +75,7 @@ class WebpackConfig {
      */
     buildEntry() {
         this.webpackConfig.entry = [
-            './asset/js/script.js',
+            './asset/typescript/main.ts',
             './asset/sass/style.scss'
         ];
 
@@ -92,14 +96,14 @@ class WebpackConfig {
      * Build the rules array.
      */
     buildRules() {
-        // JavaScript Handling
+        // JavaScript & TYPESCRIPT HANDLER
         this.webpackConfig.module.rules.push({
-            test: /\.js$/,
+            test: /\.(ts|js)x?$/,
             exclude: /(node_modules|bower_components)/,
             use: {
                 loader: 'babel-loader',
                 options: {
-                    presets: ['@babel/preset-env'],
+                    presets: ['@babel/preset-env','@babel/typescript'],
                 }
             }
         });
@@ -172,6 +176,12 @@ class WebpackConfig {
             new ModernizrWebpackPlugin(
                 this.config.modernizr
             )
+        );
+        this.webpackConfig.plugins.push(
+            new webpack.ProvidePlugin( {
+                $: 'jquery',
+                jQuery: 'jquery'
+            } )
         );
         // say ExtractTextPlugin to export his results to style.css
         this.webpackConfig.plugins.push(

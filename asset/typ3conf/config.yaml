@@ -18,7 +18,7 @@ errorHandling:
   -
     errorCode: '404'
     errorHandler: Fluid
-    errorFluidTemplate: fileadmin/Mysite4/app/Resources/Private/Layout/404.html
+    errorFluidTemplate: fileadmin/Mysite4/app/Resources/Private/Layout/400.html
     errorFluidTemplatesRootPath: ''
     errorFluidLayoutsRootPath: ''
     errorFluidPartialsRootPath: ''

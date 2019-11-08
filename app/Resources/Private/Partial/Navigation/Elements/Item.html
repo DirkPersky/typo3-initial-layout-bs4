@@ -1,0 +1,15 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<li class="nav-item{f:if(condition:item.spacer, then:' spacer')}{f:if(condition:'{item.current} || {item.active}', then:' active')}">
+    <f:if condition="{item.spacer}">
+        <f:then>
+            <span>{item.title}</span>
+        </f:then>
+        <f:else>
+            <f:render partial="Navigation/Elements/Link" arguments="{item: item}"/>
+        </f:else>
+    </f:if>
+</li>
+
+</html>

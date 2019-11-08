@@ -23,6 +23,11 @@
   "devDependencies": {
     "@babel/core": "latest",
     "@babel/preset-env": "latest",
+    "@babel/preset-typescript": "latest",
+    "@types/bootstrap": "latest",
+    "@types/fancybox": "latest",
+    "@types/jquery": "latest",
+    "@types/popper.js": "latest",
     "babel-loader": "latest",
     "clean-css": "latest",
     "css-loader": "latest",
@@ -34,6 +39,7 @@
     "node-sass": "latest",
     "penthouse": "latest",
     "sass-loader": "latest",
+    "typescript": "latest",
     "webpack": "latest",
     "webpack-cli": "latest"
   },
@@ -44,7 +50,6 @@
     "hamburgers": "latest",
     "install": "latest",
     "jquery": "latest",
-    "jquery.finger": "latest",
     "lazysizes": "latest",
     "modernizr": "latest",
     "npm": "latest",

@@ -1,10 +1,4 @@
-# Language
-temp.language = TEXT
-temp.language.value = <img src="typo3/sysext/core/Resources/Public/Icons/Flags/PNG/DE.png" alt="Deutsch"/> Deutsch
-
-temp.languageText = TEXT
-temp.languageText.value = Bitte wählen Sie Ihre Sprache
-
+# https://www.thomaskieslich.de/blog/132-typo3-8-menues-mit-fluid-und-menuprocessor-erstellen/
 #########################################
 # Spracherkennung(s-Plugin) aktivieren
 #########################################
@@ -183,119 +177,18 @@ plugin.tx_rlmplanguagedetection_pi1 {
 ################
 ### SPRACHEN ###
 ################
-[siteLanguage("hreflang") == "de"]
+[siteLanguage("hreflang") == "de-DE"]
 	# Spracherkennung deaktivieren
 	plugin.tx_rlmplanguagedetection_pi1 >
 	plugin.tx_indexedsearch._DEFAULT_PI_VARS.lang = 0
 
 [END]
 
-[siteLanguage("hreflang") == "en"]
-	# EN
-	temp.language.value = <img src="typo3/sysext/core/Resources/Public/Icons/Flags/PNG/GB.png" alt="Englisch"/> English
-
-	temp.languageText.value = Please select a language
-
+[siteLanguage("hreflang") == "en-EN"]
 	# Spracherkennung deaktivieren
 	plugin.tx_rlmplanguagedetection_pi1 >
 	plugin.tx_indexedsearch._DEFAULT_PI_VARS.lang = 1
 [END]
-
-#####################
-### LANGUAGE MENU ###
-#####################
-temp.languagemenu = COA
-temp.languagemenu {
-	20 = HMENU
-	20 {
-		special = language
-
-		# Sprachen wahl
-		special.value = 0,1
-
-		wrap = <ul class="dropdown-menu">|</ul>
-		1 = TMENU
-		1 {
-			noBlur = 1
-			# Standard Sprachen
-			NO = 1
-			NO {
-			  linkWrap = <li>|</li>
-
-			  # Standardmäßige Verlinkung des Menüs ausschalten
-			  doNotLinkIt = 1
-
-			  stdWrap {
-				# Link Title ändern
-			  	override = <img src="{$path.baseURL}typo3/sysext/core/Resources/Public/Icons/Flags/PNG/DE.png" alt="Deutsch" /> Deutsch ||  <img src="{$path.baseURL}typo3/sysext/core/Resources/Public/Icons/Flags/PNG/GB.png" alt="Englisch" /> Englisch
-
-				typolink {
-					# Nun wird der Link mit den aktuellen GET-Parametern neu aufgebaut
-					parameter.data = page:uid
-					additionalParams = &L=0 || &L=1
-					addQueryString = 1
-					addQueryString.exclude = L,id,cHash,no_cache
-					addQueryString.method = GET
-					useCacheHash = 1
-					no_cache = 0
-					title = Deutsch || Englisch
-				}
-			  }
-			}
-
-			# Aktive Sprache
-			ACT < .NO
-			ACT.linkWrap = <li class="active">|</li>
-			# NO + Übersetzung nicht vorhanden
-			USERDEF1 < .NO
-			# ACT + Übersetzung nicht vorhanden
-			USERDEF2 < .ACT
-		}
-	}
-}
-
-lib.sprache = COA
-lib.sprache {
-	10 < temp.language
-	10 {
-		wrap = <div class="navbar-language">|</div>
-		typolink = 1
-		typolink {
-			parameter = #sprache
-			ATagParams = data-select="#sprache"
-		}
-	}
-	20 = COA
-	20 {
-		wrap = <div id="sprache">|</div>
-		10 = TEXT
-		10 {
-			value = &times;
-
-			typolink = 1
-			typolink {
-				parameter = #top
-				ATagParams = data-close="#sprache" class="close"
-			}
-		}
-
-		20 = COA
-		20 {
-			wrap = <div class="sprache-inner-wrap">|</div>
-
-			10 < temp.languagemenu
-			10 {
-				wrap = <div class="sprache-inner">|</div>
-				10 < temp.languageText
-				10.wrap = <h4>|</h4>
-
-				20.wrap = <ul class="nav">|</ul>
-			}
-		}
-	}
-
-	30 =< plugin.tx_rlmplanguagedetection_pi1
-}
 
 #########################
 ### FORCE DE IN LINKS ###

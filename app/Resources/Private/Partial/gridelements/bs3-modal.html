@@ -1,36 +1,39 @@
 <f:if condition="{data.flexform_cmodal}=='true'">
   <f:then>
-    <button class="btn {data.flexform_btn_style} {data.flexform_btn_size}" data-toggle="modal" data-target="#{data.flexform_uniqueID}">{data.flexform_button}</button>
+    <button class="btn {data.flexform_btn_style} {data.flexform_btn_size}" data-toggle="modal" data-target="#{data.flexform_uniqueID}">
+      <f:format.raw>{data.flexform_button}</f:format.raw>
+    </button>
   </f:then>
 </f:if>
 
 <f:if condition="{data.flexform_trigger}=='true'">
-  <f:then>
-    <div class="modal fade" id="{data.flexform_uniqueID}" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">
-              <span aria-hidden="true">&times;</span>
-              <span class="sr-only">Close</span>
-            </button>
-            <h4 class="modal-title">{data.flexform_headline}</h4>
-          </div>
+  <div class="modal fade" id="{data.flexform_uniqueID}" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="modal-title">{data.flexform_headline}</span>
 
-          <div class="modal-body">
-            <f:format.raw>{data.tx_gridelements_view_columns.15}</f:format.raw>
-          </div>
-
-          <f:if condition="{data.flexform_closebtn}!=''">
-            <f:then>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">{data.flexform_closebtn}</button>
-              </div>
-            </f:then>
-          </f:if>
-
+          <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Close</span>
+          </button>
         </div>
+
+        <div class="modal-body">
+          <f:format.raw>{data.tx_gridelements_view_columns.15}</f:format.raw>
+        </div>
+
+        <f:if condition="{data.flexform_closebtn}!=''">
+          <f:then>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">
+                <f:format.raw>{data.flexform_closebtn}</f:format.raw>
+              </button>
+            </div>
+          </f:then>
+        </f:if>
+
       </div>
     </div>
-  </f:then>
+  </div>
 </f:if>

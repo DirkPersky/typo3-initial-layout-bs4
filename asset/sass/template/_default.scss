@@ -160,7 +160,7 @@ img {
 
 	display: none;
 	@include media-breakpoint-up(md) {
-		display: block;
+		display: flex;
 	}
 
 	a {

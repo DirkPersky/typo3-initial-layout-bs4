@@ -6,26 +6,18 @@ page = PAGE
 	<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/cssJS.txt">
 	<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/lightbox.txt">
 	<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/content.txt">
-	<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/social.txt">
 	<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/gridElements.txt">
-	<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/search.txt">
 	<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/FEEdit.txt">
 
 ########################
 ### Optionale Script ###
 ########################
-	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/breadcrumb.txt">
-	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/language.txt">
+	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/search.txt">  # ajax_search_loading
+	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/language.txt">  # tx_rlmplanguagedetection_pi1
 	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/pageteaser.txt">
 	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/news.txt">
 	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/news.rss.txt">
 	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/table.txt">
-	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/category.txt">
-
-#################
-### obsoleted ###
-#################
-	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/realUrl.txt"> # obsoleted TYPO 9.5
 
 #######################
 ### GO LIVE Scripte ###
@@ -33,118 +25,9 @@ page = PAGE
 	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/compress.txt">
 	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/scriptmeger.txt">
 
-######################
-### Default Config ###
-######################
-lib.home = TEXT
-lib.home.typolink {
-    parameter = {$nav.homeUid}
-    returnLast = url
-}
-
 ####################
 ### Site Scripts ###
 ####################
-lib.nav = COA
-lib.nav {
-	10 = HMENU
-	10 {
-		special = list
-		special.value = {$nav.homeUid}
-
-		1 = TMENU
-		1 {
-			NO = 1
-			NO {
-				wrapItemAndSub = <li class="nav-item">|</li>
-				ATagParams = title="{field:subtitle}" class="nav-link"
-				allStdWrap.insertData = 1
-			}
-
-			CUR <.NO
-			CUR.wrapItemAndSub = <li class="nav-item active">|</li>
-		}
-	}
-	10 >
-
-	20 = HMENU
-	20 {
-		excludeUidList = {$nav.exclude}
-
-		1 = TMENU
-		1 {
-			noBlur = 1
-			expAll = 1
-
-			NO = 1
-			NO {
-				wrapItemAndSub = <li class="nav-item">|</li>
-				ATagParams = title="{field:subtitle}" class="nav-link"
-				allStdWrap.insertData = 1
-
-				#################################
-				### HTML Direkt Link / Anchor ###
-				#################################
-				stdWrap {
-					cObject = COA
-					cObject {
-						10 = FILES
-						10 {
-							references {
-							    table = pages
-							    fieldName = media
-							}
-							renderObj = IMAGE
-							renderObj {
-							    file {
-								import.data = file:current:publicUrl
-								maxH = 36
-							    }
-
-							    titleText.data = file:current:title
-							    altText.data = file:current:alternative
-							}
-
-							required = 1
-							# start with first image
-							begin = 0
-							# show only XX images
-							maxItems = 1
-						}
-
-						20 = TEXT
-						20 {
-							value.field = nav_title//title
-							wrap = <span>|</span>
-						}
-					}
-				}
-				# end stdWrap
-			}
-
-			CUR <.NO
-			CUR.wrapItemAndSub = <li class="nav-item active">|</li>
-
-			ACT <.CUR
-
-			IFSUB <.NO
-			IFSUB.wrapItemAndSub = <li class="nav-item dropdown" data-nav="true">|</li>
-
-			CURIFSUB <.IFSUB
-			CURIFSUB.wrapItemAndSub = <li class="nav-item active dropdown" data-nav="true">|</li>
-
-			ACTIFSUB <.CURIFSUB
-		}
-
-		2 < .1
-		2 {
-			wrap = <span class="nav-trans"><ul class="nav dropdown-nav"><li class="dropdown-nav-close"><button class="btn btn-block btn-close"><i class="fa fa-angle-left"></i> </button></li>|</ul></span>
-		}
-
-		3 <.2
-	}
-}
-
 lib.footerNav = COA
 lib.footerNav {
     10 < temp.cPos
@@ -152,24 +35,6 @@ lib.footerNav {
 
     20 < temp.cPos
     20.select.where= colPos=3
-
-    30 = HMENU
-    30 {
-        special = list
-        special.value = {$nav.footer}
-
-        wrap = <ul class="nav">|</ul>
-
-        1 = TMENU
-        1 {
-            NO = 1
-            NO {
-                wrapItemAndSub = <li class="nav-item">|</li>
-                ATagParams = title="{field:subtitle}" class="nav-link"
-                ATagParams.insertData = 1
-            }
-        }
-    }
 }
 #################
 ### Copyright ###
