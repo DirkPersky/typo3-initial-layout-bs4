@@ -1,5 +1,6 @@
 // main: ../style.scss
 .navbar {
+	border-bottom: 1px solid theme-color('light');
 	background-color: theme-color('dark');
 	box-shadow: none;
 	padding: 10px 0;
@@ -28,14 +29,13 @@
 
 		margin-right: 0;
 		margin-left: 0;
+		max-width: 100%;
 
 		@include media-breakpoint-up(md) {
 			margin-left: auto;
 			margin-right: auto;
 		}
-		@include media-breakpoint-down(sm) {
-			max-width: 100%;
-		}
+
 
 		.nav-bars {
 			flex: 0 0 auto;
@@ -47,6 +47,7 @@
 			justify-content: center;
 		}
 	}
+
 	// Brand/Logo
 	.navbar-brand {
 		position: relative;
@@ -77,6 +78,7 @@
 			}
 		}
 	}
+
 	// Search & Toggle Btn
 	.nav-right {
 		.search {
@@ -106,6 +108,7 @@
 			&:hover {
 				color: theme-color('light');
 			}
+
 			&:focus {
 				outline: none;
 			}
@@ -124,6 +127,7 @@
 					&:before {
 						background-color: theme-color('light');
 					}
+
 					&:after {
 						background-color: theme-color('light');
 					}
@@ -134,12 +138,13 @@
 				margin-top: 3px;
 				display: none;
 
-				@include media-breakpoint-up(sm){
+				@include media-breakpoint-up(sm) {
 					display: block;
 				}
 			}
 		}
 	}
+
 	// Search Bar
 	.search-toggleable {
 		position: absolute;
@@ -159,9 +164,10 @@
 				background-color: transparent;
 				border: 0;
 				padding: 0;
-				color: white;
+				color: theme-color("dark");
 				font-size: 21px;
 				line-height: 28px;
+				box-shadow: none;
 
 				+ .focus-bar {
 					position: absolute;
@@ -195,6 +201,7 @@
 				display: none;
 			}
 		}
+
 		.close {
 			position: absolute;
 			right: 10px;
@@ -203,18 +210,50 @@
 			color: theme-color('light');
 		}
 	}
+
 	// Navigation
 	.navbar-toggleable {
-		max-height: calc(100vh - 90px);
+		max-height: calc(100vh - 67px);
 		overflow: auto;
+		height: 100vh !important;
+		display: block !important;
+
+		transform: translateX(-100%);
+		transition: all .5s ease-in-out;
+
+		@include media-breakpoint-up(lg) {
+			height: auto !important;
+			transform: translateX(0);
+
+		}
+
+		//&.collapsing {
+		//  transform: translateX(-50%);
+		//  @include media-breakpoint-up(md) {
+		//    transform: translateX(0);
+		//  }
+		//}
+
+		&.show {
+			transform: translateX(0);
+		}
+
+		> .nav {
+			height: 100%;
+
+			@include media-breakpoint-up(lg) {
+				height: auto;
+			}
+		}
 	}
+
 	//Navbar
 	.nav {
 		> .nav-item {
 			> .nav-link {
 				display: block;
 				color: theme-color('light');
-				text-transform: uppercase;
+				//text-transform: uppercase;
 
 				&:hover {
 					color: theme-color('secondary');
@@ -332,28 +371,33 @@
 	@include media-breakpoint-up(lg) {
 		padding: 0;
 	}
+
 	.navbar-brand {
 		@include media-breakpoint-up(lg) {
 			padding: 20px 0;
 		}
 	}
+
 	// Search & Toggle Btn
 	.nav-right {
 		@include media-breakpoint-up(lg) {
 			align-self: center;
 		}
+
 		.navbar-toggler {
 			@include media-breakpoint-up(lg) {
 				display: none;
 			}
 		}
 	}
+
 	.container {
 		@include media-breakpoint-up(lg) {
 			flex-wrap: nowrap;
 		}
 	}
-	.nav-bars{
+
+	.nav-bars {
 		display: flex;
 		flex-wrap: wrap;
 
@@ -361,6 +405,7 @@
 			flex-wrap: nowrap;
 		}
 	}
+
 	// Navigation
 	.navbar-toggleable {
 		background-color: rgba(theme-color('dark'), 0.9);
@@ -375,6 +420,7 @@
 			display: block;
 			overflow: visible;
 		}
+
 		.nav {
 			&.navbar-nav {
 				position: relative;
@@ -387,6 +433,7 @@
 					overflow: visible;
 					height: 100%;
 				}
+
 				> .nav-item {
 					@include media-breakpoint-up(lg) {
 						display: flex;
@@ -399,7 +446,7 @@
 			> .nav-item {
 				> .nav-link {
 					@include rem(padding, 10 15);
-					border-bottom: 1px solid theme-color('light');
+					border-bottom: 1px solid theme-color('dark');
 
 					@include media-breakpoint-up(lg) {
 						border-bottom: 0;
@@ -411,6 +458,7 @@
 			}
 		}
 	}
+
 	// Dropdowns
 	.dropdown {
 		position: static;
@@ -422,16 +470,25 @@
 			flex-direction: column;
 			flex-wrap: nowrap;
 		}
+
+		> .nav-link {
+			@include media-breakpoint-up(lg){
+
+			}
+		}
+
 		// nav Wrap
 		.dropdown-wrap {
-			background-color: theme-color('dark');
+			background-color: theme-color('light');
 			transition: all .4s ease-in-out;
 			position: absolute;
+			z-index: 5;
 			bottom: 0;
 			right: 0;
 			left: 0;
 			top: 0;
 			overflow: hidden;
+			min-width: 200px;
 
 			transform: translate(100%, 0);
 
@@ -459,8 +516,8 @@
 			.list-header {
 				position: relative;
 				@include rem(padding, 10 15);
-				border-bottom: 1px solid theme-color('light');
-				color: theme-color('light');
+				border-bottom: 1px solid theme-color('dark');
+				color: theme-color('primary');
 
 				text-align: center;
 				cursor: pointer;
@@ -503,6 +560,7 @@
 				}
 			}
 		}
+
 		// Hover event
 		&:hover {
 			> .dropdown-wrap {
@@ -516,14 +574,18 @@
 				}
 			}
 		}
+
 		// Link
 		> .nav-link {
+			border-bottom: 1px solid theme-color('dark');
 			position: relative;
 			@include media-breakpoint-down(md) {
 				padding-right: 55px !important;
+				border: 0;
 			}
+
 			> .trigger {
-				border-left: 1px solid theme-color('light');
+				border-left: 1px solid theme-color('dark');
 				cursor: pointer;
 
 				display: flex;
@@ -561,21 +623,29 @@
 }
 
 .nav-light {
-	background-color: rgba(theme-color('light'), 0.9);
+	background-color: rgba(#fff, 0.9);
 
 	&.show {
-		background-color: rgba(theme-color('light'), 0.9);
+		background-color: rgba(#fff, 0.9);
 	}
+
 	// Search & Toggle Btn
 	.nav-right {
 		.search {
 			i {
 				color: theme-color('dark');
 			}
+
+			&:hover {
+				i {
+					color: theme-color("success");
+				}
+			}
 		}
 
 		.navbar-toggler {
 			color: theme-color('dark');
+
 			&:hover {
 				color: theme-color('dark');
 			}
@@ -587,6 +657,7 @@
 					&:before {
 						background-color: theme-color('dark');
 					}
+
 					&:after {
 						background-color: theme-color('dark');
 					}
@@ -594,6 +665,7 @@
 			}
 		}
 	}
+
 	// Search Bar
 	.search-toggleable {
 		background-color: rgba(theme-color('light'), 0.9);
@@ -605,11 +677,17 @@
 					color: theme-color('dark');
 				}
 			}
+
+			form {
+				width: 100%;
+			}
 		}
+
 		.close {
 			color: theme-color('dark');
 		}
 	}
+
 	//Navbar
 	.nav {
 		> .nav-item {
@@ -617,33 +695,29 @@
 				color: theme-color('dark');
 
 				&:hover {
-					color: theme-color('secondary');
+					color: theme-color('success');
 				}
 			}
 
 			&.active {
 				> .nav-link {
+					font-weight: bold;
 					color: theme-color('primary');
+
+					&:hover {
+						color: theme-color("success");
+					}
 				}
 			}
 		}
 	}
-	// Minimal Nav
-	&.nav-minimal {
-		// Navigation
-		.navbar-toggleable {
-			background-color: rgba(theme-color('light'), 0.9);
 
-			// navbar Wrap
-			.header-nav {
-				.head-nav {
-					border-bottom-color: theme-color('dark');
+	// mobile nav
+	.navbar-toggleable {
+		background-color: rgba(#fff, 0.9) !important;
 
-					@include media-breakpoint-up(md) {
-						border-right-color: theme-color('dark');
-					}
-				}
-			}
+		@include media-breakpoint-up(lg) {
+			background-color: transparent !important;
 		}
 	}
 }

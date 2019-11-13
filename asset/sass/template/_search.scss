@@ -168,3 +168,16 @@ ul.tx-indexedsearch-browsebox {
     }
   }
 }
+
+.tx-indexedsearch-res {
+  .tx-indexedsearch-percent {
+    color: theme-color("success");
+  }
+
+  .tx-indexedsearch-info {
+    border-color: theme-color("success");
+  }
+}
+.tx-indexedsearch-rules {
+  padding-top: 1rem;
+}

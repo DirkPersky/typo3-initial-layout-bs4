@@ -98,39 +98,39 @@ body{
     }
   }
 }
-.onepage-space- {
+.onepage.onepage-space- {
   &after- {
     &extra-small {
-      margin-bottom: 15px;
+      padding-bottom: 15px;
     }
     &small {
-      margin-bottom: 30px;
+      padding-bottom: 30px;
     }
     &medium {
-      margin-bottom: 45px;
+      padding-bottom: 45px;
     }
     &large {
-      margin-bottom: 60px;
+      padding-bottom: 60px;
     }
     &extra-large {
-      margin-bottom: 75px;
+      padding-bottom: 75px;
     }
   }
   &before- {
     &extra-small {
-      margin-top: 15px;
+      padding-top: 15px;
     }
     &small {
-      margin-top: 30px;
+      padding-top: 30px;
     }
     &medium {
-      margin-top: 45px;
+      padding-top: 45px;
     }
     &large {
-      margin-top: 60px;
+      padding-top: 60px;
     }
     &extra-large {
-      margin-top: 75px;
+      padding-top: 75px;
     }
   }
 }

@@ -10,32 +10,7 @@
           <sheetTitle>Onepage Optionen</sheetTitle>
         </TCEforms>
         <el type="array">
-          <center type="array">
-            <TCEforms type="array">
-              <label>Inhalt Zentrieren</label>
-              <config type="array">
-                <type>select</type>
-                <items type="array">
-                  <numIndex index="0" type="array"><numIndex index="0">Ja</numIndex><numIndex index="1">center</numIndex></numIndex>
-                  <numIndex index="1" type="array"><numIndex index="0">Nein</numIndex><numIndex index="1">left</numIndex></numIndex>
-                </items>
-                <default>center</default>
-              </config>
-            </TCEforms>
-          </center>
-          <opblend type="array">
-            <TCEforms type="array">
-              <label>Paralax Slide</label>
-              <config type="array">
-                <type>select</type>
-                <items type="array">
-                  <numIndex index="0" type="array"><numIndex index="0">Nein</numIndex><numIndex index="1"></numIndex></numIndex>
-                  <numIndex index="1" type="array"><numIndex index="0">Ja</numIndex><numIndex index="1">op-blend</numIndex></numIndex>
-                </items>
-                <default></default>
-              </config>
-            </TCEforms>
-          </opblend>
+
           <image type="array">
             <TCEforms type="array">
               <label>Paralax Bild</label>
@@ -53,32 +28,36 @@
             </TCEforms>
           </image>
 
-          <next>
+          <css type="array">
             <TCEforms type="array">
+              <label>CCS Background</label>
               <config type="array">
-                <type>check</type>
-                <items>
-                  <numIndex index="0">
-                    <numIndex index="0">Next Button</numIndex>
-                    <numIndex index="1">1</numIndex>
-                  </numIndex>
+                <type>select</type>
+                <items type="array">
+                  <numIndex index="0" type="array"><numIndex index="0">Weiß</numIndex><numIndex index="1">bg-white</numIndex></numIndex>
+                  <numIndex index="1" type="array"><numIndex index="0">Grau</numIndex><numIndex index="1">bg-light</numIndex></numIndex>
+                  <numIndex index="2" type="array"><numIndex index="0">Dark</numIndex><numIndex index="1">bg-dark text-white</numIndex></numIndex>
+                  <numIndex index="3" type="array"><numIndex index="0">Blau</numIndex><numIndex index="1">bg-primary text-white</numIndex></numIndex>
+                  <numIndex index="4" type="array"><numIndex index="0">Grün</numIndex><numIndex index="1">bg-success text-white</numIndex></numIndex>
+                  <numIndex index="5" type="array"><numIndex index="0">Trenner</numIndex><numIndex index="1">bg-devider</numIndex></numIndex>
                 </items>
-                <default></default>
               </config>
+              <onChange>reload</onChange>
             </TCEforms>
-          </next>
+          </css>
 
-          <height type="array">
+          <inlinecss type="array">
             <TCEforms type="array">
-              <label>Height of Onepage</label>
+              <label>CSS-Inline</label>
               <config type="array">
                 <type>input</type>
-                <size>48</size>
+                <size>250</size>
                 <eval>trim</eval>
-                <default>100vh</default>
+                <default></default>
               </config>
+              <displayCond>FIELD:css:=:bg-devider</displayCond>
             </TCEforms>
-          </height>
+          </inlinecss>
 
         </el>
       </ROOT>

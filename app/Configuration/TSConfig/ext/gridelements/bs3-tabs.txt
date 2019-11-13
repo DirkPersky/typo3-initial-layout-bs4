@@ -27,6 +27,7 @@ tx_gridelements.setup{
   bs3-tabs_tab {
     title = Tab
     description = Ein Tab für einen Container
+    flexformDS = FILE:fileadmin/web-kon/Configuration/FlexForms/bs3-tab.xml
     frame = 1
 
     config {

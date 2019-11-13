@@ -1,16 +1,9 @@
 <section id="onepage{data.uid}"
-         class="onepage {f:if(condition:'{data.flexform_image}',then:'lazyload ')}{data.flexform_opblend} {data.flexform_center}{f:if(condition:'{data.space_before_class}',then:' onepage-space-before-{data.space_before_class}')}{f:if(condition:'{data.space_after_class}',then:' onepage-space-after-{data.space_after_class}')}"
-         style="{f:if(condition:'{data.flexform_height}',then:'height:{data.flexform_height};')}"
+         class="onepage {f:if(condition:'{data.flexform_image}',then:'lazyload bg-op ')}{f:if(condition:'{data.flexform_css}',then:'{data.flexform_css}')}{f:if(condition:'{data.space_before_class}',then:' onepage-space-before-{data.space_before_class}')}{f:if(condition:'{data.space_after_class}',then:' onepage-space-after-{data.space_after_class}')}"
          {f:if(condition:'{data.flexform_image}',then:'data-bgset="uploads/tx_gridelements/{data.flexform_image}"')}
-         >
-  <div class="onepage-inner">
-    <div class="container">
-      <f:format.html parseFuncTSPath="">{stdheader}</f:format.html>
-      <f:format.raw>{data.tx_gridelements_view_columns.0}</f:format.raw>
-    </div>
-  </div>
-
-  <f:if condition="{data.flexform_next}=='1'">
-    <a href="javascript:void(0)" data-onepage="true"><img src="fileadmin/Mysite4/app/Resources/Public/img/Pfeil_nach_unten.png"></a>
-  </f:if>
+{f:if(condition:'{data.flexform_inlinecss}',then:'style="{data.flexform_inlinecss}"')}
+>
+<div class="container">
+  <f:format.raw>{data.tx_gridelements_view_columns.0}</f:format.raw>
+</div>
 </section>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+    <meta type="array">
+        <langDisable>1</langDisable>
+    </meta>
+    <sheets>
+        <general>
+            <ROOT type="array">
+                <TCEforms>
+                    <sheetTitle>Tab Optionen</sheetTitle>
+                </TCEforms>
+                <el type="array">
+                    <css type="array">
+                        <TCEforms type="array">
+                            <label>Background</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array"><numIndex index="0">Default</numIndex><numIndex index="1"></numIndex></numIndex>
+                                    <numIndex index="1" type="array"><numIndex index="0">Dark</numIndex><numIndex index="1">bg-dark text-white</numIndex></numIndex>
+                                    <numIndex index="2" type="array"><numIndex index="0">Blau</numIndex><numIndex index="1">bg-primary text-white</numIndex></numIndex>
+                                    <numIndex index="3" type="array"><numIndex index="0">Grün</numIndex><numIndex index="1">bg-success text-white</numIndex></numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </css>
+                </el>
+            </ROOT>
+        </general>
+    </sheets>
+</T3DataStructure>
