@@ -46,7 +46,7 @@
   },
   "dependencies": {
     "@fancyapps/fancybox": "latest",
-    "@fortawesome/fontawesome-free-webfonts": "latest",
+    "@fortawesome/fontawesome-free": "latest",
     "bootstrap": "latest",
     "hamburgers": "latest",
     "install": "latest",
