@@ -27,8 +27,8 @@
                 <type>select</type>
                 <renderType>selectMultipleSideBySide</renderType>
                 <items>
-                  <numIndex index="0" type="array"><numIndex index="0">LLL:fileadmin/ardland/Resources/Private/Language/locallang.xlf:teilzeit</numIndex><numIndex index="1">teilzeit</numIndex></numIndex>
-                  <numIndex index="1" type="array"><numIndex index="0">LLL:fileadmin/ardland/Resources/Private/Language/locallang.xlf:vollzeit</numIndex><numIndex index="1">vollzeit</numIndex></numIndex>
+                  <numIndex index="0" type="array"><numIndex index="0">LLL:/fileadmin/Mysite4/app/Resources/Private/Language/locallang.xlf:teilzeit</numIndex><numIndex index="1">teilzeit</numIndex></numIndex>
+                  <numIndex index="1" type="array"><numIndex index="0">LLL:/fileadmin/Mysite4/app/Resources/Private/Language/locallang.xlf:vollzeit</numIndex><numIndex index="1">vollzeit</numIndex></numIndex>
                 </items>
                 <enableMultiSelectFilterTextfield>1</enableMultiSelectFilterTextfield>
               </config>

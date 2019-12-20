@@ -10,7 +10,7 @@
             "sameAs": "<f:uri.typolink parameter="{data.pid}" absolute="1"/>"
             <f:if condition="{data.flexform_hiring_logo}">
             <f:then>,"logo": "<f:uri.image src="uploads/tx_gridelements/{data.flexform_hiring_logo}" absolute="1"/>"</f:then>
-            <f:else>,"logo": "<f:uri.image src="fileadmin/ardland/Resources/Public/img/layout/logo.svg" absolute="1"/>"</f:else>
+            <f:else>,"logo": "<f:uri.image src="/fileadmin/Mysite4/app/Resources/Public/img/layout/logo.svg" absolute="1"/>"</f:else>
             </f:if>
         },
         "employmentType": "{f:if(condition:'{data.flexform_filter} == "vollzeit"',then:'FULL_TIME', else:'PART_TIME')}",

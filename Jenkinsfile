@@ -48,7 +48,7 @@ pipeline {
 
     stage('Deploy') {
         parallel {
-            stage('Deploy Prod') {
+            stage('Deploy Production') {
                 when {
                     environment name: 'DEPLOY_TO', value: 'prod'
                 }
@@ -56,7 +56,7 @@ pipeline {
                     sh 'npm run prod'
                 }
             }
-            stage('Deploy Dev') {
+            stage('Deploy Development') {
                 when {
                     environment name: 'DEPLOY_TO', value: 'dev'
                 }
