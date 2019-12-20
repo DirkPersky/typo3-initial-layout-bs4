@@ -9,7 +9,8 @@
     "watch": "webpack --watch --progress --hide-modules --mode development",
     "prod": "npm run production",
     "production": "webpack --hide-modules --mode production",
-    "css": "node abovethefold.js"
+    "css": "node abovethefold.js",
+    "build": "npm run prod && npm run css"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,7 @@
   "devDependencies": {
     "@babel/core": "latest",
     "@babel/preset-env": "latest",
-    "@babel/preset-typescript": "latest",
+    "@babel/preset-typescript": "^7.7.2",
     "@types/bootstrap": "latest",
     "@types/fancybox": "latest",
     "@types/jquery": "latest",

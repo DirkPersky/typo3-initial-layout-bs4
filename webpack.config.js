@@ -49,15 +49,17 @@ class WebpackConfig {
             }
         };
         // Uglify & Compress JS
-        if(this.isProduction()) {
+        if (this.isProduction()) {
             this.webpackConfig.optimization = {
                 minimize: true
             };
         }
     }
-    isProduction(){
-        return (!process.env.NODE_ENV || process.env.NODE_ENV === 'production') ? true: false;
+
+    isProduction() {
+        return (!process.env.NODE_ENV || process.env.NODE_ENV === 'production') ? true : false;
     }
+
     /**
      * Build the Webpack configuration object.
      */
@@ -70,6 +72,7 @@ class WebpackConfig {
 
         return this.webpackConfig;
     }
+
     /**
      * Build the entry object.
      */
@@ -81,17 +84,19 @@ class WebpackConfig {
 
         return this;
     }
+
     /**
      * Build the output object.
      */
     buildOutput() {
         this.webpackConfig.output = {
-            path: path.resolve(__dirname,  this.config.publicPath+'/js'),
+            path: path.resolve(__dirname, this.config.publicPath + '/js'),
             filename: 'script.min.js'
         };
 
         return this;
     }
+
     /**
      * Build the rules array.
      */
@@ -103,7 +108,7 @@ class WebpackConfig {
             use: {
                 loader: 'babel-loader',
                 options: {
-                    presets: ['@babel/preset-env','@babel/typescript'],
+                    presets: ['@babel/preset-env', '@babel/typescript'],
                 }
             }
         });
@@ -161,6 +166,7 @@ class WebpackConfig {
 
         return this;
     }
+
     /**
      * Build the plugins array.
      */
@@ -178,10 +184,10 @@ class WebpackConfig {
             )
         );
         this.webpackConfig.plugins.push(
-            new webpack.ProvidePlugin( {
+            new webpack.ProvidePlugin({
                 $: 'jquery',
                 jQuery: 'jquery'
-            } )
+            })
         );
         // say ExtractTextPlugin to export his results to style.css
         this.webpackConfig.plugins.push(
@@ -194,4 +200,5 @@ class WebpackConfig {
         return this;
     }
 }
+
 module.exports = new WebpackConfig().build();

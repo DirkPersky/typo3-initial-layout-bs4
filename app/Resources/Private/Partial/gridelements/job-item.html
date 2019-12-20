@@ -1,0 +1,31 @@
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "JobPosting",
+        "title": "<f:format.raw>{data.header}</f:format.raw>",
+        "description": "<f:format.html parseFuncTSPath="">{data.flexform_google_desc}</f:format.html>",
+        "hiringOrganization" : {
+            "@type": "Organization",
+            "name": "<f:format.raw>{data.flexform_hiring_name}</f:format.raw>",
+            "sameAs": "<f:uri.typolink parameter="{data.pid}" absolute="1"/>"
+            <f:if condition="{data.flexform_hiring_logo}">
+            <f:then>,"logo": "<f:uri.image src="uploads/tx_gridelements/{data.flexform_hiring_logo}" absolute="1"/>"</f:then>
+            <f:else>,"logo": "<f:uri.image src="fileadmin/ardland/Resources/Public/img/layout/logo.svg" absolute="1"/>"</f:else>
+            </f:if>
+        },
+        "employmentType": "{f:if(condition:'{data.flexform_filter} == "vollzeit"',then:'FULL_TIME', else:'PART_TIME')}",
+        "datePosted": "<f:format.date format="Y-m-d">{data.tstamp}</f:format.date>",
+        "validThrough": "",
+        <f:if condition="{data.flexform_location_zip}">"jobLocation": {
+            "@type": "Place",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "<f:format.raw>{data.flexform_location_street}</f:format.raw>",
+                "addressLocality": "<f:format.raw>{data.flexform_location_city}</f:format.raw>",
+                "postalCode": "<f:format.raw>{data.flexform_location_zip}</f:format.raw>",
+                "addressCountry": "<f:format.raw>{data.flexform_location_country}</f:format.raw>"
+            }
+        }</f:if>
+      <f:if condition="{data.flexform_skills}">,"skills": "<f:format.raw>{data.flexform_skills}</f:format.raw>"</f:if>
+    }
+</script>
