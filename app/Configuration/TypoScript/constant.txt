@@ -137,11 +137,11 @@ plugin.tx_scriptmerger {
     css {
         mergedFilePosition = </body>
         compress.enable = 0
-	merge.ignore >
-	minify.ignore >
+	    merge.ignore >
+	    minify.ignore >
         postUrlProcessing {
-            pattern = /(.*\/fileadmin)/i
-            replacement = {$path.baseURL}fileadmin
+            pattern = /(.*\/)(fileadmin|typo3conf)/i
+            replacement = /\2
         }
     }
 }
