@@ -10,18 +10,16 @@ export default class BarbaJS {
         this.selector = '#navigation > .navbar';
         this.overlay = jQuery('.barba-overlay');
         this.handlers = handlers;
-        // init handlers
-        this.initHandlers();
 
         var me = this;
         // init Barba with a default "opacity" transition
         barba.init({
             timeout: 5000,
-            prevent: (data) => this.prevent(data),
+            prevent: (data:any) => this.prevent(data),
             transitions: [{
                 name: 'legacy-example',
-                leave: function (data) {
-                    var done = this.async();
+                leave: function (data:any) {
+                    var done = (<any>this).async();
                     if(me.overlay.length > 0) {
                         me.overlay.on('transitionend webkitTransitionEnd oTransitionEnd', () => {
                             done();
@@ -36,7 +34,7 @@ export default class BarbaJS {
                         scrollTop: 0
                     }, 10);
                 },
-                afterEnter: function (data) {
+                afterEnter: function (data:any) {
                     if(me.overlay.length > 0) me.overlay.removeClass('show');
                     me.afterEnter(data);
                 }
@@ -54,8 +52,8 @@ export default class BarbaJS {
     }
     
     powermail(){
-        if(typeof window.PowermailForm == 'undefined') return;
-        var t = new window.PowermailForm(jQuery);
+        if(typeof (<any>window).PowermailForm == 'undefined') return;
+        var t = new (<any>window).PowermailForm(jQuery);
         t.initialize()
     }
 
