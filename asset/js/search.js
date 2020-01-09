@@ -98,3 +98,23 @@ $.fn.searchLoading = function (options) {
         }
     });
 };
+
+window.Statemanager.attach('typo3-search', function(){
+    /**
+     * Bind Dynamic Searchform Loadind to Element
+     */
+    $('.search[search-loading]').searchLoading({
+        type: 9718,
+    });
+    $('[search-loading]').searchLoading({
+        type: 9718,
+        onError: function (element, href) {
+            $('div[data-target="#collapseSearch"]').on('click',(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+
+                window.location = href;
+            });
+        }
+    });
+});

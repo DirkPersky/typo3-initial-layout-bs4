@@ -23,3 +23,30 @@ function scrollToAnchor(_selector) {
     return false;
 }
 
+window.Statemanager.attach('scrolls', function(){
+    /**
+     * To Top Button
+     */
+    $('#to-top').on('click', function (e) {
+        e.preventDefault();
+
+        $('html, body').animate({
+            scrollTop: 0
+        }, 1500);
+    });
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 300) { // Wenn 100 Pixel gescrolled wurde
+            $('#to-top').fadeIn();
+        } else {
+            $('#to-top').fadeOut();
+        }
+    });
+    /**
+     * Anchor Scroll
+     */
+    $('[data-link]').on('click', function (e) {
+        if (scrollToAnchor($(this).attr('href'))) {
+            e.preventDefault();
+        }
+    });
+});

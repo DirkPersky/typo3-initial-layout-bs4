@@ -26,3 +26,9 @@ $.fn.navigationBar = function() {
         });
     });
 };
+window.Statemanager.attach('navbar-events', function(){
+    /**
+     * Typo3 Bootstrap
+     */
+    $('#navbarResponsive,#collapseSearch').navigationBar();
+});

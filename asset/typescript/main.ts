@@ -2,7 +2,8 @@ import * as bootstrap from 'bootstrap';
 import Fancybox from './components/fancybox';
 import Animate from './components/waypoints';
 import BarbaJS from './components/barba';
-import initJS from './module/init';
+import './components/statemanager';
+
 // @ts-ignore
 window.jQuery = jQuery;
 
@@ -15,7 +16,7 @@ class Init {
         // load Global Libs
         this.loadLibs();
         // bootstrap
-        jQuery(function ($) {
+        jQuery(function ($:jQuery) {
             // load jQuery Functions Files
             me.loadtemplates();
             // BarbaJS
@@ -24,8 +25,6 @@ class Init {
                 new Fancybox(),
                 // Waypoint
                 new Animate(),
-                // init Scripts Caller
-                initJS,
             ]);
         });
     }

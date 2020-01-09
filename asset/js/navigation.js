@@ -27,3 +27,9 @@ $.fn.dropDownMenu = function(){
     });
 };
 
+window.Statemanager.attach('dropdown-menu', function(){
+    /**
+     * Init Navigation
+     */
+    $('.nav-inline .dropdown').dropDownMenu();
+});

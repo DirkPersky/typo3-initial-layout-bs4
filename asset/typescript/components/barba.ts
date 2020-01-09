@@ -50,19 +50,7 @@ export default class BarbaJS {
         // rebind powermail
         this.powermail();
         // init handlers
-        this.initHandlers();
-    }
-    initHandlers(){
-        this.handlers.map((handler:any, index:number)=>{
-            switch (typeof handler) {
-                case 'object':
-                    handler.init();
-                    break;
-                case 'function':
-                    handler();
-                    break;
-            }
-        });
+        (<any>window).Statemanager.call();
     }
     
     powermail(){

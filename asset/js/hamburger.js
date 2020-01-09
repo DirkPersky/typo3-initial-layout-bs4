@@ -14,3 +14,13 @@ $.fn.hamburgerButton = function( optionsConf ) {
       $this.removeClass('is-active');
     });
 };
+
+
+window.Statemanager.attach('hamburger-button', function(){
+  /**
+   * Init Hamburger
+   */
+  $('.hamburger').each(function(){
+    $(this).hamburgerButton();
+  });
+});
