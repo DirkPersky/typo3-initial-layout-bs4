@@ -5,7 +5,12 @@ export default class Fancybox {
 
     constructor(){
         this.fancy = fancybox;
+    }
 
+    init(){
+        /**
+         * Fancybox
+         */
         var classicLightbox = jQuery('.fancybox, a[rel="fancybox"]');
         classicLightbox.map((index, element) =>{
             var el = jQuery(element),

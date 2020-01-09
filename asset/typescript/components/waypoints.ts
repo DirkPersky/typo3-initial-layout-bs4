@@ -6,6 +6,8 @@ interface JQuery {
 export default class Animate {
     constructor(){
         this.loadLibs();
+    }
+    init(){
         /**
          * Aniamtion CSS on Scroll
          */
@@ -22,7 +24,6 @@ export default class Animate {
                 offset: '90%' // Way to top of Page
             });
         });
-
     }
     /**
      * Load Static Libs

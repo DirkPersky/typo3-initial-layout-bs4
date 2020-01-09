@@ -1,8 +1,8 @@
 import * as bootstrap from 'bootstrap';
-import Fancybox from './fancybox/fancybox';
-import Animate from './waypoints/animate';
-import BarbaJS from './module/barba';
-
+import Fancybox from './components/fancybox';
+import Animate from './components/waypoints';
+import BarbaJS from './components/barba';
+import initJS from './module/init';
 // @ts-ignore
 window.jQuery = jQuery;
 
@@ -16,14 +16,17 @@ class Init {
         this.loadLibs();
         // bootstrap
         jQuery(function ($) {
-            // init Fancybox
-            new Fancybox();
-            // Waypoint
-            new Animate();
-            // load old JS Files
+            // load jQuery Functions Files
             me.loadtemplates();
             // BarbaJS
-            new BarbaJS();
+            new BarbaJS([
+                // init Fancybox
+                new Fancybox(),
+                // Waypoint
+                new Animate(),
+                // init Scripts Caller
+                initJS,
+            ]);
         });
     }
     /**
@@ -31,7 +34,7 @@ class Init {
      */
     loadtemplates() {
         // Load Template Files
-        this.requireAll(require.context('../js/template', true, /\.js$/));
+        this.requireAll(require.context('../js', true, /\.js$/));
     }
     /**
      * Load Static Libs

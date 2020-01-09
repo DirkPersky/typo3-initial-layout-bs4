@@ -1,18 +1,18 @@
 // do not import Barba like this if you load the library through the browser
 import barba from '@barba/core';
 
-/**
- * default Scroll Position: <div data-barba-scroll></div>
- * overlay: <div class="barba-overlay"></div>
- * html: <div data-barba="wrapper"><div data-barba="container">.......</div></div>
- */
 export default class BarbaJS {
     private overlay:any;
     private selector:string;
+    private handlers:any;
 
-    constructor() {
+    constructor(handlers: any) {
         this.selector = '#navigation > .navbar';
         this.overlay = jQuery('.barba-overlay');
+        this.handlers = handlers;
+        // init handlers
+        this.initHandlers();
+
         var me = this;
         // init Barba with a default "opacity" transition
         barba.init({
@@ -49,13 +49,28 @@ export default class BarbaJS {
         this.barbaScroll(data.trigger);
         // rebind powermail
         this.powermail();
+        // init handlers
+        this.initHandlers();
     }
-
+    initHandlers(){
+        this.handlers.map((handler:any, index:number)=>{
+            switch (typeof handler) {
+                case 'object':
+                    handler.init();
+                    break;
+                case 'function':
+                    handler();
+                    break;
+            }
+        });
+    }
+    
     powermail(){
         if(typeof window.PowermailForm == 'undefined') return;
         var t = new window.PowermailForm(jQuery);
         t.initialize()
     }
+
     barbaScroll(trigger:any) {
         var href = trigger.href,
             target:any = false,
