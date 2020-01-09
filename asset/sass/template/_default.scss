@@ -251,3 +251,29 @@ p:last-child {
     opacity: 0;
   }
 }
+
+
+.barba-overlay {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  transition: all .3s ease-in-out;
+
+  opacity: 0;
+  visibility: hidden;
+
+  background-color: #fff;
+
+  background-image: url(../img/ajax-loader.gif);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+
+  &.show {
+    opacity: .9;
+    visibility: visible;
+  }
+}

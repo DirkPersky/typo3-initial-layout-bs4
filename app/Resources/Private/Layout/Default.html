@@ -1,43 +1,47 @@
-<header id="navigation">
-    <nav class="navbar nav-minimal fixed-top" role="navigation">
-        <div class="container">
-            <div class="brand">
-                <f:link.page pageUid="{settings.pidRoot}" class="navbar-brand float-left" title="Home">
-                    <img src="fileadmin/Mysite4/app/Resources/Public/img/logo.png" class="logo">
-                </f:link.page>
-            </div>
-            <div class="nav-bars">
-                <div class="collapse navbar-toggleable" id="navbarResponsive">
-                    <f:render partial="Navigation/Main" arguments="{_all}"/>
-                </div>
-
-                <f:render partial="SearchNav" />
-
-                <div class="nav-right">
-                    <div class="search" data-toggle="collapse" data-target="#collapseSearch">
-                        <i class="fa fa-search"></i>
+<div data-barba="wrapper">
+    <div data-barba="container">
+        <header id="navigation">
+            <nav class="navbar nav-minimal fixed-top" role="navigation">
+                <div class="container">
+                    <div class="brand">
+                        <f:link.page pageUid="{settings.pidRoot}" class="navbar-brand float-left" title="Home">
+                            <img src="fileadmin/Mysite4/app/Resources/Public/img/logo.png" class="logo">
+                        </f:link.page>
                     </div>
-                    <button class="navbar-toggler hamburger hamburger--collapse float-right" type="button"
-                            aria-label="Menu"
-                            aria-controls="navigation" data-toggle="collapse" data-target="#navbarResponsive">
-                        <span class="hamburger-box">
-                            <span class="hamburger-inner"></span>
-                        </span>
-                        <span class="menu-title">Menü</span>
-                    </button>
+                    <div class="nav-bars">
+                        <div class="collapse navbar-toggleable" id="navbarResponsive">
+                            <f:render partial="Navigation/Main" arguments="{_all}"/>
+                        </div>
+
+                        <f:render partial="SearchNav" />
+
+                        <div class="nav-right">
+                            <div class="search" data-toggle="collapse" data-target="#collapseSearch">
+                                <i class="fa fa-search"></i>
+                            </div>
+                            <button class="navbar-toggler hamburger hamburger--collapse float-right" type="button"
+                                    aria-label="Menu"
+                                    aria-controls="navigation" data-toggle="collapse" data-target="#navbarResponsive">
+                                <span class="hamburger-box">
+                                    <span class="hamburger-inner"></span>
+                                </span>
+                                <span class="menu-title">Menü</span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </nav>
-</header>
+            </nav>
+        </header>
 
-<section class="slider">
-    <f:cObject typoscriptObjectPath="lib.slider"/>
-</section>
-
-<!-- get Content -->
-<f:render section="body"/>
-
+        <section class="slider">
+            <f:cObject typoscriptObjectPath="lib.slider"/>
+        </section>
+        <div data-barba-scroll></div>
+        <!-- get Content -->
+        <f:render section="body"/>
+    </div>
+    <div class="barba-overlay"></div>
+</div>
 <!-- Footer -->
 <footer id="bottom">
     <div class="container">

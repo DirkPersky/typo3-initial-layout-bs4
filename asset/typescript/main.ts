@@ -1,6 +1,8 @@
 import * as bootstrap from 'bootstrap';
 import Fancybox from './fancybox/fancybox';
 import Animate from './waypoints/animate';
+import BarbaJS from './module/barba';
+
 // @ts-ignore
 window.jQuery = jQuery;
 
@@ -20,6 +22,8 @@ class Init {
             new Animate();
             // load old JS Files
             me.loadtemplates();
+            // BarbaJS
+            new BarbaJS();
         });
     }
     /**
