@@ -27,4 +27,3 @@ $.fn.dropDownMenu = function(){
     });
 };
 
-$('.nav-inline .dropdown').dropDownMenu();

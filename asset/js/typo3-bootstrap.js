@@ -26,6 +26,3 @@ $.fn.navigationBar = function() {
         });
     });
 };
-
-$('#navbarResponsive,#collapseSearch').navigationBar();
-

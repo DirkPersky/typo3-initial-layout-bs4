@@ -45,6 +45,7 @@
     "webpack-cli": "latest"
   },
   "dependencies": {
+    "@barba/core": "^2.9.6",
     "@fancyapps/fancybox": "latest",
     "@fortawesome/fontawesome-free": "latest",
     "bootstrap": "latest",
