@@ -1,5 +1,11 @@
 class StatemanagerClass {
-    private callbacks:array = [];
+    private callbacks:any;
+    private status:boolean;
+
+    constructor() {
+        this.callbacks = [];
+        this.status = false;
+    }
 
     attach(id:string, callback: ()=>any ){
         // params exist
@@ -20,14 +26,27 @@ class StatemanagerClass {
                 fnc: callback,
             });
         }
+        // run if not done yer
+        if(this.status){
+            this.run({
+                name: id,
+                fnc: callback,
+            });
+        }
     }
     // run Statemanager Function
     call(){
         this.callbacks.map((callback:any, index:number)=>{
-            callback.fnc();
+            this.run(callback);
         });
-    }
 
+        this.status = true;
+    }
+    // run line
+    run(data:any){
+        data.fnc();
+        console.log(data.name);
+    }
 }
 
 (<any>window).Statemanager = new StatemanagerClass();

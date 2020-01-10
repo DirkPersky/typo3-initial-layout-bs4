@@ -4,12 +4,10 @@ import barba from '@barba/core';
 export default class BarbaJS {
     private overlay:any;
     private selector:string;
-    private handlers:any;
 
-    constructor(handlers: any) {
+    constructor() {
         this.selector = '#navigation > .navbar';
         this.overlay = jQuery('.barba-overlay');
-        this.handlers = handlers;
 
         var me = this;
         // init Barba with a default "opacity" transition
@@ -71,7 +69,7 @@ export default class BarbaJS {
 
         if(target && target.length > 0){
             setTimeout(() => {
-                position = target.offset().top - parseInt(jQuery(this.selector).outerHeight() || 0);
+                position = target.offset().top - parseInt(<any>(jQuery(this.selector).outerHeight() || 0));
 
                 jQuery('html, body').stop().animate({
                     scrollTop: position

@@ -1,6 +1,6 @@
 import * as bootstrap from 'bootstrap';
-import Fancybox from './components/fancybox';
-import Animate from './components/waypoints';
+import Fancybox from './modules/fancybox';
+import Animate from './modules/waypoints';
 import BarbaJS from './components/barba';
 import './components/statemanager';
 
@@ -16,16 +16,17 @@ class Init {
         // load Global Libs
         this.loadLibs();
         // bootstrap
-        jQuery(function ($:jQuery) {
+        jQuery(function ($) {
+            // init Fancybox
+            new Fancybox();
+            // Waypointmodules
+            new Animate();
             // load jQuery Functions Files
             me.loadtemplates();
             // BarbaJS
-            new BarbaJS([
-                // init Fancybox
-                new Fancybox(),
-                // Waypoint
-                new Animate(),
-            ]);
+            new BarbaJS();
+            // run Statemanager
+            (<any>window).Statemanager.call();
         });
     }
     /**
