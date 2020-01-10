@@ -45,9 +45,13 @@ class StatemanagerClass {
     // run line
     run(data:any){
         // run callback
-        data.fnc();
-        // call event
-        this.fireEvent(data.name);
+        try {
+            data.fnc();
+            // call event
+            this.fireEvent(data.name);
+        } catch (e) {
+            console.log(e);
+        }
     }
     // Event Handling
     fireEvent(name:string) {
