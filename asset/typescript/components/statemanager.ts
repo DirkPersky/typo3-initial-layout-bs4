@@ -44,9 +44,18 @@ class StatemanagerClass {
     }
     // run line
     run(data:any){
+        // run callback
         data.fnc();
-        console.log(data.name);
+        // call event
+        this.fireEvent(data.name);
     }
+    // Event Handling
+    fireEvent(name:string) {
+        var event = document.createEvent('Event');
+        event.initEvent(name, true, true);
+        // fire Event
+        document.dispatchEvent(event);
+    };
 }
 
 (<any>window).Statemanager = new StatemanagerClass();
