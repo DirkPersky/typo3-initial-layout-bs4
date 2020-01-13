@@ -1,16 +1,12 @@
-#onepage
+#css
 tt_content.gridelements_pi1.20.10.setup{
-  onepage <  lib.gridelements.defaultGridSetup
-  onepage {
+  css <  lib.gridelements.defaultGridSetup
+  css {
 
     # Render navigation using fluid
     cObject = FLUIDTEMPLATE
     cObject {
-      file = {$path.template}Private/Partial/gridelements/onepage.html
-
-      variables {
-        stdheader =< lib.stdheader
-      }
+      file = {$path.template}Private/Partial/gridelements/css.html
     }
 
     # Add the renderObj of the tab directly, this prevents the "csc-default"-wrap

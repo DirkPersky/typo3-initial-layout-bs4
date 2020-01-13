@@ -30,19 +30,23 @@
 
           <css type="array">
             <TCEforms type="array">
-              <label>CCS Background</label>
+              <label>CSS Eigenschaften</label>
               <config type="array">
                 <type>select</type>
                 <items type="array">
-                  <numIndex index="0" type="array"><numIndex index="0">Weiß</numIndex><numIndex index="1">bg-white</numIndex></numIndex>
-                  <numIndex index="1" type="array"><numIndex index="0">Grau</numIndex><numIndex index="1">bg-light</numIndex></numIndex>
-                  <numIndex index="2" type="array"><numIndex index="0">Dark</numIndex><numIndex index="1">bg-dark text-white</numIndex></numIndex>
-                  <numIndex index="3" type="array"><numIndex index="0">Blau</numIndex><numIndex index="1">bg-primary text-white</numIndex></numIndex>
-                  <numIndex index="4" type="array"><numIndex index="0">Grün</numIndex><numIndex index="1">bg-success text-white</numIndex></numIndex>
-                  <numIndex index="5" type="array"><numIndex index="0">Trenner</numIndex><numIndex index="1">bg-devider</numIndex></numIndex>
+                  <numIndex index="0" type="array"><numIndex index="0">BG: Weiß</numIndex><numIndex index="1">bg-white</numIndex></numIndex>
+                  <numIndex index="1" type="array"><numIndex index="0">BG: Grau</numIndex><numIndex index="1">bg-light</numIndex></numIndex>
+                  <numIndex index="2" type="array"><numIndex index="0">BG: Dark</numIndex><numIndex index="1">bg-dark</numIndex></numIndex>
+                  <numIndex index="3" type="array"><numIndex index="0">BG: Success</numIndex><numIndex index="1">bg-success</numIndex></numIndex>
+                  <numIndex index="4" type="array"><numIndex index="0">BG: Primary</numIndex><numIndex index="1">bg-primary</numIndex></numIndex>
+                  <numIndex index="5" type="array"><numIndex index="0">Text: Weiß</numIndex><numIndex index="1">text-white</numIndex></numIndex>
+                  <numIndex index="6" type="array"><numIndex index="0">Text: Dark</numIndex><numIndex index="1">text-dark</numIndex></numIndex>
+                  <numIndex index="7" type="array"><numIndex index="0">Text: Success</numIndex><numIndex index="1">text-success</numIndex></numIndex>
+                  <numIndex index="8" type="array"><numIndex index="0">Text: Primary</numIndex><numIndex index="1">text-primary</numIndex></numIndex>
                 </items>
+                <maxitems>5</maxitems>
+                <size>5</size>
               </config>
-              <onChange>reload</onChange>
             </TCEforms>
           </css>
 
@@ -55,7 +59,6 @@
                 <eval>trim</eval>
                 <default></default>
               </config>
-              <displayCond>FIELD:css:=:bg-devider</displayCond>
             </TCEforms>
           </inlinecss>
 
