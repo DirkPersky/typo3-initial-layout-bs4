@@ -1,49 +1,53 @@
 class StatemanagerClass {
-    private callbacks:any;
-    private status:boolean;
+    private callbacks: any;
+    private status: boolean;
 
     constructor() {
         this.callbacks = [];
         this.status = false;
     }
 
-    attach(id:string, callback: ()=>any ){
+    attach(id: string, callback: () => any) {
         // params exist
-        if(!id || !callback) return;
+        if (!id || !callback) return;
         // is already in handler
-        let found:boolean = false;
-        this.callbacks.map((_obj:any) => {
-            if(_obj.name == id) {
+        let found: boolean = false;
+        this.callbacks.map((_obj: any) => {
+            if (_obj.name == id) {
                 found = true;
                 // override Function
                 _obj.fnc = callback;
             }
         });
         // if not add new callback
-        if(!found) {
+        if (!found) {
             this.callbacks.push({
                 name: id,
                 fnc: callback,
             });
         }
         // run if not done yer
-        if(this.status){
+        if (this.status) {
             this.run({
                 name: id,
                 fnc: callback,
             });
         }
     }
-    // run Statemanager Function
-    call(){
-        this.callbacks.map((callback:any, index:number)=>{
-            this.run(callback);
-        });
 
-        this.status = true;
+    // run Statemanager Function
+    call() {
+        setTimeout(() => {
+            this.callbacks.map((callback: any, index: number) => {
+                this.run(callback);
+            });
+
+            this.status = true;
+        }, 500);
     }
+
     // run line
-    run(data:any){
+    run(data: any) {
         // run callback
         try {
             data.fnc();
@@ -53,8 +57,9 @@ class StatemanagerClass {
             console.log(e);
         }
     }
+
     // Event Handling
-    fireEvent(name:string) {
+    fireEvent(name: string) {
         var event = document.createEvent('Event');
         event.initEvent(name, true, true);
         // fire Event

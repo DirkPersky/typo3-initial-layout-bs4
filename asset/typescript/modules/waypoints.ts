@@ -6,24 +6,6 @@ interface JQuery {
 export default class Animate {
     constructor(){
         this.loadLibs();
-        (<any>window).Statemanager.attach('waypoints-init',()=> {
-            /**
-             * Aniamtion CSS on Scroll
-             */
-            jQuery('.animated-hide').map(function (element: any) {
-                jQuery(element).addClass('animated');
-                // @ts-ignore
-                jQuery(element).waypoint(function (direction: any) {
-                    if (direction == 'down') {
-                        // @ts-ignore
-                        this.adapter.$element.removeClass('animated-hide')
-                    }
-                }, {
-                    triggerOnce: true,
-                    offset: '90%' // Way to top of Page
-                });
-            });
-        });
     }
     /**
      * Load Static Libs
