@@ -1,0 +1,20 @@
+##################
+### PWA Config ###
+##################
+page.headerData.102 = COA
+page.headerData.102 {
+    10 = COA
+    10 {
+        # Manifest generator: https://app-manifest.firebaseapp.com/
+
+        10 = TEXT
+        10.value = {$path.template}Public/service-worker.js
+        10.noTrimWrap =  | data-worker="|"|
+
+        20 = TEXT
+        20.value = {$path.template}Public/manifest.json
+        20.noTrimWrap = | href="|"|
+
+        wrap =  <link rel="manifest" |>
+    }
+}
