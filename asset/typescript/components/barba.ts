@@ -27,10 +27,12 @@ export default class BarbaJS {
                         done();
                     }
                 },
-                enter: function(){
+                enter: function(data:any){
                     jQuery('html, body').animate({
                         scrollTop: 0
                     }, 10);
+                    // active Navigation
+                    me.markActiveNav(data.trigger);
                 },
                 afterEnter: function (data:any) {
                     if(me.overlay.length > 0) me.overlay.removeClass('show');
@@ -47,6 +49,16 @@ export default class BarbaJS {
         this.powermail();
         // init handlers
         (<any>window).Statemanager.call();
+    }
+
+    markActiveNav(trigger:any){
+        var link = jQuery(trigger),
+            parent = link.parent();
+
+        if(parent.is('li')){
+            link.parents('ul').find('li').removeClass('active');
+            parent.addClass('active');
+        }
     }
     
     powermail(){
