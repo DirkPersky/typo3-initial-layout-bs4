@@ -10,6 +10,14 @@
       font-weight: 300;
     }
 
+    .error.help-block {
+      @extend .alert;
+      @extend .alert-danger;
+
+      display: inline-block;
+      margin-top: .25rem;
+    }
+
     .frame-type-textmedia {
       padding-left: 1.25rem;
     }
