@@ -1,0 +1,127 @@
+// main: ../style.scss
+.frame-type-form_formframework {
+  form {
+    background-color: theme-color('light');
+    padding:  1rem;
+    position: relative;
+    box-shadow: 1px 1px 3px #999;
+
+    h2,legend {
+      font-weight: 300;
+    }
+
+    .frame-type-textmedia {
+      padding-left: 1.25rem;
+    }
+
+    .btn-cancel {
+      @include button-variant(darken(theme-color('light'), 10%), darken(theme-color('light'), 10%));
+    }
+  }
+}
+
+/**
+ * Form Animation
+ */
+.frame-type-form_formframework {
+  padding: 1rem 1rem;
+  margin: 0 -1rem;
+
+  overflow: visible;
+  position: relative;
+
+  form {
+    position: relative;
+
+    .btn-group {
+      .fas {
+        display: none;
+      }
+    }
+
+    &.sending {
+      .btn-group.next {
+        .fas {
+          display: inline-block;
+        }
+      }
+    }
+
+    &.revert {
+      .btn-group.previous {
+        .fas {
+          display: inline-block;
+        }
+      }
+    }
+
+    &.prev,
+    &.next {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      width: calc(100% - 2rem);
+
+      margin: 1rem;
+
+      animation-name: next-form;
+      animation-duration: 1s;
+    }
+
+    &.prev {
+      animation-name: prev-form;
+    }
+
+    &.current {
+      opacity: 0;
+
+      &.left {
+        animation-duration: 1s;
+        animation-name: current-left;
+      }
+
+      &.right {
+        animation-duration: 1s;
+        animation-name: current-right;
+      }
+    }
+  }
+}
+@keyframes next-form {
+  0% {
+    left: 100%;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    left: 0rem;
+  }
+}
+@keyframes prev-form {
+  0% {
+    right: 100%;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    right: 0rem;
+  }
+}
+@keyframes current-left {
+  0% {
+    right: 0rem;
+    opacity: 1;
+  }
+  100% {
+    right: 100%;
+  }
+}
+@keyframes current-right {
+  0% {
+    left: 0rem;
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+  }
+}

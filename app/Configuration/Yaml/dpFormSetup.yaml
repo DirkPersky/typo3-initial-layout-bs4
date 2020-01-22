@@ -1,0 +1,22 @@
+TYPO3:
+  CMS:
+    Form:
+      persistenceManager:
+        allowedExtensionPaths:
+          10: fileadmin/Mysite4/app/Resources/Private/Forms/
+        allowSaveToExtensionPaths: true
+        allowDeleteFromExtensionPaths: true
+
+      prototypes:
+        dpform:
+          __inheritances:
+            10: 'TYPO3.CMS.Form.prototypes.standard'
+          formElementsDefinition:
+            Form:
+              renderingOptions:
+                templateRootPaths:
+                  100: 'fileadmin/Mysite4/app/Resources/Private/Template/forms/'
+                partialRootPaths:
+                  100: 'fileadmin/Mysite4/app/Resources/Private/Partial/forms/'
+                layoutRootPaths:
+                  100: 'fileadmin/Mysite4/app/Resources/Private/Layout/forms/'

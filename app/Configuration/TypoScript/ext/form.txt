@@ -1,0 +1,8 @@
+
+plugin.tx_form.settings.yamlConfigurations {
+    100 = fileadmin/dpdvelop/Configuration/Yaml/dpFormSetup.yaml
+}
+
+module.tx_form.settings.yamlConfigurations {
+    100 = fileadmin/dpdvelop/Configuration/Yaml/dpFormSetup.yaml
+}

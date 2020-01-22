@@ -19,6 +19,7 @@ page = PAGE
 	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/news.rss.txt">
 	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/table.txt">
 	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/pwa.txt">
+	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/form.txt">
 
 #######################
 ### GO LIVE Scripte ###

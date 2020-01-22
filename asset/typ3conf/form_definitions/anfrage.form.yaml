@@ -1,0 +1,187 @@
+
+renderingOptions:
+  submitButtonLabel: Submit
+identifier: anfrage
+label: Anfrage
+type: Form
+prototypeName: dpform
+finishers:
+  -
+    options:
+      subject: 'Deine Nachricht:  {text-2}'
+      recipientAddress: info@dp-dvelop.de
+      recipientName: 'DP Dvelop'
+      senderAddress: '{email}'
+      senderName: '{name}'
+      replyToAddress: ''
+      carbonCopyAddress: ''
+      blindCarbonCopyAddress: ''
+      format: html
+      attachUploads: true
+      translation:
+        language: ''
+    identifier: EmailToReceiver
+  -
+    options:
+      message: ''
+      contentElementUid: '151'
+    identifier: Confirmation
+renderables:
+  -
+    renderingOptions:
+      previousButtonLabel: zurück
+      nextButtonLabel: Weiter
+    type: Page
+    identifier: page-2
+    label: 'Deine Nachricht'
+    renderables:
+      -
+        type: Fieldset
+        identifier: fieldset-1
+        label: ''
+        renderables:
+          -
+            defaultValue: ''
+            type: Text
+            identifier: text-2
+            label: Betreff
+            properties:
+              fluidAdditionalAttributes:
+                placeholder: 'Dein Anliegen'
+          -
+            defaultValue: ''
+            type: Textarea
+            identifier: textarea-1
+            label: 'Deine Nachricht'
+            properties:
+              fluidAdditionalAttributes:
+                placeholder: 'Deine Nachricht'
+  -
+    renderingOptions:
+      previousButtonLabel: zurück
+      nextButtonLabel: weiter
+    identifier: page-1
+    label: 'Contact Form'
+    type: Page
+    renderables:
+      -
+        type: Fieldset
+        identifier: fieldset-2
+        label: ''
+        renderables:
+          -
+            type: GridRow
+            identifier: gridrow-2
+            label: 'Grid: Row'
+            renderables:
+              -
+                properties:
+                  options:
+                    Herr: Herr
+                    Frau: Frau
+                  prependOptionLabel: Anrede
+                  fluidAdditionalAttributes:
+                    required: required
+                  gridColumnClassAutoConfiguration:
+                    viewPorts:
+                      sm:
+                        numbersOfColumnsToUse: '6'
+                      lg:
+                        numbersOfColumnsToUse: '6'
+                      md:
+                        numbersOfColumnsToUse: '6'
+                      xs:
+                        numbersOfColumnsToUse: '12'
+                type: SingleSelect
+                identifier: singleselect-1
+                label: Anrede
+                validators:
+                  -
+                    identifier: NotEmpty
+          -
+            type: GridRow
+            identifier: gridrow-1
+            label: 'Grid: Row'
+            renderables:
+              -
+                defaultValue: ''
+                identifier: name
+                label: Vorname
+                type: Text
+                properties:
+                  fluidAdditionalAttributes:
+                    required: required
+                    placeholder: 'Vorname*'
+                  gridColumnClassAutoConfiguration:
+                    viewPorts:
+                      sm:
+                        numbersOfColumnsToUse: '6'
+                      lg:
+                        numbersOfColumnsToUse: '6'
+                      md:
+                        numbersOfColumnsToUse: '6'
+                      xs:
+                        numbersOfColumnsToUse: '12'
+                validators:
+                  -
+                    identifier: NotEmpty
+              -
+                defaultValue: ''
+                type: Text
+                identifier: text-1
+                label: Nachname
+                properties:
+                  fluidAdditionalAttributes:
+                    placeholder: 'Nachname*'
+                    required: required
+                  gridColumnClassAutoConfiguration:
+                    viewPorts:
+                      sm:
+                        numbersOfColumnsToUse: '6'
+                      lg:
+                        numbersOfColumnsToUse: '6'
+                      md:
+                        numbersOfColumnsToUse: '6'
+                      xs:
+                        numbersOfColumnsToUse: '12'
+                validators:
+                  -
+                    identifier: NotEmpty
+          -
+            defaultValue: ''
+            identifier: email
+            label: E-Mail
+            type: Text
+            properties:
+              fluidAdditionalAttributes:
+                placeholder: 'E-Mail*'
+                required: required
+            validators:
+              -
+                identifier: NotEmpty
+              -
+                identifier: EmailAddress
+          -
+            type: Checkbox
+            identifier: checkbox-1
+            label: 'Ich stimme zu, dass meine Angaben aus dem Formular zur Beantwortung meiner Anfrage erhoben und verarbeitet werden. Sie können Ihre Einwilligung jederzeit für die Zukunft per E-Mail an info@dp-dvelop.de widerrufen.'
+            properties:
+              fluidAdditionalAttributes:
+                required: required
+              elementDescription: ''
+            validators:
+              -
+                identifier: NotEmpty
+          -
+            label: 'Content element'
+            properties:
+              contentElementUid: '150'
+            type: ContentElement
+            identifier: contentelement-1
+  -
+    renderingOptions:
+      previousButtonLabel: zurück
+      nextButtonLabel: absenden
+    identifier: summarypage
+    label: Zusammenfassung
+    type: SummaryPage
