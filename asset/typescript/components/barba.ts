@@ -60,34 +60,39 @@ export default class BarbaJS {
             parent.addClass('active');
         }
     }
-    
+
     powermail(){
         if(typeof (<any>window).PowermailForm == 'undefined') return;
         var t = new (<any>window).PowermailForm(jQuery);
         t.initialize()
     }
 
-    barbaScroll(trigger:any) {
+    barbaScroll(trigger: any) {
         var href = trigger.href,
-            target:any = false,
+            target: any = false,
             position: any = 0;
-        // default scroll element exist
-        if(href.indexOf('#') != -1){
-            target = jQuery('#'+href.split("#")[1]);
-        } else {
-            // try to find default scroll position
-            target = jQuery('[data-barba-scroll]');
-        }
 
-        if(target && target.length > 0){
-            setTimeout(() => {
+        jQuery('body').removeClass('noscroll');
+
+        setTimeout(() => {
+
+            // default scroll element exist
+            if (href.indexOf('#') != -1) {
+                target = jQuery('#' + href.split("#")[1]);
+            } else {
+                // try to find default scroll position
+                target = jQuery('[data-barba-scroll]');
+            }
+
+            if (target && target.length > 0) {
                 position = target.offset().top - parseInt(<any>(jQuery(this.selector).outerHeight() || 0));
 
                 jQuery('html, body').stop().animate({
                     scrollTop: position
                 }, 1500);
-            }, 500);
-        }
+            }
+        }, 500);
+
     }
 
     prevent(data:any) {
