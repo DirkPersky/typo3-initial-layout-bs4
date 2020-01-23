@@ -1,4 +1,8 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:formvh="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers" data-namespace-typo3-fluid="true">
+<html
+		xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+		xmlns:formvh="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers"
+		xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+		data-namespace-typo3-fluid="true">
 <nav class="form-navigation">
 	<div class="btn-toolbar" role="toolbar">
 		<div class="btn-group" role="group">
@@ -27,6 +31,10 @@
 				</f:else>
 			</f:if>
 		</div>
+	</div>
+	<div class="toolbar--steps">
+		<span>{v:math.sum(a:'{form.currentPage.index}',b:1)}</span>
+		<span>{form.pages -> f:count()}</span>
 	</div>
 </nav>
 </html>

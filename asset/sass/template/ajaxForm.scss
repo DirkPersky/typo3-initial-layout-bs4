@@ -1,5 +1,6 @@
 // main: ../style.scss
 .frame-type-form_formframework {
+  .ajax-confirm,
   form {
     background-color: theme-color('light');
     padding:  1rem;
@@ -38,6 +39,7 @@
   overflow: visible;
   position: relative;
 
+  .ajax-confirm,
   form {
     position: relative;
 
@@ -91,6 +93,30 @@
       &.right {
         animation-duration: 1s;
         animation-name: current-right;
+      }
+    }
+  }
+
+  .form-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .toolbar--steps {
+      font-size: .9rem;
+      opacity: .7;
+
+      span {
+        display: inline-block;
+
+        + span {
+          &:before {
+            content: '/';
+            display: inline-block;
+
+            padding: 0 .25rem;
+          }
+        }
       }
     }
   }
