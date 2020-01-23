@@ -43,6 +43,7 @@
                   <numIndex index="6" type="array"><numIndex index="0">Text: Dark</numIndex><numIndex index="1">text-dark</numIndex></numIndex>
                   <numIndex index="7" type="array"><numIndex index="0">Text: Success</numIndex><numIndex index="1">text-success</numIndex></numIndex>
                   <numIndex index="8" type="array"><numIndex index="0">Text: Primary</numIndex><numIndex index="1">text-primary</numIndex></numIndex>
+                  <numIndex index="9" type="array"><numIndex index="0">BG: Full Overlay</numIndex><numIndex index="1">bg-op</numIndex></numIndex>
                 </items>
                 <maxitems>5</maxitems>
                 <size>5</size>
