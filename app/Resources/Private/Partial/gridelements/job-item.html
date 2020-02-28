@@ -13,7 +13,7 @@
             <f:else>,"logo": "<f:uri.image src="/fileadmin/Mysite4/app/Resources/Public/img/layout/logo.svg" absolute="1"/>"</f:else>
             </f:if>
         },
-        "employmentType": "{f:if(condition:'{data.flexform_filter} == "vollzeit"',then:'FULL_TIME', else:'PART_TIME')}",
+        "employmentType": [<f:for each="{v:iterator.explode(content: '{data.flexform_filter}', glue: ',')}" as="worktime" iteration="workiterator">"{f:if(condition:'{worktime} == "vollzeit"',then:'FULL_TIME', else:'PART_TIME')}"<f:if condition="!{workiterator.isLast}">,</f:if></f:for>],
         "datePosted": "<f:format.date format="Y-m-d">{data.tstamp}</f:format.date>",
         "validThrough": "",
         <f:if condition="{data.flexform_location_zip}">"jobLocation": {

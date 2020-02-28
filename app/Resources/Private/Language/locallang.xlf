@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2019-08-26T13:40:10Z" product-name="webkon">
+		<header/>
+		<body>
+            <trans-unit id="teilzeit" approved="yes">
+                <source>Teilzeit</source>
+            </trans-unit>
+            <trans-unit id="vollzeit" approved="yes">
+                <source>Vollzeit</source>
+            </trans-unit>
+
+            <trans-unit id="job" approved="yes">
+                <source>view job</source>
+            </trans-unit>
+
+		</body>
+	</file>
+</xliff>
