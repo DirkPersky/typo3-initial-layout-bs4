@@ -6,13 +6,13 @@ export default class BarbaJS {
     private selector:string;
 
     constructor() {
-        this.selector = '#navigation > .navbar';
+        this.selector = '#navigation #navbarResponsive .navbar-nav';
         this.overlay = jQuery('.barba-overlay');
 
         var me = this;
         // init Barba with a default "opacity" transition
         barba.init({
-            timeout: 5000,
+            timeout: 8000,
             prevent: (data:any) => this.prevent(data),
             transitions: [{
                 name: 'legacy-example',
@@ -53,11 +53,12 @@ export default class BarbaJS {
 
     markActiveNav(trigger:any){
         var link = jQuery(trigger),
-            parent = link.parent();
+            parent = link.parents('li');
 
         if(parent.is('li')){
-            link.parents('ul').find('li').removeClass('active');
-            parent.addClass('active');
+            link.parents('.navbar-nav').find('li').removeClass('active');
+            $(this.selector).find('li').removeClass('active');
+            if(parent.length > 0 ) parent.addClass('active');
         }
     }
 
@@ -96,6 +97,7 @@ export default class BarbaJS {
     }
 
     prevent(data:any) {
+        if(typeof data.el.dataset.noAjax != 'undefined') return true;
         return data.event.defaultPrevented;
     }
 }
