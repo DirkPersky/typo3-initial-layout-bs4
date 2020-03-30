@@ -40,6 +40,20 @@ export default class BarbaJS {
                 }
             }]
         });
+        barba.hooks.afterLeave((data:any) => {
+            me.afterLeave(data);
+        });
+    }
+
+    afterLeave(data:any){
+        // Set <body> classes for "next" page
+        var nextHtml = data.next.html,
+            response = nextHtml.replace(/(<\/?)body( .+?)?>/gi, '$1notbody$2>', nextHtml),
+            body = jQuery(response).filter('notbody'),
+            bodyClass:any = body.attr('class'),
+            bodyID:any = body.attr('id');
+
+        jQuery("body").attr("class", bodyClass).attr("id", bodyID);
     }
 
     afterEnter(data:any) {
