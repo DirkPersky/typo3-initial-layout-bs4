@@ -33,3 +33,28 @@ window.Statemanager.attach('dropdown-menu', function(){
      */
     $('.nav-inline .dropdown').dropDownMenu();
 });
+
+
+window.Statemanager.attach('dropdown-menu-position', function () {
+    /**
+     * Position dropdown left/right
+     */
+    $('.nav-item.dropdown').on('mouseenter', function () {
+        var dropdownList = $(this).find('.dropdown-wrap'),
+            dropdownWidth = dropdownList.width(),
+            dropdownOffset = dropdownList.offset(),
+            offsetLeft = dropdownOffset.left,
+            docWidth = $(window).width(),
+            isDropdownVisible = (offsetLeft + dropdownWidth <= docWidth);
+
+        if (!isDropdownVisible) {
+            dropdownList.addClass('pull-right');
+        }
+    });
+
+    $('.nav-item.dropdown').on('mouseleave', function () {
+        var dropdownList = $(this).find('.dropdown-wrap');
+
+        dropdownList.removeClass('pull-right');
+    });
+});

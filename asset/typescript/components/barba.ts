@@ -14,6 +14,15 @@ export default class BarbaJS {
         barba.init({
             timeout: 8000,
             prevent: (data:any) => this.prevent(data),
+            requestError: (trigger:any, action:string, url:string, response:any) => {
+                if (action === 'click') {
+                    setTimeout(() => {
+                        barba.force(url);
+                    }, 100); // TImeout needed to make sure the force is not aborted
+                }
+
+                return false;
+            },
             transitions: [{
                 name: 'legacy-example',
                 leave: function (data:any) {
