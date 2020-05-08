@@ -73,17 +73,3 @@ page.10 {
 	  pagets__2.value = {$path.template}Private/Template/root.html
 	}
 }
-
-
-## RTE Liste always add class
-lib.parseFunc_RTE {
-  externalBlocks := addToList(ul)
-  externalBlocks {
-    ul.stripNL = 1
-    ul.callRecursive = 1
-    ul.callRecursive.tagStdWrap.HTMLparser = 1
-    ul.callRecursive.tagStdWrap.HTMLparser.tags.ul {
-      fixAttrib.class.default = csc-bulletlist
-    }
-  }
-}
