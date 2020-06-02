@@ -1,70 +1,101 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <T3DataStructure>
-  <meta type="array">
-    <langDisable>1</langDisable>
-  </meta>
-  <sheets>
-    <general>
-      <ROOT type="array">
-        <TCEforms>
-          <sheetTitle>Onepage Optionen</sheetTitle>
-        </TCEforms>
-        <el type="array">
+    <meta type="array">
+        <langDisable>1</langDisable>
+    </meta>
+    <sheets>
+        <general>
+            <ROOT type="array">
+                <TCEforms>
+                    <sheetTitle>Onepage Optionen</sheetTitle>
+                </TCEforms>
+                <el type="array">
 
-          <image type="array">
-            <TCEforms type="array">
-              <label>Paralax Bild</label>
-              <config type="array">
-                <type>group</type>
-                <internal_type>file</internal_type>
-                <allowed>jpg,gif,png</allowed>
-                <max_size>2000</max_size>
-                <uploadfolder>uploads/tx_gridelements</uploadfolder>
-                <show_thumbs>1</show_thumbs>
-                <size>1</size>
-                <minitems>0</minitems>
-                <maxitems>1</maxitems>
-              </config>
-            </TCEforms>
-          </image>
+                    <image type="array">
+                        <TCEforms type="array">
+                            <label>Paralax Bild</label>
+                            <config type="array">
+                                <type>group</type>
+                                <internal_type>file</internal_type>
+                                <allowed>jpg,gif,png</allowed>
+                                <max_size>2000</max_size>
+                                <uploadfolder>uploads/tx_gridelements</uploadfolder>
+                                <show_thumbs>1</show_thumbs>
+                                <size>1</size>
+                                <minitems>0</minitems>
+                                <maxitems>1</maxitems>
+                            </config>
+                        </TCEforms>
+                    </image>
 
-          <css type="array">
-            <TCEforms type="array">
-              <label>CSS Eigenschaften</label>
-              <config type="array">
-                <type>select</type>
-                <items type="array">
-                  <numIndex index="0" type="array"><numIndex index="0">BG: Weiß</numIndex><numIndex index="1">bg-white</numIndex></numIndex>
-                  <numIndex index="1" type="array"><numIndex index="0">BG: Grau</numIndex><numIndex index="1">bg-light</numIndex></numIndex>
-                  <numIndex index="2" type="array"><numIndex index="0">BG: Dark</numIndex><numIndex index="1">bg-dark</numIndex></numIndex>
-                  <numIndex index="3" type="array"><numIndex index="0">BG: Success</numIndex><numIndex index="1">bg-success</numIndex></numIndex>
-                  <numIndex index="4" type="array"><numIndex index="0">BG: Primary</numIndex><numIndex index="1">bg-primary</numIndex></numIndex>
-                  <numIndex index="5" type="array"><numIndex index="0">Text: Weiß</numIndex><numIndex index="1">text-white</numIndex></numIndex>
-                  <numIndex index="6" type="array"><numIndex index="0">Text: Dark</numIndex><numIndex index="1">text-dark</numIndex></numIndex>
-                  <numIndex index="7" type="array"><numIndex index="0">Text: Success</numIndex><numIndex index="1">text-success</numIndex></numIndex>
-                  <numIndex index="8" type="array"><numIndex index="0">Text: Primary</numIndex><numIndex index="1">text-primary</numIndex></numIndex>
-                  <numIndex index="9" type="array"><numIndex index="0">BG: Full Overlay</numIndex><numIndex index="1">bg-op</numIndex></numIndex>
-                </items>
-                <maxitems>5</maxitems>
-                <size>5</size>
-              </config>
-            </TCEforms>
-          </css>
+                    <css type="array">
+                        <TCEforms type="array">
+                            <label>CSS Eigenschaften</label>
+                            <config type="array">
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">BG: Weiß</numIndex>
+                                        <numIndex index="1">bg-white</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">BG: Grau</numIndex>
+                                        <numIndex index="1">bg-light</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">BG: Dark</numIndex>
+                                        <numIndex index="1">bg-dark</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">BG: Success</numIndex>
+                                        <numIndex index="1">bg-success</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4" type="array">
+                                        <numIndex index="0">BG: Primary</numIndex>
+                                        <numIndex index="1">bg-primary</numIndex>
+                                    </numIndex>
+                                    <numIndex index="5" type="array">
+                                        <numIndex index="0">Text: Weiß</numIndex>
+                                        <numIndex index="1">text-white</numIndex>
+                                    </numIndex>
+                                    <numIndex index="6" type="array">
+                                        <numIndex index="0">Text: Dark</numIndex>
+                                        <numIndex index="1">text-dark</numIndex>
+                                    </numIndex>
+                                    <numIndex index="7" type="array">
+                                        <numIndex index="0">Text: Success</numIndex>
+                                        <numIndex index="1">text-success</numIndex>
+                                    </numIndex>
+                                    <numIndex index="8" type="array">
+                                        <numIndex index="0">Text: Primary</numIndex>
+                                        <numIndex index="1">text-primary</numIndex>
+                                    </numIndex>
+                                    <numIndex index="9" type="array">
+                                        <numIndex index="0">BG: Full Overlay</numIndex>
+                                        <numIndex index="1">bg-op</numIndex>
+                                    </numIndex>
+                                </items>
+                                <maxitems>5</maxitems>
+                                <size>5</size>
+                            </config>
+                        </TCEforms>
+                    </css>
 
-          <inlinecss type="array">
-            <TCEforms type="array">
-              <label>CSS-Inline</label>
-              <config type="array">
-                <type>input</type>
-                <size>250</size>
-                <eval>trim</eval>
-                <default></default>
-              </config>
-            </TCEforms>
-          </inlinecss>
+                    <inlinecss type="array">
+                        <TCEforms type="array">
+                            <label>CSS-Inline</label>
+                            <config type="array">
+                                <type>input</type>
+                                <size>250</size>
+                                <eval>trim</eval>
+                                <default></default>
+                            </config>
+                        </TCEforms>
+                    </inlinecss>
 
-        </el>
-      </ROOT>
-    </general>
-  </sheets>
+                </el>
+            </ROOT>
+        </general>
+    </sheets>
 </T3DataStructure>

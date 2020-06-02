@@ -192,7 +192,7 @@ plugin.tx_rlmplanguagedetection_pi1 {
 
 #########################
 ### FORCE DE IN LINKS ###
-###  obsolates in 9.5 ###
+###  obsolated in 9.5 ###
 #########################
 #config {
 #  defaultGetVars {

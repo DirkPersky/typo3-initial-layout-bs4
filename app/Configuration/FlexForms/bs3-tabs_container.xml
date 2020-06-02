@@ -1,44 +1,61 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <T3DataStructure>
-  <meta type="array">
-		<langDisable>1</langDisable>
-	</meta>
-	<sheets>
-		<general>
-			<ROOT type="array">
-				<TCEforms>
-					<sheetTitle>Einstellungen</sheetTitle>
-				</TCEforms>
-				<el type="array">
-					<display_type type="array">
-						<TCEforms type="array">
-							<label>Aussehen</label>
-							<config type="array">
-								<type>select</type>
-                <items type="array">
-                  <numIndex index="0" type="array"><numIndex index="0">Accordion</numIndex><numIndex index="1">accordion</numIndex></numIndex>
-									<numIndex index="1" type="array"><numIndex index="0">Tabs</numIndex><numIndex index="1">nav-tabs</numIndex></numIndex>
-                  <numIndex index="2" type="array"><numIndex index="0">Pills</numIndex><numIndex index="1">nav-pills</numIndex></numIndex>
-								</items>
-								<default>accordion</default>
-							</config>
-						</TCEforms>
-					</display_type>
-					<switch_effect type="array">
-						<TCEforms type="array">
-							<label>Switch effekt</label>
-							<config type="array">
-								<type>select</type>
-								<items type="array">
-									<numIndex index="0" type="array"><numIndex index="0">Ohne</numIndex><numIndex index="1"></numIndex></numIndex>
-									<numIndex index="1" type="array"><numIndex index="0">Einblenden</numIndex><numIndex index="1">fade</numIndex></numIndex>
-								</items>
-								<default></default>
-							</config>
-						</TCEforms>
-					</switch_effect>
-				</el>
-			</ROOT>
-		</general>
-	</sheets>
+    <meta type="array">
+        <langDisable>1</langDisable>
+    </meta>
+    <sheets>
+        <general>
+            <ROOT type="array">
+                <TCEforms>
+                    <sheetTitle>Einstellungen</sheetTitle>
+                </TCEforms>
+                <el type="array">
+                    <display_type type="array">
+                        <TCEforms type="array">
+                            <label>Aussehen</label>
+                            <config type="array">
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">Accordion</numIndex>
+                                        <numIndex index="1">accordion</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">Tabs</numIndex>
+                                        <numIndex index="1">nav-tabs</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">Pills</numIndex>
+                                        <numIndex index="1">nav-pills</numIndex>
+                                    </numIndex>
+                                </items>
+                                <default>accordion</default>
+                            </config>
+                        </TCEforms>
+                    </display_type>
+                    <switch_effect type="array">
+                        <TCEforms type="array">
+                            <label>Switch effekt</label>
+                            <config type="array">
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">Ohne</numIndex>
+                                        <numIndex index="1"></numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">Einblenden</numIndex>
+                                        <numIndex index="1">fade</numIndex>
+                                    </numIndex>
+                                </items>
+                                <default></default>
+                            </config>
+                        </TCEforms>
+                    </switch_effect>
+                </el>
+            </ROOT>
+        </general>
+    </sheets>
 </T3DataStructure>
