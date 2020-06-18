@@ -1,0 +1,20 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers" lang="en"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+<div
+        class="css--element {f:if(condition:'{data.flexform_image}',then:'lazyload bg-op ')}{f:if(condition:'{data.flexform_css}',then:"{data.flexform_css -> v:format.replace(substring:',', replacement:' ')}")}{f:if(condition:'{data.space_before_class}',then:' css-space-before-{data.space_before_class}')}{f:if(condition:'{data.space_after_class}',then:' css-space-after-{data.space_after_class}')}"
+    {f:if(condition:'{data.flexform_inlinecss}',then:'style="{data.flexform_inlinecss}"')}
+    <f:if condition="{data.flexform_image}">
+        data-bgset="{f:uri.image(image: files.0, maxWidth: 480, cropVariant: mobile)} 480w, {f:uri.image(image: files.0, maxWidth: 992, cropVariant: tablet)}  992w, {f:uri.image(image: files.0, maxWidth: 1960, cropVariant: desktop)} 1960w'" data-sizes="auto"
+    </f:if>
+    >
+
+    <div class="fluid-container">
+        <f:for each="{children.1}" as="row" iteration="row_iteration">
+            <f:for each="{row}" as="child">
+                <f:cObject typoscriptObjectPath="tt_content.{child.data.CType}" data="{child.data}" table="tt_content" />
+            </f:for>
+        </f:for>
+    </div>
+</div>
+</html>

@@ -1,0 +1,9 @@
+<div class="{v:format.trim(content: "row {data.flexform_class} {data.flexform_valign} {f:if(condition:'{data.space_before_class}', then:'frame-space-before-{data.space_before_class}')} {f:if(condition:'{data.space_after_class}', then:'frame-space-after-{data.space_after_class}')}")}">
+<f:for each="{children.1}" as="row" iteration="row_iteration">
+    <div class="{v:format.trim(content:'{data.flexform_class_col{row_iteration.cycle}} {data.flexform_width_column_xs_{row_iteration.cycle}} {data.flexform_width_column_sm_{row_iteration.cycle}} {data.flexform_width_column_md_{row_iteration.cycle}} {data.flexform_width_column_lg_{row_iteration.cycle}} {data.flexform_width_column_xl_{row_iteration.cycle}} {data.flexform_visibility_col_{row_iteration.cycle}}')}">
+        <f:for each="{row}" as="child">
+            <f:cObject typoscriptObjectPath="tt_content.{child.data.CType}" data="{child.data}" table="tt_content" />
+        </f:for>
+    </div>
+</f:for>
+</div>

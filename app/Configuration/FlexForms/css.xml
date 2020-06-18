@@ -15,15 +15,79 @@
                         <TCEforms type="array">
                             <label>Paralax Bild</label>
                             <config type="array">
-                                <type>group</type>
-                                <internal_type>file</internal_type>
-                                <allowed>jpg,gif,png</allowed>
-                                <max_size>2000</max_size>
-                                <uploadfolder>uploads/tx_gridelements</uploadfolder>
-                                <show_thumbs>1</show_thumbs>
-                                <size>1</size>
-                                <minitems>0</minitems>
+                                <type>inline</type>
                                 <maxitems>1</maxitems>
+
+                                <foreign_table>sys_file_reference</foreign_table>
+                                <foreign_field>uid_foreign</foreign_field>
+                                <foreign_sortby>sorting_foreign</foreign_sortby>
+                                <foreign_table_field>tablenames</foreign_table_field>
+                                <foreign_match_fields>
+                                    <fieldname>image</fieldname>
+                                </foreign_match_fields>
+                                <foreign_label>uid_local</foreign_label>
+                                <foreign_selector>uid_local</foreign_selector>
+                                <overrideChildTca>
+                                    <columns>
+                                        <uid_local>
+                                            <config>
+                                                <appearance>
+                                                    <elementBrowserType>file</elementBrowserType>
+                                                    <elementBrowserAllowed></elementBrowserAllowed>
+                                                </appearance>
+                                            </config>
+                                        </uid_local>
+                                    </columns>
+                                    <types>
+                                        <types index="0">
+                                            <showitem>--palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                                --palette--;;filePalette</showitem>
+                                        </types>
+                                        <types index="1">
+                                            <showitem>--palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                                --palette--;;filePalette</showitem>
+                                        </types>
+                                        <types index="2">
+                                            <showitem>--palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                                --palette--;;filePalette</showitem>
+                                        </types>
+                                        <types index="3">
+                                            <showitem>--palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.audioOverlayPalette;audioOverlayPalette,
+                                                --palette--;;filePalette</showitem>
+                                        </types>
+                                        <types index="4">
+                                            <showitem>--palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
+                                                --palette--;;filePalette</showitem>
+                                        </types>
+                                        <types index="5">
+                                            <showitem>--palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                                --palette--;;filePalette</showitem>
+                                        </types>
+                                    </types>
+                                </overrideChildTca>
+                                <filter>
+                                    <userFunc>TYPO3\CMS\Core\Resource\Filter\FileExtensionFilter->filterInlineChildren</userFunc>
+                                    <parameters>
+                                        <allowedFileExtensions></allowedFileExtensions>
+                                        <disallowedFileExtensions></disallowedFileExtensions>
+                                    </parameters>
+                                </filter>
+                                <appearance>
+                                    <useSortable>1</useSortable>
+                                    <headerThumbnail>
+                                        <field>uid_local</field>
+                                        <width>45</width>
+                                        <height>45c</height>
+                                    </headerThumbnail>
+                                    <enabledControls>
+                                        <info>0</info>
+                                        <new>0</new>
+                                        <dragdrop>0</dragdrop>
+                                        <sort>0</sort>
+                                        <hide>0</hide>
+                                        <delete>1</delete>
+                                    </enabledControls>
+                                </appearance>
                             </config>
                         </TCEforms>
                     </image>
@@ -33,7 +97,7 @@
                             <label>CSS Eigenschaften</label>
                             <config type="array">
                                 <type>select</type>
-                                <renderType>selectSingle</renderType>
+                                <renderType>selectMultipleSideBySide</renderType>
                                 <items type="array">
                                     <numIndex index="0" type="array">
                                         <numIndex index="0">BG: Weiß</numIndex>

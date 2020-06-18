@@ -34,7 +34,8 @@ lib.search.typolink {
 ########################
 ### Search Only Page ###
 ########################
-[globalVar = TSFE:type = 9718]
+
+[request.getQueryParams()['type'] == '9718']
   # https://docs.typo3.org/typo3cms/extensions/news/3.0.0/Main/Administration/Rss/Index.html
   config {
     xhtml_cleaning = none
@@ -42,6 +43,8 @@ lib.search.typolink {
     metaCharset = utf-8
     disablePrefixComment = 1
   }
+
+
 
   pageSearch = PAGE
   pageSearch {

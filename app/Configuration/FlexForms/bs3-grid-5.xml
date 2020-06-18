@@ -1197,6 +1197,10 @@
                                         <numIndex index="1">col-lg-12</numIndex>
                                     </numIndex>
                                     <numIndex index="12" type="array">
+                                        <numIndex index="0">auto</numIndex>
+                                        <numIndex index="1">col-lg-auto</numIndex>
+                                    </numIndex>
+                                    <numIndex index="12" type="array">
                                         <numIndex index="0">1/5</numIndex>
                                         <numIndex index="1">col-lg-2-4</numIndex>
                                     </numIndex>
@@ -1259,6 +1263,10 @@
                                     <numIndex index="11" type="array">
                                         <numIndex index="0">12/12</numIndex>
                                         <numIndex index="1">col-lg-12</numIndex>
+                                    </numIndex>
+                                    <numIndex index="12" type="array">
+                                        <numIndex index="0">auto</numIndex>
+                                        <numIndex index="1">col-lg-auto</numIndex>
                                     </numIndex>
                                     <numIndex index="12" type="array">
                                         <numIndex index="0">1/5</numIndex>
@@ -1325,6 +1333,10 @@
                                         <numIndex index="1">col-lg-12</numIndex>
                                     </numIndex>
                                     <numIndex index="12" type="array">
+                                        <numIndex index="0">auto</numIndex>
+                                        <numIndex index="1">col-lg-auto</numIndex>
+                                    </numIndex>
+                                    <numIndex index="12" type="array">
                                         <numIndex index="0">1/5</numIndex>
                                         <numIndex index="1">col-lg-2-4</numIndex>
                                     </numIndex>
@@ -1389,6 +1401,10 @@
                                         <numIndex index="1">col-lg-12</numIndex>
                                     </numIndex>
                                     <numIndex index="12" type="array">
+                                        <numIndex index="0">auto</numIndex>
+                                        <numIndex index="1">col-lg-auto</numIndex>
+                                    </numIndex>
+                                    <numIndex index="12" type="array">
                                         <numIndex index="0">1/5</numIndex>
                                         <numIndex index="1">col-lg-2-4</numIndex>
                                     </numIndex>
@@ -1451,6 +1467,10 @@
                                     <numIndex index="11" type="array">
                                         <numIndex index="0">12/12</numIndex>
                                         <numIndex index="1">col-lg-12</numIndex>
+                                    </numIndex>
+                                    <numIndex index="12" type="array">
+                                        <numIndex index="0">auto</numIndex>
+                                        <numIndex index="1">col-lg-auto</numIndex>
                                     </numIndex>
                                     <numIndex index="12" type="array">
                                         <numIndex index="0">1/5</numIndex>
