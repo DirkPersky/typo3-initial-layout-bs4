@@ -31,13 +31,13 @@
                                 <items>
                                     <numIndex index="0" type="array">
                                         <numIndex index="0">
-                                            LLL:/fileadmin/schroeder/Resources/Private/Language/locallang.xlf:teilzeit
+                                            LLL:/fileadmin/Mysite4/app/Resources/Private/Language/locallang.xlf:teilzeit
                                         </numIndex>
                                         <numIndex index="1">teilzeit</numIndex>
                                     </numIndex>
                                     <numIndex index="1" type="array">
                                         <numIndex index="0">
-                                            LLL:/fileadmin/schroeder/Resources/Private/Language/locallang.xlf:vollzeit
+                                            LLL:/fileadmin/Mysite4/app/Resources/Private/Language/locallang.xlf:vollzeit
                                         </numIndex>
                                         <numIndex index="1">vollzeit</numIndex>
                                     </numIndex>
