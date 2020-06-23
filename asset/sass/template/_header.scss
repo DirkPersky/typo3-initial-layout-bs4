@@ -1,7 +1,7 @@
 // main: ../style.scss
 .navbar {
-	border-bottom: 1px solid theme-color('light');
-	background-color: theme-color('dark');
+	border-bottom: 1px solid theme-color('dark');
+	background-color: theme-color('light');
 	box-shadow: none;
 	padding: 10px 0;
 
@@ -15,10 +15,6 @@
 	-o-transition: all .5s ease-out;
 	transition: all .5s ease-out;
 
-	&.show {
-		background-color: rgba(black, 0.9);
-	}
-
 	.container {
 		position: static;
 
@@ -29,16 +25,24 @@
 
 		margin-right: 0;
 		margin-left: 0;
-		max-width: 100%;
+
+		@include media-breakpoint-down(md){
+			max-width: 100%;
+		}
 
 		@include media-breakpoint-up(md) {
 			margin-left: auto;
 			margin-right: auto;
 		}
 
-
 		.nav-bars {
 			flex: 0 0 auto;
+			display: flex;
+			flex-wrap: wrap;
+
+			@include media-breakpoint-up(lg) {
+				flex-wrap: nowrap;
+			}
 		}
 
 		.brand {
@@ -47,7 +51,6 @@
 			justify-content: center;
 		}
 	}
-
 	// Brand/Logo
 	.navbar-brand {
 		position: relative;
@@ -78,139 +81,71 @@
 			}
 		}
 	}
-
 	// Search & Toggle Btn
 	.nav-right {
-		.search {
-			float: left;
+		@include media-breakpoint-up(lg) {
+			align-self: center;
+		}
+	}
+	// hamburger Icon
+	.navbar-toggler {
+		display: flex;
+		align-items: center;
 
-			i {
-				padding: 12px 14px;
-				font-size: 22px;
-				line-height: 24px;
-				color: theme-color('light');
-				cursor: pointer;
+		@include rem(padding, 10);
+		margin: 0;
+
+		@include transition(all 0.7s);
+		color: $hamburger-layer-color;
+		text-transform: uppercase;
+		font-size: 12px;
+
+		&:hover {
+			color: $hamburger-layer-color;
+		}
+
+		&:focus {
+			outline: none;
+		}
+
+		// Hide on Desktop
+		@include media-breakpoint-up(lg) {
+			display: none;
+		}
+
+		.hamburger-box {
+			margin-top: 5px;
+
+			@include media-breakpoint-up(sm) {
+				margin-right: 10px;
+				margin-top: 0;
+			}
+
+			.hamburger-inner {
+				background-color: $hamburger-layer-color;
+
+				&:before {
+					background-color: $hamburger-layer-color;
+				}
+
+				&:after {
+					background-color: $hamburger-layer-color;
+				}
 			}
 		}
 
-		.navbar-toggler {
-			display: flex;
-			align-items: center;
+		.menu-title {
+			margin-top: 3px;
+			display: none;
 
-			@include rem(padding, 10);
-			margin: 0;
-
-			@include transition(all 0.7s);
-			color: theme-color('light');
-			text-transform: uppercase;
-			font-size: 12px;
-
-			&:hover {
-				color: theme-color('light');
-			}
-
-			&:focus {
-				outline: none;
-			}
-
-			.hamburger-box {
-				@include media-breakpoint-up(sm) {
-					margin-right: 10px;
-					margin-top: 0;
-				}
-
-				.hamburger-inner {
-					background-color: theme-color('light');
-
-					&:before {
-						background-color: theme-color('light');
-					}
-
-					&:after {
-						background-color: theme-color('light');
-					}
-				}
-			}
-
-			.menu-title {
-				margin-top: 3px;
-				display: none;
-
-				@include media-breakpoint-up(sm) {
-					display: block;
-				}
+			@include media-breakpoint-up(sm) {
+				display: block;
 			}
 		}
 	}
-
-	// Search Bar
-	.search-toggleable {
-		position: absolute;
-		top: 100%;
-		left: 0;
-		right: 0;
-		background-color: rgba(0, 0, 0, 0.9);
-
-		.search-container {
-			padding: 25px 0;
-
-			form {
-				position: relative;
-			}
-
-			.form-control {
-				background-color: transparent;
-				border: 0;
-				padding: 0;
-				color: theme-color("dark");
-				font-size: 21px;
-				line-height: 28px;
-				box-shadow: none;
-
-				+ .focus-bar {
-					position: absolute;
-					bottom: 0;
-					right: 0;
-					left: 0;
-
-					height: 2px;
-
-					display: flex;
-					justify-content: center;
-					align-items: center;
-
-					&:before {
-						content: '';
-						display: block;
-						height: 100%;
-						width: 0%;
-						transition: all .4s ease-in-out;
-
-						background-color: theme-color('primary');
-					}
-				}
-
-				&:focus + .focus-bar:before {
-					width: 100%;
-				}
-			}
-
-			.input-group-btn {
-				display: none;
-			}
-		}
-
-		.close {
-			position: absolute;
-			right: 10px;
-			top: 10px;
-
-			color: theme-color('light');
-		}
-	}
-
 	// Navigation
-	.navbar-toggleable {
+	.navbar-toggleable { // offcanvis
+		background-color: rgba(theme-color('light'), 0.9);
 		max-height: calc(100vh - 67px);
 		overflow: auto;
 		height: 100vh !important;
@@ -219,244 +154,84 @@
 		transform: translateX(-100%);
 		transition: all .5s ease-in-out;
 
-		@include media-breakpoint-up(lg) {
-			height: auto !important;
-			transform: translateX(0);
-
-		}
-
-		//&.collapsing {
-		//  transform: translateX(-50%);
-		//  @include media-breakpoint-up(md) {
-		//    transform: translateX(0);
-		//  }
-		//}
-
-		&.show {
-			transform: translateX(0);
-		}
-
-		> .nav {
-			height: 100%;
-
-			@include media-breakpoint-up(lg) {
-				height: auto;
-			}
-		}
-	}
-
-	//Navbar
-	.nav {
-		> .nav-item {
-			> .nav-link {
-				display: block;
-				color: theme-color('light');
-				//text-transform: uppercase;
-
-				&:hover {
-					color: theme-color('secondary');
-				}
-			}
-
-			&.active {
-				> .nav-link {
-					color: theme-color('primary');
-				}
-			}
-		}
-	}
-}
-
-.nav-minimal {
-	// Navigation
-	.navbar-toggleable {
 		position: absolute;
 		top: 100%;
-		left: 0;
-		right: 0;
-
-		background-color: rgba(black, 0.9);
-
-		@include media-breakpoint-up(md) {
-			overflow: hidden;
-		}
-
-		&.show {
-			max-height: calc(100vh - 70px);
-			overflow-y: auto;
-
-			@include media-breakpoint-up(md) {
-				max-height: inherit;
-			}
-		}
-		// navbar Wrap
-		.header-nav {
-			margin: 0 20px;
-			text-align: center;
-
-			@include media-breakpoint-up(md) {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-
-				margin: 70px 0;
-
-				text-align: left;
-			}
-			@include media-breakpoint-up(lg) {
-				margin: 100px 0;
-			}
-
-			.head-nav {
-				border-bottom: 1px solid white;
-				padding-bottom: 50px;
-
-				@include media-breakpoint-up(md) {
-					border-right: 1px solid white;
-					border-bottom: 0;
-					float: left;
-					padding-right: 50px;
-					margin-right: 50px;
-				}
-				@include media-breakpoint-up(lg) {
-					padding-right: 90px;
-					margin-right: 70px;
-				}
-			}
-		}
-		// navs
-		.nav {
-			flex-direction: column;
-			// Main Navigation
-			&.navbar-nav {
-				> .nav-item {
-					> .nav-link {
-						font-size: 35px;
-
-						transition: all 0.2s ease-in-out;
-
-						@include media-breakpoint-up(md) {
-							font-size: 42px;
-						}
-					}
-				}
-			}
-			// Besite Main
-			&.sub-nav {
-				margin: 0;
-				padding: 50px 0;
-				list-style: none;
-
-				@include media-breakpoint-up(md) {
-					display: inline-block;
-					padding: 0;
-				}
-
-				> .nav-item {
-					line-height: 13px;
-
-					> .nav-link {
-						font-size: 21px;
-						transition: all 0.2s ease-in-out;
-					}
-				}
-			}
-		}
-	}
-}
-
-.nav-inline {
-	@include media-breakpoint-up(lg) {
-		padding: 0;
-	}
-
-	.navbar-brand {
-		@include media-breakpoint-up(lg) {
-			padding: 20px 0;
-		}
-	}
-
-	// Search & Toggle Btn
-	.nav-right {
-		@include media-breakpoint-up(lg) {
-			align-self: center;
-		}
-
-		.navbar-toggler {
-			@include media-breakpoint-up(lg) {
-				display: none;
-			}
-		}
-	}
-
-	.container {
-		@include media-breakpoint-up(lg) {
-			flex-wrap: nowrap;
-		}
-	}
-
-	.nav-bars {
-		display: flex;
-		flex-wrap: wrap;
-
-		@include media-breakpoint-up(lg) {
-			flex-wrap: nowrap;
-		}
-	}
-
-	// Navigation
-	.navbar-toggleable {
-		background-color: rgba(theme-color('dark'), 0.9);
-		position: absolute;
-		top: 100%;
+		top: calc(100% + 1px);
 		right: 0;
 		left: 0;
 
 		@include media-breakpoint-up(lg) {
 			background-color: transparent;
+			transform: translateX(0);
+			height: auto !important;
 			position: static;
 			display: block;
 			overflow: visible;
 		}
 
-		.nav {
-			&.navbar-nav {
-				position: relative;
-				overflow: hidden;
-				flex-wrap: nowrap;
-				@include media-breakpoint-up(lg) {
-					flex-direction: row;
-					flex-wrap: wrap;
-					align-items: stretch;
-					overflow: visible;
-					height: 100%;
-				}
+		&.show {
+			transform: translateX(0);
+		}
+	}
+	// Main Navbar
+	.navbar-nav {
+		height: 100%; // full hight offcanvis
+		position: relative;
+		overflow: hidden;
+		flex-wrap: nowrap;
 
-				> .nav-item {
-					@include media-breakpoint-up(lg) {
-						display: flex;
-						align-items: center;
-						justify-content: center;
-					}
-				}
+		@include media-breakpoint-up(lg) {
+			flex-direction: row;
+			flex-wrap: wrap;
+			align-items: stretch;
+			overflow: visible;
+			height: 100%;
+		}
+
+		> .nav-item {
+			@include media-breakpoint-up(lg) {
+				display: flex;
+				align-items: center;
+				justify-content: center;
 			}
 
-			> .nav-item {
-				> .nav-link {
-					@include rem(padding, 10 15);
-					border-bottom: 1px solid theme-color('dark');
-
-					@include media-breakpoint-up(lg) {
-						border-bottom: 0;
-					}
-					@include media-breakpoint-up(xl) {
-						font-size: 1.15rem;
-					}
+			> .nav-link {
+				@include media-breakpoint-up(xl) {
+					font-size: 1.15rem;
 				}
 			}
 		}
 	}
+	//Navbar link definition
+	.nav {
+		> .nav-item {
+			> .nav-link {
+				@include rem(padding, 10 15);
+				color: theme-color('dark');
+				display: block;
+				// Mobile Nav Border
+				border-bottom: 1px solid theme-color('dark');
+				@include media-breakpoint-up(lg) {
+					border-bottom: 0;
+				}
 
+				&:hover {
+					color: theme-color('danger');
+				}
+			}
+
+			&.active {
+				> .nav-link {
+					color: theme-color('danger');
+				}
+			}
+		}
+	}
+	// dropdown Menüs
+	.dropdown-wrap {
+		background-color: theme-color('light');
+
+	}
 	// Dropdowns
 	.dropdown {
 		position: static;
@@ -468,13 +243,6 @@
 			flex-direction: column;
 			flex-wrap: nowrap;
 		}
-
-		> .nav-link {
-			@include media-breakpoint-up(lg){
-
-			}
-		}
-
 		// nav Wrap
 		.dropdown-wrap {
 			background-color: theme-color('light');
@@ -523,7 +291,7 @@
 				position: relative;
 				@include rem(padding, 10 15);
 				border-bottom: 1px solid theme-color('dark');
-				color: theme-color('primary');
+				color: theme-color('danger');
 
 				text-align: center;
 				cursor: pointer;
@@ -549,7 +317,6 @@
 					right: 0;
 					left: 0;
 					top: 0;
-
 				}
 			}
 
@@ -566,7 +333,6 @@
 				}
 			}
 		}
-
 		// Hover event
 		&:hover {
 			> .dropdown-wrap {
@@ -580,11 +346,11 @@
 				}
 			}
 		}
-
-		// Link
+		// Main Link
 		> .nav-link {
 			border-bottom: 1px solid theme-color('dark');
 			position: relative;
+
 			@include media-breakpoint-down(md) {
 				padding-right: 55px !important;
 				border: 0;
@@ -627,104 +393,3 @@
 	to {
 	}
 }
-
-.nav-light {
-	background-color: rgba(#fff, 0.9);
-
-	&.show {
-		background-color: rgba(#fff, 0.9);
-	}
-
-	// Search & Toggle Btn
-	.nav-right {
-		.search {
-			i {
-				color: theme-color('dark');
-			}
-
-			&:hover {
-				i {
-					color: theme-color("success");
-				}
-			}
-		}
-
-		.navbar-toggler {
-			color: theme-color('dark');
-
-			&:hover {
-				color: theme-color('dark');
-			}
-
-			.hamburger-box {
-				.hamburger-inner {
-					background-color: theme-color('dark');
-
-					&:before {
-						background-color: theme-color('dark');
-					}
-
-					&:after {
-						background-color: theme-color('dark');
-					}
-				}
-			}
-		}
-	}
-
-	// Search Bar
-	.search-toggleable {
-		background-color: rgba(theme-color('light'), 0.9);
-
-		.search-container {
-
-			.form-control {
-				::placeholder {
-					color: theme-color('dark');
-				}
-			}
-
-			form {
-				width: 100%;
-			}
-		}
-
-		.close {
-			color: theme-color('dark');
-		}
-	}
-
-	//Navbar
-	.nav {
-		> .nav-item {
-			> .nav-link {
-				color: theme-color('dark');
-
-				&:hover {
-					color: theme-color('success');
-				}
-			}
-
-			&.active {
-				> .nav-link {
-					font-weight: bold;
-					color: theme-color('primary');
-
-					&:hover {
-						color: theme-color("success");
-					}
-				}
-			}
-		}
-	}
-
-	// mobile nav
-	.navbar-toggleable {
-		background-color: rgba(#fff, 0.9) !important;
-
-		@include media-breakpoint-up(lg) {
-			background-color: transparent !important;
-		}
-	}
-}
-
