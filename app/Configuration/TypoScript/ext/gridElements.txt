@@ -3,6 +3,15 @@ tt_content.gridelements_pi1 {
     templateRootPaths.99 = {$path.template}Private/Template/Gridelements
 
     dataProcessing {
+        10 {
+            default {
+                options {
+                    # recursive = 0
+                    # resolveFlexFormData = 0
+                    resolveChildFlexFormData = 0
+                }
+            }
+        }
         20 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
         20 {
             references.fieldName = image
