@@ -15,8 +15,7 @@
                             <label>Google Jobs Anzeige Testen</label>
                             <config type="array">
                                 <type>none</type>
-                                <default>
-                                    <![CDATA[https://search.google.com/structured-data/testing-tool/u/0/]]></default>
+                                <default><![CDATA[https://search.google.com/structured-data/testing-tool/u/0/]]></default>
                             </config>
                         </TCEforms>
                     </testtool>
@@ -30,16 +29,12 @@
                                 <renderType>selectMultipleSideBySide</renderType>
                                 <items>
                                     <numIndex index="0" type="array">
-                                        <numIndex index="0">
-                                            LLL:/fileadmin/Mysite4/app/Resources/Private/Language/locallang.xlf:teilzeit
-                                        </numIndex>
-                                        <numIndex index="1">teilzeit</numIndex>
+                                        <numIndex index="0">FULL_TIME</numIndex>
+                                        <numIndex index="1">FULL_TIME</numIndex>
                                     </numIndex>
                                     <numIndex index="1" type="array">
-                                        <numIndex index="0">
-                                            LLL:/fileadmin/Mysite4/app/Resources/Private/Language/locallang.xlf:vollzeit
-                                        </numIndex>
-                                        <numIndex index="1">vollzeit</numIndex>
+                                        <numIndex index="0">PART_TIME</numIndex>
+                                        <numIndex index="1">PART_TIME</numIndex>
                                     </numIndex>
                                 </items>
                                 <enableMultiSelectFilterTextfield>1</enableMultiSelectFilterTextfield>
@@ -88,7 +83,7 @@
                                 <type>input</type>
                                 <size>255</size>
                                 <eval>trim</eval>
-                                <default><![CDATA[Küchen-Studio ARDLAND GmbH]]></default>
+                                <default><![CDATA[]]></default>
                             </config>
                         </TCEforms>
                     </hiring_name>
@@ -183,7 +178,7 @@
                                 <type>input</type>
                                 <size>255</size>
                                 <eval>trim</eval>
-                                <default>Bosinks Kamp 2</default>
+                                <default></default>
                             </config>
                         </TCEforms>
                     </location_street>
@@ -195,7 +190,7 @@
                                 <type>input</type>
                                 <size>255</size>
                                 <eval>trim</eval>
-                                <default>Nordhorn</default>
+                                <default></default>
                             </config>
                         </TCEforms>
                     </location_city>
@@ -207,7 +202,7 @@
                                 <type>input</type>
                                 <size>255</size>
                                 <eval>trim</eval>
-                                <default>48531</default>
+                                <default></default>
                             </config>
                         </TCEforms>
                     </location_zip>
@@ -223,8 +218,85 @@
                             </config>
                         </TCEforms>
                     </location_country>
+
+                    <location_region type="array">
+                        <TCEforms type="array">
+                            <label>Land</label>
+                            <description>addressRegion</description>
+                            <config type="array">
+                                <type>input</type>
+                                <size>255</size>
+                                <eval>trim</eval>
+                                <default>NRW</default>
+                            </config>
+                        </TCEforms>
+                    </location_region>
                 </el>
             </ROOT>
         </google_jobs>
+        <google_salery>
+            <ROOT type="array">
+                <TCEforms>
+                    <sheetTitle>Bezahlung</sheetTitle>
+                </TCEforms>
+                <el type="array">
+                    <salery_active type="array">
+                        <TCEforms type="array">
+                            <label>Informationen Angeben?</label>
+                            <config type="array">
+                                <type>check</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">ja, mit ausgeben</numIndex>
+                                        <numIndex index="1">true</numIndex>
+                                    </numIndex>
+                                </items>
+                                <default>false</default>
+                            </config>
+                            <onChange>reload</onChange>
+                        </TCEforms>
+                    </salery_active>
+
+                    <salery_currency type="array">
+                        <TCEforms type="array">
+                            <label>Währung</label>
+                            <description>currency</description>
+                            <config type="array">
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">EUR €</numIndex>
+                                        <numIndex index="1">EUR</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">USD $</numIndex>
+                                        <numIndex index="1">USD</numIndex>
+                                    </numIndex>
+                                </items>
+                                <default>EUR</default>
+                            </config>
+                            <displayCond>FIELD:salery_active:REQ:true</displayCond>
+                        </TCEforms>
+                    </salery_currency>
+
+                    <salery_value type="array">
+                        <TCEforms type="array">
+                            <label>Gehalt pro Jahr</label>
+                            <description>saleryValue</description>
+                            <config type="array">
+                                <type>input</type>
+                                <size>10</size>
+                                <eval>trim,int</eval>
+                                <default>0</default>
+                            </config>
+                            <displayCond>FIELD:salery_active:REQ:true</displayCond>
+                        </TCEforms>
+                    </salery_value>
+
+
+                </el>
+            </ROOT>
+        </google_salery>
     </sheets>
 </T3DataStructure>

@@ -4,9 +4,13 @@ import barba from '@barba/core';
 export default class BarbaJS {
     private overlay:any;
     private selector:string;
+    private navbarCloseOnPageShift:boolean;
+    private collapseSelector:string;
 
     constructor() {
-        this.selector = '#navigation #navbarResponsive .navbar-nav';
+        this.selector = '.navbar-nav';
+        this.navbarCloseOnPageShift = true;
+        this.collapseSelector = '#navigation #navbarResponsive';
         this.overlay = jQuery('.barba-overlay');
 
         var me = this;
@@ -80,8 +84,11 @@ export default class BarbaJS {
 
         if(parent.is('li')){
             link.parents('.navbar-nav').find('li').removeClass('active');
-            $(this.selector).find('li').removeClass('active');
-            if(parent.length > 0 ) parent.addClass('active');
+            $(this.collapseSelector +' '+ this.selector).find('li').removeClass('active');
+            if(parent.length > 0 ) {
+                parent.addClass('active');
+                if(this.navbarCloseOnPageShift) jQuery(this.collapseSelector).collapse('hide');
+            }
         }
     }
 
@@ -109,7 +116,7 @@ export default class BarbaJS {
             }
 
             if (target && target.length > 0) {
-                position = target.offset().top - parseInt(<any>(jQuery(this.selector).outerHeight() || 0));
+                position = target.offset().top - 40 - parseInt(<any>(jQuery(this.collapseSelector).outerHeight(true) || 0));
 
                 jQuery('html, body').stop().animate({
                     scrollTop: position
