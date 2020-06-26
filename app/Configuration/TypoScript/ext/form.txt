@@ -1,8 +1,8 @@
 
 plugin.tx_form.settings.yamlConfigurations {
-    100 = fileadmin/dpdvelop/Configuration/Yaml/dpFormSetup.yaml
+    100 = fileadmin/Mysite4/app/Configuration/Yaml/dpFormSetup.yaml
 }
 
 module.tx_form.settings.yamlConfigurations {
-    100 = fileadmin/dpdvelop/Configuration/Yaml/dpFormSetup.yaml
+    100 = fileadmin/Mysite4/app/Configuration/Yaml/dpFormSetup.yaml
 }
