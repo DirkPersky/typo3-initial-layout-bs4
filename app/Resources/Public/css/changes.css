@@ -1,9 +1,3 @@
-.animated-hide .animated{
-	visibility: hidden;
-	-webkit-animation-name: none;
-			animation-name: none;
-}
-
 .page-loading{
 	position: fixed;
 	top:0;

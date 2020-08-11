@@ -239,17 +239,20 @@ p:last-child {
 /**
  * Fade Box in
  */
-.animated {
-  transition: all .7s ease-in-out;
-  visibility: visible;
-  opacity: 1;
-  /**
-   * Only Add this Class and JS will handle it him self
-   */
-  &.animated-hide {
-    transform: translateY(100px);
-    visibility: hidden;
-    opacity: 0;
+.animate {
+  visibility: hidden;
+  transition: all .4s ease-in-out;
+
+  transform: scale(0.5);
+  opacity: 0;
+  content-visibility: hidden;
+  contain-intrinsic-size: 30vh;
+
+  &.animated-show {
+    visibility: visible;
+    transform: none;
+    opacity: 1;
+    content-visibility: visible;
   }
 }
 
