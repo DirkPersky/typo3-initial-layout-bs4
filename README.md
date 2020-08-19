@@ -144,9 +144,13 @@ git push -f origin master
 
 ### BeUser Config:
 ```
+### Loescht den FE-Cache
+options.clearCache.pages = 1
+### Loescht FE-Cache und Cache in typo3conf 
+options.clearCache.all = 1
+
 # Show NavTitle in Pagetree
 options.pageTree.showNavTitle = 1
-
 # Show Page ID's in Pagetree
 options.pageTree.showPageIdWithTitle = 1
 ```
