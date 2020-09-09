@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 let FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
-let ExtractTextPlugin = require('extract-text-webpack-plugin');
+let MiniCssExtractPlugin = require('mini-css-extract-plugin');
 let ModernizrWebpackPlugin = require('modernizr-webpack-plugin');
 
 class WebpackConfig {
@@ -114,11 +114,18 @@ class WebpackConfig {
         });
         // sass / scss loader for webpack
         this.webpackConfig.module.rules.push({
-            test: /\.(sass|scss)$/,
-            exclude: /(node_modules|bower_components)/,
-            loader: ExtractTextPlugin.extract([
-                'css-loader', 'sass-loader'
-            ])
+            test: /\.(sa|sc|c)ss$/,
+            use: [
+                {
+                    loader: MiniCssExtractPlugin.loader,
+                    options: {
+                        hmr: process.env.NODE_ENV === 'de' +
+                            'velopment',
+                    },
+                },
+                'css-loader',
+                'sass-loader',
+            ],
         });
         // Copy Fonts to Public dir
         this.webpackConfig.module.rules.push({
@@ -191,9 +198,8 @@ class WebpackConfig {
         );
         // say ExtractTextPlugin to export his results to style.css
         this.webpackConfig.plugins.push(
-            new ExtractTextPlugin({ // define where to save the file
+            new MiniCssExtractPlugin({ // define where to save the file
                 filename: '../css/style.css',
-                allChunks: true,
             })
         );
 
