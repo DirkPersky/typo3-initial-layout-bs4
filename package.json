@@ -32,7 +32,7 @@
     "babel-loader": "latest",
     "clean-css": "latest",
     "css-loader": "latest",
-    "extract-text-webpack-plugin": "next",
+    "mini-css-extract-plugin": "latest",
     "file-loader": "latest",
     "friendly-errors-webpack-plugin": "latest",
     "jshint": "latest",
