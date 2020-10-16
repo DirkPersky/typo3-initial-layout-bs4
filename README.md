@@ -8,7 +8,7 @@ Additionally, there is a big focus on getting a high [PageSpeed Insights](https:
 
 ## Requirements
 - [NPM-Package manager](https://nodejs.org/)
-- [TYPO3 9.5+](https://typo3.org/download/)
+- [TYPO3 10 LTS](https://typo3.org/download/)
 
 ### Recommended TYPO3 Extensions
 **Basics**
@@ -82,7 +82,7 @@ If you need libraries that are not already placed inside the `/asset/js/template
 ### SASS to CSS
 The SASS-Files from `/asset/saas` will also be compiled into a single CSS file.
 
-### TYPO 9.5 LTS Config.
+### TYPO 10 LTS Config.
 
 **SEO**
 Sites > Static Routes
