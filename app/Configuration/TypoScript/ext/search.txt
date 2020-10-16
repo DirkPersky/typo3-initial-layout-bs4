@@ -71,4 +71,4 @@ lib.search.typolink {
       settings =< plugin.tx_indexedsearch.settings
     }
   }
-[global]
+[end]

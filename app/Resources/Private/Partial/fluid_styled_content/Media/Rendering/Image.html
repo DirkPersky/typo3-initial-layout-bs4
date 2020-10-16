@@ -1,51 +1,58 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-    <f:comment>
-        <!-- Original Link -->
-        <f:media class="image-embed-item" file="{file}" width="{data.imagewidth}" height="{data.imageheight}" alt="{file.alternative}" title="{file.title}" />
-        <f:image class="image-embed-item" image="{file}" maxWidth="{data.imagewidth}" maxHeight="{data.imageheight}" />
-        <f:uri.image image="{file}" maxWidth="{data.imagewidth}" maxHeight="{data.imageheight}" cropVariant="specialMobile"  />
-        <!-- http://png-pixel.com/ -->
-    </f:comment>
-    <picture>
-        <f:if condition="{data.imagewidth} > 1200">
-            <source
-                    srcset="<f:uri.image image="{file}" width="1960" maxWidth="{data.imagewidth}" maxHeight="{data.imageheight}" cropVariant="default" />"
-            media="(min-width: 1200px)"
-            >
-        </f:if>
-        <f:if condition="{data.imagewidth} > 992">
-            <source
-                    srcset="<f:uri.image image="{file}" width="1200" maxWidth="{data.imagewidth}" maxHeight="{data.imageheight}" cropVariant="default" />"
-            media="(min-width: 992px)"
-            >
-        </f:if>
-        <f:if condition="{data.imagewidth} > 768">
-            <source
-                    srcset="<f:uri.image image="{file}" width="992" maxWidth="{data.imagewidth}" maxHeight="{data.imageheight}" cropVariant="tablet" />"
-            media="(min-width: 768px)"
-            >
-        </f:if>
-        <f:if condition="{data.imagewidth} > 480">
-            <source
-                    srcset="<f:uri.image image="{file}" width="768" maxWidth="{data.imagewidth}" maxHeight="{data.imageheight}" cropVariant="tablet" />"
-            media="(min-width: 480px)"
-            >
-        </f:if>
-
-        <f:if condition="{data.imagewidth}">
-            <f:then>
-                <f:if condition="{data.imagewidth} < 480">
-                    <f:then>
-                        <img class="img-fluid lazyload" alt="{file.alternative -> f:format.stripTags()}" title="{file.title -> f:format.stripTags()}" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="<f:uri.image image="{file}" maxWidth="{data.imagewidth}" maxHeight="{data.imageheight}" cropVariant="mobile" />" width="{dimensions.width}" height="{dimensions.height}" />
-                    </f:then>
-                    <f:else>
-                        <img class="img-fluid lazyload" alt="{file.alternative -> f:format.stripTags()}" title="{file.title -> f:format.stripTags()}" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="<f:uri.image image="{file}" maxWidth="480" maxHeight="{data.imageheight}" cropVariant="mobile" />" width="{dimensions.width}" height="{dimensions.height}" />
-                    </f:else>
-                </f:if>
-            </f:then>
-            <f:else>
-                <img class="img-fluid lazyload" alt="{file.alternative -> f:format.stripTags()}" title="{file.title -> f:format.stripTags()}" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="<f:uri.image image="{file}" maxWidth="480" maxHeight="{data.imageheight}" cropVariant="mobile" />" width="{dimensions.width}" height="{dimensions.height}" />
-            </f:else>
-        </f:if>
-    </picture>
+<f:comment>
+    <!-- Original Link -->
+    <f:media alt="{file.alternative}" class="image-embed-item" file="{file}" height="{data.imageheight}"
+             title="{file.title}" width="{data.imagewidth}"/>
+    <f:image class="image-embed-item" image="{file}" maxHeight="{data.imageheight}" maxWidth="{data.imagewidth}"/>
+    <f:uri.image cropVariant="specialMobile" image="{file}" maxHeight="{data.imageheight}"
+                 maxWidth="{data.imagewidth}"/>
+</f:comment>
+<picture>
+    <f:if condition="{data.imagewidth} > 1400">
+        <source media="(min-width: 1400px)"
+                srcset="{f:uri.image(image:file, width:1960, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile', fileExtension:'webp')}"
+                type="image/webp"/>
+        <source media="(min-width: 1400px)"
+                srcset="{f:uri.image(image:file, width:1960, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile')}"
+                type="{file.originalFile.properties.mime_type}"/>
+    </f:if>
+    <f:if condition="{data.imagewidth} > 1200">
+        <source media="(min-width: 1200px)"
+                srcset="{f:uri.image(image:file, width:1400, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile', fileExtension:'webp')}"
+                type="image/webp"/>
+        <source media="(min-width: 1200px)"
+                srcset="{f:uri.image(image:file, width:1400, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile')}"
+                type="{file.originalFile.properties.mime_type}"/>
+    </f:if>
+    <f:if condition="{data.imagewidth} > 992">
+        <source media="(min-width: 992px)"
+                srcset="{f:uri.image(image:file, width:1200, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile', fileExtension:'webp')}"
+                type="image/webp"/>
+        <source media="(min-width: 992px)"
+                srcset="{f:uri.image(image:file, width:1200, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile')}"
+                type="{file.originalFile.properties.mime_type}"/>
+    </f:if>
+    <f:if condition="{data.imagewidth} > 768">
+        <source media="(min-width: 768px)"
+                srcset="{f:uri.image(image:file, width:992, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile', fileExtension:'webp')}"
+                type="image/webp"/>
+        <source media="(min-width: 768px)"
+                srcset="{f:uri.image(image:file, width:992, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile')}"
+                type="{file.originalFile.properties.mime_type}"/>
+    </f:if>
+    <f:if condition="{data.imagewidth} > 480">
+        <source media="(min-width: 480px)"
+                srcset="{f:uri.image(image:file, width:768, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile', fileExtension:'webp')}"
+                type="image/webp"/>
+        <source media="(min-width: 480px)"
+                srcset="{f:uri.image(image:file, width:768, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile')}"
+                type="{file.originalFile.properties.mime_type}"/>
+    </f:if>
+    <source srcset="{f:uri.image(image:file, width:360, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile', fileExtension:'webp')}"
+            type="image/webp"/>
+    <source srcset="{f:uri.image(image:file, width:360, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile')}"
+            type="{file.originalFile.properties.mime_type}"/>
+    <img alt="{file.alternative}" class="img-fluid" height="{dimensions.height}" lazyload="true" title="{file.title}"
+         width="{dimensions.width}"/>
+</picture>
 </html>
