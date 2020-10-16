@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 let FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 let MiniCssExtractPlugin = require('mini-css-extract-plugin');
-let ModernizrWebpackPlugin = require('modernizr-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 class WebpackConfig {
     /**
@@ -10,31 +10,7 @@ class WebpackConfig {
      */
     constructor() {
         this.config = {
-            publicPath: 'app/Resources/Public',
-            modernizr: {
-                filename: 'modernizr.min.js',
-                classPrefix: "",
-                options: [
-                    "addTest",
-                    "atRule",
-                    "domPrefixes",
-                    "hasEvent",
-                    "load",
-                    "mq",
-                    "prefixed",
-                    "prefixes",
-                    "prefixedCSS",
-                    "setClasses",
-                    "testAllProps",
-                    "testProp",
-                    "testStyles"
-                ],
-                'feature-detects': [
-                    "css/flexbox",
-                    "svg",
-                    "svg/smil"
-                ]
-            }
+            publicPath: 'app/Resources/Public'
         };
 
         this.webpackConfig = {
@@ -46,12 +22,16 @@ class WebpackConfig {
             },
             resolve: {
                 extensions: [".ts", ".tsx", ".js"]
-            }
+            },
+            target: ['es5']
         };
         // Uglify & Compress JS
         if (this.isProduction()) {
             this.webpackConfig.optimization = {
-                minimize: true
+                minimize: true,
+                minimizer: [new TerserPlugin({
+                    extractComments: false,
+                })],
             };
         }
     }
@@ -91,7 +71,8 @@ class WebpackConfig {
     buildOutput() {
         this.webpackConfig.output = {
             path: path.resolve(__dirname, this.config.publicPath + '/js'),
-            filename: 'script.min.js'
+            filename: 'script.min.js',
+            publicPath: ''
         };
 
         return this;
@@ -108,7 +89,11 @@ class WebpackConfig {
             use: {
                 loader: 'babel-loader',
                 options: {
-                    presets: ['@babel/preset-env', '@babel/typescript'],
+                    presets: [
+                        '@babel/preset-env',
+                        '@babel/typescript'
+                    ],
+                    plugins: ['@babel/transform-arrow-functions']
                 }
             }
         });
@@ -119,8 +104,7 @@ class WebpackConfig {
                 {
                     loader: MiniCssExtractPlugin.loader,
                     options: {
-                        hmr: process.env.NODE_ENV === 'de' +
-                            'velopment',
+                        hmr: process.env.NODE_ENV === 'development',
                     },
                 },
                 'css-loader',
@@ -150,25 +134,21 @@ class WebpackConfig {
         // Copy Images to Public dir
         this.webpackConfig.module.rules.push({
             test: /\.(png|jpe?g|gif)$/,
-            loaders: [
-                {
-                    loader: 'file-loader',
-                    options: {
-                        name: path => {
-                            if (!/node_modules|bower_components/.test(path)) {
-                                return '../img/layout/[name].[ext]?[hash]';
-                            }
-
-                            return '../img/vendor/' + path
-                                .replace(/\\/g, '/')
-                                .replace(
-                                    /((.*(node_modules|bower_components))|images|image|img|assets)\//g, ''
-                                ) + '?[hash]';
-                        },
-                        publicPath: ''
+            loader: 'file-loader',
+            options: {
+                name: path => {
+                    if (!/node_modules|bower_components/.test(path)) {
+                        return '../img/layout/[name].[ext]?[hash]';
                     }
-                }
-            ]
+
+                    return '../img/vendor/' + path
+                        .replace(/\\/g, '/')
+                        .replace(
+                            /((.*(node_modules|bower_components))|images|image|img|assets)\//g, ''
+                        ) + '?[hash]';
+                },
+                publicPath: ''
+            }
         });
 
         return this;
@@ -183,12 +163,6 @@ class WebpackConfig {
             new FriendlyErrorsWebpackPlugin({
                 clearConsole: true
             })
-        );
-        // Generate Moderniz
-        this.webpackConfig.plugins.push(
-            new ModernizrWebpackPlugin(
-                this.config.modernizr
-            )
         );
         this.webpackConfig.plugins.push(
             new webpack.ProvidePlugin({
