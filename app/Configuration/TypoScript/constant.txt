@@ -23,7 +23,7 @@ plugin.tx_cookieconsent.settings {
     # extend layout with checkboxes (basic,dpextend)
     layout = dpextend
     #  pre check statistics in checkboxes layout
-    statistics = true
+    statistics = false
     # pre check statistics in checkboxes layout
     marketing = false
 
@@ -40,7 +40,7 @@ plugin.tx_cookieconsent.settings {
         }
         button {
             # Overlay Button: Background
-            background = #b81839
+            background = #f96332
             # Overlay Button: Text
             text = #fff
         }
@@ -50,7 +50,7 @@ plugin.tx_cookieconsent.settings {
     palette {
         popup {
             # Bar: Background color
-            background = #2473be
+            background = rgba(0,0,0,.8)
             # Bar: text color
             text = #fff
         }
@@ -71,8 +71,6 @@ meta {
     viewport =  width=device-width, initial-scale=1.0
 }
 plugin.tx_csseo {
-    # Page Pref Title
-    sitetitle =
     # Sitemap.xml
     sitemap {
         pages {

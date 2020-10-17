@@ -15,6 +15,5 @@ page.includeJSFooter {
 }
 
 page.includeJS {
-  modernizr = {$path.template}Public/js/modernizr.min.js
   template = {$path.template}Public/js/script.min.js
 }
