@@ -1,38 +1,38 @@
-<div data-barba="wrapper">
-    <div data-barba="container">
-        <header id="navigation">
-            <nav class="navbar nav-minimal fixed-top" role="navigation">
-                <div class="container">
-                    <div class="brand">
-                        <f:link.page pageUid="{settings.pidRoot}" class="navbar-brand float-left" title="Home">
-                            <img src="fileadmin/Mysite4/app/Resources/Public/img/logo.png" class="logo">
-                        </f:link.page>
+<header id="navigation">
+    <nav class="navbar nav-minimal fixed-top" role="navigation">
+        <div class="container">
+            <div class="brand">
+                <f:link.page class="navbar-brand float-left" pageUid="{settings.pidRoot}" title="Home">
+                    <img class="logo" src="fileadmin/Mysite4/app/Resources/Public/img/logo.png">
+                </f:link.page>
+            </div>
+            <div class="nav-bars">
+                <div class="collapse navbar-toggleable" id="navbarResponsive">
+                    <f:render arguments="{_all}" partial="Navigation/Main"/>
+                </div>
+
+                <f:render partial="SearchNav"/>
+
+                <div class="nav-right">
+                    <div class="search" data-target="#collapseSearch" data-toggle="collapse">
+                        <i class="fa fa-search"></i>
                     </div>
-                    <div class="nav-bars">
-                        <div class="collapse navbar-toggleable" id="navbarResponsive">
-                            <f:render partial="Navigation/Main" arguments="{_all}"/>
-                        </div>
-
-                        <f:render partial="SearchNav" />
-
-                        <div class="nav-right">
-                            <div class="search" data-toggle="collapse" data-target="#collapseSearch">
-                                <i class="fa fa-search"></i>
-                            </div>
-                            <button class="navbar-toggler hamburger hamburger--collapse float-right" type="button"
-                                    aria-label="Menu"
-                                    aria-controls="navigation" data-toggle="collapse" data-target="#navbarResponsive">
+                    <button aria-controls="navigation" aria-label="Menu"
+                            class="navbar-toggler hamburger hamburger--collapse float-right"
+                            data-target="#navbarResponsive" data-toggle="collapse" type="button">
                                 <span class="hamburger-box">
                                     <span class="hamburger-inner"></span>
                                 </span>
-                                <span class="menu-title">Menü</span>
-                            </button>
-                        </div>
-                    </div>
+                        <span class="menu-title">Menü</span>
+                    </button>
                 </div>
-            </nav>
-        </header>
+            </div>
+        </div>
+    </nav>
+</header>
 
+<div data-barba="wrapper">
+    <div data-barba="container">
         <section class="slider">
             <f:cObject typoscriptObjectPath="lib.slider"/>
         </section>
