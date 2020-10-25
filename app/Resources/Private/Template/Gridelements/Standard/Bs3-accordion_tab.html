@@ -1,0 +1,21 @@
+<div class="card card-accordion">
+    <a aria-controls="collapse{data.uid}" aria-expanded="true" class="card-header {data.flexform_style}"
+       data-icon=".icon.collapse{data.uid}" data-toggle="collapse" href="#collapse{data.uid}"
+       role="button">
+        <f:format.html parseFuncTSPath="">{data.header}</f:format.html>
+        <span class="icon collapse{data.uid} collapse {f:if(condition:'{data.flexform_active}',then:'in')}"></span>
+    </a>
+    <div aria-labelledby="heading{data.uid}"
+         class="collapse{data.uid} panel-collapse collapse {f:if(condition:'{data.flexform_active}',then:'in')}"
+         id="collapse{data.uid}" role="tabpanel">
+        <div class="card-body">
+            <f:for as="row" each="{children.1}" iteration="row_iteration">
+                <f:for as="child" each="{row}">
+                    <f:cObject data="{child.data}" table="tt_content"
+                               typoscriptObjectPath="tt_content.{child.data.CType}"/>
+                </f:for>
+                p
+            </f:for>
+        </div>
+    </div>
+</div>

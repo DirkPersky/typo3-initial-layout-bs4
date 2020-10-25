@@ -4,11 +4,11 @@
  */
 picture {
 	img {
-		width: 100%;
+	  width: auto;
 
-		&.lazyloaded {
-			width: auto;
-		}
+	  &.lazyloaded {
+		width: auto;
+	  }
 	}
 }
 
