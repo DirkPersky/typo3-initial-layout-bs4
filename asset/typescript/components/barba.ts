@@ -83,11 +83,11 @@ export default class BarbaJS {
             parent = link.parents('li');
 
         if(parent.is('li')){
-            link.parents('.navbar-nav').find('li').removeClass('active');
-            $(this.collapseSelector +' '+ this.selector).find('li').removeClass('active');
-            if(parent.length > 0 ) {
+            link.parents(this.selector).find('li').removeClass('active');
+
+            if (parent.length > 0) {
                 parent.addClass('active');
-                if(this.navbarCloseOnPageShift) jQuery(this.collapseSelector).collapse('hide');
+                if (this.navbarCloseOnPageShift) jQuery(this.collapseSelector).collapse('hide');
             }
         }
     }
