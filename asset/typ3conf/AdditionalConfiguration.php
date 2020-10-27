@@ -30,6 +30,9 @@ switch ($system) {
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['errorHandlerErrors'] = 0;
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['exceptionalErrors'] = 0;
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['enableDeprecationLog'] = '';
+
+        include 'CacheConfiguration.php';
+
         break;
     case 2:
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['displayErrors'] = '0';
@@ -43,6 +46,9 @@ switch ($system) {
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['enable_exceptionDLOG'] = '0';
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['enableDeprecationLog'] = '';
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['systemLogLevel'] = '3';
+
+        include 'CacheConfiguration.php';
+
         break;
 }
 /**

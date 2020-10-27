@@ -106,10 +106,10 @@ window.Statemanager.attach('typo3-search', function(){
     $('.search[search-loading]').searchLoading({
         type: 9718,
     });
-    $('[search-loading]').searchLoading({
+    $('[search-loading]:not(.search)').searchLoading({
         type: 9718,
         onError: function (element, href) {
-            $('div[data-target="#collapseSearch"]').on('click',(e) => {
+            $('div[data-target="#collapseSearch"]').on('click', (e) => {
                 e.preventDefault();
                 e.stopPropagation();
 
