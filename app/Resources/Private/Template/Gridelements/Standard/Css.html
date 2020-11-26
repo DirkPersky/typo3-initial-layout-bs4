@@ -5,7 +5,7 @@
         class="css--element {f:if(condition:'{data.flexform_image}',then:'lazyload bg-op ')}{f:if(condition:'{data.flexform_css}',then:"{data.flexform_css -> v:format.replace(substring:',', replacement:' ')}")}{f:if(condition:'{data.space_before_class}',then:' css-space-before-{data.space_before_class}')}{f:if(condition:'{data.space_after_class}',then:' css-space-after-{data.space_after_class}')}"
     {f:if(condition:'{data.flexform_inlinecss}',then:'style="{data.flexform_inlinecss}"')}
     <f:if condition="{data.flexform_image}">
-        data-bgset="{f:uri.image(image: files.0, maxWidth: 480, cropVariant: mobile)} 480w, {f:uri.image(image: files.0, maxWidth: 992, cropVariant: tablet)}  992w, {f:uri.image(image: files.0, maxWidth: 1960, cropVariant: desktop)} 1960w'" data-sizes="auto"
+        data-bgset="{f:uri.image(image: files.0, maxWidth: 480, cropVariant: mobile)} 480w, {f:uri.image(image: files.0, maxWidth: 992, cropVariant: tablet)}  992w, {f:uri.image(image: files.0, maxWidth: 1960, cropVariant: desktop)} 1960w" data-sizes="auto"
     </f:if>
     >
 
