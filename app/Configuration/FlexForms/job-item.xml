@@ -280,6 +280,29 @@
                         </TCEforms>
                     </salery_currency>
 
+                    <salery_einheit type="array">
+                        <TCEforms type="array">
+                            <label>Referenz Einheit</label>
+                            <description>currency</description>
+                            <config type="array">
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">YEAR</numIndex>
+                                        <numIndex index="1">YEAR</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">MONTH</numIndex>
+                                        <numIndex index="1">MONTH</numIndex>
+                                    </numIndex>
+                                </items>
+                                <default>MONTH</default>
+                            </config>
+                            <displayCond>FIELD:salery_active:REQ:true</displayCond>
+                        </TCEforms>
+                    </salery_einheit>
+
                     <salery_value type="array">
                         <TCEforms type="array">
                             <label>Gehalt pro Jahr</label>

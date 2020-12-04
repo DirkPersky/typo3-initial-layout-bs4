@@ -1,41 +1,52 @@
+<html
+        data-namespace-typo3-fluid="true">
+
 <script type="application/ld+json">
     {
         "@context": "https://schema.org/",
         "@type": "JobPosting",
         "title": "<f:format.raw>{data.header}</f:format.raw>",
-        "description": "<f:format.html parseFuncTSPath="">{data.flexform_google_desc}</f:format.html>",
-        "hiringOrganization" : {
+        "description": "<f:format.raw><v:format.replace substring='"
+        ' replacement='
+        \
+        "'>{data.flexform_google_desc}</v:format.replace></f:format.raw>",
+        "hiringOrganization": {
             "@type": "Organization",
             "name": "<f:format.raw>{data.flexform_hiring_name}</f:format.raw>",
-            "sameAs": "<f:uri.typolink parameter="{data.pid}" absolute="1"/>"
+            "sameAs": "<f:uri.typolink parameter="{
+        data.pid
+    }" absolute="1"/>"
     <f:if condition="{data.flexform_hiring_logo}">
-    <f:then>,       "logo": "<f:uri.image image="{files.0}" absolute="1"/>"</f:then>
-    <f:else>,       "logo": "<f:uri.image src="/fileadmin/Mysite4/app/Resources/Public/img/layout/logo.svg" absolute="1"/>"</f:else>
-    </f:if>
+    <f: then>, "logo": "<f:uri.image image="{files.0}" absolute="1"/>"</f: then>
+    <f: else>, "logo": "<f:uri.image src="/fileadmin/Mysite4/app/Resources/Public/img/layout/logo.svg" absolute="1"/>"</f: else>
+    </f: if>
     },
-    "employmentType": [<f:for each="{v:iterator.explode(content: '{data.flexform_filter}', glue: ',')}" as="worktime" iteration="workiterator">"{worktime}"<f:if condition="!{workiterator.isLast}">,</f:if></f:for>],
+    "employmentType": [<f: for each="{v:iterator.explode(content: '{data.flexform_filter}', glue: ',')}" as="worktime" iteration="workiterator">"{worktime}"<f: if condition="!{workiterator.isLast}">, </f:if></f: for>],
     "datePosted": "<f:format.date format="Y-m-d">{data.tstamp}</f:format.date>",
     "validThrough": "",
     <f:if condition="{data.flexform_location_zip}">"jobLocation": {
     "@type": "Place",
     "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "<f:format.raw>{data.flexform_location_street}</f:format.raw>",
-        "addressLocality": "<f:format.raw>{data.flexform_location_city}</f:format.raw>",
-        "postalCode": "<f:format.raw>{data.flexform_location_zip}</f:format.raw>",
-        "addressCountry": "<f:format.raw>{data.flexform_location_country}</f:format.raw>",
-        "addressRegion": "<f:format.raw>{data.flexform_location_region}</f:format.raw>"
+    "@type": "PostalAddress",
+    "streetAddress": "<f:format.raw>{data.flexform_location_street}</f:format.raw>",
+    "addressLocality": "<f:format.raw>{data.flexform_location_city}</f:format.raw>",
+    "postalCode": "<f:format.raw>{data.flexform_location_zip}</f:format.raw>",
+    "addressCountry": "<f:format.raw>{data.flexform_location_country}</f:format.raw>",
+    "addressRegion": "<f:format.raw>{data.flexform_location_region}</f:format.raw>"
     }
-    }</f:if>
-    <f:if condition="{data.flexform_skills}">,"skills": "<f:format.raw>{data.flexform_skills}</f:format.raw>"</f:if>
-    <f:if condition="{data.flexform_salery_active}">,"baseSalary": {
-        "@type": "MonetaryAmount",
-        "currency": "<f:format.raw>{data.flexform_salery_currency}</f:format.raw>",
-        "value": {
-            "@type": "QuantitativeValue",
-            "value": <f:format.raw>{data.flexform_salery_value}</f:format.raw>,
-            "unitText": "YEAR"
-        }
-    }</f:if>
+    }</f: if>
+    <f: if condition="{data.flexform_skills}">, "skills": "<f:format.raw>{data.flexform_skills}</f:format.raw>"</f: if>
+    <f:if condition="{data.flexform_salery_active}">, "baseSalary": {
+    "@type": "MonetaryAmount",
+    "currency": "<f:format.raw>{data.flexform_salery_currency}</f:format.raw>",
+    "value": {
+    "@type": "QuantitativeValue",
+    "value": <f: format.raw>{
+    data.flexform_salery_value}</f: format.raw>,
+    "unitText": "<f:format.raw>{data.flexform_salery_einheit}</f:format.raw>"
+    }
+    }</f: if>
     }
 </script>
+
+</html>
