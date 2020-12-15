@@ -15,7 +15,7 @@
                             <label>Google Jobs Anzeige Testen</label>
                             <config type="array">
                                 <type>none</type>
-                                <default><![CDATA[https://search.google.com/structured-data/testing-tool/u/0/]]></default>
+                                <default><![CDATA[https://search.google.com/test/rich-results]]></default>
                             </config>
                         </TCEforms>
                     </testtool>
