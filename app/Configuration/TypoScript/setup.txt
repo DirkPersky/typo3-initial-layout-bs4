@@ -27,17 +27,6 @@ page = PAGE
 	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/compress.txt">
 	#<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/scriptmerger.txt">
 
-####################
-### Site Scripts ###
-####################
-lib.footerNav = COA
-lib.footerNav {
-    10 < temp.cPos
-    10.select.where= colPos=2
-
-    20 < temp.cPos
-    20.select.where= colPos=3
-}
 #################
 ### Copyright ###
 #################

@@ -11,20 +11,34 @@ lib.content {
   10 < styles.content.get
   15 = RESTORE_REGISTER
 }
-##############################
-### Load Content by colPos ###
-##############################
-temp.cPos = CONTENT
-temp.cPos {
-  table = tt_content
-  slide = -1
-  select {
-    where = colPos=5
-    begin=0
-    languageField = sys_language_uid
-    orderBy = sorting
-  }
+
+########################################################################
+###                 Load Content bei Date Attribute                  ###
+### <f:cObject typoscriptObjectPath="lib.colContent" data="1"/> ###
+########################################################################
+lib.colContent = COA
+lib.colContent {
+    5 = LOAD_REGISTER
+    5  {
+        colPos.cObject = TEXT
+        colPos.cObject {
+            value.current = 1
+        }
+    }
+    20 < styles.content.get
+    20.select.where = colPos={register:colPos}
+    20.select.where.insertData = 1
+	stdWrap.required = 1
+    stdWrap.replacement < lib.replacement
 }
+########################################################################
+###                 Load Content bei Date Attribute                  ###
+### <f:cObject typoscriptObjectPath="lib.colContentSlide" data="1"/> ###
+########################################################################
+lib.colContentSlide < lib.dynamicContent
+lib.colContentSlide.20.slide = -1
+lib.colContentSlide.stdWrap.wrap >
+
 ########################################################################
 ###                 Load Content bei Date Attribute                  ###
 ### <f:cObject typoscriptObjectPath="lib.dynamicContent" data="67"/> ###
@@ -50,18 +64,10 @@ lib.dynamicContent {
         }
     }
 }
-############################
-### Slider Default Pos 1 ###
-############################
-lib.slider < temp.cPos
-lib.slider.select.where = colPos=1
-lib.slider.slide >
+
 #############################
 ### Override Fluid Styles ###
 #############################
-lib.fluidContent.partialRootPaths.100 = {$path.template}Private/Partial/fluid_styled_content/
-lib.fluidContent.templateRootPaths.100 = {$path.template}Private/Template/fluid_styled_content/
-
 lib.contentElement.partialRootPaths.100 = {$path.template}Private/Partial/fluid_styled_content/
 lib.contentElement.templateRootPaths.100 = {$path.template}Private/Template/fluid_styled_content/
 lib.contentElement.layoutRootPaths.100 = {$path.template}Private/Layout/fluid_styled_content/
