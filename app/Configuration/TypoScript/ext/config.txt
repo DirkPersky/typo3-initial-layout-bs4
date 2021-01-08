@@ -35,7 +35,7 @@ config  {
   metaCharset = utf-8
   disablePrefixComment = 1
   index_enable = 1
-  baseURL = {$path.baseURL}
+  baseURL = /
 
   removeDefaultJS = 0
   inlineStyle2TempFile = 0

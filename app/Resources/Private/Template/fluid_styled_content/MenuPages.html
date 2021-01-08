@@ -1,0 +1,34 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Main">
+    <f:switch expression="{data.layout}">
+        <f:case value="8">
+            <f:render section="ShowHiddenMenu" arguments="{data:data}"/>
+        </f:case>
+        <f:defaultCase>
+            <f:render section="DefaultMenu" arguments="{menu:menu}"/>
+        </f:defaultCase>
+    </f:switch>
+</f:section>
+
+<f:section name="DefaultMenu">
+    <f:if condition="{menu}">
+        <ul>
+            <f:for each="{menu}" as="page">
+                <li>
+                    <a href="{page.link}"{f:if(condition: page.target, then: ' target="{page.target}"')} title="{page.title}">
+                    <span>{page.title}</span>
+                    </a>
+                </li>
+            </f:for>
+        </ul>
+    </f:if>
+</f:section>
+
+<f:section name="ShowHiddenMenu">
+    <v:menu.list pages="{data.pages}" showHiddenInMenu="1">
+        <f:render section="DefaultMenu" arguments="{menu:menu}"/>
+    </v:menu.list>
+</f:section>
+
+</html>
