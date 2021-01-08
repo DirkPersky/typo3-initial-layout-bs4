@@ -23,9 +23,24 @@ TCEFORM.tt_content.header_layout {
 }
 
 TCEFORM.tt_content.layout {
-	addItems.6 = Carousel(Slider)
-}
 
+    altLabels  {
+        6 = Carousel(Slider)
+        7 = Carousel(Slider-Startseite)
+        8 = Menu - include not in menu
+    }
+
+	types {
+        textmedia {
+            addItems.6 = 6
+        	addItems.7 = 7
+        }
+
+        menu_pages {
+            addItems.8 = 8
+        }
+    }
+}
 
 #################
 ### powermail ###
