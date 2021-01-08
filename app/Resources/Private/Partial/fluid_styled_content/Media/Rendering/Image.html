@@ -9,47 +9,64 @@
 </f:comment>
 <picture>
     <f:if condition="{data.imagewidth} > 1400">
-        <source media="(min-width: 1400px)"
-                srcset="{f:uri.image(image:file, width:1960, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile', fileExtension:'webp')}"
-                type="image/webp"/>
+        <f:if condition="{file.originalFile.properties.extension} != 'svg'">
+            <source media="(min-width: 1400px)"
+                    srcset="{f:uri.image(image:file, width:1960, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile', fileExtension:'webp')}"
+                    type="image/webp"/>
+        </f:if>
         <source media="(min-width: 1400px)"
                 srcset="{f:uri.image(image:file, width:1960, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile')}"
                 type="{file.originalFile.properties.mime_type}"/>
     </f:if>
     <f:if condition="{data.imagewidth} > 1200">
-        <source media="(min-width: 1200px)"
-                srcset="{f:uri.image(image:file, width:1400, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile', fileExtension:'webp')}"
-                type="image/webp"/>
+        <f:if condition="{file.originalFile.properties.extension} != 'svg'">
+            <source media="(min-width: 1200px)"
+                    srcset="{f:uri.image(image:file, width:1400, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile', fileExtension:'webp')}"
+                    type="image/webp"/>
+        </f:if>
+
         <source media="(min-width: 1200px)"
                 srcset="{f:uri.image(image:file, width:1400, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile')}"
                 type="{file.originalFile.properties.mime_type}"/>
     </f:if>
     <f:if condition="{data.imagewidth} > 992">
-        <source media="(min-width: 992px)"
-                srcset="{f:uri.image(image:file, width:1200, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile', fileExtension:'webp')}"
-                type="image/webp"/>
+        <f:if condition="{file.originalFile.properties.extension} != 'svg'">
+            <source media="(min-width: 992px)"
+                    srcset="{f:uri.image(image:file, width:1200, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile', fileExtension:'webp')}"
+                    type="image/webp"/>
+        </f:if>
+
         <source media="(min-width: 992px)"
                 srcset="{f:uri.image(image:file, width:1200, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile')}"
                 type="{file.originalFile.properties.mime_type}"/>
     </f:if>
     <f:if condition="{data.imagewidth} > 768">
-        <source media="(min-width: 768px)"
-                srcset="{f:uri.image(image:file, width:992, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile', fileExtension:'webp')}"
-                type="image/webp"/>
+        <f:if condition="{file.originalFile.properties.extension} != 'svg'">
+            <source media="(min-width: 768px)"
+                    srcset="{f:uri.image(image:file, width:992, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile', fileExtension:'webp')}"
+                    type="image/webp"/>
+        </f:if>
+
         <source media="(min-width: 768px)"
                 srcset="{f:uri.image(image:file, width:992, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile')}"
                 type="{file.originalFile.properties.mime_type}"/>
     </f:if>
     <f:if condition="{data.imagewidth} > 480">
-        <source media="(min-width: 480px)"
-                srcset="{f:uri.image(image:file, width:768, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile', fileExtension:'webp')}"
-                type="image/webp"/>
+        <f:if condition="{file.originalFile.properties.extension} != 'svg'">
+            <source media="(min-width: 480px)"
+                    srcset="{f:uri.image(image:file, width:768, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile', fileExtension:'webp')}"
+                    type="image/webp"/>
+        </f:if>
+
         <source media="(min-width: 480px)"
                 srcset="{f:uri.image(image:file, width:768, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile')}"
                 type="{file.originalFile.properties.mime_type}"/>
     </f:if>
-    <source srcset="{f:uri.image(image:file, width:360, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile', fileExtension:'webp')}"
-            type="image/webp"/>
+    <f:if condition="{file.originalFile.properties.extension} != 'svg'">
+        <source srcset="{f:uri.image(image:file, width:360, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile', fileExtension:'webp')}"
+                type="image/webp"/>
+    </f:if>
+
     <source srcset="{f:uri.image(image:file, width:360, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile')}"
             type="{file.originalFile.properties.mime_type}"/>
     <img alt="{file.alternative}" class="img-fluid" height="{dimensions.height}" lazyload="true" title="{file.title}"
