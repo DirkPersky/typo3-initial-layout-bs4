@@ -35,7 +35,7 @@ lib.colContent {
 ###                 Load Content bei Date Attribute                  ###
 ### <f:cObject typoscriptObjectPath="lib.colContentSlide" data="1"/> ###
 ########################################################################
-lib.colContentSlide < lib.dynamicContent
+lib.colContentSlide < lib.colContent
 lib.colContentSlide.20.slide = -1
 lib.colContentSlide.stdWrap.wrap >
 
