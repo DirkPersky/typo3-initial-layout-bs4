@@ -42,6 +42,9 @@
     "webpack-cli": "latest"
   },
   "dependencies": {
+    "@babel/plugin-transform-arrow-functions": "^7.12.1",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-typescript": "^7.12.7",
     "@barba/core": "latest",
     "@fancyapps/fancybox": "latest",
     "@fortawesome/fontawesome-free": "latest",
@@ -50,6 +53,7 @@
     "install": "latest",
     "jquery": "latest",
     "lazysizes": "latest",
+    "mmenu-js": "^8.5.20",
     "npm": "latest",
     "popper.js": "latest",
     "rrssb": "latest",
