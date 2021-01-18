@@ -1,0 +1,217 @@
+.canvas--nav {
+  position: fixed;
+  z-index: 1000;
+  right: 0;
+  top: 0;
+
+  max-height: 100vh;
+  height: 100%;
+  max-width: 440px;
+  width: 100%;
+  overflow: auto;
+
+  background-color: #f3f3f3;
+  transition: transform .4s ease, -webkit-transform .4s ease;
+  transform: translate3d(100%, 0, 0);
+
+  html.nav--open & {
+	transform: translate3d(0, 0, 0);
+  }
+
+  .navbar-nav {
+	position: relative;
+	overflow: hidden;
+	flex-wrap: nowrap;
+	min-height: 100%; // full hight offcanvis
+
+	&:before {
+	  content: 'MENU';
+	  text-align: center;
+	  display: block;
+	  @include rem(padding, 10 15);
+	  color: rgba(0, 0, 0, 0.3);
+	  border-bottom: 1px solid rgba(0, 0, 0, .1);
+	}
+  }
+
+  //Navbar link definition
+  .nav {
+	> .nav-item {
+	  > .nav-link {
+		@include rem(padding, 10 15);
+		display: block;
+		color: theme-color('dark');
+		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+		&:hover {
+		  color: theme-color('primary');
+		  background-color: rgba(0, 0, 0, .05);
+		}
+	  }
+
+	  &.active {
+		> .nav-link {
+		  color: theme-color('primary');
+		  background-color: rgba(0, 0, 0, .1);
+		}
+	  }
+	}
+  }
+
+  // Dropdowns
+  .dropdown {
+	position: static;
+
+	// Nav Formating
+	.nav {
+	  flex-direction: column;
+	  flex-wrap: nowrap;
+	}
+
+	// Main Link
+	> .nav-link {
+	  position: relative;
+	  padding-right: 55px !important;
+	  border: 0;
+
+	  > .trigger {
+		font-size: 22px;
+		position: absolute;
+
+		top: 0;
+		right: 0;
+		bottom: 0;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		width: 44px;
+		height: 100%;
+		cursor: pointer;
+		border-left: 1px solid rgba(0, 0, 0, 0.1);
+		color: rgba(0, 0, 0, 0.3);
+
+		&:before {
+		  @extend .fas;
+		  @extend .fa-angle-right
+		}
+	  }
+	}
+  }
+
+  // nav Wrap
+  .dropdown-wrap {
+	position: absolute;
+	z-index: 5;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+	min-width: 200px;
+	transition: all .4s ease-in-out;
+	transform: translate(100%, 0);
+
+	background-color: #f3f3f3;
+
+	.list-header {
+	  position: relative;
+	  @include rem(padding, 10 15);
+	  cursor: pointer;
+	  text-align: center;
+
+	  color: theme-color('danger');
+	  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+	  &:before {
+		@extend .fas;
+		@extend .fa-angle-left;
+
+		font-size: 22px;
+		position: absolute;
+		top: 0;
+
+		right: 0;
+		bottom: 0;
+		left: 0;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 44px;
+		height: 100%;
+	  }
+	}
+
+	&.show {
+	  transform: translate(0, 0);
+	}
+
+	> ul {
+	  overflow: auto;
+	  max-height: 100%;
+	}
+  }
+
+  // Backdrop Style
+  .nav--backdrop {
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	visibility: hidden;
+	width: 100vw;
+	height: 100vh;
+	cursor: pointer;
+	transition: all .5s ease-out;
+	opacity: 0;
+	background-color: rgba(0, 0, 0, .4);
+
+	html.nav--open & {
+	  visibility: visible;
+	  opacity: 1;
+
+	  @include media-breakpoint-up(lg) {
+		overflow: hidden;
+		opacity: 0;
+	  }
+	}
+  }
+}
+
+html.nav--open {
+  &,
+  body {
+	overflow: hidden;
+	height: 100vh;
+
+	@include media-breakpoint-up(lg) {
+	  overflow: visible;
+	  height: auto;
+	}
+  }
+}
+
+#mainNavigation, //navbar
+div[data-barba="wrapper"], // content
+footer#footer, // footer
+.nav--backdrop {
+  z-index: 1;
+  transition: transform .4s ease, -webkit-transform .4s ease;
+
+  // on Modal Open
+  html.nav--open & {
+	transform: translate3d(-80%, 0, 0);
+
+	@include media-breakpoint-up(sm) {
+	  transform: translate3d(-440px, 0, 0);
+	}
+
+	@include media-breakpoint-up(lg) {
+	  transform: none;
+	}
+  }
+}

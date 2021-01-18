@@ -1,36 +1,38 @@
-<header id="navigation">
-    <nav class="navbar nav-minimal fixed-top" role="navigation">
-        <div class="container">
-            <div class="brand">
-                <f:link.page class="navbar-brand float-left" pageUid="{settings.pidRoot}" title="Home">
-                    <img class="logo" src="fileadmin/Mysite4/app/Resources/Public/img/logo.png">
-                </f:link.page>
-            </div>
-            <div class="nav-bars">
-                <div class="collapse navbar-toggleable" id="navbarResponsive">
-                    <f:render arguments="{_all}" partial="Navigation/MainCanvis"/>
+<header id="navigation" class="navbar nav-minimal {f:if(condition:'{data.is_siteroot}', then:'home')}">
+    <div class="navbar nav-minimal" role="navigation">
+        <div id="headerInner">
+            <div class="container">
+                <div class="brand">
+                    <f:link.page class="navbar-brand float-left" pageUid="{settings.pidRoot}" title="Home">
+                        <img class="logo" src="fileadmin/Mysite4/app/Resources/Public/img/logo.png">
+                    </f:link.page>
                 </div>
+                <div class="nav-bars">
+                    <f:render partial="SearchNav"/>
 
-                <f:render partial="SearchNav"/>
-
-                <div class="nav-right">
-                    <div class="search" data-target="#collapseSearch" data-toggle="collapse">
-                        <i class="fa fa-search"></i>
-                    </div>
-                    <button aria-controls="navigation" aria-label="Menu"
-                            class="navbar-toggler hamburger hamburger--collapse float-right"
-                            data-target="#navbarResponsive" data-toggle="collapse" type="button">
+                    <div class="nav-right">
+                        <div class="search" data-target="#collapseSearch" data-toggle="collapse">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <button aria-controls="navigation" aria-label="Menu"
+                                class="navbar-toggler hamburger hamburger--collapse d-lg-none"
+                                data-dp-canvis="d-lg-none" type="button" disabled>
                                 <span class="hamburger-box">
                                     <span class="hamburger-inner"></span>
                                 </span>
-                        <span class="menu-title">Menü</span>
-                    </button>
+                            <span class="menu-title">Menü</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </nav>
+        <div id="navbarResponsive" class="d-none d-lg-block w-100">
+            <div class="container">
+                <f:render arguments="{_all}" partial="Navigation/Main"/>
+            </div>
+        </div>
+    </div>
 </header>
-<div class="nav--backdrop"></div>
 
 <div data-barba="wrapper">
     <div data-barba="container">

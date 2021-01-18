@@ -45,7 +45,7 @@ export default class BarbaJS {
                         scrollTop: 0
                     }, 10);
                     // active Navigation
-                    me.markActiveNav(data.trigger);
+                    jQuery(window).trigger('dp--canvas');
                 },
                 afterEnter: function (data:any) {
                     if(me.overlay.length > 0) me.overlay.removeClass('show');
@@ -76,20 +76,6 @@ export default class BarbaJS {
         this.powermail();
         // init handlers
         (<any>window).Statemanager.call();
-    }
-
-    markActiveNav(trigger:any){
-        var link = jQuery(trigger),
-            parent = link.parents('li');
-
-        if(parent.is('li')){
-            link.parents(this.selector).find('li').removeClass('active');
-
-            if (parent.length > 0) {
-                parent.addClass('active');
-                if (this.navbarCloseOnPageShift) jQuery(this.collapseSelector).collapse('hide');
-            }
-        }
     }
 
     powermail(){

@@ -1,64 +1,4 @@
 // main: ../style.scss
-.nav--backdrop {
-  position: fixed;
-  z-index: 100;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  visibility: hidden;
-  width: 100vw;
-  height: 100vh;
-  cursor: pointer;
-  transition: all .5s ease-out;
-  opacity: 0;
-  background-color: rgba(0, 0, 0, .4);
-
-  html.nav--open & {
-	visibility: visible;
-	opacity: 1;
-
-	@include media-breakpoint-up(lg) {
-	  overflow: hidden;
-	  opacity: 0;
-	}
-  }
-}
-
-html.nav--open {
-  &,
-  body {
-	overflow: hidden;
-	height: 100vh;
-
-	@include media-breakpoint-up(lg) {
-	  overflow: visible;
-	  height: auto;
-	}
-  }
-}
-
-header#navigation, //navbar
-div[data-barba="wrapper"], // content
-footer#bottom, // footer
-.nav--backdrop {
-  z-index: 1;
-  transition: transform .4s ease, -webkit-transform .4s ease;
-
-  // on Modal Open
-  html.nav--open & {
-	transform: translate3d(-80%, 0, 0);
-
-	@include media-breakpoint-up(sm) {
-	  transform: translate3d(-440px, 0, 0);
-	}
-
-	@include media-breakpoint-up(lg) {
-	  transform: none;
-	}
-  }
-}
-
 .navbar {
   padding: 0;
   -moz-transition: all .5s ease-out;
@@ -129,6 +69,11 @@ footer#bottom, // footer
 	  outline: none;
 	}
 
+	&[disabled] {
+	  opacity: .2;
+	  cursor: not-allowed;
+	}
+
 	// Hide on Desktop
 	@include media-breakpoint-up(lg) {
 	  display: none;
@@ -165,69 +110,17 @@ footer#bottom, // footer
 	}
   }
 
-  // Navigation
-  .navbar-toggleable { // offcanvis
-	position: fixed;
-	z-index: 100;
-	top: 0;
-	left: 100%;
-	display: block !important;
-	overflow: auto;
-
-	width: 100%;
-	height: 100vh !important;
-	max-height: calc(100vh);
-	background-color: #f3f3f3;
-
-	@include media-breakpoint-up(sm) {
-	  max-width: 440px;
-	}
-
-	@include media-breakpoint-up(lg) {
-	  position: static;
-	  display: block;
-	  overflow: visible;
-	  max-width: 100%;
-	  height: auto !important;
-	  transform: translateX(0);
-	  background-color: transparent;
-	}
-  }
-
   // Main Navbar
   .navbar-nav {
 	position: relative;
-	overflow: hidden;
-	flex-wrap: nowrap;
-	min-height: 100%; // full hight offcanvis
-
-	@include media-breakpoint-up(lg) {
-	  overflow: visible;
-	  align-items: stretch;
-	  flex-direction: row;
-	  flex-wrap: wrap;
-	  min-height: auto;
-	}
-
-	&:before {
-	  content: 'MENU';
-	  text-align: center;
-	  display: block;
-	  @include rem(padding, 10 15);
-	  color: rgba(0, 0, 0, 0.3);
-	  border-bottom: 1px solid rgba(0, 0, 0, .1);
-
-	  @include media-breakpoint-up(lg) {
-		display: none;
-	  }
-	}
+	align-items: stretch;
+	flex-direction: row;
+	flex-wrap: wrap;
 
 	> .nav-item {
-	  @include media-breakpoint-up(lg) {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	  }
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
 
 	  > .nav-link {
 		@include media-breakpoint-up(xl) {
@@ -244,11 +137,7 @@ footer#bottom, // footer
 		@include rem(padding, 10 15);
 		display: block;
 		color: theme-color('dark');
-		// Mobile Nav Border
-		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-		@include media-breakpoint-up(lg) {
-		  border-bottom: 0;
-		}
+		border-bottom: 0;
 
 		&:hover {
 		  color: theme-color('primary');
@@ -268,10 +157,7 @@ footer#bottom, // footer
 
   // Dropdowns
   .dropdown {
-	position: static;
-	@include media-breakpoint-up(lg) {
-	  position: relative;
-	}
+	position: relative;
 	// Nav Formating
 	.nav {
 	  flex-direction: column;
@@ -281,14 +167,12 @@ footer#bottom, // footer
 	// Hover event
 	&:hover {
 	  > .dropdown-wrap {
-		@include media-breakpoint-up(lg) {
-		  visibility: visible;
-		  animation-name: dropdown-nav;
+		visibility: visible;
+		animation-name: dropdown-nav;
 
-		  animation-duration: .4s;
-		  animation-iteration-count: 1;
-		  opacity: 1;
-		}
+		animation-duration: .4s;
+		animation-iteration-count: 1;
+		opacity: 1;
 	  }
 	}
 
@@ -296,38 +180,6 @@ footer#bottom, // footer
 	> .nav-link {
 	  position: relative;
 	  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-
-	  @include media-breakpoint-down(md) {
-		padding-right: 55px !important;
-		border: 0;
-	  }
-
-	  > .trigger {
-		font-size: 22px;
-		position: absolute;
-
-		top: 0;
-		right: 0;
-		bottom: 0;
-
-		display: flex;
-		align-items: center;
-		justify-content: center;
-
-		width: 44px;
-		height: 100%;
-		cursor: pointer;
-		border-left: 1px solid rgba(0, 0, 0, 0.1);
-
-		@include media-breakpoint-up(lg) {
-		  display: none;
-		}
-
-		&:before {
-		  @extend .fas;
-		  @extend .fa-angle-right
-		}
-	  }
 	}
   }
 
@@ -344,7 +196,7 @@ footer#bottom, // footer
 	transition: all .4s ease-in-out;
 	transform: translate(100%, 0);
 
-	background-color: rgba(0, 0, 0, 0.1);
+	background-color: #f3f3f3;
 
 	@include media-breakpoint-up(lg) {
 	  z-index: -1;
@@ -361,51 +213,17 @@ footer#bottom, // footer
 	}
 
 	.dropdown-wrap {
-	  @include media-breakpoint-up(lg) {
-		top: 0;
-		left: 100%;
-	  }
+	  top: 0;
+	  left: 100%;
 
 	  &.pull-right {
-
-		@include media-breakpoint-up(lg) {
-		  right: auto;
-		  left: -100%;
-		}
+		right: auto;
+		left: -100%;
 	  }
 	}
 
 	.list-header {
-	  position: relative;
-	  @include rem(padding, 10 15);
-	  cursor: pointer;
-	  text-align: center;
-
-	  color: theme-color('danger');
-	  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-
-	  @include media-breakpoint-up(lg) {
-		display: none;
-	  }
-
-	  &:before {
-		@extend .fas;
-		@extend .fa-angle-left;
-
-		font-size: 22px;
-		position: absolute;
-		top: 0;
-
-		right: 0;
-		bottom: 0;
-		left: 0;
-
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 44px;
-		height: 100%;
-	  }
+	  display: none;
 	}
 
 	&.show {
@@ -413,20 +231,16 @@ footer#bottom, // footer
 	}
 
 	> ul {
-	  overflow: auto;
+	  overflow: visible;
 	  max-height: 100%;
-
-	  @include media-breakpoint-up(lg) {
-		overflow: visible;
-	  }
 	}
   }
 }
 
 @keyframes dropdown-nav {
-	from {
-		top: -100%;
-	}
-	to {
-	}
+  from {
+	top: -100%;
+  }
+  to {
+  }
 }

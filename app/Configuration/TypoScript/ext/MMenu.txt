@@ -1,0 +1,41 @@
+mmenuPage = PAGE
+mmenuPage {
+    typeNum = 22
+    config.cache_period = 2678400
+    config.disableAllHeaderCode = 1
+    config.disablePrefixComment = 1
+}
+
+mmenuPage.10 = FLUIDTEMPLATE
+mmenuPage.10 {
+	layoutRootPath = {$path.template}Private/Layout/
+	partialRootPath = {$path.template}Private/Partial/
+
+    ##########################
+    ### DATA PREPROCESSING ###
+    ##########################
+    dataProcessing {
+        # Main Menu
+        10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+        10 {
+            special = list
+            special.value = {$nav.homeUid}
+
+            levels = 3
+            includeSpacer = 1
+            as = menuMain
+
+            excludeUidList = {$nav.exclude}
+            expandAll = 1
+        }
+
+        # Language Menu
+        30 = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
+        30 {
+            languages = auto
+            as = menuLanguage
+        }
+    }
+
+	file = {$path.template}Private/Template/Navigation.html
+}

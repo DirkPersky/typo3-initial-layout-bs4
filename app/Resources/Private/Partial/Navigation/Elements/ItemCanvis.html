@@ -8,17 +8,20 @@
         <span>{item.title}</span>
     </f:then>
     <f:else>
-        <f:render partial="Navigation/Elements/Link" arguments="{item: item}"/>
+        <f:render partial="Navigation/Elements/LinkCanvas" arguments="{item: item}"/>
     </f:else>
 </f:if>
 <f:if condition="{item.children}">
-    <f:render section="submenu" arguments="{submenu: item.children}"/>
+    <f:render section="submenu" arguments="{submenu: item.children, title: item.title}"/>
 </f:if>
 </li>
 
 <f:section name="submenu">
     <span class="dropdown-wrap">
         <ul class="nav dropdown-nav">
+            <li class="list-header">
+                <span>{title}</span>
+            </li>
             <f:for each="{submenu}" as="subItem">
                 <f:render partial="Navigation/Elements/ItemCanvis" arguments="{item: subItem}"/>
             </f:for>
