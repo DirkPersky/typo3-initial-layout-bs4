@@ -8,7 +8,6 @@ page = PAGE
 	<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/content.txt">
 	<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/gridElements.txt">
 	<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/FEEdit.txt">
-	<INCLUDE_TYPOSCRIPT: source="FILE:fileadmin/Mysite4/app/Configuration/TypoScript/ext/MMenu.txt">
 
 ########################
 ### Optionale Script ###
