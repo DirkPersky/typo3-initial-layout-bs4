@@ -31,7 +31,7 @@ window.Statemanager.attach('dropdown-menu', function(){
     /**
      * Init Navigation
      */
-    $('.nav-inline .dropdown').dropDownMenu();
+    $('.navbar-toggleable .dropdown').dropDownMenu();
 });
 
 

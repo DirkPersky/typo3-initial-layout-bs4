@@ -22,7 +22,7 @@ page.10 {
             special = list
             special.value = {$nav.homeUid}
 
-            levels = 2
+            levels = 3
             includeSpacer = 1
             as = menuMain
 

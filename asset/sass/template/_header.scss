@@ -13,6 +13,16 @@
   transition: all .5s ease-out;
   opacity: 0;
   background-color: rgba(0, 0, 0, .4);
+
+  html.nav--open & {
+	visibility: visible;
+	opacity: 1;
+
+	@include media-breakpoint-up(lg) {
+	  overflow: hidden;
+	  opacity: 0;
+	}
+  }
 }
 
 html.nav--open {
@@ -25,11 +35,6 @@ html.nav--open {
 	  overflow: visible;
 	  height: auto;
 	}
-  }
-
-  .nav--backdrop {
-	visibility: visible;
-	opacity: 1;
   }
 }
 
@@ -208,7 +213,7 @@ footer#bottom, // footer
 	  content: 'MENU';
 	  text-align: center;
 	  display: block;
-	  padding: .5rem .5rem;
+	  @include rem(padding, 10 15);
 	  color: rgba(0, 0, 0, 0.3);
 	  border-bottom: 1px solid rgba(0, 0, 0, .1);
 
