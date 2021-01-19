@@ -16,7 +16,7 @@
                         </div>
                         <button aria-controls="navigation" aria-label="Menu"
                                 class="navbar-toggler hamburger hamburger--collapse d-lg-none"
-                                data-dp-canvis="d-lg-none" type="button" disabled>
+                                data-dp-canvis="d-lg-none" data-sync="#canvas-sync" type="button" disabled>
                                 <span class="hamburger-box">
                                     <span class="hamburger-inner"></span>
                                 </span>
@@ -27,7 +27,7 @@
             </div>
         </div>
         <div id="navbarResponsive" class="d-none d-lg-block w-100">
-            <div class="container">
+            <div class="container" id="canvas-sync">
                 <f:render arguments="{_all}" partial="Navigation/Main"/>
             </div>
         </div>

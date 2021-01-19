@@ -31,7 +31,10 @@ $.fn.DPCanvas = function (options){
     function loadNavigationContent(){
         var current = window.location.protocol+'//' + window.location.hostname + window.location.pathname;
         // make Ajax Request
-        var response = $.get(current, {
+        var response = $.get({
+            url: current,
+            cache: true
+        }, {
             type: settings.type
         });
         // handle Response
@@ -41,6 +44,8 @@ $.fn.DPCanvas = function (options){
             linkBindings();
             // add Toggle Button now
             toggleButtonEvents();
+            // sync action
+            syncNav(data);
         }, function (error){ });
     }
     /**
@@ -93,6 +98,16 @@ $.fn.DPCanvas = function (options){
             // close events
             $(settings.backdrop).trigger('click');
         });
+    }
+
+    /**
+     * Sync Main Action
+     */
+    function syncNav(data){
+        var $syncTarget = $button.data('sync');
+        if($syncTarget && ($syncTarget = $($syncTarget)).length > 0) {
+            $syncTarget.html($container.find('.navbar-nav').clone());
+        }
     }
 };
 
