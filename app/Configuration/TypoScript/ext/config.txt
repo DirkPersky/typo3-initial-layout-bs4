@@ -38,6 +38,7 @@ config  {
   baseURL = /
 
   removeDefaultJS = 0
+  removeDefaultCss = 1
   inlineStyle2TempFile = 0
   noScaleUp = 1
   meaningfulTempFilePrefix = 50

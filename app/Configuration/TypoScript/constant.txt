@@ -96,7 +96,6 @@ plugin.tx_csseo {
 ### Template ###
 ################
 path.template = fileadmin/Mysite4/app/Resources/
-path.baseURL = http://mysite4.cms-sudhaus.de/
 
 template.style = body
 favicon = favicon.png
