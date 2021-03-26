@@ -1,6 +1,34 @@
+.canvas--menu {
+  // Backdrop Style
+  .nav--backdrop {
+	position: fixed;
+	z-index: 1035;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	visibility: hidden;
+	width: 100vw;
+	height: 100vh;
+	cursor: pointer;
+	transition: all .5s ease-out;
+	opacity: 0;
+	background-color: rgba(0, 0, 0, .4);
+
+	html.nav--open & {
+	  visibility: visible;
+	  opacity: 1;
+
+	  //@include media-breakpoint-up(lg) {
+	  //overflow: hidden;
+	  //opacity: 0;
+	  //}
+	}
+  }
+}
 .canvas--nav {
   position: fixed;
-  z-index: 1000;
+  z-index: 1040;
   right: 0;
   top: 0;
 
@@ -154,32 +182,6 @@
 	}
   }
 
-  // Backdrop Style
-  .nav--backdrop {
-	position: fixed;
-	z-index: 100;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	visibility: hidden;
-	width: 100vw;
-	height: 100vh;
-	cursor: pointer;
-	transition: all .5s ease-out;
-	opacity: 0;
-	background-color: rgba(0, 0, 0, .4);
-
-	html.nav--open & {
-	  visibility: visible;
-	  opacity: 1;
-
-	  @include media-breakpoint-up(lg) {
-		overflow: hidden;
-		opacity: 0;
-	  }
-	}
-  }
 }
 
 html.nav--open {
@@ -197,9 +199,8 @@ html.nav--open {
 
 #mainNavigation, //navbar
 div[data-barba="wrapper"], // content
-footer#footer, // footer
+footer#bottom, // footer
 .nav--backdrop {
-  z-index: 1;
   transition: transform .4s ease, -webkit-transform .4s ease;
 
   // on Modal Open
@@ -209,9 +210,9 @@ footer#footer, // footer
 	@include media-breakpoint-up(sm) {
 	  transform: translate3d(-440px, 0, 0);
 	}
-
-	@include media-breakpoint-up(lg) {
-	  transform: none;
-	}
+	//
+	//@include media-breakpoint-up(lg) {
+	//  transform: none;
+	//}
   }
 }
