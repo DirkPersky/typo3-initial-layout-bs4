@@ -11,7 +11,7 @@
 	width: 100vw;
 	height: 100vh;
 	cursor: pointer;
-	transition: all .5s ease-out;
+	transition: all .4s ease-out;
 	opacity: 0;
 	background-color: rgba(0, 0, 0, .4);
 
@@ -201,7 +201,7 @@ html.nav--open {
 div[data-barba="wrapper"], // content
 footer#bottom, // footer
 .nav--backdrop {
-  transition: transform .4s ease, -webkit-transform .4s ease;
+  transition: transform .4s ease, -webkit-transform .4s ease !important;
 
   // on Modal Open
   html.nav--open & {
