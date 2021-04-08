@@ -47,19 +47,21 @@ lib.dynamicContent = COA
 lib.dynamicContent {
     5 = LOAD_REGISTER
     5  {
-        colPos.cObject = TEXT
-        colPos.cObject {
+        pID.cObject = TEXT
+        pID.cObject {
             value.current = 1
         }
     }
     20 = CONTENT
     20 {
         table = tt_content
-        slide = -1
         select {
-            where = {register:colPos}
-            where.insertData = 1
+            pidInList = {register:pID}
+            pidInList.insertData = 1
+            where = colPos=2
+            #where.insertData = 1
             begin=0
+            max=1
             languageField = sys_language_uid
         }
     }
