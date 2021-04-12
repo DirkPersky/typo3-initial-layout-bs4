@@ -1,0 +1,48 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers" lang="en"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+
+<div class="item{f:if(condition:'{data.header}',then:' has--headline')}{f:if(condition:'{tx_gridelements_children} > 0',then:' has--content')}">
+    <div
+            class="icon"
+    <f:if condition="{data.flexform_image}">style="background-image:url(f:uri.image(image: files.0, maxWidth: 480, cropVariant: mobile)});"</f:if>
+    >
+    <f:if condition="{data.header_link}">
+        <f:then>
+            <f:link.typolink parameter="{data.header_link}">
+                <f:render section="RenderHeader" arguments="{_all}" />
+            </f:link.typolink>
+        </f:then>
+        <f:else>
+            <f:render section="RenderHeader" arguments="{_all}" />
+        </f:else>
+    </f:if>
+</div>
+<f:if condition="{tx_gridelements_children} > 0">
+    <div class="item-body">
+        <f:render section="RenderContent" arguments="{_all}" />
+    </div>
+</f:if>
+</div>
+
+
+<f:section name="RenderHeader">
+    <f:if condition="{data.flexform_icon}">
+        <div class="icon-fa">
+            <i class="{data.flexform_icon -> f:format.raw()}"></i>
+        </div>
+    </f:if>
+    <f:if condition="{data.header}">
+        <div class="icon-headline">
+            <f:format.raw>{data.header}</f:format.raw>
+        </div>
+    </f:if>
+</f:section>
+<f:section name="RenderContent">
+    <f:for each="{children.1}" as="row" iteration="row_iteration">
+        <f:for each="{row}" as="child">
+            <f:cObject typoscriptObjectPath="tt_content.{child.data.CType}" data="{child.data}" table="tt_content" />
+        </f:for>
+    </f:for>
+</f:section>
+</html>

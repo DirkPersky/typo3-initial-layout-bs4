@@ -1,103 +1,130 @@
 // main: ../style.scss
 .popout {
-		$icon-width: 50px !default;
-		$popout-width: 280px !default;
+  $icon-width: 50px !default;
+  $popout-width: 280px !default;
 
-		display: none;
+  display: none;
 
-		@include media-breakpoint-up(md) {
-			position: fixed;
-			z-index: 1125;
-			right: 0;
-			top:15%;
+  @include media-breakpoint-up(md) {
+	position: fixed;
+	z-index: 1125;
+	right: 0;
+	top: 15%;
 
-			display: block;
-		}
+	display: block;
+  }
 
-		width: $icon-width;
+  width: $icon-width;
 
-		.item {
-			background-color: #f8f8f8;
-			border:1px solid #e7e7e7;
+  .item {
+	background-color: #f8f8f8;
+	border: 1px solid #e7e7e7;
 
-			color: inline;
+	color: inherit;
 
-			width: $icon-width;
-			margin-bottom: 10px;
-			padding: 5px 0 5px 5px;
+	width: $icon-width;
+	margin-bottom: 10px;
+	padding: 5px 0 5px 5px;
 
-			border-top-left-radius: 5px;
-			border-bottom-left-radius: 5px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
 
-			position: relative;
-			left:0;
+	position: relative;
+	left: 0;
 
-			-webkit-transition: all 0.6s; /* Safari */
-	    transition: all 0.6s;
+	transition: all 0.6s;
 
-			@media (min-width: #{(map-get($grid-breakpoints,'xl') + $popout-width + ($icon-width*3))}) {
-				width: ($popout-width - ($icon-width) );
-				left: -($popout-width - ($icon-width*2) );
-			}
-
-			overflow: hidden;
-
-			.icon {
-				width: $popout-width;
-				background-repeat: no-repeat;
-				background-size: auto ($icon-width - 10px);
-				min-height: ($icon-width - 10px);
-
-				padding-left: ($icon-width + 5px);
-				line-height: ($icon-width - 10px);
-				vertical-align: middle;
-
-				@include font-size(18px);
-
-				.icon-headline {
-					display: block;
-					position: relative;
-
-					&:before {
-						@extend .fas;
-						@extend .fa-angle-down;
-
-						position: absolute;
-						left: 40px;
-						bottom: -6px;
-
-						@include font-size(11px);
-					}
-				}
-			}
-
-			.item-body {
-				width: $popout-width;
-				padding-left: 35px;
-
-				-webkit-transition: max-height 0.6s; /* Safari */
-				transition: max-height 0.6s;
-
-				max-height: 0;
-				overflow-y: auto;
-			}
-			&:hover,
-			&.on {
-				width: $popout-width;
-
-				position: relative;
-				left: -($popout-width - $icon-width);
-
-				// border-bottom-left-radius: 0;
-
-				.icon-headline {
-						&:before {
-							display: none;
-						}
-				}
-				.item-body {
-					max-height: 320px;
-				}
-			}
-		}
+	@media (min-width: #{(map-get($grid-breakpoints,'xl') + $popout-width + ($icon-width*3))}) {
+	  width: ($popout-width - ($icon-width));
+	  left: -($popout-width - ($icon-width*2) );
 	}
+
+	overflow: hidden;
+
+	.icon {
+	  position: relative;
+	  width: $popout-width;
+	  background-repeat: no-repeat;
+	  background-size: auto ($icon-width - 10px);
+	  min-height: ($icon-width - 10px);
+
+	  padding-left: ($icon-width + 5px);
+	  line-height: ($icon-width - 10px);
+	  vertical-align: middle;
+
+	  @include font-size(18px);
+
+	  .icon-headline {
+		display: block;
+		position: relative;
+
+		&:before {
+		  @extend .fas;
+		  @extend .fa-angle-down;
+
+		  position: absolute;
+		  left: 40px;
+		  bottom: -6px;
+
+		  @include font-size(11px);
+		}
+	  }
+
+	  .icon-fa {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: ($icon-width - 10px);
+		height: 100%;
+		font-size: 1.6rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	  }
+
+	  a {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		display: block;
+		padding-left: ($icon-width + 5px);
+	  }
+	}
+
+	.item-body {
+	  width: $popout-width;
+	  padding-left: 35px;
+
+	  -webkit-transition: max-height 0.6s; /* Safari */
+	  transition: max-height 0.6s;
+
+	  max-height: 0;
+	  overflow-y: auto;
+	}
+
+	&.has--content,
+	&.has--headline {
+	  &:hover,
+	  &.on {
+		width: $popout-width;
+
+		position: relative;
+		left: -($popout-width - $icon-width);
+
+		// border-bottom-left-radius: 0;
+
+		.icon-headline {
+		  &:before {
+			display: none;
+		  }
+		}
+
+		.item-body {
+		  max-height: 320px;
+		}
+	  }
+	}
+  }
+}

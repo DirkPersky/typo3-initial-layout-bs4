@@ -10,9 +10,9 @@
                     <sheetTitle>Button Optionen</sheetTitle>
                 </TCEforms>
                 <el type="array">
-                    <headline type="array">
+                    <icon type="array">
                         <TCEforms type="array">
-                            <label>Link Mehr Text</label>
+                            <label>Font Awesome-Icon</label>
                             <config type="array">
                                 <type>input</type>
                                 <size>48</size>
@@ -20,8 +20,7 @@
                                 <default></default>
                             </config>
                         </TCEforms>
-                    </headline>
-
+                    </icon>
                     <image type="array">
                         <TCEforms type="array">
                             <label>Bild</label>
