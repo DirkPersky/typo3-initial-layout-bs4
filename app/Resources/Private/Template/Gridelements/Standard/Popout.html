@@ -2,9 +2,8 @@
       xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers" lang="en"
       xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
 
-<div class="item{f:if(condition:'{data.header}',then:' has--headline')}{f:if(condition:'{tx_gridelements_children} > 0',then:' has--content')}">
-    <div
-            class="icon"
+<div class="item {f:if(condition:'{data.header} && {data.header_layout} != 100',then:' has--headline')}{f:if(condition:'{data.tx_gridelements_children} > 0',then:' has--content')}">
+    <div class="icon"
     <f:if condition="{data.flexform_image}">style="background-image:url(f:uri.image(image: files.0, maxWidth: 480, cropVariant: mobile)});"</f:if>
     >
     <f:if condition="{data.header_link}">
@@ -18,13 +17,12 @@
         </f:else>
     </f:if>
 </div>
-<f:if condition="{tx_gridelements_children} > 0">
+<f:if condition="{data.tx_gridelements_children} > 0">
     <div class="item-body">
         <f:render section="RenderContent" arguments="{_all}" />
     </div>
 </f:if>
 </div>
-
 
 <f:section name="RenderHeader">
     <f:if condition="{data.flexform_icon}">
@@ -33,9 +31,11 @@
         </div>
     </f:if>
     <f:if condition="{data.header}">
-        <div class="icon-headline">
-            <f:format.raw>{data.header}</f:format.raw>
-        </div>
+        <f:if condition="{data.header_layout} != 100">
+            <div class="icon-headline">
+                <f:format.raw>{data.header}</f:format.raw>
+            </div>
+        </f:if>
     </f:if>
 </f:section>
 <f:section name="RenderContent">
