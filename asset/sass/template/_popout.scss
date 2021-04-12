@@ -104,26 +104,27 @@
 	  overflow-y: auto;
 	}
 
-	&.has--content,
-	&.has--headline {
-	  &:hover,
-	  &.on {
-		width: $popout-width;
+	&:hover,
+	&.on {
+	  width: $popout-width;
 
-		position: relative;
+	  position: relative;
+	  left: - 15px;
+
+	  &.has--content,
+	  &.has--headline {
 		left: -($popout-width - $icon-width);
+	  }
+	  // border-bottom-left-radius: 0;
 
-		// border-bottom-left-radius: 0;
-
-		.icon-headline {
-		  &:before {
-			display: none;
-		  }
+	  .icon-headline {
+		&:before {
+		  display: none;
 		}
+	  }
 
-		.item-body {
-		  max-height: 320px;
-		}
+	  .item-body {
+		max-height: 320px;
 	  }
 	}
   }
