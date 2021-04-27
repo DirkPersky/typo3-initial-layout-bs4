@@ -45,6 +45,7 @@ class Init {
         require('lazysizes/plugins/respimg/ls.respimg'); // LazyLoading for Responsive Images
         require('lazysizes/plugins/bgset/ls.bgset'); // LazyLoading for Background-Images
         require('lazysizes'); // LazyLoading main lib
+        // require('picturefill'); // IE 11 FIX
         // require('rrssb'); // Sozial share
     }
     /**
