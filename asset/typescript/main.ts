@@ -24,7 +24,16 @@ class Init {
             // load jQuery Functions Files
             me.loadtemplates();
             // BarbaJS
-            new BarbaJS();
+            try {
+                var ua = window.navigator.userAgent;
+                var msie = ua.indexOf("MSIE ");
+
+                if (msie > 0 || !!ua.match(/Trident.*rv\:11\./)) {  // If Internet Explorer, return version number
+                    console.log('Please upadte your Browser!');
+                } else {
+                    new BarbaJS();
+                }
+            } catch (e) { }
             // run Statemanager
             (<any>window).Statemanager.call();
         });
