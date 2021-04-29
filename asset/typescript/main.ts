@@ -29,7 +29,7 @@ class Init {
                 var msie = ua.indexOf("MSIE ");
 
                 if (msie > 0 || !!ua.match(/Trident.*rv\:11\./)) {  // If Internet Explorer, return version number
-                    console.log('Please upadte your Browser!');
+                    console.log('Please update your Browser!');
                 } else {
                     new BarbaJS();
                 }
