@@ -12,7 +12,7 @@
   }
 
   .powermail_fieldwrap {
-    @extend .form-group;
+    //@extend .form-group;
 
     &.layout2 {
       float: left;
@@ -84,7 +84,7 @@
       display: inline-block;
       input[type="submit"] {
         @extend .btn;
-        @extend .btn-secondary;
+        @include button-variant($secondary, $secondary);
       }
     }
   }
@@ -110,7 +110,7 @@
 
   .tx-indexedsearch-searchbox-button {
     @extend .btn;
-    @extend .btn-secondary;
+    @include button-variant($secondary, $secondary);
   }
 }
 

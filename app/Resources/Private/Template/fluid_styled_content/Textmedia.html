@@ -17,13 +17,14 @@
 			>
 			<f:if condition="{gallery.count.rows} > 1">
 				<!--- Indicators -->
-				<ol class="carousel-indicators">
+				<div class="carousel-indicators">
 					<f:for each="{gallery.rows}" as="row" iteration="row_iteration" key="entrynumber">
-						<li data-target="#carousel-generic-{data.uid}" data-slide-to="{f:cObject(typoscriptObjectPath: 'lib.math', data: '{entrynumber} -1')}" class="{f:if(condition:'{row_iteration.isFirst}',then:'active')}">
-						</li>
+						<button aria-current="true" aria-label="Slide {entrynumber}"
+								class="{f:if(condition:'{row_iteration.isFirst}',then:'active')}"
+								data-bs-slide-to="{f:cObject(typoscriptObjectPath: 'lib.math', data: '{entrynumber} -1')}"
+								data-bs-target="#carousel-generic-{data.uid}" type="button"></button>
 					</f:for>
-				</ol>
-
+				</div>
 			</f:if>
 			<!-- Carousel Items -->
 			<div class="carousel-inner">
@@ -31,12 +32,16 @@
 			</div>
 			<f:if condition="{gallery.count.rows} > 1">
 				<!--- Direction navs -->
-				<a class="left carousel-control" href="#carousel-generic-{data.uid}" role="button" data-slide="prev">
-					<span class="glyphicon glyphicon-chevron-left"></span>
-				</a>
-				<a class="right carousel-control" href="#carousel-generic-{data.uid}" role="button" data-slide="next">
-					<span class="glyphicon glyphicon-chevron-right"></span>
-				</a>
+				<button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carousel-generic-{data.uid}"
+						type="button">
+					<span aria-hidden="true" class="carousel-control-prev-icon"></span>
+					<span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carousel-generic-{data.uid}"
+						type="button">
+					<span aria-hidden="true" class="carousel-control-next-icon"></span>
+					<span class="visually-hidden">Next</span>
+				</button>
 			</f:if>
 			</div>
 		</f:case>

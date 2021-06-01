@@ -68,18 +68,18 @@
 	  > .nav-link {
 		@include rem(padding, 10 15);
 		display: block;
-		color: theme-color('dark');
+		color: $dark;
 		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
 		&:hover {
-		  color: theme-color('primary');
+		  color: $primary;
 		  background-color: rgba(0, 0, 0, .05);
 		}
 	  }
 
 	  &.active {
 		> .nav-link {
-		  color: theme-color('primary');
+		  color: $primary;
 		  background-color: rgba(0, 0, 0, .1);
 		}
 	  }
@@ -149,7 +149,7 @@
 	  cursor: pointer;
 	  text-align: center;
 
-	  color: theme-color('danger');
+	  color: $danger;
 	  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
 	  &:before {
