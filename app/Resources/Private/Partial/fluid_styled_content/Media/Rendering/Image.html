@@ -16,7 +16,7 @@
         </f:if>
         <source media="(min-width: 1400px)"
                 srcset="{f:uri.image(image:file, width:1960, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'default')}"
-                type="{file.originalFile.properties.mime_type}"/>
+                type="{file.mime_type}"/>
     </f:if>
     <f:if condition="{data.imagewidth} > 1200">
         <f:if condition="{file.originalFile.properties.extension} != 'svg'">
@@ -27,7 +27,7 @@
 
         <source media="(min-width: 1200px)"
                 srcset="{f:uri.image(image:file, width:1400, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'default')}"
-                type="{file.originalFile.properties.mime_type}"/>
+                type="{file.mime_type}"/>
     </f:if>
     <f:if condition="{data.imagewidth} > 992">
         <f:if condition="{file.originalFile.properties.extension} != 'svg'">
@@ -38,7 +38,7 @@
 
         <source media="(min-width: 992px)"
                 srcset="{f:uri.image(image:file, width:1200, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'default')}"
-                type="{file.originalFile.properties.mime_type}"/>
+                type="{file.mime_type}"/>
     </f:if>
     <f:if condition="{data.imagewidth} > 768">
         <f:if condition="{file.originalFile.properties.extension} != 'svg'">
@@ -49,7 +49,7 @@
 
         <source media="(min-width: 768px)"
                 srcset="{f:uri.image(image:file, width:992, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'tablet')}"
-                type="{file.originalFile.properties.mime_type}"/>
+                type="{file.mime_type}"/>
     </f:if>
     <f:if condition="{data.imagewidth} > 480">
         <f:if condition="{file.originalFile.properties.extension} != 'svg'">
@@ -60,7 +60,7 @@
 
         <source media="(min-width: 480px)"
                 srcset="{f:uri.image(image:file, width:768, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'tablet')}"
-                type="{file.originalFile.properties.mime_type}"/>
+                type="{file.mime_type}"/>
     </f:if>
     <f:if condition="{file.originalFile.properties.extension} != 'svg'">
         <source srcset="{f:uri.image(image:file, width:360, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile', fileExtension:'webp')}"
@@ -68,7 +68,7 @@
     </f:if>
 
     <source srcset="{f:uri.image(image:file, width:360, maxWidth:data.imagewidth, maxHeight:data.imageheight, cropVariant:'mobile')}"
-            type="{file.originalFile.properties.mime_type}"/>
+            type="{file.mime_type}"/>
     <img alt="{file.alternative}" class="img-fluid" height="{dimensions.height}" lazyload="true" title="{file.title}"
          width="{dimensions.width}"/>
 </picture>
