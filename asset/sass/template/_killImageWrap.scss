@@ -29,6 +29,12 @@ figure {
 	@include typo3CeMedia();
 }
 
+.frame-layout-1 {
+  .ce-gallery {
+	@include typo3CeMediaCols();
+  }
+}
+
 
 .ce-textpic.ce-intext {
 	@extend .clearfix;

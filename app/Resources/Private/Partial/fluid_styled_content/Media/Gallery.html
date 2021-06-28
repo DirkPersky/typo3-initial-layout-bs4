@@ -23,7 +23,7 @@
 	<f:defaultCase>
 
 		<f:if condition="{gallery.rows}">
-			<div class="ce-gallery{f:if(condition: data.imageborder, then: ' ce-border')}" data-ce-columns="{gallery.count.columns}" data-ce-images="{gallery.count.files}">
+			<div class="ce-gallery{f:if(condition: data.imageborder, then: ' ce-border')}" data-ce-imagecols="{data.imagecols}" data-ce-columns="{gallery.count.columns}" data-ce-images="{gallery.count.files}">
 				<f:if condition="{gallery.position.horizontal} == 'center'">
 					<div class="ce-outer">
 						<div class="ce-inner">
