@@ -11,9 +11,10 @@
 			<div
 					id="carousel-generic-{data.uid}"
 					class="carousel slide"
-					data-ride="carousel"
-					data-interval="{f:if(condition: "{data.subheader}", then: "{f:cObject(typoscriptObjectPath: 'lib.math', data: '{data.subheader}')}", else: "3000")}"
-			data-wrap="true"
+					data-bs-ride="carousel"
+					data-bs-pause="false"
+					data-bs-interval="{f:if(condition: "{data.subheader}", then: "{f:cObject(typoscriptObjectPath: 'lib.math', data: '{data.subheader}')}", else: "5000")}"
+					data-bs-wrap="true"
 			>
 			<f:if condition="{gallery.count.rows} > 1">
 				<!--- Indicators -->
