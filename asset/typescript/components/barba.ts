@@ -113,7 +113,17 @@ export default class BarbaJS {
     }
 
     prevent(data:any) {
-        if(typeof data.el.dataset.noAjax != 'undefined') return true;
+        if (typeof data.el.dataset.noAjax != 'undefined') return true;
+        // abort if PDF
+        try {
+            if (data.href.match(/\.pdf$/)) {
+                return true;
+            }
+            if (data.target.href.match(/\.pdf$/)) {
+                return true;
+            }
+        } catch (e) {
+        }
         return data.event.defaultPrevented;
     }
 }
