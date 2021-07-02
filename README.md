@@ -155,6 +155,15 @@ options.pageTree.showNavTitle = 1
 options.pageTree.showPageIdWithTitle = 1
 ```
 
+### fileadmin .htaccess
+
+```.htaccess
+#add for ePaper
+<If "%{REQUEST_URI} =~ m#epaper/(.*)#">
+    Header set Content-Security-Policy "default-src * 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval'; connect-src * 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'; frame-src *; style-src * 'unsafe-inline';"
+</If>
+```
+
 ## Sitemap.xml
 Page
 ```http://example.org/?type=1533906435```
