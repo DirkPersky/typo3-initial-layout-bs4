@@ -23,7 +23,7 @@ class WebpackConfig {
             resolve: {
                 extensions: [".ts", ".tsx", ".js"]
             },
-            target: ['es5']
+            target: ['web','es5'],
         };
         // Uglify & Compress JS
         if (this.isProduction()) {
@@ -72,7 +72,7 @@ class WebpackConfig {
         this.webpackConfig.output = {
             path: path.resolve(__dirname, this.config.publicPath + '/js'),
             filename: 'script.min.js',
-            publicPath: ''
+            publicPath: '',
         };
 
         return this;
@@ -82,6 +82,46 @@ class WebpackConfig {
      * Build the rules array.
      */
     buildRules() {
+        // Copy Fonts to Public dir
+        this.webpackConfig.module.rules.push({
+            test: /\.(woff2?|ttf|eot|svg|otf)/,
+            type: 'asset',
+            generator: {
+                filename: path => {
+                    path = path.filename;
+                    if (!/node_modules|bower_components/.test(path)) {
+                        return '../fonts/[name][ext][query]'.replace(/@/g, '');
+                    }
+
+                    return '../fonts/' + path
+                        .replace(/\\/g, '/')
+                        .replace(/@/g, '')
+                        .replace(
+                            /((.*(node_modules|bower_components))|fonts|font|assets)\//g, ''
+                        ) + '[query]';
+                }
+            }
+        });
+        // Copy Images to Public dir
+        this.webpackConfig.module.rules.push({
+            test: /\.(png|jpe?g|gif)$/,
+            type: 'asset',
+            generator: {
+                filename: path => {
+                    path = path.filename;
+                    if (!/node_modules|bower_components/.test(path)) {
+                        return '../img/layout/[name][ext][query]'.replace(/@/g, '');
+                    }
+
+                    return '../img/vendor/' + path
+                        .replace(/\\/g, '/')
+                        .replace(/@/g, '')
+                        .replace(
+                            /((.*(node_modules|bower_components))|fonts|font|assets)\//g, ''
+                        ) + '[query]';
+                }
+            }
+        });
         // JavaScript & TYPESCRIPT HANDLER
         this.webpackConfig.module.rules.push({
             test: /\.(ts|js)x?$/,
@@ -90,10 +130,19 @@ class WebpackConfig {
                 loader: 'babel-loader',
                 options: {
                     presets: [
-                        '@babel/preset-env',
-                        '@babel/typescript'
+                        ['@babel/preset-env', {
+                            "corejs": { "version":3 },
+                            "useBuiltIns": "usage",
+                            "targets": {
+                                "edge": "17",
+                                "firefox": "60",
+                                "chrome": "67",
+                                "safari": "11.1",
+                                "ie": "11"
+                            }
+                        }],
+                        ['@babel/typescript']
                     ],
-                    plugins: ['@babel/transform-arrow-functions']
                 }
             }
         });
@@ -101,51 +150,10 @@ class WebpackConfig {
         this.webpackConfig.module.rules.push({
             test: /\.(sa|sc|c)ss$/,
             use: [
-                {
-                    loader: MiniCssExtractPlugin.loader
-                },
-                'css-loader',
-                'sass-loader',
+                { loader: MiniCssExtractPlugin.loader },
+                { loader: 'css-loader' },
+                { loader: 'sass-loader' },
             ],
-        });
-        // Copy Fonts to Public dir
-        this.webpackConfig.module.rules.push({
-            test: /\.(woff2?|ttf|eot|svg|otf)$/,
-            loader: 'file-loader',
-            options: {
-                name: path => {
-                    if (!/node_modules|bower_components/.test(path)) {
-                        return '../fonts/[name].[ext]?[hash]'.replace(/@/g, '');
-                    }
-
-                    return '../fonts/' + path
-                        .replace(/\\/g, '/')
-                        .replace(/@/g, '')
-                        .replace(
-                            /((.*(node_modules|bower_components))|fonts|font|assets)\//g, ''
-                        ) + '?[hash]';
-                },
-                publicPath: ''
-            }
-        });
-        // Copy Images to Public dir
-        this.webpackConfig.module.rules.push({
-            test: /\.(png|jpe?g|gif)$/,
-            loader: 'file-loader',
-            options: {
-                name: path => {
-                    if (!/node_modules|bower_components/.test(path)) {
-                        return '../img/layout/[name].[ext]?[hash]';
-                    }
-
-                    return '../img/vendor/' + path
-                        .replace(/\\/g, '/')
-                        .replace(
-                            /((.*(node_modules|bower_components))|images|image|img|assets)\//g, ''
-                        ) + '?[hash]';
-                },
-                publicPath: ''
-            }
         });
 
         return this;
@@ -177,5 +185,4 @@ class WebpackConfig {
         return this;
     }
 }
-
 module.exports = new WebpackConfig().build();

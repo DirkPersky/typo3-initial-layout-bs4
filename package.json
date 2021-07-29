@@ -1,6 +1,6 @@
 {
   "name": "TYPO3-initial-layout-bs4",
-  "version": "4.0.2",
+  "version": "5.0.0",
   "description": "NPM Integration with webpack",
   "main": "index.js",
   "scripts": {
@@ -23,12 +23,16 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "latest",
+    "@babel/plugin-transform-arrow-functions": "latest",
+    "@babel/preset-env": "latest",
+    "@babel/preset-typescript": "latest",
     "@types/bootstrap": "latest",
     "@types/fancybox": "latest",
     "@types/jquery": "latest",
     "@types/popper.js": "latest",
     "babel-loader": "latest",
     "clean-css": "latest",
+    "core-js": "latest",
     "css-loader": "latest",
     "file-loader": "latest",
     "friendly-errors-webpack-plugin": "latest",
@@ -42,9 +46,6 @@
     "webpack-cli": "latest"
   },
   "dependencies": {
-    "@babel/plugin-transform-arrow-functions": "^7.12.1",
-    "@babel/preset-env": "^7.12.11",
-    "@babel/preset-typescript": "^7.12.7",
     "@barba/core": "latest",
     "@fancyapps/fancybox": "latest",
     "@fortawesome/fontawesome-free": "latest",
@@ -53,8 +54,6 @@
     "install": "latest",
     "jquery": "latest",
     "lazysizes": "latest",
-    "picturefill": "latest",
-    "npm": "latest",
     "popper.js": "latest",
     "rrssb": "latest",
     "tether": "latest",
