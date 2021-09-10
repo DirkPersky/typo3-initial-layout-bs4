@@ -2,16 +2,14 @@
       data-namespace-typo3-fluid="true">
 
 <f:if condition="{menuMain}">
-    <ul class="nav navbar-nav">
-        <f:for each="{menuMain}" as="mainItem">
-            <li class="nav-item {f:if(condition:mainItem.current, then:' active')}">
-                <f:render partial="Navigation/Elements/Link" arguments="{item: mainItem}"/>
-            </li>
-            <f:if condition="{mainItem.children}">
-                <f:render section="submenu" arguments="{submenu: mainItem.children}"/>
-            </f:if>
-        </f:for>
-    </ul>
+    <f:for as="mainItem" each="{menuMain}">
+        <li class="nav-item {f:if(condition:mainItem.current, then:' active')}">
+            <f:render arguments="{item: mainItem}" partial="Navigation/Elements/Link"/>
+        </li>
+        <f:if condition="{mainItem.children}">
+            <f:render arguments="{submenu: mainItem.children}" section="submenu"/>
+        </f:if>
+    </f:for>
 </f:if>
 
 <f:section name="submenu">
