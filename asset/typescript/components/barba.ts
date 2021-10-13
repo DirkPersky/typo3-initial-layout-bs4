@@ -13,26 +13,28 @@ export default class BarbaJS {
         this.navbarCloseOnPageShift = true;
         this.collapseSelector = '#navigation #navbarResponsive';
         this.overlay = jQuery('.barba-overlay');
+        this.body = jQuery('html, body');
 
         var me = this;
         // init Barba with a default "opacity" transition
         barba.init({
             timeout: 8000,
-            prevent: (data:any) => this.prevent(data),
-            requestError: (trigger:any, action:string, url:string, response:any) => {
+            prevent: (data: any) => this.prevent(data),
+            // cacheIgnore: true,
+            // logLevel: 'debug',
+            requestError: (trigger: any, action: string, url: string, response: any) => {
                 if (action === 'click') {
                     setTimeout(() => {
                         barba.force(url);
                     }, 100); // TImeout needed to make sure the force is not aborted
                 }
-
-                return false;
+                // return false;
             },
             transitions: [{
-                name: 'legacy-example',
-                leave: function (data:any) {
+                name: 'Animation Loader',
+                leave: function (data: any) {
                     var done = (<any>this).async();
-                    if(me.overlay.length > 0) {
+                    if (me.overlay.length > 0) {
                         me.overlay.on('transitionend webkitTransitionEnd oTransitionEnd', () => {
                             done();
                         });
@@ -42,9 +44,8 @@ export default class BarbaJS {
                     }
                 },
                 enter: function(data:any) {
-
                     if (!me.barbaHasScroll(data.trigger)) {
-                        me.body.animate({
+                        me.body.stop().animate({
                             scrollTop: 0
                         }, 10);
                     }
@@ -89,32 +90,10 @@ export default class BarbaJS {
     }
 
     barbaHasScroll(trigger: any) {
-        var href = trigger.href,
-            target: any = false;
-
-        // default scroll element exist
-        if (href.indexOf('#') != -1) {
-            target = jQuery('#' + href.split("#")[1]);
-        } else {
-            // try to find default scroll position
-            target = jQuery('[data-barba-scroll]');
-        }
-
-        if (target && target.length > 0) return target;
-
-        return;
-    }
-
-
-    barbaScroll(trigger: any) {
-        var href = trigger.href,
-            target: any = false,
-            position: any = 0,
-            me: any = this;
-
-        jQuery('body').removeClass('noscroll');
-
-        setTimeout(() => {
+        // error handling Browser Back/Forward
+        try {
+            var href = trigger.href,
+                target: any = false;
 
             // default scroll element exist
             if (href.indexOf('#') != -1) {
@@ -124,15 +103,43 @@ export default class BarbaJS {
                 target = jQuery('[data-barba-scroll]');
             }
 
-            if (target && target.length > 0) {
-                position = target.offset().top - 40 - parseInt(<any>(jQuery(this.collapseSelector).outerHeight(true) || 0));
+            if (target && target.length > 0) return target;
+        } catch (e) {
+        }
+        return;
+    }
 
-                me.body.stop().animate({
-                    scrollTop: position
-                }, 1000);
-            }
-        }, 100);
 
+    barbaScroll(trigger: any) {
+        // error handling Browser Back/Forward
+        try {
+            var href = trigger.href,
+                target: any = false,
+                position: any = 0,
+                me: any = this;
+
+            jQuery('body').removeClass('noscroll');
+
+            if (typeof href == 'undefined') return;
+            setTimeout(() => {
+                // default scroll element exist
+                if (href.indexOf('#') != -1) {
+                    target = jQuery('#' + href.split("#")[1]);
+                } else {
+                    // try to find default scroll position
+                    target = jQuery('[data-barba-scroll]');
+                }
+
+                if (target && target.length > 0) {
+                    position = target.offset().top - 40 - parseInt(<any>(jQuery(this.collapseSelector).outerHeight(true) || 0));
+
+                    me.body.stop().animate({
+                        scrollTop: position
+                    }, 700);
+                }
+            }, 100);
+        } catch (e) {
+        }
     }
 
     prevent(data:any) {
