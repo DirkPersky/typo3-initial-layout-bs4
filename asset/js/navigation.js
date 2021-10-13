@@ -15,8 +15,8 @@ $.fn.DPCanvas = function (options){
         backdrop: '.nav--backdrop'
     }, options);
     // container
-    var $button = $(this);
-    $container = $(settings.wrap);
+    var $button = $(this),
+        $container = $(settings.wrap);
     // add data class
     if($button.data('dp-canvis')) $container.addClass($button.data('dp-canvis'));
     // at wrapper to body
