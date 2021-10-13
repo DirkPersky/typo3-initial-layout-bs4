@@ -150,9 +150,14 @@ class WebpackConfig {
         this.webpackConfig.module.rules.push({
             test: /\.(sa|sc|c)ss$/,
             use: [
-                { loader: MiniCssExtractPlugin.loader },
-                { loader: 'css-loader' },
-                { loader: 'sass-loader' },
+                {
+                    loader: MiniCssExtractPlugin.loader,
+                    options: {
+                        publicPath: "../../",
+                    },
+                },
+                {loader: 'css-loader'},
+                {loader: 'sass-loader'},
             ],
         });
 

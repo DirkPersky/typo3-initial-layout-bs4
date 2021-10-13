@@ -40,6 +40,7 @@
     "mini-css-extract-plugin": "latest",
     "node-sass": "latest",
     "penthouse": "latest",
+    "postcss-loader": "latest",
     "sass-loader": "latest",
     "typescript": "latest",
     "webpack": "latest",
