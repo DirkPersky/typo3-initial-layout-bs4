@@ -6,4 +6,26 @@ config {
   concatenateCss = 1
   compressJs = 1
   concatenateJs = 1
+
+  moveJsFromHeaderToFooter = 1
 }
+
+
+page {
+  headerData {
+      # Define Preloads
+    105 = TEXT
+    105.value(
+      <link rel="preload" as="font" href="{$path.template}Public/fonts/XXX" type="font/woff2" crossorigin="anonymous">
+      <link rel="preload" as="font" href="{$path.template}Public/fonts/XXX" type="font/woff2" crossorigin="anonymous">
+    )
+    105.insertDate=1
+  }
+}
+
+##########################
+### Performance Config ###
+##########################
+config.sendCacheHeaders = 1
+config.enableContentLengthHeader = 1
+config.no_cache=0
