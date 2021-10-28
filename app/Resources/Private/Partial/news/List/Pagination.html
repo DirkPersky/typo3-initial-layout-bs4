@@ -1,0 +1,58 @@
+<nav aria-label="Page navigation" class="page-navigation d-flex justify-content-center pt-4">
+    <p class="sr-only">
+        <f:translate arguments="{0:paginator.currentPageNumber,1:paginator.numberOfPages}" key="paginate_overall"/>
+    </p>
+    <ul class="pagination mb-0">
+        <f:if condition="{pagination.previousPageNumber} && {pagination.previousPageNumber} >= {pagination.firstPageNumber}">
+            <f:then>
+                <li class="page-item previous">
+                    <a class="page-link"
+                       href="{f:uri.action(action:actionName, arguments:{currentPage: pagination.previousPageNumber})}"
+                       title="{f:translate(key:'pagination.previous')}">
+                        {f:translate(key:'widget.pagination.previous', extensionName: 'fluid')}
+                    </a>
+                </li>
+            </f:then>
+        </f:if>
+
+        <f:if condition="{pagination.previousPageNumber} && {pagination.previousPageNumber} < {paginator.currentPageNumber}">
+            <li class="page-item">
+                <a class="page-link"
+                   href="{f:uri.action(action:actionName, arguments:{currentPage: pagination.firstPageNumber})}">{pagination.firstPageNumber}</a>
+            </li>
+            <f:if condition="{pagination.previousPageNumber} > {pagination.firstPageNumber}">
+                <li class="page-item many-sites">…</li>
+            </f:if>
+        </f:if>
+        <f:for as="page" each="{pagination.allPageNumbers}">
+            <f:if condition="{page} == {paginator.currentPageNumber}">
+                <li class="page-item {f:if(condition: '{page} == {paginator.currentPageNumber}', then:'active')}">
+                    <a class="page-link"
+                       href="{f:uri.action(action:actionName, arguments:{currentPage: page})}">{page}</a>
+                </li>
+            </f:if>
+        </f:for>
+        <f:if condition="{pagination.nextPageNumber} && {pagination.nextPageNumber} > {paginator.currentPageNumber}">
+            <f:if condition="{pagination.nextPageNumber} < {pagination.lastPageNumber}">
+                <li class="page-item many-sites">…</li>
+            </f:if>
+
+            <li class="page-item">
+                <a class="page-link"
+                   href="{f:uri.action(action:actionName, arguments:{currentPage: pagination.lastPageNumber})}">{pagination.lastPageNumber}</a>
+            </li>
+        </f:if>
+
+        <f:if condition="{pagination.nextPageNumber} && {pagination.nextPageNumber} <= {pagination.lastPageNumber}">
+            <f:then>
+                <li class="page-item next">
+                    <a class="page-link"
+                       href="{f:uri.action(action:actionName, arguments:{currentPage: pagination.nextPageNumber})}"
+                       title="{f:translate(key:'pagination.next')}">
+                        {f:translate(key:'widget.pagination.next', extensionName: 'fluid')}
+                    </a>
+                </li>
+            </f:then>
+        </f:if>
+    </ul>
+</nav>

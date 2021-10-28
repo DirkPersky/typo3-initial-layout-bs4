@@ -49,7 +49,7 @@ routeEnhancers:
       - routePath: '/page-{page}'
         _controller: 'News::list'
         _arguments:
-          page: '@widget_0/currentPage'
+          page: 'currentPage'
       - routePath: '/{news-title}'
         _controller: 'News::detail'
         _arguments:
