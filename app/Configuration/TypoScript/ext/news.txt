@@ -51,3 +51,37 @@ plugin.tx_news {
     }
   }
 }
+
+###########################
+### Add News to Sitemap ###
+###########################
+plugin.tx_seo.config {
+    xmlSitemap {
+        sitemaps {
+            news {
+                provider = TYPO3\CMS\Seo\XmlSitemap\RecordsXmlSitemapDataProvider
+                config {
+                    table = tx_news_domain_model_news
+                    additionalWhere =
+                    sortField = sorting
+                    lastModifiedField = tstamp
+                    changeFreqField = sitemap_changefreq
+                    priorityField = sitemap_priority
+                    pid = {$plugin.tx_csseo.sitemap.extensions.news.storagePid}
+                    recursive = 2
+                    url {
+                        pageId = {$plugin.tx_csseo.sitemap.extensions.news.detailPid}
+                        fieldToParameterMap {
+                            uid = tx_news_pi1[news]
+                        }
+
+                        additionalGetParameters {
+                            tx_news_pi1.controller = News
+                            tx_news_pi1.action = detail
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
